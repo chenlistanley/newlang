@@ -1,0 +1,40 @@
+<html>
+
+<script type="text/javascript">
+
+
+function test(){
+	function Person(name, age){
+		this.name=name
+		this.age=age
+		this.say=function(){
+			print(this.name, this.age)
+		}
+	}
+	var a = new Person("Stanley", 20)
+	print(a)
+}
+
+
+
+function print(){
+	var a = "";
+	function toString(arrays){
+		for(k in arrays){
+			if(typeof(arrays[k]) == typeof([])){
+				toString(arrays[k]);
+			}else{
+				a += a.length > 0 ? "&nbsp;" : "";
+				a += arrays[k];
+			}
+		}
+	}
+	toString(arguments);
+	a += "<br/>";
+	document.write(a);
+}
+
+test();
+</script>
+
+</html>

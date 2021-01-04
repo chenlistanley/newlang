@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Counter</title>
+	<script type="text/javascript">
+		var counter =(function (){
+			var seed=0;
+			return (function (){
+				return ++seed;
+			});
+		})();
+		
+		document.write("<div id='showDiv'>0</div>");
+		document.write("<button onclick='increase()'>+1</button>");
+		
+		function increase(){
+			document.getElementById("showDiv").innerText=counter();
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

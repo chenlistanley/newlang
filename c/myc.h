@@ -1,0 +1,2 @@
+
+#define APPLE 10

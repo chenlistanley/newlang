@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Timer</title>
+    <script>
+        document.write("<div id='clock'>00:00.00</div><div><button onClick='pause()'>Pause</button><button onClick='resume()'>Continue</button><button onClick='restart()'>Restart</button></div>");
+        var hour=0, minute= 0, second=0;
+        var timerId = window.setInterval(tick, 1000);
+        function tick(){
+        	second += 1;
+        	if(second >= 60){
+        		minute++;
+        		second -= 60;
+        	}
+        	if(minute >= 60){
+        		hour++;
+        		minute -= 60;
+        	}
+        	var text = displayDigit(hour) + ':' + displayDigit(minute) + '.' + displayDigit(second);
+            document.getElementById("clock").innerText = text;
+        }
+
+        function displayDigit(digit){
+        	if(digit < 10){
+        		return "0" + digit;
+        	}
+        	return digit;
+        }
+
+        function pause(){
+            window.clearInterval(timerId);
+        }
+
+        function resume(){
+            window.clearInterval(timerId);
+            timeId = window.setInterval(tick, 1000);
+        }
+
+        function restart() {
+            window.clearInterval(timeId);
+            document.getElementById("clock").innerText = "00:00.00";
+            hour=minute=second=0;
+            timeId = window.setInterval(tick, 1000);
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

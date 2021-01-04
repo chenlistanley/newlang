@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Clock</title>
+    <script>
+        document.write("<div id='clock'></div>");
+        window.setInterval(tick, 1000);
+        function tick(){
+            document.getElementById("clock").innerText = new Date().toLocaleTimeString();
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
