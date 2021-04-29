@@ -12,3 +12,11 @@ fun test2(){
 		println("$i ${a[i]}")
 	}
 }
+
+fun test(){
+	var a = listOf("apple", "banana")
+	a = a.plus("orange")
+	for(k in a){
+		println(k)
+	}
+}

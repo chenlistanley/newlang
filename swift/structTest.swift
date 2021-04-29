@@ -1,7 +1,7 @@
 
 struct Person{
-	var name: String
-	var age: Int
+	let name: String
+	let age: Int
 }
 
 func test(){

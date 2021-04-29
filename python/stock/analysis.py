@@ -1,6 +1,7 @@
 from os import listdir
 from json import load
 from math import ceil
+import os
 
 def look_file(days):
 	a=[]
@@ -54,7 +55,7 @@ def half_up(a):
 def simple_up(a):
 	for k in a:
 		b = a[k]
-		if min(b) > 20 or min(b) < 10:
+		if min(b) > 20 or min(b) < 5:
 			continue
 		if not half_up(b):
 			continue
@@ -63,13 +64,18 @@ def simple_up(a):
 		print(k, b)
 
 def check(a, code):
-	print(code, a[code])
+	if code in a:
+		print(code, a[code])
 
 def test():
-	a = lookup(10)
-	# all_up(a)
+	os.chdir("data")
+	a = lookup(5)
 	simple_up(a)
 	print("------")
+	a = lookup(10)
+	check(a, "601988")
+	check(a, "600036")
+	check(a, "601166")
 	check(a, "600016")
 
 test()

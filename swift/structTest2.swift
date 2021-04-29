@@ -1,19 +1,25 @@
-
 struct Person{
-	var name: String
-	var age: Int
-
-	var say: (String, Int){
-        return (self.name, self.age)
+    let name:String
+    let age:Int
+    var fruits:[String]
+    
+    func say(){
+        print(self.name, self.age, self.fruits)
     }
-
-    var say2: [String:String]{
-        return ["name": self.name, "age": "\(self.age)"]
+    
+    mutating func have(fruit:String){
+        fruits.append(fruit)
+    }
+    
+    mutating func remove() -> String{
+        return fruits.removeLast()
     }
 }
 
 func test(){
-    let a = Person(name: "Stanely", age: 20)
-    print(a.say)
-    print(a.say2)
+    var a = Person(name:"Stanley", age:20, fruits:["apple"])
+    a.have(fruit:"banana")
+    a.have(fruit:"orange")
+    print(a.remove())
+    a.say()
 }

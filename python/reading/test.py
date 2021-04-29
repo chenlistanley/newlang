@@ -1,9 +1,11 @@
 import re
 
 def read():
-	with open("a.txt", encoding="utf-8") as f:
+	with open("java.txt", encoding="utf-8") as f:
 		for line in f:
 			if line.strip() == "":
+				continue
+			if line.find('Error') >= 0 or line.find('Exception') >= 0:
 				continue
 			s = line
 			s = re.sub("【[^】]*】", "", s)

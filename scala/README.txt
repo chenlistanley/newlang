@@ -1,2 +1,2 @@
 scalac test.scala
-scala test
+scala Tester

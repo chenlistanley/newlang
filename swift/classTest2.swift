@@ -1,31 +1,40 @@
+
 class Person{
-    var name: String
-    var age: Int
+    let name:String
+    let age:Int
+    var fruits:[String]
     
-    init(name:String, age:Int){
-        self.name=name
-        self.age=age
+    init(name:String, age:Int, fruits:[String]){
+        self.name = name
+        self.age = age
+        self.fruits = fruits
     }
     
     func say(){
-        print(self.name, self.age)
+        print(self.name, self.age, self.fruits)
     }
-}
-class Student:Person{
-    var glade: Int
-
-    init(name:String, age:Int, glade:Int){
-        self.glade = glade
-        super.init(name:name, age:age)
-    }
-
-    override func say(){
-        super.say()
-        print(self.glade)
+    
+    subscript(i:Int) -> String{
+        get{
+            if fruits.count > i {
+                return fruits[i]
+            }else{
+                return ""
+            }
+        }
+        set(value){
+            if fruits.count > i {
+                fruits[i] = value
+            }else{
+                fruits.append(value)
+            }
+        }
     }
 }
 
 func test(){
-    let a = Student(name: "Stanley", age:20, glade:10)
+    let a = Person(name:"Stanley", age:20, fruits:["apple"])
+    a[1] = "banana"
     a.say()
+    print(a[0], a[1], a[2])
 }

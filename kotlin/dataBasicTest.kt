@@ -1,3 +1,6 @@
+fun main(){
+    test()
+}
 
 fun test(){
     var a = 10

@@ -16,7 +16,7 @@ def call(pn=1):
 
 def save():
 	t=time.strftime("%Y%m%d", time.localtime())
-	file=str("%s.json" %t)
+	file=str("data/%s.json" %t)
 	a=open(file, mode='w')
 	a.write(json.dumps(stock))
 	a.close()

@@ -1,29 +1,50 @@
 import json
 
-def record(file, size):
-	with open("record.json", mode='r+') as f:
-		a = json.load(f)
-		start = a.get(file)
-		if not start:
-			start = 1
-		end = start + size
-		a[file] = end
-		f.seek(0)
-		json.dump(a, f)
-		return (start, end)
+json_file = "record.json"
 
-def read(file, size):
-	a = record(file, size)
+def load_record():
+	a = {}
+	with open(json_file, mode='r') as f:
+		a = json.load(f)
+	return a
+
+def save_record(k, v):
+	a = load_record()
+	with open(json_file, mode='w') as f:
+		a[k] = v
+		json.dump(a, f)
+
+def read(file, start, end):
+	a = []
 	with open(file, mode='r', encoding="utf-8") as f:
 		num = 0
 		for line in f:
 			num += 1
-			if num < a[0] or num >= a[1]:
+			if num < start or num >= end:
 				continue
-			print(line)
-			
+			a.append(line)
+	return a
+
+def manage(file, size):
+	a = load_record()
+	start = a.get(file)
+	if not start:
+		start = 1
+	end = start + size
+	b = read(file, start, end)
+	if len(b) == 0:
+		start = 1
+		end = start + size
+		b = read(file, start, end)
+	for k in b:
+		print(k)
+	save_record(file, end)
+
 
 def test():
-	read("daoDejing.txt", 3)
+	filename = str("%s.txt" %input("File name: "))
+	# linenum = int(input("Line num: "))
+	linenum = 1
+	manage(filename, linenum)
 
 test()
