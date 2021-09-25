@@ -1,17 +1,14 @@
-object Test{
-	def main(args:Array[String]):Unit = {
+
+object Tester{
+	def main(args: Array[String]):Unit = {
 		test()
 	}
 
 	def test():Unit = {
-		try{
-			val a = 1 / 0
-		} catch{
-			case e:Exception => print(e)
-		}finally{
-			print("orange")
-		}
+		val a = Person("Stanley", 20)
+		println(a.name, a.age)
 	}
 
-	
+	case class Person(name:String, age:Int)
 } 
+

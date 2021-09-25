@@ -16,6 +16,7 @@ fun test2(){
 fun test(){
 	var a = listOf("apple", "banana")
 	a = a.plus("orange")
+	a = a.minus("apple")
 	for(k in a){
 		println(k)
 	}

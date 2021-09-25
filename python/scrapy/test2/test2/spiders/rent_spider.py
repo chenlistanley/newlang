@@ -23,13 +23,13 @@ class QuotesSpider(scrapy.Spider):
             money = quote.css(".money ::text").get()
             link = quote.css(".title ::attr(href)").get()
 
-            if not title or title in self.titles or self.findWord(title, '女','搭','隔','no more','已经出租','想租'):
+            if not title or title in self.titles or self.findWord(title, '女','搭','隔','no more','已经出租','想租', '求租'):
                 continue
             if not money:
                 continue
 
             price = re.search('\\d+', money).group()
-            if price and int(price) in range(500,600):
+            if price and int(price) in range(400,601):
                 self.titles.append(title)
                 yield {
                     'amount': money,

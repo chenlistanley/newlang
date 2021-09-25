@@ -1,45 +1,57 @@
+import random
 
-def load(file, size):
-	a = []
+def read(file):
+	words = []
 	with open(file, mode='r', encoding="utf-8") as f:
 		for k in f:
 			word = k.strip()
 			if word == "":
 				continue
-			a.append(word)
-			if len(a) == size:
-				break
-	return a
+			words.append(word)
+	return words
 
 def save(file, words):
-	with open(file, mode='a', encoding="utf-8") as f:
+	with open(file, mode='w', encoding="utf-8") as f:
 		for k in words:
 			f.write("%s\n" %k)
 
-def delete(file, words):
+def pick(src, excludes, size):
 	a = []
-	with open(file, mode='r', encoding="utf-8") as f:
-		for k in f:
-			word = k.strip()
-			if word not in words:
-				a.append(word)
-	
-	with open(file, mode='w', encoding="utf-8") as f:
-		for k in a:
-			f.write("%s\n" %k)
+	srcLen = len(src)
+	for k in range(srcLen):
+		b = src[random.randint(0, srcLen)]
+		if b not in excludes:
+			a.append(b)
+		if len(a) >= size:
+			break
+	return a
 
 def test():
-	s = input("Please key number of size: ")
-	s = int(s)
-	a = load("toSave.txt", s)
-	b = []
-	for k in a:
-		print(k)
-		s = input("Please key 'Y' if remember: ")
-		if s == "Y" or s == 'y':
-			b.append(k)
-	save("saved.txt", b)
-	delete("toSave.txt", b)
+	words = read("word.txt")
+	remembers = read("remember.txt")
+	practises = read("practise.txt")
+	size = 50
+	left = size - len(practises)
+	if left > 0:
+		practises += pick(remembers, practises, left >> 1)
 
+	left = size - len(practises)
+	if left > 0:
+		practises += pick(words, remembers + practises, left)
+
+	for k in tuple(practises):
+		print("\n%s" %k)
+		s = input("")
+		while s != k:
+			s = input("")
+		s = input("Remember (Y/y): ")
+		if s == "Y" or s == 'y':
+			remembers.append(k)
+			practises.remove(k)
+		elif k in remembers:
+			remembers.remove(k)
+	
+	save("remember.txt", remembers)
+	save("practise.txt", practises)
 
 test()

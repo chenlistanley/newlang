@@ -9,4 +9,11 @@ object Test{
 			println(k)
 		}
 	}
+
+	def test():Unit = {
+		val a = Set("apple", "banana")
+		a.foreach{
+			k => println(k)
+		}
+	}
 }

@@ -39,4 +39,10 @@ def test7():
 	f = lambda a, b : a + b
 	print(f(1,2))
 
+def test8():
+	def fa(b, a="apple"):
+		print(a, b)
+
+	fa("banna")
+
 test7()
