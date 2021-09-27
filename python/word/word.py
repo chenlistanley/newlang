@@ -5,7 +5,7 @@ def read(file):
 	with open(file, mode='r', encoding="utf-8") as f:
 		for k in f:
 			word = k.strip()
-			if word == "":
+			if word == "" or word in words:
 				continue
 			words.append(word)
 	return words
@@ -16,15 +16,15 @@ def save(file, words):
 			f.write("%s\n" %k)
 
 def pick(src, excludes, size):
-	a = []
+	dst = []
 	srcLen = len(src)
 	for k in range(srcLen):
 		b = src[random.randint(0, srcLen)]
-		if b not in excludes:
-			a.append(b)
-		if len(a) >= size:
+		if b not in excludes and b not in dst:
+			dst.append(b)
+		if len(dst) >= size:
 			break
-	return a
+	return dst
 
 def test():
 	words = read("word.txt")
@@ -44,7 +44,7 @@ def test():
 		s = input("")
 		while s != k:
 			s = input("")
-		s = input("Remember (Y/y): ")
+		s = input("Remember (y/n): ")
 		if s == "Y" or s == 'y':
 			remembers.append(k)
 			practises.remove(k)
