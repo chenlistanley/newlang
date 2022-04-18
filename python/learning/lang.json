@@ -1,0 +1,6 @@
+{
+	"daily": ["groovy", "ruby", "lua"],
+	"weekly": ["Kotlin", "Scala", "php"],
+	"monthly": ["C", "C++", "C#", "Go", "Rust", "Python", "Swift", "typescript", "nodejs"],
+	"yearly": []
+}

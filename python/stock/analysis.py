@@ -1,7 +1,9 @@
 from os import listdir,chdir
 from json import load
+import numpy
 
-names = []
+stockNames={}
+stockCodes=[]
 
 def look_file(count, interval, skip):
 	a=[]
@@ -35,42 +37,24 @@ def lookup(files):
 				a[k]=[v]
 	return a
 
-def half_up(a):
-	if a[0] < 10 or a[0] > 30:
-		return False
-	b = a[0]
-	c = a[0]
-	for k in range(1, len(a)):
-		b = b * (1 + 0.03)
-		c = c * (1 + 0.04)
-	if a[-1] >= b and a[-1] <= c:
-		return True
-	return False
-
 def simple_up(a):
-	m = {}
 	for k in a:
 		b = a[k]
-		if not half_up(b):
+		if len(b) < 3 or b[-1] < numpy.percentile(b, 90):
 			continue
-		m[k] = b
-	for k in m:
-		print(k, names[k], m[k])
+		stockCodes.append(k)
 
-def check(a, *codes):
+def check(a, codes):
 	for code in codes:
 		if code in a:
-			print(code, names[code], a[code])
+			print(code, stockNames[code], a[code][-8:])
 
 def test():
-	global names
-	names = look_data("name.json")
+	stockNames.update(look_data("name.json"))
 	chdir("data")
-	print("---daily---")
-	files = look_file(10, 1, 0)
-	a = lookup(files)
+	a = lookup(look_file(15, 1, 0))
 	simple_up(a)
-	print("---check---")
-	check(a, "601988", "600036", "601166", "600016")
+	stockCodes.extend(["601988", "600036", "601166", "600016"])
+	check(a, stockCodes)
 
 test()

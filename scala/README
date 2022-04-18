@@ -1,0 +1,4 @@
+scalac test.scala
+scala Testing
+
+scala test.scala
