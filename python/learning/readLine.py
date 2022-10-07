@@ -31,6 +31,9 @@ def manage(file, size):
 
 def test():
 	file = str("%s.txt" %input("File name: "))
-	manage(file, 1)
+	lines = 1
+	if "gua" in file:
+		lines = 3
+	manage(file, lines)
 
 test()

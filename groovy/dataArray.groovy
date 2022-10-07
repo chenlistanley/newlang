@@ -6,5 +6,6 @@ def test(){
 	for(k in a){
 		println(k)
 	}
+	a.each(k -> println("$k"))
 }
 

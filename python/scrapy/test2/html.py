@@ -5,17 +5,14 @@ def read():
 	a = []
 	with open('test.json', mode='r', encoding="utf-8") as f:
 		a = json.load(f)
+		# a = re.sub(",", "<br/>", "apple,")
 	write(a)
 
 def write(a):
-	if "unitPrice" in a[0]:
-		a = sort(a)
+	a = sorted(a, key=lambda k: re.search("\\d+", str(k)).group())
 	with open('test.html', mode='w', encoding="utf-8") as f:
 		for k in a:
 			f.write(str("<p>%s</p>" %k))
-
-def sort(a):
-	return sorted(a, key=lambda k: int(re.search("\\d+", k['unitPrice']).group()))
 
 def test():
 	read()

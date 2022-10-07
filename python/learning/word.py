@@ -11,54 +11,42 @@ def read(file):
 	return words
 
 def pick(src, excludes, size):
-	dst = []
-	srcLen = len(src)
-	for k in range(srcLen):
-		srcIndex = random.randint(0, srcLen)
-		if srcIndex >= srcLen:
-			srcIndex = 0
-		b = src[srcIndex]
-		if b not in excludes and b not in dst:
-			dst.append(b)
-		if len(dst) >= size:
-			break
-	return dst
+	a = set(src).difference(set(excludes))
+	return list(a)[:size]
 
-def manage(file, size):
+def manage(file, rememberCount, practiseCount, count):
 	words = read(file)
 	records = record.get(file)
-	remembers = records.get('remembers')
-	if not remembers:
-		remembers = []
-	practises = records.get('practises')
-	if not practises:
-		practises = []
-	remain = size - len(practises)
-	if remain > 0:
-		practises += pick(remembers, practises, remain >> 1)
-
-	remain = size - len(practises)
-	if remain > 0:
-		practises += pick(words, remembers + practises, remain)
-
-	for k in set(practises):
+	remembers = []
+	practises = []
+	if 'remembers' in records:
+		remembers = records['remembers']
+	if 'practises' in records:
+		practises = records['practises']
+	work = pick(practises, [], practiseCount)
+	work.extend(pick(remembers, work, rememberCount))
+	work.extend(pick(words, work, count))
+	work = set(work)
+	print(len(work))
+	for k in work:
 		print("\n%s" %k, end=" ")
 		s = input("")
 		while s != k:
 			s = input("")
 		s = input("Remember (y/n): ")
 		if s == "Y" or s == 'y':
-			remembers.append(k)
-			practises.remove(k)
-		elif k in remembers:
-			remembers.remove(k)
-	
-	print(str("completed %s" %(len(practises))))
-	records.update({"remembers": remembers})
-	records.update({"practises": practises})
+			if k not in remembers:
+				remembers.append(k)
+			if k in practises:
+				practises.remove(k)
+		else:
+			if k in remembers:
+				remembers.remove(k)
+			if k not in practises:
+				practises.append(k)
+	records={"remembers": remembers, "practises": practises}
 	record.update(file, records)
 
 def test():
-	manage("word.txt", 50)
-
+	manage("word.txt", 2, 5, 3)
 test()

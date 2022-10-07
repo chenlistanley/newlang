@@ -54,4 +54,4 @@ def test12():
 	for k in a:
 		print(k.group())
 
-test12()
+test()

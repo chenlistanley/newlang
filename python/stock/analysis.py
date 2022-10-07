@@ -5,7 +5,7 @@ import numpy
 stockNames={}
 stockCodes=[]
 
-def look_file(count, interval, skip):
+def getFiles(count, interval, skip):
 	a=[]
 	files = listdir("./")
 	step = interval
@@ -15,7 +15,7 @@ def look_file(count, interval, skip):
 		a.insert(0, files[-k])
 	return a
 
-def look_data(file):
+def getFileData(file):
 	a = {}
 	with open(file, encoding="utf-8", mode='r') as f:
 		data=load(f)
@@ -23,10 +23,10 @@ def look_data(file):
 			a.update(k)
 	return a
 
-def lookup(files):
+def collectData(files):
 	a = {}
 	for f in files:
-		d = look_data(f)
+		d = getFileData(f)
 		for k in d.keys():
 			v = d[k]
 			if "-" == v:
@@ -37,24 +37,38 @@ def lookup(files):
 				a[k]=[v]
 	return a
 
-def simple_up(a):
+def checkDiff(d):
+	d1=numpy.diff(d)
+	d2=numpy.diff(d1)
+	return d1[-1] >= 0 and d2[-1] >= 0
+
+def analysisData(a):
 	for k in a:
 		b = a[k]
-		if len(b) < 3 or b[-1] < numpy.percentile(b, 90):
+		if len(b) < 3 or max(b) > 40 or numpy.median(b) > b[-1] or not checkDiff(b):
 			continue
 		stockCodes.append(k)
 
-def check(a, codes):
+def printData(a, codes):
 	for code in codes:
-		if code in a:
+		if code in a and code in stockNames:
 			print(code, stockNames[code], a[code][-8:])
 
+def check(a, code):
+	data = a[code]
+	d1 = numpy.diff(data)
+	d2 = numpy.diff(d1)
+	print(d1)
+	print(d2)
+
 def test():
-	stockNames.update(look_data("name.json"))
+	stockNames.update(getFileData("name.json"))
 	chdir("data")
-	a = lookup(look_file(15, 1, 0))
-	simple_up(a)
-	stockCodes.extend(["601988", "600036", "601166", "600016"])
-	check(a, stockCodes)
+	a = collectData(getFiles(30, 1, 0))
+	analysisData(a)
+	stockCodes.extend(["600036", "601166", "301187"])
+	printData(a, stockCodes)
+
+	# check(a, "301187")
 
 test()

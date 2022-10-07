@@ -6,6 +6,6 @@ function test()
 	a3 = 100.99
 	a4 = true
 	a5 = "apple"
-	a6 = 'a'
+	a6 = 'banana'
 	print(a0, a1, a2, a3, a4, a5, a6)
 end

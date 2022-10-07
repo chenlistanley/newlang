@@ -15,8 +15,8 @@ pub fn test2(){
 	map.insert("b", "banana");
 	map.insert("c", "cane");
 
-	for e in map.iter(){
-		println!("{:?}", e);
+	for (k,v) in a.iter(){
+		println!("{} {}", k, v);
 	}
 }
 

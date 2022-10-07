@@ -12,8 +12,7 @@ end
 
 class Student < Person
 	def initialize(name, age, grade)
-		@name = name
-		@age = age
+		super(name, age)
 		@grade = grade
 	end
 

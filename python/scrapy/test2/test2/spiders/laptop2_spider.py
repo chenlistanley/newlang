@@ -1,7 +1,7 @@
 import scrapy,re
 
 class QuotesSpider(scrapy.Spider):
-    name = 'shi'
+    name = 'laptop2'
     start_urls = []
     start_urls.append("https://www.shichengbbs.com/c206")
     start_urls.append("https://www.singxin.com/c39")

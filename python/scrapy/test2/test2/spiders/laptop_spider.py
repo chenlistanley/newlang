@@ -1,7 +1,7 @@
 import scrapy,re
 
 class QuotesSpider(scrapy.Spider):
-    name = 'bbs'
+    name = 'laptop'
     start_urls = []
     for k in range(5):
         start_urls.append(str("https://bbs.sgcn.org/forum-197-%s.html" %(k+1)))

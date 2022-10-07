@@ -21,4 +21,12 @@ object Test{
 			k => println(k)
 		}
 	}
+
+	def test():Unit = {
+		val a = Map("A"-> "apple")
+		a.get("B") match {
+			case Some(s) => print(s)
+			case None => print("none")
+		}
+	}
 }

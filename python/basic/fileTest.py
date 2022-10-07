@@ -1,4 +1,9 @@
 
+def format(line):
+	s = line.strip()
+	s = s.split(" ")
+	print(str("'%s'" %s[1]), end=", ")
+
 def test():
 	a=open("a.txt", encoding="utf-8")
 	for line in a:
@@ -23,9 +28,9 @@ def test4():
 	a.close()
 
 def test5():
-	with open("data/test.txt") as a:
+	with open("a.txt", encoding="utf-8") as a:
 		for line in a:
-			print(line)
+			format(line)
 
-test()
+test5()
 
