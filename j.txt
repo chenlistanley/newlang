@@ -1,0 +1,857 @@
+1. A text file, foo.txt contains the following content:
+Hi, user! Welcome to Pluralsight. 
+You already wrote the code to close these files inside the finally block. How would you copy the complete file content to another file que.txt?
+
+	try {
+    FileReader in = new FileReader("foo.txt");
+    FileWriter out = new FileWriter("que.txt");
+
+    int ch;
+    while ((ch = in.read()) != -1) {
+       out.write(ch);
+    }
+} catch (IOException ex) { //...
+} finally { //Code to close the files}
+
+
+
+
+2. A method finds a product by ID. The method returns an Optional containing the product if the method finds it and an empty Optional otherwise:
+public Optional<Product> findById(long id) {
+    // Implementation omitted
+}
+You have a list of product IDs:
+List<Long> productIds = List.of(378465L, 723468L, 877810L);
+You want to find the products for each of the IDs and skip the ones that do not find a product. What is a correct and efficient way to do this?
+
+	
+	List<Product> products = productIds.stream()
+        .flatMap(id -> findById(id).stream())
+        .toList();
+
+
+
+3. Which lambda expression is the same as the following lambda expression?
+Function<LocalDate, LocalDate> addSevenDays = (LocalDate date) -> {
+    LocalDate result = date.plusDays(7);
+    return result;
+};
+
+
+	
+	Function<LocalDate, LocalDate> addSevenDays =
+    date -> date.plusDays(7);
+
+
+4. When would you be unaware of the existence of a directory?
+
+	
+	When both the exists and the notExists methods return false
+
+
+
+5. In the date-time API, which class holds the firstDayOfMonth method?
+
+	
+	TemporalAdjusters
+
+
+
+6. You wrote a modular Java application. You successfully compiled the source code. Your project has the following directory structure. The source files are in the src directory and the compiled class files are in the target directory.
+src/
+  com/
+    pluralsight/
+      Example.java
+  module-info.java
+target/
+  com/
+    pluralsight/
+      Example.class
+  module-info.class
+The content of the module-info.java file is as follows:
+module example {}
+
+
+	
+	java -p target -m example/com.pluralsight.Example
+	
+
+7. Which is a byte stream class?
+
+	
+	FilterInputStream
+
+
+
+8. What is the output of the following code?
+Set<String> hashSet = new HashSet<>();
+Set<String> hashSet2 = new HashSet<>();
+hashSet.add("Hello World");
+hashSet2.add("Hello World again");
+hashSet.retainAll(hashSet2);
+System.out.println("hashSet size: " + hashSet.size());
+System.out.println("hashSet2 size: " + hashSet2.size())
+
+
+	
+	hashSet size: 0
+hashSet2 size: 1
+
+
+
+
+9. You must use the PathMatcher class to locate strings that end with either .htm or .pdf. How would you write the glob syntax?
+	
+	
+	*.{htm,pdf}
+
+
+
+10. You must copy text data from foo.txt to que.txt. While reading a character from foo.txt, the variable must hold it in its last 16 bits. How would you accomplish the task?
+
+
+	
+	Use the FileReader and FileWriter classes.
+
+
+11. You must use an intermediate operation on a stream to get all the elements that match a predicate until the first element that does not match the predicate (throwing away the elements that come after that element). Which intermediate operation would you use?
+
+
+	
+	takeWhile
+
+
+
+12. You have two Instant objects, t1 and t2. How can you find out the time difference in number of hours between these two objects?
+
+	
+	t1.until(t2, ChronoUnit.HOURS)
+
+
+
+
+13. Consider the following classes with custom exceptions:
+import java.io.*;
+public class MyClass extends Foo {
+
+    public void psMethod() throws Exception {  
+        System.out.println("Hey, user!");  
+    } 
+   
+    public static void main(String args[]) {
+        Foo obj = new MyClass();    
+           try {    
+               obj.psMethod();    
+           } catch (Exception ex) {}   
+   }
+}
+class Foo {    
+  void psMethod() throws IOException {  
+      System.out.println("Hidden message.");  
+  }    
+}    
+
+	
+	
+	Replace IOException with Exception in the psMethod() definition of class Foo.
+
+
+
+14. You are creating a library that you want to package in a module. Some of the classes in your library are for internal use only. You do not want your library module's users to use those classes directly. How can you ensure that your library module's users cannot use the internal classes of your library, either directly or with reflection?
+
+
+	
+	Put the internal classes in a package that you do not export from the module.
+
+
+
+
+15. You create the following main method after importing the necessary packages:
+public static void main(String[] args) throws Exception {
+    String data = foo("path\to\a\text\file");
+    System.out.println(data);
+}
+How would you write the method foo to read the file?
+
+
+	
+	
+	public static String foo(String path) throws Exception {
+    String data = "";
+    data = new String(Files.readAllBytes(Paths.get(path)));
+    return data;
+}
+
+
+
+
+16. You delete a file using the statement fileObj.delete(). Which operation could you still perform using the object fileObj?
+
+	
+	
+	fileObj.getName()
+
+
+
+17. Which command can you use to check that you have the necessary software installed to compile Java 17 source code on your computer?
+
+	
+	Command: javac -version; if it prints a version number of 17 or greater, then you have the necessary software.
+
+
+
+18. Which statement is true about method references?
+
+	
+	A method reference can refer to a constructor.
+	
+
+
+19. Which class depends on regular expressions to parse strings?
+
+	
+	Scanner
+
+
+
+20. What is the maximum number of type arguments you can pass to a raw generic type class?
+
+	
+	0
+
+
+2. Which statement is true with regards to a Set?
+
+	A Set can contain mutable objects.
+
+
+
+
+1. You must write a method definition that should accept an unknown input type list. It should also display all of its elements after inserting a comma between each of the two corresponding elements. How would you write the method definition code?
+
+
+	public static void displayElements(List<?> list) {
+		for (Object i: list)	
+			System.out.print(i + ",");
+	}
+
+
+
+
+2. Which statement is true about generic methods?
+	
+	They can be static and non-static.
+	
+	
+
+4. Which statement about stream operations is true?
+
+	
+	collect is a terminal operation that you can use to store the elements of a stream in a list.
+
+
+
+
+5. You compile the following program. From the current directory in your terminal, you see a class file named Hello.class in the directory classes/com/pluralsight/hello. Which command should you use to run the program?
+package com.pluralsight.hello;
+
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello Pluralsight");
+    }
+}
+
+
+	
+	java -classpath classes com.pluralsight.hello.Hello
+
+
+
+6. How can you convert a stream into a java.util.List?
+
+	
+	By calling toList() on the stream
+
+
+
+
+9. You are developing an application with two modules named example.app and example.lib. Module example.app contains a package com.pluralsight.app and module example.lib contains a package com.pluralsight.lib. You want to use classes from package com.pluralsight.lib in the module example.app, but you also want example.app to be the only module that can use those classes. Other modules should not be able to use the classes in package com.pluralsight.lib. What must the module descriptor of example.lib look like?
+
+
+	
+	module example.lib {
+    exports com.pluralsight.lib to example.app;
+}
+
+
+
+10. Interface DoubleStream contains a method named summaryStatistics. When is this useful?
+
+
+	
+	When you must determine the minimum, maximum, and average value of the elements in the stream
+
+
+
+11. You have alphanumeric content in a variable str and you load a text file inside the Java environment using the statement File f = new File("path/to/file"). How would you write the content to the file?
+
+	
+	FileWriter foo = new FileWriter(f.getAbsoluteFile());
+BufferedWriter que = new BufferedWriter(foo);
+que.write(str);
+que.close();
+
+
+
+
+12. The following method takes an object obj of type T, converts it to bytes using toBytes, and writes the bytes to an OutputStream. What should the type of toBytes be?
+private <T> void writeAsBytes(
+        T obj,
+        /* ??? */ toBytes,
+        OutputStream out) throws IOException {
+    byte[] bytes = toBytes.apply(obj);
+    out.write(bytes);
+}
+
+	
+	Function<T, byte[]>
+
+
+
+13. You are writing a multi-threaded application that uses a HashSet that contains strings. Multiple threads will read from the HashSet, adding elements to it and removing elements from it. How would you create and initialize the HashSet so that your program works correctly?
+
+	
+	Set<String> set = Collections.synchronizedSet(new HashSet<>());
+
+
+
+14. You are trying to perform a left shift operation with the following code, but it results in a syntax error. The answer should be 40. What change can you make to correct this?
+int y = 5;
+y << 3;
+System.out.println(y);
+
+
+	
+	Use the left shift with an incrementer:
+int y = 5;
+y <<= 3;
+
+
+
+
+15. What is the main purpose of the interface java.util.function.Supplier?
+
+
+	
+	To provide a function that takes no arguments and that returns a value
+
+
+
+16. The following class performs a write operation on a text file demo.txt:
+import java.io.*;
+public class PS {
+    public static void main(String args[])  {
+        FileWriter fw = new FileWriter("demo.txt");
+        fw.write("This content is written inside the file.");
+        fw.close();
+        System.out.println("Write operation is completed!");    
+    }
+}
+On compiling the code, you receive the error, "Unhandled exception type IOException." How would you resolve the error?
+
+
+
+	
+	Embed all four statements of the main method inside a try block and catch the IOException.
+
+
+
+17. Which statement about importing classes from packages from the standard library is true?
+
+
+	
+	Classes from the package java.lang are imported automatically.
+
+
+
+18. Why does the following code results in a runtime error?
+List<Integer> list1 = new ArrayList<>();
+list1.add(1);
+list1.add(10);
+list1.add(20);
+ 
+for (int i : list1) {
+    list1.add(20);
+}
+
+
+	
+	
+	Because the loop does not use an iterator.
+
+
+
+19. What is true about functional interfaces?
+
+	
+	
+	A functional interface must define a single abstract method.
+
+
+
+20. Which built-in exception would you call inside the catch block to handle the exception thrown from the operation 5/0 inside the try block?
+
+	
+	ArithmeticException
+
+
+
+
+3.  Given the following code:
+public abstract class Book {
+    protected int pages = 100;
+    public abstract int getNumPages();
+}
+
+public class LargeBook extends Book {
+    public LargeBook(int maxPages) {
+        pages = maxPages;
+    }
+ 
+    public static LargeBook() {
+        pages = 200;
+    }
+
+    public int getNumPages() {
+        return pages;
+    }
+}
+Why does the LargeBook class not compile?
+
+
+	
+	It contains a static constructor.
+
+
+
+4. You must create a generic method and pass a generic type argument whose subtypes are List<Double> and List<String>. Which expression would you use?
+
+	List<?>
+
+
+5. Given Class1:
+class Class1 {
+
+    protected int var1;
+    
+    public int getVar1() {
+        return var1;
+    }
+
+    public void setVar1(int var1) {
+        this.var1 = var1;
+    }
+}
+How can a class called Class2, which inherits from Class1, access this var1 property?
+
+	
+	It can access the property in Class2 by directly using the variable name var1. 
+
+
+
+8. You must copy a directory's files to a new directory. To do so, you use the code Files.copy(source, target, REPLACE_EXISTING). The copy operation runs successfully but the content of the directory is not copied to the new location. Why?
+	
+	Because Files.copy() does not allow you to copy the directory's contents.
+
+
+9. Which StandardOpenOptions is present in the newByteChannel methods and not in the newOutputStream methods?
+
+	
+	READ
+
+
+10. Which StandardOpenOptions is present in the newByteChannel methods and not in the newOutputStream methods?
+
+src
+  com
+    pluralsight
+      App.java
+out
+  com
+    pluralsight
+      App.class
+What command or commands do you use to package the application into an executable JAR file?
+
+	
+	cd out
+jar -c -f app.jar --main-class com.pluralsight.App *
+	
+	
+
+12. Which is a user-defined exception?
+	
+	TypeException
+
+
+
+
+
+14. A method returns an Optional containing a UserAccount for a user ID, or an empty Optional if there is no account for that user ID.
+interface UserAccount {}
+
+interface UserAccountRepository {
+    Optional<UserAccount> findAccount(long userId);
+}
+Another method finds the accounts for a list of user IDs. How can you rewrite the body of the following method so that you only need one intermediate stream operation?
+public static List<UserAccount> findAccounts(List<Long> userIds) {
+    return userIds.stream()
+            .map(repo::findAccount)
+            .filter(Optional::isPresent)
+            .map(Optional::get)
+            .toList();
+}
+
+
+	return userIds.stream()
+			.flatMap(userId -> repo.findAccount(userId).stream())
+			.toList();
+
+
+
+
+
+15. You define a functional interface named Combiner:
+@FunctionalInterface
+interface Combiner {
+    String apply(String first, String second);
+}
+And a method that uses this functional interface to pairwise combines elements from two lists:
+List<String> combineLists(List<String> first, List<String> second,
+                          Combiner combiner) {
+    List<String> result = new ArrayList<>();
+    for (int i = 0; i < first.size(); i++) {
+        result.add(combiner.apply(first.get(i), second.get(i)));
+    }
+    return result;
+}
+Which functional interface from the package java.util.function could you use instead of your own interface Combiner?
+
+	
+	BinaryOperator<String>
+
+
+
+
+17. You write the following code and run it multiple times:
+Runnable runnable = new Runnable() {
+    @Override
+    public void run() {
+        System.out.println("One");
+    }
+};
+
+new Thread(runnable).run();
+System.out.println("Two");
+What is the output?
+
+	
+	You see "One" first and then "Two". The two println statements execute on the same thread.
+
+
+
+
+
+18. You have two parameters, an author's name, and the year in which the author published a book. How would you declare an annotation to include these values inside the Javadoc-generated document? 
+
+		
+		@Documented
+@interface MyAnn {
+ String name() default = "xyz";
+ int year() default = 2020;
+}
+
+
+
+19. You have a list of tags and you want to write them to a file using the following code:
+List<String> tags = List.of("#morning", "#coffee", "#tea");
+
+try (Writer w = new FileWriter("tags.txt")) {
+    tags.forEach(w::write);
+}
+This code does not compile. What is the problem?
+
+	
+	The write method of the class FileWriter might throw an IOException so you cannot pass the method reference w::write to forEach.
+
+
+20. Which annotation could you apply to a class without defining any of its attribute values?
+
+	
+	@Entity
+
+------------------------------------------------------------
+	
+
+You package a Java application in a Java Archive (JAR) file named app.jar. The application uses a library that is also packaged in a JAR named json-parser.jar. You try to run the application using the following command line:
+java -cp json-parser.jar -jar app.jar
+The application fails with a NoClassDefFoundError. Why?
+Your choice: incorrect -
+You forgot to include app.jar in the classpath. The following command works:
+
+java -cp json-parser.jar;app.jar -jar app.jar
+Incorrect -
+The manifest file is missing in app.jar. You must add it and then the given command works.
+
+Incorrect -
+You forgot to specify the name of the class to run. The following command works:
+
+java -cp json-parser.jar -jar app.jar com.myproject.App
+Correct -
+The library json-parser.jar is not listed in the manifest file of app.jar. You must add it so the following command works:
+
+java -jar app.jar
+Incorrect -
+I don't know yet.
+
+
+When you compile the following method, you get an error from the compiler:
+public int sum(List<Integer> numbers) {
+    int sum = 0;
+    numbers.forEach(n -> sum += n);
+    return sum;
+}
+What is wrong with this code?
+Incorrect -
+The variable sum is of a primitive type so you cannot modify it inside the lambda expression.
+
+Your choice: incorrect -
+The variable n in the lambda expression is of type Integer, which you cannot add to the variable sum of type int using +=.
+
+Correct -
+The lambda expression tries to modify the local variable sum, which is not allowed in a lambda expression.
+
+Incorrect -
+The lambda expression tries to access the local variable sum, but this variable is not in scope in the lambda expression.
+
+Incorrect -
+I don't know yet.
+
+
+You have a predicate to test if a number is divisible by 3 and a predicate to test if a number is divisible by 5:
+IntPredicate divBy3 = number -> number % 3 == 0;
+IntPredicate divBy5 = number -> number % 5 == 0;
+How can you combine these two predicates to create a predicate that tests if a number is divisible by 15?
+Correct -
+IntPredicate divBy15 = divBy3.and(divBy5);
+Incorrect -
+IntPredicate divBy15 = divBy3 || divBy5;
+Incorrect -
+IntPredicate divBy15 = divBy3 && divBy5;
+Incorrect -
+IntPredicate divBy15 = divBy3.or(divBy5);
+Incorrect -
+I don't know yet.
+
+
+
+What must you do so you can run a Java Archive (JAR) file named app.jar with the following command?
+java -jar app.jar
+Your choice: correct -
+Ensure that there is a "Main-Class" attribute in the JAR's manifest file that specifies the name of the class with the main method to run.
+
+Incorrect -
+Ensure that there is a file named Main.class inside the JAR file that contains the main method to run.
+
+Incorrect -
+Ensure that the JAR file is in the classpath by setting the CLASSPATH environment variable appropriately.
+
+Incorrect -
+Mark the JAR file as executable at the operating system level (for example, use the command chmod u+x app.jar on Linux).
+
+Incorrect -
+I don't know yet.
+
+
+
+
+Which statement about sequential and parallel streams is true?
+Your choice: correct -
+Processing a parallel stream may be slower than processing a sequential stream.
+
+Incorrect -
+If you have a multi-core CPU, then processing a parallel stream is faster than processing a sequential stream.
+
+Incorrect -
+Processing a parallel stream causes a higher memory usage than processing a sequential stream.
+
+Incorrect -
+If you have a single-core CPU, then there is no performance difference in processing a sequential or a parallel stream.
+
+Incorrect -
+I don't know yet.
+
+
+
+You are creating a modular Java application that exports the package com.pluralsight.example. The source files for your application are in the directory src. Where must you put the module-info.java file in the directory structure of your project?
+Incorrect -
+In the directory src/com/pluralsight
+
+Incorrect -
+In the root directory of the project, next to the src directory
+
+Incorrect -
+In the directory src/com/pluralsight/example
+
+Your choice: correct -
+In the directory src
+
+Incorrect -
+I don't know yet.
+
+
+
+You have an application with a class named App in the package com.pluralsight. You compiled it successfully and now you want to package it into an executable Java Archive (JAR) file. The directory structure of your project, as seen from the current directory, looks like this:
+src
+  com
+    pluralsight
+      App.java
+out
+  com
+    pluralsight
+      App.class
+What command or commands do you use to package the application into an executable JAR file?
+Incorrect -
+jar -c -f app.jar --main-class com.pluralsight.App out/*
+Incorrect -
+jar -c -f app.jar --main-class com/pluralsight/App.class .
+Your choice: correct -
+cd out
+jar -c -f app.jar --main-class com.pluralsight.App *
+Incorrect -
+cd src
+jar -c -f app.jar --main-class com/pluralsight/App.java *
+Incorrect -
+I don't know yet.
+
+
+
+You write a superclass Foo that has a derived class Que. Que overrides one of the Foo's methods using the @Override annotation. You then apply the @SuppressWarnings annotation to Foo before running the code but the script throws an unresolved compilation error. Why?
+Incorrect -
+Because the @Override annotation must use round brackets at its end.
+
+Incorrect -
+Because you cannot apply the @SuppressWarnings annotation to a superclass.
+
+Incorrect -
+Because you have the @SuppressWarnings annotation on the superclass only and not the derived class.
+
+Your choice: correct -
+Because the @SuppressWarnings annotation must consist of an attribute value.
+
+Incorrect -
+I don't know yet.
+
+
+
+The date is March 31st, 2022. What is the value of getMonths() when you apply it to the difference between the current date and January 1st, 2020 using the Period class?
+Correct -
+2
+
+Incorrect -
+27
+
+Your choice: incorrect -
+3
+
+Incorrect -
+26
+
+Incorrect -
+I don't know yet.
+
+
+You have a lambda expression and a functional interface. The functional interface acts as the target type for the lambda expression. Which statement is true in this case?
+Incorrect -
+The return type of the lambda expression may be a supertype of the return type of the abstract method that the functional interface defines.
+
+Correct -
+The types of the parameters of the lambda expression must be exactly the same as the types of the parameters of the abstract method that the functional interface defines.
+
+Incorrect -
+The types of the parameters of the lambda expression may be subtypes of the types of the parameters of the abstract method that the functional interface defines.
+
+Your choice: incorrect -
+The return type of the lambda expression must be exactly the same as the return type of the abstract method that the functional interface defines.
+
+Incorrect -
+I don't know yet.
+
+
+You are using FileInputStream and FileOutputStream input/output (I/O) byte streams to copy data from one file to another. How many bytes are transferring at a time using the read and write methods?
+Incorrect -
+16
+
+Correct -
+1
+
+Incorrect -
+8
+
+Incorrect -
+32
+
+Incorrect -
+I don't know yet.
+
+
+
+
+Your application supports themes. If a user does not choose a theme, the app uses the default theme. The following code shows the interfaces Theme and ThemeRepository that can find the theme for a user and that provides the default theme:
+public interface Theme { /* ... */ }
+
+public interface ThemeRepository {
+    Optional<Theme> findUserTheme(long userId);
+    Theme getDefaultTheme();
+}
+You write the following method getTheme which gets the theme for a user or the default theme if a user does not have a theme. What is the best way to implement this method?
+public Theme getTheme(ThemeRepository repo, long userId) {
+    return /* ??? */;
+}
+Incorrect -
+return repo.findUserTheme(userId)
+    .orElse(repo.getDefaultTheme());
+Incorrect -
+return repo.findUserTheme(userId)
+    .ifPresentOrElse(theme -> theme, repo.getDefaultTheme());
+Your choice: correct -
+return repo.findUserTheme(userId)
+    .orElseGet(repo::getDefaultTheme);
+Incorrect -
+return repo.findUserTheme(userId)
+    .or(repo::getDefaultTheme);
+Incorrect -
+I don't know yet.
+
+
+
+You create a raw type of a generic type class as follows:
+Foo<String> fooObj = new Foo<>();
+Foo rawObj = fooObj;
+rawObj.set(20);
+After raw type creation, you perform a set operation that throws a warning, "unchecked invocation to set(T)." What could be causing the warning? 
+Correct -
+Raw type bypassed the type check of generic type.
+
+Incorrect -
+You assigned a raw type to a generic type.
+
+Incorrect -
+You created a raw type without any parameters.
+
+Your choice: incorrect -
+Generic type bypassed the type check of raw type.
+
+Incorrect -
+I don't know yet.
+
+

@@ -1,0 +1,361 @@
+1. Using the file command to investigate a script the following is printed:
+$ file my.sh
+my.sh: Paul Falstad's zsh script, ASCII text executable
+
+	The shebang specifies zsh as the script interpreter.
+
+
+2. Consider the following script.sh: 
+echo "Total arguments passed are: $#"
+echo "The arguments are: $*"
+................................
+echo "The third argument is: $1"
+The parameters passed to the script are the following: ./script.sh P1 P2 P3 P4  With which single command should you replace the dotted line to make output of the script correct?
+
+	shift 2
+
+3. After reviewing variables returned in a subshell which variable should you use to access the Process ID (PID) of a Bash subshell?
+	
+	$BASHPID
+
+4. What is the difference between chmod -R a+X scripts/ and chmod -R a+x /scripts/?
+	
+	Both recursively set the execute permission to the /scripts/ directory and below but using the uppercase X, the execute permission is only added if it already exits on at least one object.
+
+
+5. In Bash, what is a valid way to return non-numeric values from a function?
+	
+	Store non-numerical values in global variables and access them outside of the function.
+
+
+
+6. The following script has been developed by your colleague who reports that it does not always terminate when the users request:
+while true; do
+ read -p "Do you want to continue: y/n "
+ echo "hello"
+ if [ "$REPLY" == "n" ] ; then
+  break
+ fi
+done
+
+	
+		while true; do
+	 declare -l REPLY
+	 read -p "Do you want to continue: y/n "
+	 echo "hello"
+	 if [ "$REPLY" == "n" ] ; then
+	  break
+	 fi
+	done
+	
+
+
+7. You need to run a command in the background; however, the output from the command is verbose and this is causing the command to run in the foreground intermittently. Review the command and identify a solution allowing the command to execute entirely in the background.
+sudo tar -cvf etc.tar /etc 2>/dev/null&
+	
+	sudo tar -cvf etc.tar /etc &>/dev/null&
+
+
+
+8. You develop a script that should run code until the user chooses to quit. Having chosen to implement a while loop, which is a possible solution?
+	
+		while true; do
+	 read -p "Do you want to continue: y/n "
+	 echo "hello"
+	 if [ "$REPLY" == "n" ] ; then
+	  break
+	 fi
+	done
+	
+
+
+9. declare -i my_var1=42
+declare -a my_var2=("apple" "banana" "orange")
+declare -r my_var3="Hello, World!"
+
+# Modify the variables
+my_var1=10
+my_var2[1]="pear"
+my_var3="Goodbye, World!"
+Which of the commands within the script above is bound to fail?
+	
+	my_var3="Goodbye, World!"
+
+
+10. An alias has been created in Bash that allows two values to be printed. They currently print on multiple lines but you would prefer the values on one line and tab separated using two spaces for each tab. How do you change the current alias:
+alias report="printf 'User: %s\nDirectory: %s\n'"
+
+	alias report="tabs 2;printf 'User: %s\tDirectory: %s\n'"
+
+
+
+11. It has been noted that a script created by a colleague can run excessively if it is not stopped by the operator correctly:
+COUNT=0
+while true; do
+  echo $COUNT
+  let "COUNT++"
+done
+How can you correct the script to allow the for a maximum 1000 iterations before the script ends.
+
+
+COUNT=0
+while true; do
+  echo $COUNT
+  let "COUNT++"
+  if [ "$COUNT" -gt 1000 ]; then
+      break
+  fi
+done
+
+
+
+12. Working at the command line you have successfully used exec to redirect all stdout to a named file; however, you are unable to return stdout to the console when required without logging out. Reviewing your command history, what can you add next time to ensure you can easily redirect stdout back to the console:
+LOG=/tmp/logfile
+exec > $LOG
+echo hello
+
+	
+	Before the exec command add the line to duplicate stdin :
+	exec 6>&1
+
+
+
+13. Which loop is best suited to be used while you wait for a condition to become true in Bash?
+	
+	until
+
+
+
+14. Consider the following script: 
+local greeting="Hello"
+
+function my_salute {
+  name=$1
+  echo "${greeting}, ${name}!"
+}
+
+read name
+my_salute $name
+
+echo "${greeting}"
+
+	
+	The variable greeting should be global and the variable name should be local.
+
+
+
+15. Taking into account the following function:
+add_numbers() {
+    local num1="$1"
+    local num2="$2"
+    local sum=$((num1 + num2))
+    echo "The sum of $num1 and $num2 is $sum."
+}
+How would you improve this function to ensure better error handling and code maintainability?
+
+
+	
+	Add proper documentation and comments to the function to explain its purpose, input parameters, and expected output.
+
+
+
+16. As an administrator of a Linux server, you need to process each file with a .conf suffix in the /tmp directory. You have evaluated different techniques in a script. What is your best course of action?
+
+
+	
+	for file in "/tmp/*.conf"; do
+    grep '^Passwd yes' $file
+    done
+	
+
+
+17. The output of a script should produce the following results as requested by your manager:
+1 2 3 4 5 6 7 8 9 10
+The output should be on its own line in the console and clear of any prompt. Which solution best meets this requirement?
+
+	
+	for i in {1..10}; do echo -n "$i "; done; echo
+
+
+18. Why do you use exec redirection in a script rather than simple redirection?
+
+	
+	All stdout or all stderr can output from the script needs to go to the same file.
+
+
+
+19. case "$1" in
+  'start')
+    echo "Starting"
+    ;;
+   'stop')
+     echo "Stopping"
+     ;;
+esac
+Review the script. The script works but if an incorrect option is supplied it does not do anything and does not give feedback to the operator. What would you add to the case statement to provide feedback for incorrect input?
+
+
+		case "$1" in
+		  'start')
+			echo "Starting"
+			;;
+		   'stop')
+			 echo "Stopping"
+			 ;;
+		   *)
+			echo "Usage: $0 start|stop"
+			;;
+		esac
+
+
+
+
+20. What is the main difference between the $@ and the $* special parameters? 
+
+	
+	When using $*, the parameters are treated as a single string while $@ treats each parameter as a separate item.
+
+
+21. You are charged with writing a bash function called search that takes two arguments: a file extension and a directory path. The function should search the given directory and all its subdirectories for files with the given extension, and print the full path of each matching file to the console. What function is best suited for this task ?
+	
+	search() {
+    find "$2" -name "*.$1" -type f -print
+	}
+
+
+You are developing a Bash script that needs to execute code when a counter raises above an integer value. As you develop the script you have been testing snippets of code; what solution do you implement? 
+Incorrect -
+COUNT=10
+if [ COUNT > 9 ]
+  then
+   echo "Hello"
+fi
+Incorrect -
+COUNT=10
+if [[ COUNT > 9 ]]
+  then
+   echo "Hello"
+fi
+Your choice: correct -
+COUNT=10
+if (( COUNT > 9 ))
+  then
+   echo "Hello"
+fi
+Incorrect -
+COUNT=10
+if (( COUNT < 9 ))
+  then
+   echo "Hello"
+fi
+Incorrect -
+I don't know yet.
+
+
+A colleague has asked for you help in fixing a script that is required to create a configuration file for the time server. The code snippet your colleague created is listed:
+cat > /etc/chrony.d/servers.conf <END
+server 192.168.1.1 prefer iburst
+pool us.pool.ntp.org iburst
+<END
+Based on your experience what is the problem with this code snippet?
+Incorrect -
+A HEREDOC uses double less than symbols (<<) at the opening and closing of the document.
+
+Correct -
+HEREDOCs should have double less than symbols (<<) at the opening delimiter and only the delimiter name without << at the close of the HEREDOC.
+
+Incorrect -
+The command cat should read the input from the time server configuration file using a single less than sumbol (<).
+
+Your choice: incorrect -
+A HEREDOC needs the starting and ending delimiter without preceding redirection arrows.
+
+Incorrect -
+I don't know yet.
+
+
+Analyze the script provided, which includes the assignment of "Nice day\n" to the variable "my_string" and calculates the string's length using "${#my_string}", and then determine the expected output when the script is executed.
+my_string=$'Nice day\n'
+string_length=${#my_string}
+echo "$string_length"
+Your choice: correct -
+9 is the expected output because the newline character is treated as a single character
+
+Incorrect -
+7 is the expected because spacing and the newline character are ignored when counting
+
+Incorrect -
+10 is the expected output because that is the number of characters contained within the variable
+
+Incorrect -
+8 is the expected output as the newline character is not taken into account
+
+Incorrect -
+I don't know yet.
+
+Which is the correct syntax for using variable expansion to provide a default value? 
+Incorrect -
+${VARNAME:-$DEFAULT_VALUE} 
+Correct -
+${VARNAME:-DEFAULT_VALUE}
+Incorrect -
+${-DEFAULT_VALUE:VARNAME} 
+Incorrect -
+{$VARNAME:-$DEFAULT_VALUE} 
+Incorrect -
+I don't know yet.
+
+
+You create the following script designed to print the values of multiple variables with numerical suffixes.
+#!/usr/bin/bash
+user1=bob
+user2=jane
+for arg in {1..2} ; do
+echo ${user$arg}
+done
+The script errors on execution, how would you correct the script so it prints both variables correctly?
+Your choice: incorrect -
+#!/usr/bin/bash
+user1=bob
+user2=jane
+for arg in {1..2} ; do
+echo "${user$arg}"
+done
+Correct -
+#!/usr/bin/bash
+user1=bob
+user2=jane
+for arg in {1..2} ; do
+eval "echo \${user$arg}"
+done
+Incorrect -
+#!/usr/bin/bash
+user1=bob
+user2=jane
+for arg in {1..2} ; do
+echo $user$arg
+done
+Incorrect -
+#!/usr/bin/bash
+user1=bob
+user2=jane
+for arg in {1..2} ; do
+echo $(user$arg)
+done
+Incorrect -
+I don't know yet.
+
+
+
+What characters can be used to delimit the name of a variable from adjacent characters?
+Incorrect -
+[]
+Incorrect -
+''
+Your choice: correct -
+{}
+Incorrect -
+()
+Incorrect -
+I don't know yet.
+
