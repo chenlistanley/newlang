@@ -1,0 +1,84 @@
+API Design and Development
+
+1. You create a website for users to interact with based on their sports interests. To participate in interactions, users must register on the site. You enable rate limiting for the number of logins per minute. What should you do if users unintentionally surpass the rate limit?
+Disable their next login attempts for the next few minutes.
+
+2. How would you construct the JSON Web Token (JWT) signature to transmit information between parties based on the following header and payload data?
+header
+{
+  "alg": "RS256",
+  "typ": "JWT"
+}
+
+payload
+{
+  "sub": "dummy",
+  "name": "Pluralsight",
+  "courses": "2545"
+}
+
+jwt = base64UrlEncode(header) + "." +
+      base64UrlEncode(payload) + "." + 
+      base64UrlEncode(signature)
+RSASHA256(
+  base64UrlEncode(header) + "." +
+  base64UrlEncode(payload),
+  some_secret)
+  
+3. Which tool strictly follows the server-side service discovery pattern in a microservices environment?
+AWS Elastic Load Balancer 
+
+4. What statement is true when you switch from Rivest-Shamir-Adleman (RSA) to the Advanced Encryption Standard (AES) encryption algorithm?
+The sender and the receiver share a private key.
+
+5. Which RESTful design principle allows users to navigate to hyperlinks that they receive in an API response?
+Resource-oriented
+
+6. You design an API using microservices architecture principles. You update the API version. What happens?
+The updates do not affect any services. 
+
+7. You manage a highly secure API that receives a significant number of requests as your marketing campaign flourishes. During this time, a few clients face server refusals, accompanied by the HTTP 431 status code. To mitigate this issue, you use the Retry-After header which reduces the problem's frequency, but the underlying issue persists. How can you resolve the issue with little to no information loss?
+Ensure that the Referer header receives a small URL.
+
+8. In a microservices setup, you must locate service instances, accounting for dynamic changes in their numbers and locations. During the process, you must handle containers that have dynamic IP addresses. What approach would you use to discover these services?
+Use a load balancer that queries a service registry and forwards the request to the right service instance.
+
+9. You develop API version 1.0.0 and, two years later, launch a significant upgrade, version 2.0.0. During the major release, you communicate to your user base that backward compatibility support for version 1.0.0 ends in one year. As that deadline approaches, some users still have not transitioned to the new version and are approaching the point where they will no longer receive company support. What actions should you take to ensure that customers do not experience a disruption?
+Further extend the grace period for all users, regardless of their migration status.
+
+10. When signing up clients to your application through OAuth 2.0 using their social email IDs, you request access to their photos and other media for an enhanced website experience. An attacker exploits an OAuth 2.0 vulnerability to gain access to users' private data, however. What steps can you take to address and fix this security vulnerability?
+Switch to using JSON Web Token (JWT) as the OAuth's access token.
+
+11. Your client uses JSON Web Tokens (JWT) for user authentication in their web application. The JWTs consist of signed tokens that contain three Base64-URL encoded strings separated by dots. In addition to standard maintenance, your client requests enhanced website security. Attackers may have exploited a vulnerability and extracted the signature from these tokens. To align with Request for Comments (RFC) 7519 standards, what adjustments must you make to enhance token security on the website?
+Encrypt the signed tokens.
+
+12. You build a social networking site that allows users to scroll at a rate of three feeds per second. The API permits access to 10 feeds per second. Some users exhaust their rate limit but are unsure what to do next. You set the X-RateLimit-Limit header to 10 for API requests per second, but this does not clarify the user's next steps. How can you address this uncertainty?
+Communicate the upcoming delay time to users using the Retry-After HTTP header.
+
+13. Your website uses OAuth 2.0. The site is under attack. Attackers use replay attacks to compromise your network. During a refresh token exchange, you expect a new access token. The attackers possess the refresh tokens, however, which makes confirming the identity of the requesting source a challenge. How should you respond to this security threat?
+Incorporate refresh token rotation so the authorization server provides a pair of refresh-access tokens.
+
+14. You implement open authorization (OAuth2) on your website, but users want to access it programmatically. How can you facilitate their access?
+Generate a user-specific API key, which is accessible only once until it regenerates.
+
+15. You create a microservice architecture-based API for an ecommerce platform. The platform enables users to search for a product, purchase it, and handle its delivery. A user selects a speaker worth $150. They finish the initial steps of the transaction that spans across multiple services. In the last step, the API specifies an invalid price value of $1,500. As the API owner, what action would you take in this scenario?
+Establish a non-transient service failure and cancel all the user's previous successful steps.
+
+16. You remove API gateways between clients and services in a microservices architecture. What happens?
+Clients track multiple endpoints by themselves.
+
+17. In a microservices setup, a client initiates a request that causes several network round trips with the server. You allocate additional resources to resolve the issue for that client. The next day, numerous users replicate similar API calls. What should you do?
+Introduce API gateways between clients and services.
+
+18. Which rate limit is suitable for a customer to stream a real-time video with no delays?
+Requests per second
+
+19. You apply rate limiting on your API. What effect does this have in terms of resource utilization and the capacity for your API to accommodate users?
+You can accommodate more users with the existing resources.
+
+20. You release an API version v2.0.0 with backward compatibility to v1.0.0. How long should you maintain this backward compatibility with the older version?
+Until the expiration of the deprecation grace period
+
+21. In OAuth 2.0, the transmission of refresh tokens happens between which components?
+The client and the authorization server
+  

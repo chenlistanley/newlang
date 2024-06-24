@@ -1,0 +1,6054 @@
+Using Kubernetes as a Developer
+1.
+
+In which label do you assign the values stable and canary in a .yaml file to perform a canary deployment?
+
+1. In which label do you assign the values stable and canary in a .yaml file to perform a canary deployment?
+Incorrect -
+role
+
+Incorrect -
+tier
+
+Incorrect -
+image
+
+Your choice: correct -
+track
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Using Kubernetes as a Developer
+2.
+
+What role do adapter containers play when you use them in a multi-container Pod setup?
+
+2. What role do adapter containers play when you use them in a multi-container Pod setup?
+Incorrect -
+They are service discovery application gateways, forwarding network requests from "localhost" to remote application endpoints.
+
+Incorrect -
+They export application output to remote repository locations.
+
+Incorrect -
+They extend the main application container with add-on features as secondary containers in the Pod.
+
+Your choice: correct -
+They standardize application output and convert data to accepted formats for logging or monitoring.
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Using Kubernetes as a Developer
+3.
+
+What is correct about using Services in Kubernetes?
+
+3. What is correct about using Services in Kubernetes?
+Your choice: incorrect -
+Userspace proxy never obstructs the source IP address of a packet accessing a Service.
+
+Incorrect -
+The Type field works using a nested functionality when used in Google Compute Engine.
+
+Correct -
+The iptables proxy mode has an affect on clients passing with a load balancer.
+
+Incorrect -
+The Type field works using a crossed functionality when used in AWS.
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Using Kubernetes as a Developer
+4.
+
+Given the following PersistentVolumeClaim (PVC) and PersistentVolume (PV) definition:
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+name: persistent-disk-claim
+spec:
+accessModes:
+- ReadWriteOnce
+volumeMode: Filesystem
+resources:
+requests:
+storage: 8Gi
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+name: persistent-disk
+spec:
+capacity:
+storage: 8Gi
+volumeMode: Filesystem
+accessModes:
+- ReadWriteOnce
+persistentVolumeReclaimPolicy: Recycle
+storageClassName: Recyclable
+nfs:
+path: /tmp
+server: 172.17.0.2
+
+What changes can you make to allow the PVC to bind to the PV persistent-disk?
+
+4. Given the following PersistentVolumeClaim (PVC) and PersistentVolume (PV) definition:
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: persistent-disk-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 8Gi
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: persistent-disk
+spec:
+  capacity:
+    storage: 8Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: Recyclable
+  nfs:
+    path: /tmp
+    server: 172.17.0.2
+
+What changes can you make to allow the PVC to bind to the PV persistent-disk?
+Incorrect -
+Add the storageClassName: persistent-disk attribute to the PVC.
+
+Correct -
+Add the storageClassName: Recyclable attribute to the PVC.
+
+Incorrect -
+Add the volumeSelector: persistent-disk attribute to the PVC.
+
+Your choice: incorrect -
+Add the volumeName: persistent-disk attribute to the PVC.
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Using Kubernetes as a Developer
+5.
+
+You omit a prefix when creating a Kubernetes annotation. What happens?
+
+5. You omit a prefix when creating a Kubernetes annotation. What happens?
+Incorrect -
+The annotation key becomes a temporary object.
+
+Incorrect -
+Kubernetes presumes that the annotation key is public to everyone.
+
+Your choice: correct -
+Kubernetes presumes that the annotation key is private to the user.
+
+Incorrect -
+The annotation key becomes a durable object.
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Using Kubernetes as a Developer
+6.
+
+What attributes must be in the definition of a Pod to mount the value of the ConfigMap special-config as an environment variable SPECIAL_LEVEL_KEY?
+
+6. What attributes must be in the definition of a Pod to mount the value of the ConfigMap special-config as an environment variable SPECIAL_LEVEL_KEY?
+Incorrect -
+- configMapRef:
+     name: special-config
+     key: SPECIAL_LEVEL
+Incorrect -
+- name: SPECIAL_LEVEL_KEY
+  valueFrom:
+    configMap:
+      name: special-config
+      key: SPECIAL_LEVEL
+Your choice: correct -
+- name: SPECIAL_LEVEL_KEY
+  valueFrom:
+    configMapKeyRef:
+      name: special-config
+      key: SPECIAL_LEVEL
+Incorrect -
+- name: SPECIAL_LEVEL_KEY
+  valueFrom:
+    configMapKeyRef:
+      name: special-config
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Using Kubernetes as a Developer
+7.
+
+You are generating Kubernetes resources using kompose. You use the following kompose labels in your docker-compose.yaml file:
+
+kompose.volume.size as 1Gi for the requests storage’s size in the PersistentVolumeClaim
+kompose.service.type as node to designate the service to be created
+kompose.controller.type as daemonset to convert the deployment upon creation
+
+When you run kompose convert, the command fails. Why is this?
+
+7. You are generating Kubernetes resources using kompose. You use the following kompose labels in your docker-compose.yaml file:
+
+kompose.volume.size as 1Gi for the requests storage’s size in the PersistentVolumeClaim
+kompose.service.type as node to designate the service to be created
+kompose.controller.type as daemonset to convert the deployment upon creation
+
+When you run kompose convert, the command fails. Why is this?
+Your choice: incorrect -
+You should run the kompose up command instead of kompose convert.
+
+Incorrect -
+You should increase the kompose.volume.size to handle the needs of the request.
+
+Incorrect -
+You must define the kompose.controller.type as deployment instead.
+
+Correct -
+You must define the kompose.service.type as nodeport instead.
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Using Kubernetes as a Developer
+8.
+
+You're attempting to view the events for a particular Pod, but running kubectl get event my-pod results in the error "events 'my-pod' not found". What is the correct command?
+
+8. You're attempting to view the events for a particular Pod, but running kubectl get event my-pod results in the error "events 'my-pod' not found". What is the correct command?
+Incorrect -
+kubectl get event -p my-pod
+
+Your choice: correct -
+kubectl get event --field-selector involvedObject.name=my-pod
+
+Incorrect -
+kubectl get event --field=pod my-pod
+
+Incorrect -
+kubectl get pod my-pod --events
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Using Kubernetes as a Developer
+9.
+
+An administrator created an application deployment from the command line. An update of the container image rescales the deployment to three instances. The admin ran the following set of commands in a Kubernetes command-line interface (CLI): 
+
+kubectl create deployment nginx --image=nginx:1.7.9
+kubectl set image deployment/nginx nginx=nginx:1.9.1 --record=true
+kubectl scale deployment/nginx --replicas=3
+
+Because of an incident that the admin must fix in the application version, they reverse the deployment revision as follows: 
+
+kubectl rollout undo deployment/nginx
+
+What values will the Image and Replicas fields indicate for the deployment nginx if the admin runs the command kubectl describe deployment/nginx?
+
+9. An administrator created an application deployment from the command line. An update of the container image rescales the deployment to three instances. The admin ran the following set of commands in a Kubernetes command-line interface (CLI):  kubectl create deployment nginx --image=nginx:1.7.9
+kubectl set image deployment/nginx nginx=nginx:1.9.1 --record=true
+kubectl scale deployment/nginx --replicas=3
+
+Because of an incident that the admin must fix in the application version, they reverse the deployment revision as follows:  kubectl rollout undo deployment/nginx
+
+What values will the Image and Replicas fields indicate for the deployment nginx if the admin runs the command kubectl describe deployment/nginx?
+Your choice: incorrect -
+Image: nginx:1.9.1
+Replicas: 3
+Incorrect -
+Image: nginx:1.9.1
+Replicas: 1
+Incorrect -
+Image: nginx:1.7.9
+Replicas: 1
+Correct -
+Image: nginx:1.7.9
+Replicas: 3
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Using Kubernetes as a Developer
+10.
+
+Consider the following resource definition file called multi-container-app.yaml:
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+name: multi-container-app
+spec:
+[...]
+template:
+spec:
+containers:
+- name: app-container
+image: training/main-application:0.1
+- name: web-container
+image: nginx:1.7.9
+
+And the file named log-exporter-container-extension.yaml:
+
+spec:
+template:
+spec:
+containers:
+- name: log-exporter-container
+image: training/log-exporter:0.1
+
+After you create a live deployment object named deployment/multi-container-app from the template, you run an update by issuing the command:
+
+kubectl patch deployment multi-container-app --patch "$(cat log-exporter-container-extension.yaml)" --type=strategic
+
+What is the outcome?
+
+10. Consider the following resource definition file called multi-container-app.yaml:
+
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: multi-container-app
+spec:
+[...]
+  template:
+    spec:
+      containers:
+      - name: app-container
+        image: training/main-application:0.1 
+      - name: web-container
+        image: nginx:1.7.9
+
+And the file named log-exporter-container-extension.yaml:
+
+spec:
+  template:
+    spec:
+      containers:
+      - name: log-exporter-container
+        image: training/log-exporter:0.1
+
+After you create a live deployment object named deployment/multi-container-app from the template, you run an update by issuing the command:
+
+kubectl patch deployment multi-container-app --patch "$(cat log-exporter-container-extension.yaml)" --type=strategic
+
+What is the outcome?
+Correct -
+It will add the log-exporter-container to the list of containers in the deployment template object and will trigger a rolling update on the deployment instance.
+
+Your choice: incorrect -
+It will add the log-exporter-container to the list of containers in the deployment template object. To trigger a rolling update on the deployment instance, a user must manually deploy the new revision.
+
+Incorrect -
+It will replace the list of containers in the deployment template object with a single entry containing log-exporter-container and it will trigger a rolling update on the deployment instance.
+
+Incorrect -
+It will replace the resource definition file, adding log-exporter-container to the list of containers and will update the live deployment object.
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Using Kubernetes as a Developer
+11.
+
+How can you expose Pod and container fields to applications running in a Pod?
+
+11. How can you expose Pod and container fields to applications running in a Pod?
+Incorrect -
+Using the FieldRef API, applications can access Pod fields and metadata by exposing the value of the Pod or container fields to environment variables.
+
+Incorrect -
+Using the ConfigMap API, applications can access Pod fields and metadata by exposing the value of the Pod or container fields to environment variables.
+
+Incorrect -
+Using the Annotations API, applications can access Pod fields and metadata by exposing the value of the Pod or container fields to environment variables.
+
+Your choice: correct -
+Using the Downward API, applications can access Pod fields and metadata by exposing the value of the Pod or container fields to environment variables.
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Using Kubernetes as a Developer
+12.
+
+Which probe, when active, disables the rest of the probes until it succeeds?
+
+12. Which probe, when active, disables the rest of the probes until it succeeds?
+Incorrect -
+Liveness
+
+Your choice: correct -
+Startup
+
+Incorrect -
+Readiness
+
+Incorrect -
+Merger
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Using Kubernetes as a Developer
+13.
+
+Based on the specification in the following Ingress configuration, what type of Ingress are you using?
+
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+ annotations:
+ nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+ rules:
+ - host: foo.bar.com
+ http:
+ paths:
+ - path: /foo
+ backend:
+ serviceName: service1
+ servicePort: 4200
+ - path: /bar
+ backend:
+ serviceName: service2
+ servicePort: 8080
+13. Based on the specification in the following Ingress configuration, what type of Ingress are you using?
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+ annotations:
+ nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+ rules:
+ - host: foo.bar.com
+ http:
+ paths:
+ - path: /foo
+ backend:
+ serviceName: service1
+ servicePort: 4200
+ - path: /bar
+ backend:
+ serviceName: service2
+ servicePort: 8080
+Incorrect -
+Single service Ingress
+
+Incorrect -
+Transport Layer Security (TLS)
+
+Incorrect -
+Name-based virtual hosting
+
+Your choice: correct -
+A simple fanout
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Using Kubernetes as a Developer
+14.
+
+Given the following readiness probe definition, what is the minimum amount of time after creation of the Pod or container that will pass before it restarts?
+
+readinessProbe:
+  tcpSocket:
+  port: 8080
+  initialDelaySeconds: 10
+  periodSeconds: 15
+  failureThreshhold: 2
+14. Given the following readiness probe definition, what is the minimum amount of time after creation of the Pod or container that will pass before it restarts?
+readinessProbe:
+  tcpSocket:
+  port: 8080
+  initialDelaySeconds: 10
+  periodSeconds: 15
+  failureThreshhold: 2
+Incorrect -
+35 seconds
+
+Incorrect -
+40 seconds
+
+Incorrect -
+30 seconds
+
+Your choice: correct -
+25 seconds
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Using Kubernetes as a Developer
+15.
+
+What objects can the dataSource field reference to?
+
+15. What objects can the dataSource field reference to?
+Incorrect -
+PersistentVolumeClaim and PersistentVolume 
+
+Your choice: correct -
+PersistentVolumeClaim and VolumeSnapshot 
+
+Incorrect -
+All the available objects in its namespace
+
+Incorrect -
+All the available objects in its namespace, including the core objects
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Using Kubernetes as a Developer
+16.
+
+In Kubernetes, which environment variable controls the log destination?
+
+16. In Kubernetes, which environment variable controls the log destination?
+Correct -
+KUBE_LOGGING_DESTINATION
+
+Incorrect -
+LOGGING_DESTINATION
+
+Your choice: incorrect -
+CLUSTER_LOGGING_DESTINATION
+
+Incorrect -
+CONTAINER_LOGGING_DESTINATION
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Using Kubernetes as a Developer
+17.
+
+How many ways can you discover a Service in Kubernetes?
+
+17. How many ways can you discover a Service in Kubernetes?
+Incorrect -
+4
+
+Your choice: incorrect -
+6
+
+Incorrect -
+8
+
+Correct -
+2
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Using Kubernetes as a Developer
+18.
+
+You created a Deployment with a Pod template. When the kubelet starts the container, there is startup failure. What fixes must you make in the container to overcome the failure?
+
+18. You created a Deployment with a Pod template. When the kubelet starts the container, there is startup failure. What fixes must you make in the container to overcome the failure?
+Incorrect -
+Set the imagePullPolicy to Never instead of IfNotPresent. 
+
+Your choice: incorrect -
+Set the imagePullPolicy to Never instead of Always. 
+
+Incorrect -
+Set the imagePullPolicy to Always instead of IfNotPresent. 
+
+Correct -
+Set the imagePullPolicy to IfNotPresent instead of Never.
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Using Kubernetes as a Developer
+19.
+
+How are files from a directory defined inside a ConfigMap?
+
+19. How are files from a directory defined inside a ConfigMap?
+Incorrect -
+With the contents of a single file in the data attribute or a collection of key/value pairs that are defined in the dataCollection attribute of the object
+
+Your choice: correct -
+With the contents of a single file in the data attribute or a collection of key/value pairs that are also defined in the data attribute of the object
+
+Incorrect -
+With the contents of the files in the directory as key/value pairs of annotations in the ConfigMap object
+
+Incorrect -
+With the contents of the files in the directory as plain key/value pairs of attributes in the ConfigMap object
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Using Kubernetes as a Developer
+20.
+
+You created a blue/green deployment for your Kubernetes application. After transferring all traffic to the green version, what will you do if users start to report bugs?
+
+20. You created a blue/green deployment for your Kubernetes application. After transferring all traffic to the green version, what will you do if users start to report bugs?
+Your choice: incorrect -
+Debug the green version while users are still using it.
+
+Incorrect -
+Start creating a new version while users are still using the existing green version.
+
+Incorrect -
+Switch the users who are reporting the bugs back to the blue version until you fix the bugs in the green version.
+
+Correct -
+Switch the traffic back to the blue version and destroy the green version.
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+1.
+ 
+Based on the specification in the following Ingress configuration, what type of Ingress are you using?
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+ annotations:
+ nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+ rules:
+ - host: foo.bar.com
+ http:
+ paths:
+ - path: /foo
+ backend:
+ serviceName: service1
+ servicePort: 4200
+ - path: /bar
+ backend:
+ serviceName: service2
+ servicePort: 8080
+
+A simple fanout
+2.
+ 
+How are files from a directory defined inside a ConfigMap?
+
+With the contents of a single file in the data attribute or a collection of key/value pairs that are also defined in the data attribute of the object
+
+3.
+ 
+Which option must you set while creating a CronJob object to handle timezones?
+
+CRON_TZ
+4.
+ 
+What is the purpose of using the kompose up command?
+To create a Kubernetes deployment for a Dockerized application
+5.
+ 
+You created a Deployment with five replicas using the command kubectl apply -f https://eg.com/demo/controllers/dep.yaml. How can you verify if all five replicas are ready in the Deployment?
+
+Run kubectl get deployments and check if the AVAILABLE label has the number five in it.
+
+6.
+ 
+Which is a valid label value?
+An empty value
+7.
+ 
+Which workload resource would you use for an application that requires an ordered and automated rolling update?
+•  Your choice: correct -
+StatefulSets
+
+8.
+ 
+Which container acts as a client proxy and proxies the connections to the main container?
+Ambassador
+
+9.
+ 
+Which metadata field in a Pod is populated by the system?
+Generation
+
+10.
+ 
+An application is working for the past half hour but is not progressing. You suspect the application never started successfully so you use a startup probe to check when it was started. This doesn't resolve the issue, however. What else can you do to make the application progress?
+•  Your choice: correct -
+Use a liveness probe to catch any deadlock present in the application and restart it.
+
+11.
+ 
+You are working on an application that depends on a third-party service. When the application boots, it must perform a long-running handshake with the third party before it can successfully handle requests. How would you implement this in Kubernetes?
+
+Implement a readiness probe that checks if the third-party handshake was successful. Kubernetes will automatically handle the flow of traffic to the Pods.
+12.
+ 
+How many ways can you discover a Service in Kubernetes?
+2
+
+13.
+ 
+You are generating Kubernetes resources using kompose. You use the following kompose labels in your docker-compose.yaml file:
+You must define the kompose.service.type as nodeport instead.
+
+14.
+ 
+What is correct about using Services in Kubernetes?
+•  Correct -
+The iptables proxy mode has an affect on clients passing with a load balancer.
+15.
+ 
+You are diagnosing a problem, but running kubectl get events produces too many events for you to see the problem. Which command would you use to view only the important events?
+kubectl get events --field-selector type!=Normal
+16.
+ 
+In Kubernetes, which environment variable controls the log destination?
+KUBE_LOGGING_DESTINATION
+17.
+ 
+You have an application running on Kubernetes where communication to the configuration Service (which could be in a separate container) might be performed with a localhost. When you test the application, it fails with an error implying a communication issue with the config Service. What is the most likely explanation?
+The config Service is running in a separate Pod rather than a second container in the web application's Pod.
+18.
+ 
+You have a high-traffic application running on Kubernetes that is regularly updated with new code. You need the app to have zero downtime, instant switchover, and fast rollback in the event of an issue. What method will meet your needs?
+Using a blue-green deployment method
+19.
+ 
+Given the following PersistentVolumeClaim (PVC) and PersistentVolume (PV) definition:
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+name: persistent-disk-claim
+spec:
+accessModes:
+- ReadWriteOnce
+volumeMode: Filesystem
+resources:
+requests:
+storage: 8Gi
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+name: persistent-disk
+spec:
+capacity:
+storage: 8Gi
+volumeMode: Filesystem
+accessModes:
+- ReadWriteOnce
+persistentVolumeReclaimPolicy: Recycle
+storageClassName: Recyclable
+nfs:
+path: /tmp
+server: 172.17.0.2
+
+What changes can you make to allow the PVC to bind to the PV persistent-disk?
+Add the storageClassName: Recyclable attribute to the PVC.
+20.
+ 
+Why is Service an optional field in the Kubernetes web user interface (UI) deploy wizard?
+Because not every application needs to expose a Service to an external IP address
+
+
+Given the following PersistentVolume (PV) belonging to the storage class Recyclable:
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+name: persistent-disk
+spec:
+capacity:
+storage: 10Gi
+accessModes:
+- ReadWriteMany
+persistentVolumeReclaimPolicy: Recycle
+storageClassName: Recyclable
+nfs:
+path: /tmp
+server: 172.17.0.2
+
+What happens when a user creates a PersistentVolumeClaim (PVC) that is requesting storage capacity of 5 Gb and belongs to the same storage class Recyclable?
+A.	The PVC is created with 5 Gb of storage capacity and the PV locks the remaining amount.
+You modified the config/kernel-monitor.json file and removed the ReadonlyFilesystem condition from the file. How can you revert the changes back?
+A.	By creating a new ReadonlyFilesystem condition definition inside the conditions field along with a reason and a message
+You run a Deployment and create a Service. You confirmed that the Service exists, is reachable by Domain Name System (DNS) and IP, and has been crosschecked against the original YAML manifest. A Pod is not able to reach itself with a Service IP, however. What is the issue?
+•  The network is not properly configured for hairpin traffic.
+
+Why would you use the shorthand R with the kubectl rollout command?
+•  To process the directory specified in -f recursively
+
+Your team uses kubectl to manage all aspects of your company's Kubernetes deployment. You are onboarding several DevOps engineers on the team who will take over the day-to-day management of simple tasks related to deployments. Which solution is most appropriate and will help your company scale?
+•  The updated kubectl command structure 
+
+You created a Deployment with a Pod template. When the kubelet starts the container, there is startup failure. What fixes must you make in the container to overcome the failure?
+
+•  Set the imagePullPolicy to IfNotPresent instead of Never.
+
+ 
+You have a MongoDB server running in a Pod at port number 34121. You must access the database from your local system which means you require port forwarding. How will you achieve the task without choosing the port number manually?
+
+kubectl port-forward replicaset/mongo-3fj5sk9 :34121
+
+
+You want to fetch out the stable release and track the records weekly. To do so, you create two labels as follows:
+
+release!=canary,track!=daily
+
+
+
+What is the purpose of using the kompose up command?
+To create a Kubernetes deployment for a Dockerized application
+
+You deleted the PersistentVolumeClaim and released the volume. How can you reclaim the volume?
+Because the PersistentVolume still exists, delete it along with the data from the linked storage asset and the asset itself.
+
+What is true of a Service in Kubernetes?
+A.	A service is a representational state transfer (REST) object similar to a Pod. 
+
+
+4.
+ 
+You created a Deployment with a Pod template. When the kubelet starts the container, there is startup failure. What fixes must you make in the container to overcome the failure?
+Set the imagePullPolicy to IfNotPresent instead of Never.
+
+8.
+ 
+Your team uses kubectl to manage all aspects of your company's Kubernetes deployment. You are onboarding several DevOps engineers on the team who will take over the day-to-day management of simple tasks related to deployments. Which solution is most appropriate and will help your company scale?
+The updated kubectl command structure 
+
+9.
+ 
+You have a MongoDB server running in a Pod at port number 34121. You must access the database from your local system which means you require port forwarding. How will you achieve the task without choosing the port number manually?
+•  kubectl port-forward replicaset/mongo-3fj5sk9 :34121
+•  
+
+10.
+ 
+You must load the following configuration file into Kubernetes as a ConfigMap:
+
+## application config appconfig.txt
+## comments for dev use only
+
+host=reports.example.com
+port=80
+timeout=6
+
+When you run the command kubectl create configmap myconfig --from-file=./appconfig.txt, however, the ConfigMap is created with the comments intact, which is causing your application to throw an error. How would you fix the command?
+
+11.
+ 
+You must implement a probe to stop Pods from receiving traffic when they are busy. The probe should also make sure the Pods are taken out within 20 seconds, checking on the /healthz:8080 endpoint. What would be the correct YAML to configure this?
+readinessProbe:
+  httpGet:
+    path: /healthz
+    port: 8080
+  initialDelaySeconds: 3
+  periodSeconds: 5
+
+
+12.
+ 
+You want to create a new CronJob object called demo-job that uses the image training/demo-job and runs the /scripts/job.sh script every minute. What command would you run in the Kubernetes command-line interface (CLI)?
+kubectl run demo-job --restart=OnFailure --schedule="*/1 * * * *" 
+                     --image=training/demo-job -- /scripts/job.sh
+
+13.
+ 
+While working with kubectl, you encounter an error. To troubleshoot it, which verbosity level would you choose to get its detailed trace?
+--v=5
+
+17.
+ 
+As a namespace administrator, you need ultimate control over deployment security, but must allow your developers to configure within a range. How can you do this?
+Implement a security policy on the cluster and use securityContext in deployments as normal.
+
+19.
+ 
+You used the hostPath PersistentVolume (PV) type to test a single node. Which type will you use to test multiple node clusters?
+Local
+
+22.
+ 
+What is the first step to take in a canary deployment in Kubernetes?
+Ensure that the Service does not have a version selector.
+
+
+v1.
+ 
+Based on the specification in the following Ingress configuration, what type of Ingress are you using?
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+ annotations:
+ nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+ rules:
+ - host: foo.bar.com
+ http:
+ paths:
+ - path: /foo
+ backend:
+ serviceName: service1
+ servicePort: 4200
+ - path: /bar
+ backend:
+ serviceName: service2
+ servicePort: 8080
+
+A simple fanout
+2.
+ 
+How are files from a directory defined inside a ConfigMap?
+
+With the contents of a single file in the data attribute or a collection of key/value pairs that are also defined in the data attribute of the object
+
+3.
+ 
+Which option must you set while creating a CronJob object to handle timezones?
+
+CRON_TZ
+4.
+ 
+What is the purpose of using the kompose up command?
+To create a Kubernetes deployment for a Dockerized application
+5.
+ 
+You created a Deployment with five replicas using the command kubectl apply -f https://eg.com/demo/controllers/dep.yaml. How can you verify if all five replicas are ready in the Deployment?
+
+Run kubectl get deployments and check if the AVAILABLE label has the number five in it.
+
+6.
+ 
+Which is a valid label value?
+An empty value
+7.
+ 
+Which workload resource would you use for an application that requires an ordered and automated rolling update?
+•  Your choice: correct -
+StatefulSets
+
+8.
+ 
+Which container acts as a client proxy and proxies the connections to the main container?
+Ambassador
+
+9.
+ 
+Which metadata field in a Pod is populated by the system?
+Generation
+
+10.
+ 
+An application is working for the past half hour but is not progressing. You suspect the application never started successfully so you use a startup probe to check when it was started. This doesn't resolve the issue, however. What else can you do to make the application progress?
+•  Your choice: correct -
+Use a liveness probe to catch any deadlock present in the application and restart it.
+
+11.
+ 
+You are working on an application that depends on a third-party service. When the application boots, it must perform a long-running handshake with the third party before it can successfully handle requests. How would you implement this in Kubernetes?
+
+Implement a readiness probe that checks if the third-party handshake was successful. Kubernetes will automatically handle the flow of traffic to the Pods.
+12.
+ 
+How many ways can you discover a Service in Kubernetes?
+2
+
+13.
+ 
+You are generating Kubernetes resources using kompose. You use the following kompose labels in your docker-compose.yaml file:
+You must define the kompose.service.type as nodeport instead.
+
+14.
+ 
+What is correct about using Services in Kubernetes?
+•  Correct -
+The iptables proxy mode has an affect on clients passing with a load balancer.
+15.
+ 
+You are diagnosing a problem, but running kubectl get events produces too many events for you to see the problem. Which command would you use to view only the important events?
+kubectl get events --field-selector type!=Normal
+16.
+ 
+In Kubernetes, which environment variable controls the log destination?
+KUBE_LOGGING_DESTINATION
+17.
+ 
+You have an application running on Kubernetes where communication to the configuration Service (which could be in a separate container) might be performed with a localhost. When you test the application, it fails with an error implying a communication issue with the config Service. What is the most likely explanation?
+The config Service is running in a separate Pod rather than a second container in the web application's Pod.
+18.
+ 
+You have a high-traffic application running on Kubernetes that is regularly updated with new code. You need the app to have zero downtime, instant switchover, and fast rollback in the event of an issue. What method will meet your needs?
+Using a blue-green deployment method
+19.
+ 
+Given the following PersistentVolumeClaim (PVC) and PersistentVolume (PV) definition:
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+name: persistent-disk-claim
+spec:
+accessModes:
+- ReadWriteOnce
+volumeMode: Filesystem
+resources:
+requests:
+storage: 8Gi
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+name: persistent-disk
+spec:
+capacity:
+storage: 8Gi
+volumeMode: Filesystem
+accessModes:
+- ReadWriteOnce
+persistentVolumeReclaimPolicy: Recycle
+storageClassName: Recyclable
+nfs:
+path: /tmp
+server: 172.17.0.2
+
+What changes can you make to allow the PVC to bind to the PV persistent-disk?
+Add the storageClassName: Recyclable attribute to the PVC.
+20.
+ 
+Why is Service an optional field in the Kubernetes web user interface (UI) deploy wizard?
+Because not every application needs to expose a Service to an external IP address
+
+
+Given the following PersistentVolume (PV) belonging to the storage class Recyclable:
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+name: persistent-disk
+spec:
+capacity:
+storage: 10Gi
+accessModes:
+- ReadWriteMany
+persistentVolumeReclaimPolicy: Recycle
+storageClassName: Recyclable
+nfs:
+path: /tmp
+server: 172.17.0.2
+
+What happens when a user creates a PersistentVolumeClaim (PVC) that is requesting storage capacity of 5 Gb and belongs to the same storage class Recyclable?
+A.	The PVC is created with 5 Gb of storage capacity and the PV locks the remaining amount.
+You modified the config/kernel-monitor.json file and removed the ReadonlyFilesystem condition from the file. How can you revert the changes back?
+A.	By creating a new ReadonlyFilesystem condition definition inside the conditions field along with a reason and a message
+You run a Deployment and create a Service. You confirmed that the Service exists, is reachable by Domain Name System (DNS) and IP, and has been crosschecked against the original YAML manifest. A Pod is not able to reach itself with a Service IP, however. What is the issue?
+•  The network is not properly configured for hairpin traffic.
+
+Why would you use the shorthand R with the kubectl rollout command?
+•  To process the directory specified in -f recursively
+
+Your team uses kubectl to manage all aspects of your company's Kubernetes deployment. You are onboarding several DevOps engineers on the team who will take over the day-to-day management of simple tasks related to deployments. Which solution is most appropriate and will help your company scale?
+•  The updated kubectl command structure 
+
+You created a Deployment with a Pod template. When the kubelet starts the container, there is startup failure. What fixes must you make in the container to overcome the failure?
+
+•  Set the imagePullPolicy to IfNotPresent instead of Never.
+
+ 
+You have a MongoDB server running in a Pod at port number 34121. You must access the database from your local system which means you require port forwarding. How will you achieve the task without choosing the port number manually?
+
+kubectl port-forward replicaset/mongo-3fj5sk9 :34121
+
+
+You want to fetch out the stable release and track the records weekly. To do so, you create two labels as follows:
+
+release!=canary,track!=daily
+
+
+
+What is the purpose of using the kompose up command?
+To create a Kubernetes deployment for a Dockerized application
+
+You deleted the PersistentVolumeClaim and released the volume. How can you reclaim the volume?
+Because the PersistentVolume still exists, delete it along with the data from the linked storage asset and the asset itself.
+
+What is true of a Service in Kubernetes?
+A.	A service is a representational state transfer (REST) object similar to a Pod. 
+
+
+4.
+ 
+You created a Deployment with a Pod template. When the kubelet starts the container, there is startup failure. What fixes must you make in the container to overcome the failure?
+Set the imagePullPolicy to IfNotPresent instead of Never.
+
+8.
+ 
+Your team uses kubectl to manage all aspects of your company's Kubernetes deployment. You are onboarding several DevOps engineers on the team who will take over the day-to-day management of simple tasks related to deployments. Which solution is most appropriate and will help your company scale?
+The updated kubectl command structure 
+
+9.
+ 
+You have a MongoDB server running in a Pod at port number 34121. You must access the database from your local system which means you require port forwarding. How will you achieve the task without choosing the port number manually?
+•  kubectl port-forward replicaset/mongo-3fj5sk9 :34121
+•  
+
+10.
+ 
+You must load the following configuration file into Kubernetes as a ConfigMap:
+
+## application config appconfig.txt
+## comments for dev use only
+
+host=reports.example.com
+port=80
+timeout=6
+
+When you run the command kubectl create configmap myconfig --from-file=./appconfig.txt, however, the ConfigMap is created with the comments intact, which is causing your application to throw an error. How would you fix the command?
+
+11.
+ 
+You must implement a probe to stop Pods from receiving traffic when they are busy. The probe should also make sure the Pods are taken out within 20 seconds, checking on the /healthz:8080 endpoint. What would be the correct YAML to configure this?
+readinessProbe:
+  httpGet:
+    path: /healthz
+    port: 8080
+  initialDelaySeconds: 3
+  periodSeconds: 5
+
+
+12.
+ 
+You want to create a new CronJob object called demo-job that uses the image training/demo-job and runs the /scripts/job.sh script every minute. What command would you run in the Kubernetes command-line interface (CLI)?
+kubectl run demo-job --restart=OnFailure --schedule="*/1 * * * *" 
+                     --image=training/demo-job -- /scripts/job.sh
+
+13.
+ 
+While working with kubectl, you encounter an error. To troubleshoot it, which verbosity level would you choose to get its detailed trace?
+--v=5
+
+17.
+ 
+As a namespace administrator, you need ultimate control over deployment security, but must allow your developers to configure within a range. How can you do this?
+Implement a security policy on the cluster and use securityContext in deployments as normal.
+
+19.
+ 
+You used the hostPath PersistentVolume (PV) type to test a single node. Which type will you use to test multiple node clusters?
+Local
+
+22.
+ 
+What is the first step to take in a canary deployment in Kubernetes?
+Ensure that the Service does not have a version selector.
+
+1.
+ 
+Based on the specification in the following Ingress configuration, what type of Ingress are you using?
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+ annotations:
+ nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+ rules:
+ - host: foo.bar.com
+ http:
+ paths:
+ - path: /foo
+ backend:
+ serviceName: service1
+ servicePort: 4200
+ - path: /bar
+ backend:
+ serviceName: service2
+ servicePort: 8080
+
+A simple fanout
+2.
+ 
+How are files from a directory defined inside a ConfigMap?
+
+With the contents of a single file in the data attribute or a collection of key/value pairs that are also defined in the data attribute of the object
+
+3.
+ 
+Which option must you set while creating a CronJob object to handle timezones?
+
+CRON_TZ
+4.
+ 
+What is the purpose of using the kompose up command?
+To create a Kubernetes deployment for a Dockerized application
+5.
+ 
+You created a Deployment with five replicas using the command kubectl apply -f https://eg.com/demo/controllers/dep.yaml. How can you verify if all five replicas are ready in the Deployment?
+
+Run kubectl get deployments and check if the AVAILABLE label has the number five in it.
+
+6.
+ 
+Which is a valid label value?
+An empty value
+7.
+ 
+Which workload resource would you use for an application that requires an ordered and automated rolling update?
+•  Your choice: correct -
+StatefulSets
+
+8.
+ 
+Which container acts as a client proxy and proxies the connections to the main container?
+Ambassador
+
+9.
+ 
+Which metadata field in a Pod is populated by the system?
+Generation
+
+10.
+ 
+An application is working for the past half hour but is not progressing. You suspect the application never started successfully so you use a startup probe to check when it was started. This doesn't resolve the issue, however. What else can you do to make the application progress?
+•  Your choice: correct -
+Use a liveness probe to catch any deadlock present in the application and restart it.
+
+11.
+ 
+You are working on an application that depends on a third-party service. When the application boots, it must perform a long-running handshake with the third party before it can successfully handle requests. How would you implement this in Kubernetes?
+
+Implement a readiness probe that checks if the third-party handshake was successful. Kubernetes will automatically handle the flow of traffic to the Pods.
+12.
+ 
+How many ways can you discover a Service in Kubernetes?
+2
+
+13.
+ 
+You are generating Kubernetes resources using kompose. You use the following kompose labels in your docker-compose.yaml file:
+You must define the kompose.service.type as nodeport instead.
+
+14.
+ 
+What is correct about using Services in Kubernetes?
+•  Correct -
+The iptables proxy mode has an affect on clients passing with a load balancer.
+15.
+ 
+You are diagnosing a problem, but running kubectl get events produces too many events for you to see the problem. Which command would you use to view only the important events?
+kubectl get events --field-selector type!=Normal
+16.
+ 
+In Kubernetes, which environment variable controls the log destination?
+KUBE_LOGGING_DESTINATION
+17.
+ 
+You have an application running on Kubernetes where communication to the configuration Service (which could be in a separate container) might be performed with a localhost. When you test the application, it fails with an error implying a communication issue with the config Service. What is the most likely explanation?
+The config Service is running in a separate Pod rather than a second container in the web application's Pod.
+18.
+ 
+You have a high-traffic application running on Kubernetes that is regularly updated with new code. You need the app to have zero downtime, instant switchover, and fast rollback in the event of an issue. What method will meet your needs?
+Using a blue-green deployment method
+19.
+ 
+Given the following PersistentVolumeClaim (PVC) and PersistentVolume (PV) definition:
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+name: persistent-disk-claim
+spec:
+accessModes:
+- ReadWriteOnce
+volumeMode: Filesystem
+resources:
+requests:
+storage: 8Gi
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+name: persistent-disk
+spec:
+capacity:
+storage: 8Gi
+volumeMode: Filesystem
+accessModes:
+- ReadWriteOnce
+persistentVolumeReclaimPolicy: Recycle
+storageClassName: Recyclable
+nfs:
+path: /tmp
+server: 172.17.0.2
+
+What changes can you make to allow the PVC to bind to the PV persistent-disk?
+
+Add the storageClassName: Recyclable attribute to the PVC.
+20.
+ 
+Why is Service an optional field in the Kubernetes web user interface (UI) deploy wizard?
+Because not every application needs to expose a Service to an external IP address
+
+
+1.You created a Deployment with five replicas using the command kubectl apply -f https://eg.com/demo/controllers/dep.yaml. How can you verify if all five replicas are ready in the Deployment?
+Run kubectl get deployments and check if the AVAILABLE label has the number five in it.
+2.Which daemon keeps track of the kernel logs and identifies kernel vulnerabilities based on predefined rules?
+Kernel Monitor
+3.What is the difference between a service port and a container port?
+A container port is defined in the Dockerfile and represents the port that the application running in the container is listening to, whereas the service port is the port that the Kubernetes Service listens to and forwards traffic to the Pods based on the selector.
+
+4.Consider the following service definition:
+apiVersion: v1
+kind: Service
+metadata:
+   name: my-service
+spec:
+   selector:
+      app: MyApp
+   ports:
+      - protocol: TCP
+        port: 80
+      - port: 8333
+        protocol: TCP
+You apply the following but receive an error:
+The Service "my-service" is invalid:
+* spec.ports[0].name: Required value
+* spec.ports[1].name: Required value
+What is the problem?
+When using more than one port, they must have names like this:
+ports:
+   - name: web
+     protocol: TCP
+     port: 80
+   - name: health
+     port: 8333
+     protocol: TCP
+
+5.What is a key benefit of running a containerized application on Kubernetes?
+Orchestration and scheduling
+
+6.What is the small controllable unit in Kubernetes?
+Pod
+7.When using a managed Kubernetes service from a cloud services provider, what responsibilities does the cloud provider have for the cluster?
+It must ensure that the Kubernetes control plane, and the underlying compute and network infrastructure, are operational.
+8.While working with ConfigMaps, you are unable to change the content of the data field. What could be the state of the ConfigMap in this case?
+Immutable
+9.What happens to Kubernetes Job resources that a CronJob creates with the optional field concurrencyPolicy equal to Replace?
+If it's time for a new run and the previous Job run hasn’t completed, the CronJob replaces the currently running Job run with a new Job object.
+
+10.In Kubernetes networking, what does Ingress do?
+Expose HTTP and HTTPS routes from outside the cluster to services within the cluster
+
+11.
+ 
+What files does using the following configuration for a ConfigMap create?
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-configmap-pod-cfpd
+spec:
+  containers:
+    - name: example
+      image: alpine
+      command: ["sleep", "1800"]
+      env:
+        - name: FOO_BAR 
+          valueFrom:
+            configMapKeyRef:
+              name: example-test        
+              key: foo_bar 
+        - name: BAZ_QUE
+          valueFrom:
+            configMapKeyRef:
+              name: example-test
+              key: baz_que
+      volumeMounts:
+      - name: config
+        mountPath: "/config"
+        readOnly: true
+  volumes:
+    - name: config
+      configMap:
+        name: example-test
+        items:
+        - key: "test.properties"
+          path: "test.properties"
+        - key: "example-screening.properties"
+          path: "example-screening.properties"
+/config/test.properties and /config/example-screening.properties
+
+12.You are building the image configuration of a container stored locally that spawns privatized production instances of the location services API for your application. How can you make sure that no attempt is made to pull the image?
+imagePullPolicy: Never
+
+13.What command can you use in a Kubernetes command-line interface (CLI) to list all available Pods from all the namespaces?
+kubectl get pods --all-namespaces
+
+14.You have five containers and two Pods. To retrieve the logs, you run the following command:
+kubectl logs -f -l --all-containers
+How many of these containers will start streaming their logs?
+Five
+
+15.What is Docker Swarm?
+A tool for managing and scheduling a collection of Docker nodes as a single virtual system
+
+16.The main non-functional requirements of a software project for the architecture team are:Host anywhere;
+1.	Support decoupled services that can be independently deployed and scaled;
+2.	Ensure dependency management is part of the deployment unit;
+3.	Orchestrate components and enable discovery
+Which approach can meet these requirements?
+Write a containerized collection of microservices, and deploy and manage them using Kubernetes.
+
+17.What type of container enhances and extends the main application container by adding additional feature?
+Sidecar
+
+18.Your company's Kubernetes cluster has a ConfigMap named app-config that must be shared across multiple Kubernetes applications. What approach would you take to use the game.properties key as an environment variable named GAME_PROPERTIES in a container?
+Add the following entry to the env attribute of the container:
+- name: GAME_PROPERTIES
+valueFrom:
+   configMapKeyRef:
+      name: app-config
+      key: game.properties
+
+19.How can a developer modify a Pod to allow the containers to enable privileged mode as well as to gain access to devices on the host?
+Add privileged: true to the spec.securityContext attribute of the Pod.
+
+20.What do annotations in Kubernetes do?
+Provide a purely generic way to add metadata to Kubernetes objects
+
+
+
+
+
+
+
+
+
+
+Given the following live deployment object called "multi-container-app":
+
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+name: multi-container-app
+spec:
+[...]
+template:
+spec:
+containers:
+- name: app-container
+image: training/main-application:0.1 
+- name: web-container
+image: nginx:1.7.9
+containerPort: 80
+
+And the container extension found in the file "web-preview-container-extension.yaml":
+ 
+spec:
+template:
+spec:
+containers:
+- name: web-preview-container
+image: training/web-preview:0.1
+containerPort: 80
+
+A cluster administrator patched the "deployment/multi-container-app" with an extra container by issuing the command:
+
+kubectl patch deployment multi-container-app --patch "$(cat web-preview-container-extension.yaml)" --type=strategic
+
+The command returns an error. Why?
+
+
+The container from the extension file is binding to port 80 which is already used in the web-container container from the deployment.
+
+You deleted the PersistentVolumeClaim and released the volume. How can you reclaim the volume?
+Because the PersistentVolume still exists, delete it along with the data from the linked storage asset and the asset itself.
+
+What is the first step to take in a canary deployment in Kubernetes?
+Ensure that the Service does not have a version selector.
+
+Which option must you set while creating a CronJob object to handle timezones?
+
+CRON_TZ
+
+ 
+Consider the following configuration file of a Service with multiple ports:
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-demo
+spec:
+  selector:
+    app: PSDemo
+  ports:
+    - name: 0_http
+      protocol: TCP
+      port: 80
+      targetPort: 2342
+    - name: https-p
+      protocol: TCP
+      port: 443
+      targetPort: 9871
+This file results in an error because of an invalid port name. What fixes must you make to remove the error?
+
+Remove 0_ from 0_http.
+
+Given the following PersistentVolume (PV) belonging to the storage class Recyclable:
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+name: persistent-disk
+spec:
+capacity:
+storage: 10Gi
+accessModes:
+- ReadWriteMany
+persistentVolumeReclaimPolicy: Recycle
+storageClassName: Recyclable
+nfs:
+path: /tmp
+server: 172.17.0.2
+
+What happens when a user creates a PersistentVolumeClaim (PVC) that is requesting storage capacity of 5 Gb and belongs to the same storage class Recyclable?
+The PVC is created with 5 Gb of storage capacity and the PV locks the remaining amount.
+
+While working with kubectl, you encounter an error. To troubleshoot it, which verbosity level would you choose to get its detailed trace?
+
+--v=5
+
+ 
+You must implement a probe to stop Pods from receiving traffic when they are busy. The probe should also make sure the Pods are taken out within 20 seconds, checking on the /healthz:8080 endpoint. What would be the correct YAML to configure this?
+
+readinessProbe:
+  httpGet:
+    path: /healthz
+    port: 8080
+  initialDelaySeconds: 3
+  periodSeconds: 5
+
+Why would you use the shorthand R with the kubectl rollout command?
+
+To process the directory specified in -f recursively
+
+
+You have the following live Deployment definition object located in your local development host at ./web-application-deployment.yaml:
+
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+name:web-application-demo
+spec:
+[...]
+template:
+spec:
+containers:
+- name: app
+image: training/web-application-demo:1.0.9 
+
+You must update the image to training/web-application-demo:1.1.0 and save the file for version control. What procedures can achieve this?
+
+Edit the file contents and replace the image field with training/web-application-demo:1.1.0.
+Save the file on the localhost and run the following command:
+kubectl apply -f ./web-application-deployment.yaml.
+
+ 
+How many ways can you discover a Service in Kubernetes?
+
+
+2
+
+A Pod named demo-application-1 is mounting the PersistentVolumeClaim (PVC) called slow-storage-pvc, which has the following definition: 
+apiVersion: v1 
+kind: PersistentVolumeClaim 
+metadata:
+   name: slow-storage-pvc 
+spec:
+   accessModes:
+     - ReadWriteOnce
+   volumeMode: block
+   resources:
+     requests:
+       storage: 8Gi
+   storageClassName: slow 
+What will happen if you mount the PVC slow-storage-pvc to a new Pod demo-application-2 under the same file system path as demo-application-1? 
+
+
+The operation will fail because the ReadWriteOnce access mode restricts other Pods from mounting the PVC.
+
+What purpose does the --dry-run option flag serve when running the command: kubectl rollout undo deployment/web-application-demo --to-revision=2 --dry-run?
+
+If set, the command only prints the object that would be sent without changing the cluster state.
+
+
+Containers within a Pod share an IP address and port space. What special function does this enable for containers?
+
+The ability to find each other with localhost
+
+You have a microservices application hosted on Kubernetes deployed with rolling updates. You want to enhance the deployment process so you can test new versions in production while the majority of users continue to work with the previous production version. What solution would you choose to enable this?
+
+Use canary deployments and an Ingress controller to allow testing of the new version on a different subdomain.
+
+
+You skipped setting the service account when creating a Pod. Which field will you check in the YAML file to ensure that a default service account has been assigned to the Pod?
+
+spec.serviceAccountName
+
+
+What is the most common container design pattern that can extend the main container with sync services such as a git-synchronizer?
+
+Sidecar
+
+
+Your company must connect a containerized application with a Redis database running outside Kubernetes. The application container is trying to connect to a Redis instance running on localhost. How can you use the ambassador container design pattern instead of a direct connection to the Redis database?
+
+You can use an ambassador container as a secondary container in the Pod, launching a proxy application that is forwarding requests from the localhost connection to a remote Redis server.
+
+
+You must create an endpoint for a Service with no selector. Which loopback endpoint IP (IPv4) can you choose?
+192.0.0.0
+You have a MongoDB server running in a Pod at port number 34121. You must access the database from your local system which means you require port forwarding. How will you achieve the task without choosing the port number manually?
+kubectl port-forward replicaset/mongo-3fj5sk9 :34121
+
+You are diagnosing a problem, but running kubectl get events produces too many events for you to see the problem. Which command would you use to view only the important events?
+kubectl get events --field-selector type!=Normal
+Which container acts as a client proxy and proxies the connections to the main container?
+Ambassador
+You are working on an application that depends on a third-party service. When the application boots, it must perform a long-running handshake with the third party before it can successfully handle requests. How would you implement this in Kubernetes?
+Implement a readiness probe that checks if the third-party handshake was successful. Kubernetes will automatically handle the flow of traffic to the Pods.
+ 
+You do not want to use the default service account for your Pod so you set the name of your custom service account in the spec.serviceAccountName field. Your custom service account is rejected, however. What could be the possible explanation?
+
+The custom service account was not created when the Pod was created.
+You created a Deployment with five replicas using the command kubectl apply -f https://eg.com/demo/controllers/dep.yaml. How can you verify if all five replicas are ready in the Deployment?
+Run kubectl get deployments and check if the AVAILABLE label has the number five in it.
+As a namespace administrator, you need ultimate control over deployment security, but must allow your developers to configure within a range. How can you do this?
+Implement a security policy on the cluster and use securityContext in deployments as normal.
+Why is Service an optional field in the Kubernetes web user interface (UI) deploy wizard?
+Because not every application needs to expose a Service to an external IP address
+In Kubernetes, which environment variable controls the log destination?
+KUBE_LOGGING_DESTINATION
+You are generating Kubernetes resources using kompose. You use the following kompose labels in your docker-compose.yaml file:
+
+kompose.volume.size as 1Gi for the requests storage’s size in the PersistentVolumeClaim
+kompose.service.type as node to designate the service to be created
+kompose.controller.type as daemonset to convert the deployment upon creation
+
+When you run kompose convert, the command fails. Why is this?
+You must define the kompose.service.type as nodeport instead.
+Your service is just one part of a microservices application. The microservice you wrote cannot handle the volume of traffic in the production cluster because it maxed out its resource constraints. Your application is deployed using the following definition. What is the most likely solution?
+apiVersion: v1
+kind: Pod
+metadata:
+labels:
+run: process-order-api
+name: process-order-api
+spec:
+containers:
+- image: company/processorder
+name: procesorder
+Redeploy the applications as a Kubernetes Deployment with a ReplicaSet set to a minimum of two.
+After creating the resources with the following PersistentVolumeClaim (PVC) and PersistentVolume (PV) definition running on a Kubernetes cluster, the PVC is still unbound. Why?
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+name: persistent-disk-claim
+namespace: training
+
+spec:
+accessModes:
+- ReadWriteOnce
+volumeMode: Filesystem
+storageClassName: Recyclable
+resources:
+requests:
+storage: 5Gi
+selector:
+matchLabels:
+environment: "dev"
+
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+name: persistent-disk
+spec:
+capacity:
+storage: 8Gi
+volumeMode: Filesystem
+accessModes:
+- ReadWriteOnce
+persistentVolumeReclaimPolicy: Recycle
+storageClassName: Recyclable
+nfs:
+path: /tmp
+server: 172.17.0.2
+The PVC can only bind to PVs that have the label: environment: dev.
+ 
+Inside securityContext, which label stops a process from attaining more privilege than its parent process?
+allowPrivilegeEscalation
+Consider the following resource definition file called multi-container-app.yaml:
+
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+name: multi-container-app
+spec:
+[...]
+template:
+spec:
+containers:
+- name: app-container
+image: training/main-application:0.1 
+- name: web-container
+image: nginx:1.7.9
+
+And the file named log-exporter-container-extension.yaml:
+
+spec:
+template:
+spec:
+containers:
+- name: log-exporter-container
+image: training/log-exporter:0.1
+
+After you create a live deployment object named deployment/multi-container-app from the template, you run an update by issuing the command:
+
+kubectl patch deployment multi-container-app --patch "$(cat log-exporter-container-extension.yaml)" --type=strategic
+
+What is the outcome?
+It will add the log-exporter-container to the list of containers in the deployment template object and will trigger a rolling update on the deployment instance.
+What purpose does the --dry-run option flag serve when running the command: kubectl rollout undo deployment/web-application-demo --to-revision=2 --dry-run?
+If set, the command only prints the object that would be sent without changing the cluster state.
+What is the general purpose of labels and selectors in Kubernetes?
+To meaningfully identify objects for users but not by directly implying semantics to the core system
+You must debug a Pod by identifying the node on which it is running and using the shell on the node. How will you create the interactive shell instance?
+kubectl debug node/rkst -it --image=ubuntu
+
+You have to store user credentials to perform basic authentication. To do so, you create the following configuration:
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-basic-auth
+type: kubernetes.io/basic-auth
+credentials:
+  username: explorer      
+  password: sfdjl44SD3425
+On running the script, you notice invalid user credentials. Why?
+
+You have stored user credentials in credentials instead of stringData.
+
+
+
+ 
+You passed a certain value to both the dataSourceRef and the dataSource fields. This leads to an error by the dataSourceRef field. You confirm the value of the object to be demo.kubernetes.ex. What is the cause of the error?
+The object doesn't belong to any of the available apiGroup values.
+
+You deleted the PersistentVolumeClaim and released the volume. How can you reclaim the volume?
+Because the PersistentVolume still exists, delete it along with the data from the linked storage asset and the asset itself.
+
+A microservice you engineered contains endpoints that persist information to a database. In your application, a component of the Kubernetes container logic handles the final issuing of the calls. When the database call is made, the data to be persisted is sanitized, transformed, and injected into the database. The application handles sanitization and transformation. As the deployed application runs, resiliency testing is performed, but when containers are shut down, calls are dropped and do not experience a retry. Why is this?
+Generally, containers should be treated as ephemeral. Therefore, the microservice should handle the final issuing of calls, not the container. 
+
+
+
+
+You want to fetch out the stable release and track the records weekly. To do so, you create two labels as follows:
+release!=stable
+track==daily
+You receive the canary release with daily records. What fixes must you make to the labels to overcome the glitches?
+release!=canary,track!=daily
+
+
+You must load the following configuration file into Kubernetes as a ConfigMap:
+
+## application config appconfig.txt
+## comments for dev use only
+
+host=reports.example.com
+port=80
+timeout=6
+
+When you run the command kubectl create configmap myconfig --from-file=./appconfig.txt, however, the ConfigMap is created with the comments intact, which is causing your application to throw an error. How would you fix the command?
+kubectl create configmap myconfig --from-env-file=./appconfig.txt
+
+What is true of a Service in Kubernetes?
+A service is a representational state transfer (REST) object similar to a Pod. 
+
+Your team uses kubectl to manage all aspects of your company's Kubernetes deployment. You are onboarding several DevOps engineers on the team who will take over the day-to-day management of simple tasks related to deployments. Which solution is most appropriate and will help your company scale?
+The updated kubectl command structure 
+
+You created a Deployment with a Pod template. When the kubelet starts the container, there is startup failure. What fixes must you make in the container to overcome the failure?
+Set the imagePullPolicy to IfNotPresent instead of Never.
+
+What is correct about using Services in Kubernetes?
+The iptables proxy mode has an affect on clients passing with a load balancer.
+
+Which metadata field in a Pod is populated by the system?
+Generation
+
+Which workload resource would you use for an application that requires an ordered and automated rolling update?
+StatefulSets
+
+Based on the specification in the following Ingress configuration, what type of Ingress are you using?
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+ annotations:
+ nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+ rules:
+ - host: foo.bar.com
+ http:
+ paths:
+ - path: /foo
+ backend:
+ serviceName: service1
+ servicePort: 4200
+ - path: /bar
+ backend:
+ serviceName: service2
+ servicePort: 8080
+
+A simple fanout
+
+You used the hostPath PersistentVolume (PV) type to test a single node. Which type will you use to test multiple node clusters?
+Local
+
+
+
+
+You want to create a new CronJob object called demo-job that uses the image training/demo-job and runs the /scripts/job.sh script every minute. What command would you run in the Kubernetes command-line interface (CLI)?
+
+kubectl run demo-job --restart=OnFailure --schedule="*/1 * * * *" 
+                     --image=training/demo-job -- /scripts/job.sh
+
+Which is a valid label value?
+An empty value
+
+
+1.
+ 
+Based on the specification in the following Ingress configuration, what type of Ingress are you using?
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+ annotations:
+ nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+ rules:
+ - host: foo.bar.com
+ http:
+ paths:
+ - path: /foo
+ backend:
+ serviceName: service1
+ servicePort: 4200
+ - path: /bar
+ backend:
+ serviceName: service2
+ servicePort: 8080
+
+A simple fanout
+2.
+ 
+How are files from a directory defined inside a ConfigMap?
+
+With the contents of a single file in the data attribute or a collection of key/value pairs that are also defined in the data attribute of the object
+
+3.
+ 
+Which option must you set while creating a CronJob object to handle timezones?
+
+CRON_TZ
+4.
+ 
+What is the purpose of using the kompose up command?
+To create a Kubernetes deployment for a Dockerized application
+5.
+ 
+You created a Deployment with five replicas using the command kubectl apply -f https://eg.com/demo/controllers/dep.yaml. How can you verify if all five replicas are ready in the Deployment?
+
+Run kubectl get deployments and check if the AVAILABLE label has the number five in it.
+
+6.
+ 
+Which is a valid label value?
+An empty value
+7.
+ 
+Which workload resource would you use for an application that requires an ordered and automated rolling update?
+•  Your choice: correct -
+StatefulSets
+
+8.
+ 
+Which container acts as a client proxy and proxies the connections to the main container?
+Ambassador
+
+9.
+ 
+Which metadata field in a Pod is populated by the system?
+Generation
+
+10.
+ 
+An application is working for the past half hour but is not progressing. You suspect the application never started successfully so you use a startup probe to check when it was started. This doesn't resolve the issue, however. What else can you do to make the application progress?
+•  Your choice: correct -
+Use a liveness probe to catch any deadlock present in the application and restart it.
+
+11.
+ 
+You are working on an application that depends on a third-party service. When the application boots, it must perform a long-running handshake with the third party before it can successfully handle requests. How would you implement this in Kubernetes?
+
+Implement a readiness probe that checks if the third-party handshake was successful. Kubernetes will automatically handle the flow of traffic to the Pods.
+12.
+ 
+How many ways can you discover a Service in Kubernetes?
+2
+
+13.
+ 
+You are generating Kubernetes resources using kompose. You use the following kompose labels in your docker-compose.yaml file:
+You must define the kompose.service.type as nodeport instead.
+
+14.
+ 
+What is correct about using Services in Kubernetes?
+•  Correct -
+The iptables proxy mode has an affect on clients passing with a load balancer.
+15.
+ 
+You are diagnosing a problem, but running kubectl get events produces too many events for you to see the problem. Which command would you use to view only the important events?
+kubectl get events --field-selector type!=Normal
+16.
+ 
+In Kubernetes, which environment variable controls the log destination?
+KUBE_LOGGING_DESTINATION
+17.
+ 
+You have an application running on Kubernetes where communication to the configuration Service (which could be in a separate container) might be performed with a localhost. When you test the application, it fails with an error implying a communication issue with the config Service. What is the most likely explanation?
+The config Service is running in a separate Pod rather than a second container in the web application's Pod.
+18.
+ 
+You have a high-traffic application running on Kubernetes that is regularly updated with new code. You need the app to have zero downtime, instant switchover, and fast rollback in the event of an issue. What method will meet your needs?
+Using a blue-green deployment method
+19.
+ 
+Given the following PersistentVolumeClaim (PVC) and PersistentVolume (PV) definition:
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+name: persistent-disk-claim
+spec:
+accessModes:
+- ReadWriteOnce
+volumeMode: Filesystem
+resources:
+requests:
+storage: 8Gi
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+name: persistent-disk
+spec:
+capacity:
+storage: 8Gi
+volumeMode: Filesystem
+accessModes:
+- ReadWriteOnce
+persistentVolumeReclaimPolicy: Recycle
+storageClassName: Recyclable
+nfs:
+path: /tmp
+server: 172.17.0.2
+
+What changes can you make to allow the PVC to bind to the PV persistent-disk?
+Add the storageClassName: Recyclable attribute to the PVC.
+20.
+ 
+Why is Service an optional field in the Kubernetes web user interface (UI) deploy wizard?
+Because not every application needs to expose a Service to an external IP address
+
+
+Given the following PersistentVolume (PV) belonging to the storage class Recyclable:
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+name: persistent-disk
+spec:
+capacity:
+storage: 10Gi
+accessModes:
+- ReadWriteMany
+persistentVolumeReclaimPolicy: Recycle
+storageClassName: Recyclable
+nfs:
+path: /tmp
+server: 172.17.0.2
+
+What happens when a user creates a PersistentVolumeClaim (PVC) that is requesting storage capacity of 5 Gb and belongs to the same storage class Recyclable?
+A.  The PVC is created with 5 Gb of storage capacity and the PV locks the remaining amount.
+You modified the config/kernel-monitor.json file and removed the ReadonlyFilesystem condition from the file. How can you revert the changes back?
+A.  By creating a new ReadonlyFilesystem condition definition inside the conditions field along with a reason and a message
+You run a Deployment and create a Service. You confirmed that the Service exists, is reachable by Domain Name System (DNS) and IP, and has been crosschecked against the original YAML manifest. A Pod is not able to reach itself with a Service IP, however. What is the issue?
+•  The network is not properly configured for hairpin traffic.
+
+Why would you use the shorthand R with the kubectl rollout command?
+•  To process the directory specified in -f recursively
+
+Your team uses kubectl to manage all aspects of your company's Kubernetes deployment. You are onboarding several DevOps engineers on the team who will take over the day-to-day management of simple tasks related to deployments. Which solution is most appropriate and will help your company scale?
+•  The updated kubectl command structure 
+
+You created a Deployment with a Pod template. When the kubelet starts the container, there is startup failure. What fixes must you make in the container to overcome the failure?
+
+•  Set the imagePullPolicy to IfNotPresent instead of Never.
+
+ 
+You have a MongoDB server running in a Pod at port number 34121. You must access the database from your local system which means you require port forwarding. How will you achieve the task without choosing the port number manually?
+
+kubectl port-forward replicaset/mongo-3fj5sk9 :34121
+
+
+You want to fetch out the stable release and track the records weekly. To do so, you create two labels as follows:
+
+release!=canary,track!=daily
+
+
+
+What is the purpose of using the kompose up command?
+To create a Kubernetes deployment for a Dockerized application
+
+You deleted the PersistentVolumeClaim and released the volume. How can you reclaim the volume?
+Because the PersistentVolume still exists, delete it along with the data from the linked storage asset and the asset itself.
+
+What is true of a Service in Kubernetes?
+A.  A service is a representational state transfer (REST) object similar to a Pod. 
+
+
+4.
+ 
+You created a Deployment with a Pod template. When the kubelet starts the container, there is startup failure. What fixes must you make in the container to overcome the failure?
+Set the imagePullPolicy to IfNotPresent instead of Never.
+
+8.
+ 
+Your team uses kubectl to manage all aspects of your company's Kubernetes deployment. You are onboarding several DevOps engineers on the team who will take over the day-to-day management of simple tasks related to deployments. Which solution is most appropriate and will help your company scale?
+The updated kubectl command structure 
+
+9.
+ 
+You have a MongoDB server running in a Pod at port number 34121. You must access the database from your local system which means you require port forwarding. How will you achieve the task without choosing the port number manually?
+•  kubectl port-forward replicaset/mongo-3fj5sk9 :34121
+•  
+
+10.
+ 
+You must load the following configuration file into Kubernetes as a ConfigMap:
+
+## application config appconfig.txt
+## comments for dev use only
+
+host=reports.example.com
+port=80
+timeout=6
+
+When you run the command kubectl create configmap myconfig --from-file=./appconfig.txt, however, the ConfigMap is created with the comments intact, which is causing your application to throw an error. How would you fix the command?
+
+11.
+ 
+You must implement a probe to stop Pods from receiving traffic when they are busy. The probe should also make sure the Pods are taken out within 20 seconds, checking on the /healthz:8080 endpoint. What would be the correct YAML to configure this?
+readinessProbe:
+  httpGet:
+    path: /healthz
+    port: 8080
+  initialDelaySeconds: 3
+  periodSeconds: 5
+
+
+12.
+ 
+You want to create a new CronJob object called demo-job that uses the image training/demo-job and runs the /scripts/job.sh script every minute. What command would you run in the Kubernetes command-line interface (CLI)?
+kubectl run demo-job --restart=OnFailure --schedule="*/1 * * * *" 
+                     --image=training/demo-job -- /scripts/job.sh
+
+13.
+ 
+While working with kubectl, you encounter an error. To troubleshoot it, which verbosity level would you choose to get its detailed trace?
+--v=5
+
+17.
+ 
+As a namespace administrator, you need ultimate control over deployment security, but must allow your developers to configure within a range. How can you do this?
+Implement a security policy on the cluster and use securityContext in deployments as normal.
+
+19.
+ 
+You used the hostPath PersistentVolume (PV) type to test a single node. Which type will you use to test multiple node clusters?
+Local
+
+22.
+ 
+What is the first step to take in a canary deployment in Kubernetes?
+Ensure that the Service does not have a version selector.
+
+1.
+ 
+Based on the specification in the following Ingress configuration, what type of Ingress are you using?
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+ annotations:
+ nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+ rules:
+ - host: foo.bar.com
+ http:
+ paths:
+ - path: /foo
+ backend:
+ serviceName: service1
+ servicePort: 4200
+ - path: /bar
+ backend:
+ serviceName: service2
+ servicePort: 8080
+
+A simple fanout
+2.
+ 
+How are files from a directory defined inside a ConfigMap?
+
+With the contents of a single file in the data attribute or a collection of key/value pairs that are also defined in the data attribute of the object
+
+3.
+ 
+Which option must you set while creating a CronJob object to handle timezones?
+
+CRON_TZ
+4.
+ 
+What is the purpose of using the kompose up command?
+To create a Kubernetes deployment for a Dockerized application
+5.
+ 
+You created a Deployment with five replicas using the command kubectl apply -f https://eg.com/demo/controllers/dep.yaml. How can you verify if all five replicas are ready in the Deployment?
+
+Run kubectl get deployments and check if the AVAILABLE label has the number five in it.
+
+6.
+ 
+Which is a valid label value?
+An empty value
+7.
+ 
+Which workload resource would you use for an application that requires an ordered and automated rolling update?
+•  Your choice: correct -
+StatefulSets
+
+8.
+ 
+Which container acts as a client proxy and proxies the connections to the main container?
+Ambassador
+
+9.
+ 
+Which metadata field in a Pod is populated by the system?
+Generation
+
+10.
+ 
+An application is working for the past half hour but is not progressing. You suspect the application never started successfully so you use a startup probe to check when it was started. This doesn't resolve the issue, however. What else can you do to make the application progress?
+•  Your choice: correct -
+Use a liveness probe to catch any deadlock present in the application and restart it.
+
+11.
+ 
+You are working on an application that depends on a third-party service. When the application boots, it must perform a long-running handshake with the third party before it can successfully handle requests. How would you implement this in Kubernetes?
+
+Implement a readiness probe that checks if the third-party handshake was successful. Kubernetes will automatically handle the flow of traffic to the Pods.
+12.
+ 
+How many ways can you discover a Service in Kubernetes?
+2
+
+13.
+ 
+You are generating Kubernetes resources using kompose. You use the following kompose labels in your docker-compose.yaml file:
+You must define the kompose.service.type as nodeport instead.
+
+14.
+ 
+What is correct about using Services in Kubernetes?
+•  Correct -
+The iptables proxy mode has an affect on clients passing with a load balancer.
+15.
+ 
+You are diagnosing a problem, but running kubectl get events produces too many events for you to see the problem. Which command would you use to view only the important events?
+kubectl get events --field-selector type!=Normal
+16.
+ 
+In Kubernetes, which environment variable controls the log destination?
+KUBE_LOGGING_DESTINATION
+17.
+ 
+You have an application running on Kubernetes where communication to the configuration Service (which could be in a separate container) might be performed with a localhost. When you test the application, it fails with an error implying a communication issue with the config Service. What is the most likely explanation?
+The config Service is running in a separate Pod rather than a second container in the web application's Pod.
+18.
+ 
+You have a high-traffic application running on Kubernetes that is regularly updated with new code. You need the app to have zero downtime, instant switchover, and fast rollback in the event of an issue. What method will meet your needs?
+Using a blue-green deployment method
+19.
+ 
+Given the following PersistentVolumeClaim (PVC) and PersistentVolume (PV) definition:
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+name: persistent-disk-claim
+spec:
+accessModes:
+- ReadWriteOnce
+volumeMode: Filesystem
+resources:
+requests:
+storage: 8Gi
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+name: persistent-disk
+spec:
+capacity:
+storage: 8Gi
+volumeMode: Filesystem
+accessModes:
+- ReadWriteOnce
+persistentVolumeReclaimPolicy: Recycle
+storageClassName: Recyclable
+nfs:
+path: /tmp
+server: 172.17.0.2
+
+What changes can you make to allow the PVC to bind to the PV persistent-disk?
+Add the storageClassName: Recyclable attribute to the PVC.
+20.
+ 
+Why is Service an optional field in the Kubernetes web user interface (UI) deploy wizard?
+Because not every application needs to expose a Service to an external IP address
+
+
+1.
+ 
+Based on the specification in the following Ingress configuration, what type of Ingress are you using?
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+ annotations:
+ nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+ rules:
+ - host: foo.bar.com
+ http:
+ paths:
+ - path: /foo
+ backend:
+ serviceName: service1
+ servicePort: 4200
+ - path: /bar
+ backend:
+ serviceName: service2
+ servicePort: 8080
+
+A simple fanout
+2.
+ 
+How are files from a directory defined inside a ConfigMap?
+
+With the contents of a single file in the data attribute or a collection of key/value pairs that are also defined in the data attribute of the object
+
+3.
+ 
+Which option must you set while creating a CronJob object to handle timezones?
+
+CRON_TZ
+4.
+ 
+What is the purpose of using the kompose up command?
+To create a Kubernetes deployment for a Dockerized application
+5.
+ 
+You created a Deployment with five replicas using the command kubectl apply -f https://eg.com/demo/controllers/dep.yaml. How can you verify if all five replicas are ready in the Deployment?
+
+Run kubectl get deployments and check if the AVAILABLE label has the number five in it.
+
+6.
+ 
+Which is a valid label value?
+An empty value
+7.
+ 
+Which workload resource would you use for an application that requires an ordered and automated rolling update?
+•  Your choice: correct -
+StatefulSets
+
+8.
+ 
+Which container acts as a client proxy and proxies the connections to the main container?
+Ambassador
+
+9.
+ 
+Which metadata field in a Pod is populated by the system?
+Generation
+
+10.
+ 
+An application is working for the past half hour but is not progressing. You suspect the application never started successfully so you use a startup probe to check when it was started. This doesn't resolve the issue, however. What else can you do to make the application progress?
+•  Your choice: correct -
+Use a liveness probe to catch any deadlock present in the application and restart it.
+
+11.
+ 
+You are working on an application that depends on a third-party service. When the application boots, it must perform a long-running handshake with the third party before it can successfully handle requests. How would you implement this in Kubernetes?
+
+Implement a readiness probe that checks if the third-party handshake was successful. Kubernetes will automatically handle the flow of traffic to the Pods.
+12.
+ 
+How many ways can you discover a Service in Kubernetes?
+2
+
+13.
+ 
+You are generating Kubernetes resources using kompose. You use the following kompose labels in your docker-compose.yaml file:
+You must define the kompose.service.type as nodeport instead.
+
+14.
+ 
+What is correct about using Services in Kubernetes?
+•  Correct -
+The iptables proxy mode has an affect on clients passing with a load balancer.
+15.
+ 
+You are diagnosing a problem, but running kubectl get events produces too many events for you to see the problem. Which command would you use to view only the important events?
+kubectl get events --field-selector type!=Normal
+16.
+ 
+In Kubernetes, which environment variable controls the log destination?
+KUBE_LOGGING_DESTINATION
+17.
+ 
+You have an application running on Kubernetes where communication to the configuration Service (which could be in a separate container) might be performed with a localhost. When you test the application, it fails with an error implying a communication issue with the config Service. What is the most likely explanation?
+The config Service is running in a separate Pod rather than a second container in the web application's Pod.
+18.
+ 
+You have a high-traffic application running on Kubernetes that is regularly updated with new code. You need the app to have zero downtime, instant switchover, and fast rollback in the event of an issue. What method will meet your needs?
+Using a blue-green deployment method
+19.
+ 
+Given the following PersistentVolumeClaim (PVC) and PersistentVolume (PV) definition:
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+name: persistent-disk-claim
+spec:
+accessModes:
+- ReadWriteOnce
+volumeMode: Filesystem
+resources:
+requests:
+storage: 8Gi
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+name: persistent-disk
+spec:
+capacity:
+storage: 8Gi
+volumeMode: Filesystem
+accessModes:
+- ReadWriteOnce
+persistentVolumeReclaimPolicy: Recycle
+storageClassName: Recyclable
+nfs:
+path: /tmp
+server: 172.17.0.2
+
+What changes can you make to allow the PVC to bind to the PV persistent-disk?
+Add the storageClassName: Recyclable attribute to the PVC.
+20.
+ 
+Why is Service an optional field in the Kubernetes web user interface (UI) deploy wizard?
+Because not every application needs to expose a Service to an external IP address
+
+
+Given the following PersistentVolume (PV) belonging to the storage class Recyclable:
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+name: persistent-disk
+spec:
+capacity:
+storage: 10Gi
+accessModes:
+- ReadWriteMany
+persistentVolumeReclaimPolicy: Recycle
+storageClassName: Recyclable
+nfs:
+path: /tmp
+server: 172.17.0.2
+
+What happens when a user creates a PersistentVolumeClaim (PVC) that is requesting storage capacity of 5 Gb and belongs to the same storage class Recyclable?
+A.  The PVC is created with 5 Gb of storage capacity and the PV locks the remaining amount.
+You modified the config/kernel-monitor.json file and removed the ReadonlyFilesystem condition from the file. How can you revert the changes back?
+A.  By creating a new ReadonlyFilesystem condition definition inside the conditions field along with a reason and a message
+You run a Deployment and create a Service. You confirmed that the Service exists, is reachable by Domain Name System (DNS) and IP, and has been crosschecked against the original YAML manifest. A Pod is not able to reach itself with a Service IP, however. What is the issue?
+•  The network is not properly configured for hairpin traffic.
+
+Why would you use the shorthand R with the kubectl rollout command?
+•  To process the directory specified in -f recursively
+
+Your team uses kubectl to manage all aspects of your company's Kubernetes deployment. You are onboarding several DevOps engineers on the team who will take over the day-to-day management of simple tasks related to deployments. Which solution is most appropriate and will help your company scale?
+•  The updated kubectl command structure 
+
+You created a Deployment with a Pod template. When the kubelet starts the container, there is startup failure. What fixes must you make in the container to overcome the failure?
+
+•  Set the imagePullPolicy to IfNotPresent instead of Never.
+
+ 
+You have a MongoDB server running in a Pod at port number 34121. You must access the database from your local system which means you require port forwarding. How will you achieve the task without choosing the port number manually?
+
+kubectl port-forward replicaset/mongo-3fj5sk9 :34121
+
+
+You want to fetch out the stable release and track the records weekly. To do so, you create two labels as follows:
+
+release!=canary,track!=daily
+
+
+
+What is the purpose of using the kompose up command?
+To create a Kubernetes deployment for a Dockerized application
+
+You deleted the PersistentVolumeClaim and released the volume. How can you reclaim the volume?
+Because the PersistentVolume still exists, delete it along with the data from the linked storage asset and the asset itself.
+
+What is true of a Service in Kubernetes?
+A.  A service is a representational state transfer (REST) object similar to a Pod. 
+
+
+4.
+ 
+You created a Deployment with a Pod template. When the kubelet starts the container, there is startup failure. What fixes must you make in the container to overcome the failure?
+Set the imagePullPolicy to IfNotPresent instead of Never.
+
+8.
+ 
+Your team uses kubectl to manage all aspects of your company's Kubernetes deployment. You are onboarding several DevOps engineers on the team who will take over the day-to-day management of simple tasks related to deployments. Which solution is most appropriate and will help your company scale?
+The updated kubectl command structure 
+
+9.
+ 
+You have a MongoDB server running in a Pod at port number 34121. You must access the database from your local system which means you require port forwarding. How will you achieve the task without choosing the port number manually?
+•  kubectl port-forward replicaset/mongo-3fj5sk9 :34121
+•  
+
+10.
+ 
+You must load the following configuration file into Kubernetes as a ConfigMap:
+
+## application config appconfig.txt
+## comments for dev use only
+
+host=reports.example.com
+port=80
+timeout=6
+
+When you run the command kubectl create configmap myconfig --from-file=./appconfig.txt, however, the ConfigMap is created with the comments intact, which is causing your application to throw an error. How would you fix the command?
+
+11.
+ 
+You must implement a probe to stop Pods from receiving traffic when they are busy. The probe should also make sure the Pods are taken out within 20 seconds, checking on the /healthz:8080 endpoint. What would be the correct YAML to configure this?
+readinessProbe:
+  httpGet:
+    path: /healthz
+    port: 8080
+  initialDelaySeconds: 3
+  periodSeconds: 5
+
+
+12.
+ 
+You want to create a new CronJob object called demo-job that uses the image training/demo-job and runs the /scripts/job.sh script every minute. What command would you run in the Kubernetes command-line interface (CLI)?
+kubectl run demo-job --restart=OnFailure --schedule="*/1 * * * *" 
+                     --image=training/demo-job -- /scripts/job.sh
+
+13.
+ 
+While working with kubectl, you encounter an error. To troubleshoot it, which verbosity level would you choose to get its detailed trace?
+--v=5
+
+17.
+ 
+As a namespace administrator, you need ultimate control over deployment security, but must allow your developers to configure within a range. How can you do this?
+Implement a security policy on the cluster and use securityContext in deployments as normal.
+
+19.
+ 
+You used the hostPath PersistentVolume (PV) type to test a single node. Which type will you use to test multiple node clusters?
+Local
+
+22.
+ 
+What is the first step to take in a canary deployment in Kubernetes?
+Ensure that the Service does not have a version selector.
+
+v1.
+ 
+Based on the specification in the following Ingress configuration, what type of Ingress are you using?
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+ annotations:
+ nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+ rules:
+ - host: foo.bar.com
+ http:
+ paths:
+ - path: /foo
+ backend:
+ serviceName: service1
+ servicePort: 4200
+ - path: /bar
+ backend:
+ serviceName: service2
+ servicePort: 8080
+
+A simple fanout
+2.
+ 
+How are files from a directory defined inside a ConfigMap?
+
+With the contents of a single file in the data attribute or a collection of key/value pairs that are also defined in the data attribute of the object
+
+3.
+ 
+Which option must you set while creating a CronJob object to handle timezones?
+
+CRON_TZ
+4.
+ 
+What is the purpose of using the kompose up command?
+To create a Kubernetes deployment for a Dockerized application
+5.
+ 
+You created a Deployment with five replicas using the command kubectl apply -f https://eg.com/demo/controllers/dep.yaml. How can you verify if all five replicas are ready in the Deployment?
+
+Run kubectl get deployments and check if the AVAILABLE label has the number five in it.
+
+6.
+ 
+Which is a valid label value?
+An empty value
+7.
+ 
+Which workload resource would you use for an application that requires an ordered and automated rolling update?
+•  Your choice: correct -
+StatefulSets
+
+8.
+ 
+Which container acts as a client proxy and proxies the connections to the main container?
+Ambassador
+
+9.
+ 
+Which metadata field in a Pod is populated by the system?
+Generation
+
+10.
+ 
+An application is working for the past half hour but is not progressing. You suspect the application never started successfully so you use a startup probe to check when it was started. This doesn't resolve the issue, however. What else can you do to make the application progress?
+•  Your choice: correct -
+Use a liveness probe to catch any deadlock present in the application and restart it.
+
+11.
+ 
+You are working on an application that depends on a third-party service. When the application boots, it must perform a long-running handshake with the third party before it can successfully handle requests. How would you implement this in Kubernetes?
+
+Implement a readiness probe that checks if the third-party handshake was successful. Kubernetes will automatically handle the flow of traffic to the Pods.
+12.
+ 
+How many ways can you discover a Service in Kubernetes?
+2
+
+13.
+ 
+You are generating Kubernetes resources using kompose. You use the following kompose labels in your docker-compose.yaml file:
+You must define the kompose.service.type as nodeport instead.
+
+14.
+ 
+What is correct about using Services in Kubernetes?
+•  Correct -
+The iptables proxy mode has an affect on clients passing with a load balancer.
+15.
+ 
+You are diagnosing a problem, but running kubectl get events produces too many events for you to see the problem. Which command would you use to view only the important events?
+kubectl get events --field-selector type!=Normal
+16.
+ 
+In Kubernetes, which environment variable controls the log destination?
+KUBE_LOGGING_DESTINATION
+17.
+ 
+You have an application running on Kubernetes where communication to the configuration Service (which could be in a separate container) might be performed with a localhost. When you test the application, it fails with an error implying a communication issue with the config Service. What is the most likely explanation?
+The config Service is running in a separate Pod rather than a second container in the web application's Pod.
+18.
+ 
+You have a high-traffic application running on Kubernetes that is regularly updated with new code. You need the app to have zero downtime, instant switchover, and fast rollback in the event of an issue. What method will meet your needs?
+Using a blue-green deployment method
+19.
+ 
+Given the following PersistentVolumeClaim (PVC) and PersistentVolume (PV) definition:
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+name: persistent-disk-claim
+spec:
+accessModes:
+- ReadWriteOnce
+volumeMode: Filesystem
+resources:
+requests:
+storage: 8Gi
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+name: persistent-disk
+spec:
+capacity:
+storage: 8Gi
+volumeMode: Filesystem
+accessModes:
+- ReadWriteOnce
+persistentVolumeReclaimPolicy: Recycle
+storageClassName: Recyclable
+nfs:
+path: /tmp
+server: 172.17.0.2
+
+What changes can you make to allow the PVC to bind to the PV persistent-disk?
+Add the storageClassName: Recyclable attribute to the PVC.
+20.
+ 
+Why is Service an optional field in the Kubernetes web user interface (UI) deploy wizard?
+Because not every application needs to expose a Service to an external IP address
+
+
+Given the following PersistentVolume (PV) belonging to the storage class Recyclable:
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+name: persistent-disk
+spec:
+capacity:
+storage: 10Gi
+accessModes:
+- ReadWriteMany
+persistentVolumeReclaimPolicy: Recycle
+storageClassName: Recyclable
+nfs:
+path: /tmp
+server: 172.17.0.2
+
+What happens when a user creates a PersistentVolumeClaim (PVC) that is requesting storage capacity of 5 Gb and belongs to the same storage class Recyclable?
+A.  The PVC is created with 5 Gb of storage capacity and the PV locks the remaining amount.
+You modified the config/kernel-monitor.json file and removed the ReadonlyFilesystem condition from the file. How can you revert the changes back?
+A.  By creating a new ReadonlyFilesystem condition definition inside the conditions field along with a reason and a message
+You run a Deployment and create a Service. You confirmed that the Service exists, is reachable by Domain Name System (DNS) and IP, and has been crosschecked against the original YAML manifest. A Pod is not able to reach itself with a Service IP, however. What is the issue?
+•  The network is not properly configured for hairpin traffic.
+
+Why would you use the shorthand R with the kubectl rollout command?
+•  To process the directory specified in -f recursively
+
+Your team uses kubectl to manage all aspects of your company's Kubernetes deployment. You are onboarding several DevOps engineers on the team who will take over the day-to-day management of simple tasks related to deployments. Which solution is most appropriate and will help your company scale?
+•  The updated kubectl command structure 
+
+You created a Deployment with a Pod template. When the kubelet starts the container, there is startup failure. What fixes must you make in the container to overcome the failure?
+
+•  Set the imagePullPolicy to IfNotPresent instead of Never.
+
+ 
+You have a MongoDB server running in a Pod at port number 34121. You must access the database from your local system which means you require port forwarding. How will you achieve the task without choosing the port number manually?
+
+kubectl port-forward replicaset/mongo-3fj5sk9 :34121
+
+
+You want to fetch out the stable release and track the records weekly. To do so, you create two labels as follows:
+
+release!=canary,track!=daily
+
+
+
+What is the purpose of using the kompose up command?
+To create a Kubernetes deployment for a Dockerized application
+
+You deleted the PersistentVolumeClaim and released the volume. How can you reclaim the volume?
+Because the PersistentVolume still exists, delete it along with the data from the linked storage asset and the asset itself.
+
+What is true of a Service in Kubernetes?
+A.  A service is a representational state transfer (REST) object similar to a Pod. 
+
+
+4.
+ 
+You created a Deployment with a Pod template. When the kubelet starts the container, there is startup failure. What fixes must you make in the container to overcome the failure?
+Set the imagePullPolicy to IfNotPresent instead of Never.
+
+8.
+ 
+Your team uses kubectl to manage all aspects of your company's Kubernetes deployment. You are onboarding several DevOps engineers on the team who will take over the day-to-day management of simple tasks related to deployments. Which solution is most appropriate and will help your company scale?
+The updated kubectl command structure 
+
+9.
+ 
+You have a MongoDB server running in a Pod at port number 34121. You must access the database from your local system which means you require port forwarding. How will you achieve the task without choosing the port number manually?
+•  kubectl port-forward replicaset/mongo-3fj5sk9 :34121
+•  
+
+10.
+ 
+You must load the following configuration file into Kubernetes as a ConfigMap:
+
+## application config appconfig.txt
+## comments for dev use only
+
+host=reports.example.com
+port=80
+timeout=6
+
+When you run the command kubectl create configmap myconfig --from-file=./appconfig.txt, however, the ConfigMap is created with the comments intact, which is causing your application to throw an error. How would you fix the command?
+
+11.
+ 
+You must implement a probe to stop Pods from receiving traffic when they are busy. The probe should also make sure the Pods are taken out within 20 seconds, checking on the /healthz:8080 endpoint. What would be the correct YAML to configure this?
+readinessProbe:
+  httpGet:
+    path: /healthz
+    port: 8080
+  initialDelaySeconds: 3
+  periodSeconds: 5
+
+
+12.
+ 
+You want to create a new CronJob object called demo-job that uses the image training/demo-job and runs the /scripts/job.sh script every minute. What command would you run in the Kubernetes command-line interface (CLI)?
+kubectl run demo-job --restart=OnFailure --schedule="*/1 * * * *" 
+                     --image=training/demo-job -- /scripts/job.sh
+
+13.
+ 
+While working with kubectl, you encounter an error. To troubleshoot it, which verbosity level would you choose to get its detailed trace?
+--v=5
+
+17.
+ 
+As a namespace administrator, you need ultimate control over deployment security, but must allow your developers to configure within a range. How can you do this?
+Implement a security policy on the cluster and use securityContext in deployments as normal.
+
+19.
+ 
+You used the hostPath PersistentVolume (PV) type to test a single node. Which type will you use to test multiple node clusters?
+Local
+
+22.
+ 
+What is the first step to take in a canary deployment in Kubernetes?
+Ensure that the Service does not have a version selector.
+
+1.
+ 
+Based on the specification in the following Ingress configuration, what type of Ingress are you using?
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+ annotations:
+ nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+ rules:
+ - host: foo.bar.com
+ http:
+ paths:
+ - path: /foo
+ backend:
+ serviceName: service1
+ servicePort: 4200
+ - path: /bar
+ backend:
+ serviceName: service2
+ servicePort: 8080
+
+A simple fanout
+2.
+ 
+How are files from a directory defined inside a ConfigMap?
+
+With the contents of a single file in the data attribute or a collection of key/value pairs that are also defined in the data attribute of the object
+
+3.
+ 
+Which option must you set while creating a CronJob object to handle timezones?
+
+CRON_TZ
+4.
+ 
+What is the purpose of using the kompose up command?
+To create a Kubernetes deployment for a Dockerized application
+5.
+ 
+You created a Deployment with five replicas using the command kubectl apply -f https://eg.com/demo/controllers/dep.yaml. How can you verify if all five replicas are ready in the Deployment?
+
+Run kubectl get deployments and check if the AVAILABLE label has the number five in it.
+
+6.
+ 
+Which is a valid label value?
+An empty value
+7.
+ 
+Which workload resource would you use for an application that requires an ordered and automated rolling update?
+•  Your choice: correct -
+StatefulSets
+
+8.
+ 
+Which container acts as a client proxy and proxies the connections to the main container?
+Ambassador
+
+9.
+ 
+Which metadata field in a Pod is populated by the system?
+Generation
+
+10.
+ 
+An application is working for the past half hour but is not progressing. You suspect the application never started successfully so you use a startup probe to check when it was started. This doesn't resolve the issue, however. What else can you do to make the application progress?
+•  Your choice: correct -
+Use a liveness probe to catch any deadlock present in the application and restart it.
+
+11.
+ 
+You are working on an application that depends on a third-party service. When the application boots, it must perform a long-running handshake with the third party before it can successfully handle requests. How would you implement this in Kubernetes?
+
+Implement a readiness probe that checks if the third-party handshake was successful. Kubernetes will automatically handle the flow of traffic to the Pods.
+12.
+ 
+How many ways can you discover a Service in Kubernetes?
+2
+
+13.
+ 
+You are generating Kubernetes resources using kompose. You use the following kompose labels in your docker-compose.yaml file:
+You must define the kompose.service.type as nodeport instead.
+
+14.
+ 
+What is correct about using Services in Kubernetes?
+•  Correct -
+The iptables proxy mode has an affect on clients passing with a load balancer.
+15.
+ 
+You are diagnosing a problem, but running kubectl get events produces too many events for you to see the problem. Which command would you use to view only the important events?
+kubectl get events --field-selector type!=Normal
+16.
+ 
+In Kubernetes, which environment variable controls the log destination?
+KUBE_LOGGING_DESTINATION
+17.
+ 
+You have an application running on Kubernetes where communication to the configuration Service (which could be in a separate container) might be performed with a localhost. When you test the application, it fails with an error implying a communication issue with the config Service. What is the most likely explanation?
+The config Service is running in a separate Pod rather than a second container in the web application's Pod.
+18.
+ 
+You have a high-traffic application running on Kubernetes that is regularly updated with new code. You need the app to have zero downtime, instant switchover, and fast rollback in the event of an issue. What method will meet your needs?
+Using a blue-green deployment method
+19.
+ 
+Given the following PersistentVolumeClaim (PVC) and PersistentVolume (PV) definition:
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+name: persistent-disk-claim
+spec:
+accessModes:
+- ReadWriteOnce
+volumeMode: Filesystem
+resources:
+requests:
+storage: 8Gi
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+name: persistent-disk
+spec:
+capacity:
+storage: 8Gi
+volumeMode: Filesystem
+accessModes:
+- ReadWriteOnce
+persistentVolumeReclaimPolicy: Recycle
+storageClassName: Recyclable
+nfs:
+path: /tmp
+server: 172.17.0.2
+
+What changes can you make to allow the PVC to bind to the PV persistent-disk?
+
+Add the storageClassName: Recyclable attribute to the PVC.
+20.
+ 
+Why is Service an optional field in the Kubernetes web user interface (UI) deploy wizard?
+Because not every application needs to expose a Service to an external IP address
+
+
+1. In Kubernetes, what feature does Ingress provide?
+Your choice: correct -
+Name-based virtual hosting
+
+Incorrect -
+Port forwarding
+
+Incorrect -
+Cluster protection
+
+Incorrect -
+Pod security
+
+Incorrect -
+I don't know yet.
+
+2. Why is Service an optional field in the Kubernetes web user interface (UI) deploy wizard?
+Incorrect -
+Because not every application necessarily contains a Service
+
+Correct -
+Because not every application needs to expose a Service to an external IP address
+
+Your choice: incorrect -
+Because Pods with Service resources are deployed as resource objects
+
+Incorrect -
+Because the dedicated resources for Services are expensive and thereby optional
+
+Incorrect -
+I don't know yet.
+
+3. Containers within a Pod share an IP address and port space. What special function does this enable for containers?
+Your choice: incorrect -
+The ability to communicate through System V semaphores or Portable Operating System Interface (POSIX) shared memory
+
+Incorrect -
+The ability to seamlessly communicate with containers in other Pods with a Pod address
+
+Incorrect -
+The ability to communicate with inter process communication (IPC)
+
+Correct -
+The ability to find each other with localhost
+
+Incorrect -
+I don't know yet.
+
+4. What does a Kubernetes cluster IP do?
+Correct -
+Exposes the Service on a cluster-internal IP; choosing this makes the Service only reachable from within the cluster
+
+Your choice: incorrect -
+Exposes the Service on an internal virtual multicast IP address that all the Pods listen to; choosing this makes the Service only reachable from within the cluster but ignores all namespacing
+
+Incorrect -
+Exposes the service on a new IP that is shared using multicast between all the worker nodes; choosing this makes the Service accessible outside the cluster
+
+Incorrect -
+Exposes the Service on a worker node's network address; choosing this makes the Service accessible outside the cluster
+
+Incorrect -
+I don't know yet.
+
+5. A Pod named demo-application-1 is mounting the PersistentVolumeClaim (PVC) called slow-storage-pvc, which has the following definition: 
+apiVersion: v1 
+kind: PersistentVolumeClaim 
+metadata:
+   name: slow-storage-pvc 
+spec:
+   accessModes:
+     - ReadWriteOnce
+   volumeMode: block
+   resources:
+     requests:
+       storage: 8Gi
+   storageClassName: slow 
+What will happen if you mount the PVC slow-storage-pvc to a new Pod demo-application-2 under the same file system path as demo-application-1? 
+Incorrect -
+The operation will succeed and mount the shared PVC to the new Pod under the specified file system path.
+
+Incorrect -
+The operation will fail because the PVC is mounted under the same file system in the Pods.
+
+Your choice: incorrect -
+The operation will fail because the volumeMode attribute is set to block and should be set to filesystem.
+
+Correct -
+The operation will fail because the ReadWriteOnce access mode restricts other Pods from mounting the PVC.
+
+Incorrect -
+I don't know yet.
+
+6. What can you infer from the following kubectl command?
+kubectl logs -f -c ruby demo
+Incorrect -
+The demo container logs begin to stream in the ruby Pod. 
+
+Your choice: correct -
+The ruby container logs begin to stream in the demo Pod.
+
+Incorrect -
+The streaming of ruby container logs in the demo Pod is suspended.
+
+Incorrect -
+The streaming of demo container logs in the ruby Pod is suspended. 
+
+Incorrect -
+I don't know yet.
+
+7. Consider the following configuration file of a Service with multiple ports:
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-demo
+spec:
+  selector:
+    app: PSDemo
+  ports:
+    - name: 0_http
+      protocol: TCP
+      port: 80
+      targetPort: 2342
+    - name: https-p
+      protocol: TCP
+      port: 443
+      targetPort: 9871
+This file results in an error because of an invalid port name. What fixes must you make to remove the error?
+Your choice: incorrect -
+Replace https-p with https_p.
+
+Correct -
+Remove 0_ from 0_http.
+
+Incorrect -
+Remove -p from https-p.
+
+Incorrect -
+Replace 0_http with ~http_0.
+
+Incorrect -
+I don't know yet.
+
+8. In Kubernetes, what is the most common cause of a Pod becoming stuck in Pending when trying to become scheduled onto a node?
+Incorrect -
+Because the Pod is naturally leaking resources and therefore is faulty
+
+Incorrect -
+Because Pods contain state and must be scheduled two at a time
+
+Your choice: incorrect -
+Because the node is full and cannot handle the Pod
+
+Correct -
+Because of insufficient resources in the Pod of one type or another
+
+Incorrect -
+I don't know yet.
+
+9. Why is it uncommon to create individual Pods, including singleton Pods, in Kubernetes? 
+Correct -
+Because Pods are designed to have a relatively short life span and are disposable entities 
+
+Your choice: incorrect -
+Because Pods are durable by design, so you should only configure them as a subset of Deploy resources
+
+Incorrect -
+Because Pods share resources and there should always be a configuration of two or more
+
+Incorrect -
+Because Pods contain state and therefore need another Pod to hold and preserve that state
+
+Incorrect -
+I don't know yet.
+
+10. What is a liveness probe?
+Correct -
+A periodic check on whether a Pod is healthy and can continue to receive traffic
+
+Incorrect -
+A check on whether a Deployment is ready to receive traffic after creation
+
+Incorrect -
+A periodic check on whether a Deployment is healthy and can continue to receive traffic
+
+Your choice: incorrect -
+A check on whether a Pod is ready to receive traffic after creation
+
+Incorrect -
+I don't know yet.
+
+11. When using a managed Kubernetes service from a cloud services provider, what responsibilities does the cloud provider have for the cluster?
+Your choice: correct -
+It must ensure that the Kubernetes control plane, and the underlying compute and network infrastructure, are operational.
+
+Incorrect -
+It must ensure that the control plane is highly available.
+
+Incorrect -
+It must ensure that the other cloud services are integrated into the Kubernetes as a platform.
+
+Incorrect -
+It must ensure that the Kubernetes API is available from all worker nodes.
+
+Incorrect -
+I don't know yet.
+
+12. The command kubectl describe nginx-deployment-1006230814-6winp, when run, produces an error. Why?
+Incorrect -
+The line is missing the node command.
+
+Incorrect -
+You cannot describe a specific Pod.
+
+Correct -
+The line is missing the pod command.
+
+Your choice: incorrect -
+The line is missing -o yaml command.
+
+Incorrect -
+I don't know yet.
+
+13. You restart your application and it is not serving the traffic for the first five seconds. You analyze the issue and the delay is because of the app's dependencies on a few external services after its startup. To resolve the issue, you create a startup probe as follows:
+startupProbe:
+  exec:
+    command:
+    - cat
+    - /tmp/healthy
+  initialDelaySeconds: 5
+  periodSeconds: 5
+This doesn't resolve the issue, however. What changes must you make in the code so Kubernetes Services do not send traffic to the Pod until it is ready to receive?
+Incorrect -
+Use failureThreshold instead of initialDelaySeconds.
+
+Incorrect -
+Use a liveness probe instead of a startup probe.
+
+Incorrect -
+Use failureThreshold instead of periodSeconds. 
+
+Your choice: correct -
+Use a readiness probe instead of a startup probe.
+
+Incorrect -
+I don't know yet.
+
+14. You have a container in a Pod and you opened its configuration file to update it. How will you add two environment variables, foo (or FOO) and bar (or BAR), to the container with the values xyz and pqr respectively?
+Incorrect -
+env:
+- pathName: foo
+  assignValue: "xyz"
+- pathName: bar
+  assignValue: "pqr"
+Your choice: incorrect -
+env:
+- pathName: FOO
+  value: "xyz"
+- pathName: BAR
+  value: "pqr" 
+Correct -
+env:
+- name: FOO
+  value: "xyz"
+- name: BAR
+  value: "pqr"
+Incorrect -
+env:
+- name: {foo: "xyz", bar: "pqr"}
+Incorrect -
+I don't know yet.
+
+15. Your team developed a microservice application to run on a Kubernetes platform that uses an Ingress controller to route traffic and one deployment definition per microservice. The team takes the current Deployment definition:
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: user--profile-deployment
+    labels:
+        app: user-profile
+        version: 1.02
+spec:
+    replicas: 4
+    selector:
+        matchLabels:
+            app: user-profile
+    template:
+    metadata:
+        labels:
+            app: user-profile
+            version: 1.02
+    spec:
+        containers:
+        - name: userprofile
+          image: user-profile:1.02
+          ports:
+            - containerPort: 80
+and creates a derivative for the new version:
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: user--profile-deployment
+    labels:
+        app: user-profile
+        version: 1.03
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: user-profile
+    template:
+        metadata:
+            labels:
+                app: user-profile
+                version: 1.03
+    spec:
+    containers:
+    - name: userprofile
+      image: user-profile:1.03
+      ports:
+        - containerPort: 80
+The new version of the application works and a blue/green style switch happens on the Ingress controller to complete the deployment, but error rates start to increase. What is the most likely explanation? 
+Incorrect -
+The new code is not as efficient. Roll back and re-evaluate the code changes for performance issues.
+
+Incorrect -
+The version numbers are mismatched in the Ingress controller with the new deployment version.
+
+Incorrect -
+The cluster needs an additional worker node to run the extra containers.
+
+Your choice: correct -
+The ReplicaSet for the new version has a minimum of one rather than four, meaning the user profile is most likely the bottleneck.
+
+Incorrect -
+I don't know yet.
+
+16. What command can create a ConfigMap object called app-config with the contents of the file ./app-config.yaml?
+Incorrect -
+kubectl init configmap --name=app-config --file=./app-config.yaml
+
+Your choice: correct -
+kubectl create configmap app-config --from-file=./app-config.yaml
+
+Incorrect -
+kubectl create cmap --name=app-config --from-file=./app-config.yaml
+
+Incorrect -
+kubectl build configmap app-config ./app-config.yaml
+
+Incorrect -
+I don't know yet.
+
+17. What do CronJob resources do in a Kubernetes cluster?
+Incorrect -
+Deploy applications on all the cluster nodes
+
+Incorrect -
+Group Job objects by label selectors
+
+Your choice: incorrect -
+Automate application deployments only at specific schedules
+
+Correct -
+Run time-based Jobs
+
+Incorrect -
+I don't know yet.
+
+18. Consider the following Pod specification:
+...
+spec:
+  containers:
+  - name: count
+    image: busybox
+    args: 
+     - /bin/sh,
+     - -c,
+     i=0; 
+     while true; 
+     do 
+        echo "$i: $(date)"; 
+        i=$((i+1)); 
+        sleep 1; 
+     done
+What is the time interval for receiving logs in this Pod?
+Incorrect -
+One hour
+
+Correct -
+One second
+
+Incorrect -
+One minute
+
+Incorrect -
+One day
+
+Incorrect -
+I don't know yet.
+
+19. In a microservices application with a strict service-level agreement (SLA), how does Kubernetes enable application resiliency?
+Correct -
+Kubernetes is self-healing so if a node fails, the Pods will restart across deployed clusters.
+
+Incorrect -
+Kubernetes is self-dependent so any security patches released are automatically applied to all nodes, including the worker nodes and working container images.
+
+Incorrect -
+Kubernetes is self-defending so if a distributed denial-of-service (DDoS) attack occurs, it detects it and denylists the traffic.
+
+Your choice: incorrect -
+Kubernetes is self-monitoring so any applications that run on a Kubernetes cluster get automatic instrumentation injected at runtime, which, combined with KubeAI, alerts on performance issues in real time.
+
+Incorrect -
+I don't know yet.
+
+20. What is a characteristic of Pods in a Kubernetes cluster?
+Incorrect -
+They group resources such as shared storage (volumes) and network (IP address and port space).
+
+Your choice: incorrect -
+They share common resources on the same node such as storage (volumes) and network (IP address and port space).
+
+Incorrect -
+They model applications with shared storage (volumes) that contain a single container.
+
+Correct -
+They are a group of one or more application containers that share storage (Volumes) and network (IP address and port space).
+
+Incorrect -
+I don't know yet.
+
+
+1. You evicted all of the Pods from the BFIRE node using the command kubectl drain BFIRE. Also, during the maintenance operation, the node is left in the cluster. What command informs Kubernetes to carry on scheduling fresh Pods on this node?
+Correct -
+kubectl uncordon BFIRE
+Incorrect -
+kubectl cordon BFIRE
+Your choice: incorrect -
+kubectl drain
+Incorrect -
+kubectl drain-all 
+Incorrect -
+I don't know yet.
+
+2. Which reclaim policy keeps the data in a PersistentVolume when the attached PersistentVolumeClaim is deleted?
+Incorrect -
+Reclaim
+
+Incorrect -
+Recycle
+
+Your choice: correct -
+Retain
+
+Incorrect -
+Persistent
+
+Incorrect -
+I don't know yet.
+
+3. Your team wants zero downtime deployments for its containerized microservice application running on Kubernetes with an instantaneous switch over once testing the new version is complete. What deployment methodology should your team use?
+Incorrect -
+Use Kubernetes Network Address Translation (NAT) to broadcast traffic to all Pods with the matching selector.
+
+Your choice: correct -
+Use Kubernetes Services to do blue/green deployments by switching the selector from the old to the new version.
+
+Incorrect -
+Enable Kubernetes built-in blue/green updates through "UpdateStrategy: BlueGreen".
+
+Incorrect -
+Use Kubernetes Ingress controllers to duplicate traffic to both the old and new service while deploying the app.
+
+Incorrect -
+I don't know yet.
+
+
+4. You must update the credentials within a Secret syspack. How will you open the configuration file to perform the changes?
+Incorrect -
+kubectl edit secrets syspack --force
+Your choice: incorrect -
+kubectl update secrets syspack --save-config=true
+Correct -
+kubectl edit secrets syspack
+Incorrect -
+kubectl update secrets syspack --record=true
+Incorrect -
+I don't know yet.
+
+5. What does the kubectl port-forward command do?
+Incorrect -
+Forward one or more local ports to the Kubernetes API.
+
+Your choice: correct -
+Forward one or more local ports to a Pod.
+
+Incorrect -
+Configure port forwarding from one Pod to another Pod.
+
+Incorrect -
+Configure network address translation (NAT) port forwarding to Pods in the cluster.
+
+Incorrect -
+I don't know yet.
+
+
+
+
+6. Consider the following Pod definition:
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cuda-test
+spec:
+  containers:
+    - name: cuda-test
+      image: "k8s.gcr.io/cuda-vector-add:v0.1"
+      resources:
+        limits:
+          nvidia.com/gpu: 1
+  nodeSelector:
+    accelerator: nvidia-tesla-p100
+
+
+What type of label filtering is in use?
+Your choice: incorrect -
+Tensory requirements
+
+Incorrect -
+Set-based requirements
+
+Correct -
+Equality-based requirements
+
+Incorrect -
+Poly-requirements
+
+Incorrect -
+I don't know yet.
+
+
+7. What can you do to implement a liveness probe on a workload running in your Kubernetes cluster?
+Your choice: correct -
+Modify the Pod object.
+
+Incorrect -
+Modify the Ingress object.
+
+Incorrect -
+Modify the LoadBalancer object.
+
+Incorrect -
+Modify the Service object.
+
+Incorrect -
+I don't know yet.
+
+
+
+8. What is the kubectl command to stream logs of a Pod envoy?
+Incorrect -
+kubectl logs -p -c app=envoy
+
+Incorrect -
+kubectl logs -stream envoy
+
+Your choice: incorrect -
+kubectl logs -flow app=envoy
+
+Correct -
+kubectl logs envoy -f
+
+Incorrect -
+I don't know yet.
+
+9. Which attribute can you use in a ConfigMap object to store key/value pairs of files?
+Incorrect -
+The contents attribute
+
+Your choice: incorrect -
+The metadata.configmap attribute
+
+Correct -
+The data attribute
+
+Incorrect -
+The metadata attribute
+
+Incorrect -
+I don't know yet.
+
+
+
+10. A Pod named demo-application-1 is mounting the PersistentVolumeClaim (PVC) called slow-storage-pvc, which has the following definition: 
+apiVersion: v1 
+kind: PersistentVolumeClaim 
+metadata:
+   name: slow-storage-pvc 
+spec:
+   accessModes:
+     - ReadWriteOnce
+   volumeMode: block
+   resources:
+     requests:
+       storage: 8Gi
+   storageClassName: slow 
+What will happen if you mount the PVC slow-storage-pvc to a new Pod demo-application-2 under the same file system path as demo-application-1? 
+Correct -
+The operation will fail because the ReadWriteOnce access mode restricts other Pods from mounting the PVC.
+
+Your choice: incorrect -
+The operation will succeed and mount the shared PVC to the new Pod under the specified file system path.
+
+Incorrect -
+The operation will fail because the volumeMode attribute is set to block and should be set to filesystem.
+
+Incorrect -
+The operation will fail because the PVC is mounted under the same file system in the Pods.
+
+Incorrect -
+I don't know yet.
+
+
+
+11. What is the role of the kubectl proxy command?
+Correct -
+It creates a proxy between localhost and the Kubernetes API server. It forwards incoming requests from the local port to the remote Kubernetes API server port.
+
+Incorrect -
+It creates a proxy between localhost and remote Pods. It forwards local ports to specified deployment and Pod resources.
+
+Incorrect -
+It creates a proxy between localhost and specified Kubernetes server components such as apiserver, controller-manager, scheduler, and proxy.
+
+Your choice: incorrect -
+It creates a static serving content server on the localhost. It allows serving static content over a specified HTTP path.
+
+Incorrect -
+I don't know yet.
+
+
+
+12. What advantages do Deployments have over Pods, when running applications in a Kubernetes cluster?
+Incorrect -
+Deployment objects group one or more Kubernetes resources (Pod, ConfigMap, PersistentVolume) that can be created all at once through the kubectl create command.
+
+Incorrect -
+Deployment objects are useful when versioning applications. The Deployment objects maintain Pods directly, keeping track of the versions through annotations.
+
+Your choice: correct -
+Deployment objects maintain a desired state of the application Pods through ReplicaSets, allowing users to make changes and rollback to previous revisions.
+
+Incorrect -
+Deployment objects manage the number of desired replicas for groups of Pods that match the load balancer used in the deployment definition.
+
+Incorrect -
+I don't know yet.
+
+
+
+13. You are seeing issues with your microservice application that suggest one microservice is failing to respond. Your logs and monitoring, however, are not helping you identify which one. Which kubectl action would be useful for testing possible services individually from your local computer?
+Incorrect -
+kubectl nat
+
+Your choice: correct -
+kubectl port-forward
+
+Incorrect -
+kubectl proxy
+
+Incorrect -
+kubectl ingress
+
+Incorrect -
+I don't know yet.
+
+14. Of the following, which property of a Pod do you set to provide configuration to the container it is running? 
+Your choice: correct -
+Environment variables
+
+Incorrect -
+Configuration objects
+
+Incorrect -
+Edit commands
+
+Incorrect -
+Cluster config
+
+Incorrect -
+I don't know yet.
+
+
+
+15. You have a docker-compose.yml file which cannot be used with the kubectl command. How would you process the file to run with the kubectl command?
+Your choice: incorrect -
+Run kompose docker followed by kubectl run -f <files>. 
+
+Correct -
+Run kompose convert followed by kubectl apply -f <files>.
+
+Incorrect -
+Run kompose docker followed by kubectl apply -f <files>. 
+
+Incorrect -
+Run kompose convert followed by kubectl storage -v <files>. 
+
+Incorrect -
+I don't know yet.
+
+
+
+16. You are working on an application that depends on a third-party service. When the application boots, it must perform a long-running handshake with the third party before it can successfully handle requests. How would you implement this in Kubernetes?
+Incorrect -
+Create an init container dedicated to initializing the third-party connection. Once the connection has been established, you can start the main container.
+
+Your choice: incorrect -
+Have the application check for the third-party handshake success on startup and end the process if it is not yet available. The Kubernetes scheduler will restart the Pods.
+
+Incorrect -
+Implement a liveliness probe that checks if the third-party handshake was successful. Kubernetes will automatically stop sending traffic after a while.
+
+Correct -
+Implement a readiness probe that checks if the third-party handshake was successful. Kubernetes will automatically handle the flow of traffic to the Pods.
+
+Incorrect -
+I don't know yet.
+
+
+17. One of your containers in a Pod randomly shuts down. You investigate the output:
+Container Name: nginx
+LastState: map[terminated:map[exitCode:137 reason:OOM Killed containerID:docker://0e4095b]]
+
+What does this mean?
+Incorrect -
+The container stopped because it became committed to a new node.
+
+Incorrect -
+The container stopped because the user set the sigkill signal.
+
+Your choice: correct -
+The container stopped because it was resource starved. 
+
+Incorrect -
+The container stopped because it was leaking resources. 
+
+Incorrect -
+I don't know yet.
+
+
+
+18. Your service is just one part of a microservices application. The microservice you wrote cannot handle the volume of traffic in the production cluster because it maxed out its resource constraints. Your application is deployed using the following definition. What is the most likely solution?
+apiVersion: v1
+kind: Pod
+metadata:
+labels:
+run: process-order-api
+name: process-order-api
+spec:
+containers:
+- image: company/processorder
+name: procesorder
+Incorrect -
+The Pod definition is not getting enough resources. Add the following to increase the amount of CPU and memory it reserves.
+
+- resources:
+CPU: 10M
+Mem: 1024M
+
+Your choice: correct -
+Redeploy the applications as a Kubernetes Deployment with a ReplicaSet set to a minimum of two.
+
+Incorrect -
+The cluster is under too high a load. Add an additional worker node and let Kubernetes rebalance.
+
+Incorrect -
+Apply the Pod definition a second time to scale out to more Pods.
+
+Incorrect -
+I don't know yet.
+
+
+
+19. How do the containers in Pods run in a Kubernetes cluster?
+Correct -
+A Pod has a group of one or more containers and it keeps them colocated and coscheduled on the same physical node, sharing its resources.
+
+Your choice: incorrect -
+A Pod has a group of one or more application containers and it schedules them on different nodes and shares the same storage volumes.
+
+Incorrect -
+A Pod only has a single logical abstraction of a container that shares its resources with other Pods scheduled on the same physical node.
+
+Incorrect -
+A Pod has a group of one or more application containers and it keeps them colocated and scheduled on distinct physical nodes and restarts them as a whole unit in case of container failures.
+
+Incorrect -
+I don't know yet.
+
+
+20. When using Docker Desktop, the Kubernetes server runs locally within your Docker instance and is a single node cluster. What else is true of this local Kubernetes server?
+Correct -
+The local Kubernetes cluster is ready out-of-the-box.
+
+Incorrect -
+Enabling or disabling the local Kubernetes cluster can interfere with other workloads you are processing.
+
+Your choice: incorrect -
+You can configure the local Kubernetes cluster to a maximum of two nodes.
+
+Incorrect -
+The local Kubernetes cluster is for production testing.
+
+Incorrect -
+I don't know yet.
+
+
+. You must update the credentials within a Secret syspack. How will you open the configuration file to perform the changes?
+Your choice: correct -
+kubectl edit secrets syspack
+Incorrect -
+kubectl edit secrets syspack --force
+Incorrect -
+kubectl update secrets syspack --save-config=true
+Incorrect -
+kubectl update secrets syspack --record=true
+Incorrect -
+I don't know yet.
+
+
+Using Kubernetes as a Developer
+2.
+
+Given the following PersistentVolumeClaim (PVC) and PersistentVolume (PV) definition:
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+name: persistent-disk-claim
+spec:
+accessModes:
+- ReadWriteOnce
+volumeMode: Filesystem
+resources:
+requests:
+storage: 8Gi
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+name: persistent-disk
+spec:
+capacity:
+storage: 8Gi
+volumeMode: Filesystem
+accessModes:
+- ReadWriteOnce
+persistentVolumeReclaimPolicy: Recycle
+storageClassName: Recyclable
+nfs:
+path: /tmp
+server: 172.17.0.2
+
+What changes can you make to allow the PVC to bind to the PV persistent-disk?
+
+2. Given the following PersistentVolumeClaim (PVC) and PersistentVolume (PV) definition:
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: persistent-disk-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 8Gi
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: persistent-disk
+spec:
+  capacity:
+    storage: 8Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: Recyclable
+  nfs:
+    path: /tmp
+    server: 172.17.0.2
+
+What changes can you make to allow the PVC to bind to the PV persistent-disk?
+Your choice: incorrect -
+Add the volumeSelector: persistent-disk attribute to the PVC.
+
+Correct -
+Add the storageClassName: Recyclable attribute to the PVC.
+
+Incorrect -
+Add the volumeName: persistent-disk attribute to the PVC.
+
+Incorrect -
+Add the storageClassName: persistent-disk attribute to the PVC.
+
+Incorrect -
+I don't know yet.
+
+
+What happens if a Pod that is in the running state fails a readiness probe check?
+Incorrect -
+The Pod restarts.
+
+Incorrect -
+HTTP containers in the Pod stop receiving traffic until the probe is successful.
+
+Correct -
+The Pod stops receiving traffic until the probe is successful.
+
+Your choice: incorrect -
+The Pod's containers restart.
+
+Incorrect -
+I don't know yet.
+
+Which attribute can you use in a ConfigMap object to store key/value pairs of files?
+Incorrect -
+The metadata.configmap attribute
+
+Incorrect -
+The contents attribute
+
+Incorrect -
+The metadata attribute
+
+Your choice: correct -
+The data attribute
+
+
+You are a software engineer using kompose. There are a set of unique ingestion properties in your company's docker-compose files that you want to convert properly to Kubernetes resources. The properties aren't supported by kompose. What parts of the architecture will you have to change with plug-ins?
+Incorrect -
+Ingress morphology and loader
+
+Incorrect -
+Transformer only
+
+Your choice: correct -
+Loader, transformer, and outputter
+
+Incorrect -
+Loader only
+
+Incorrect -
+I don't know yet.
+
+You must mount a directory folder of configuration files located at /app/config/ on a Pod. What command can you use in a Kubernetes command-line interface (CLI) to create a ConfigMap named app-config with all files as key/value pairs?
+Your choice: incorrect -
+kubectl create configmap --name=app-config --from-folder=/app/config/
+
+Incorrect -
+kubectl create configmap app-config /app/config/
+
+Correct -
+kubectl create configmap app-config --from-file=/app/config/
+
+Incorrect -
+kubectl create configmap app-config --from-folder=/app/config/
+
+Incorrect -
+I don't know yet.
+
+You are depending on a container pattern X to deploy components of an application into separate processes. To enhance the functionality of your main container however, you need another design pattern. Which design pattern will help you improve the main container?
+Your choice: incorrect -
+The ambassador pattern over the adapter pattern, X
+
+Incorrect -
+The adapter pattern over the sidecar pattern, X.
+
+Correct -
+The sidecar pattern over the adapter pattern, X
+
+Incorrect -
+The adapter pattern over the ambassador pattern, X
+
+Incorrect -
+I don't know yet.
+
+
+What does a Kubernetes cluster IP do?
+Incorrect -
+Exposes the service on a new IP that is shared using multicast between all the worker nodes; choosing this makes the Service accessible outside the cluster
+
+Your choice: correct -
+Exposes the Service on a cluster-internal IP; choosing this makes the Service only reachable from within the cluster
+
+Incorrect -
+Exposes the Service on an internal virtual multicast IP address that all the Pods listen to; choosing this makes the Service only reachable from within the cluster but ignores all namespacing
+
+Incorrect -
+Exposes the Service on a worker node's network address; choosing this makes the Service accessible outside the cluster
+
+Incorrect -
+I don't know yet.
+
+
+
+
+
+What is the lifetime of a readiness probe on a container?
+Incorrect -
+Second-half lifecycle
+
+Incorrect -
+First-half lifecycle
+
+Incorrect -
+Flexible, as required
+
+Your choice: correct -
+Whole lifecycle
+
+Incorrect -
+I don't know yet.
+
+
+After creating the resources with the following PersistentVolumeClaim (PVC) and PersistentVolume (PV) definition running on a Kubernetes cluster, the PVC is still unbound. Why?
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: persistent-disk-claim
+  namespace: training
+  
+spec:
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  storageClassName: Recyclable
+  resources:
+    requests:
+      storage: 5Gi
+  selector:
+    matchLabels:
+      environment: "dev"
+
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: persistent-disk
+spec:
+  capacity:
+    storage: 8Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: Recyclable
+  nfs:
+    path: /tmp
+    server: 172.17.0.2
+Incorrect -
+The PVC can only bind to PVs with storage capacity of 5 Gi.
+
+Your choice: incorrect -
+The PVC can only bind to PVs from the training namespace.
+
+Correct -
+The PVC can only bind to PVs that have the label: environment: dev.
+
+Incorrect -
+The PVC can only bind to PVs with the attribute claimRef set to the PVC name.
+
+Incorrect -
+I don't know yet.
+
+You have to store user credentials to perform basic authentication. To do so, you create the following configuration:
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-basic-auth
+type: kubernetes.io/basic-auth
+credentials:
+  username: explorer      
+  password: sfdjl44SD3425
+On running the script, you notice invalid user credentials. Why?
+Correct -
+You have stored user credentials in credentials instead of stringData.
+
+Incorrect -
+You have provided both username and password instead of just username.
+
+Your choice: incorrect -
+You have marked type as kubernetes.io/basic-auth instead of k8s.io/basic-auth.
+
+Incorrect -
+You have used kind: Secret to hold credentials instead of kind: Credentials.
+
+
+You must add a new host foo.bar.com to an existing Ingress. How will you update the Ingress without losing the previous available hosts?
+Incorrect -
+By verifying the YAML configuration file (kubectl describe ingress) and adding the details of the new host using kubectl update ingress
+
+Your choice: incorrect -
+By verifying the YAML configuration file (kubectl verify ingress) and adding the details of the new host using kubectl add ingress
+
+Correct -
+By editing the YAML configuration file (kubectl edit ingress) and adding the details of the new host
+
+Incorrect -
+By editing the YAML configuration file (kubectl edit ingress-controller) and adding the details of the new host
+
+Incorrect -
+I don't know yet.
+
+
+One of your Pods needs access to a Service that has an associated port that is published and a cluster IP is in its place. The client Pod's environment variables aren't yet populated, however. Why?
+Correct -
+You must create the Service before creating the client Pods.
+
+Incorrect -
+You must create the Service 30 minutes after you create the client Pods. 
+
+Incorrect -
+You must replace the Domain Name System (DNS) Service Discovery method with the environment variables method.
+
+Your choice: incorrect -
+You must replace the Domain Name System (DNS) Service Discovery method with the Dynamic Host Configuration Protocol (DHCP) method.  
+
+Incorrect -
+I don't know yet.
+
+
+When using Docker Desktop, the Kubernetes server runs locally within your Docker instance and is a single node cluster. What else is true of this local Kubernetes server?
+Incorrect -
+Enabling or disabling the local Kubernetes cluster can interfere with other workloads you are processing.
+
+Incorrect -
+You can configure the local Kubernetes cluster to a maximum of two nodes.
+
+Incorrect -
+The local Kubernetes cluster is for production testing.
+
+Your choice: correct -
+The local Kubernetes cluster is ready out-of-the-box.
+
+
+
+What can you do to implement a liveness probe on a workload running in your Kubernetes cluster?
+Your choice: correct -
+Modify the Pod object.
+
+Incorrect -
+Modify the Service object.
+
+Incorrect -
+Modify the LoadBalancer object.
+
+Incorrect -
+Modify the Ingress object.
+
+Incorrect -
+I don't know yet.
+
+
+
+In terms of a multi-container Pod, what is a use case for an ambassador type container?
+Incorrect -
+Ambassador containers can create shared filesystems or volumes, which grants other containers in the Pod quick access to files and resources.
+
+Your choice: incorrect -
+Ambassador containers can extend the features of the main container, such as gathering connection details about other applications and granting the main container access to these resources.
+
+Incorrect -
+Ambassador containers can create standardized container output, converting the output into an accepted format, and granting other containers standardized access to these resources.
+
+Correct -
+Ambassador containers can create proxies or gateways to remote applications, which allows the main container to create network connections on localhost.
+
+
+
+
+You have a high-traffic application running on Kubernetes that is regularly updated with new code. You need the app to have zero downtime, instant switchover, and fast rollback in the event of an issue. What method will meet your needs?
+Incorrect -
+Using a ReplicaSet to replicate all traffic to two or more Pods during deployment
+
+Incorrect -
+Changing the API semantic version with every deployment and creating new traffic rules based on the new API version
+
+Your choice: correct -
+Using a blue-green deployment method
+
+Incorrect -
+Using a rolling update method
+
+Incorrect -
+I don't know yet.
+
+
+
+What is the kubectl command to stream logs of a Pod envoy?
+Incorrect -
+kubectl logs -stream envoy
+
+Your choice: correct -
+kubectl logs envoy -f
+
+Incorrect -
+kubectl logs -p -c app=envoy
+
+Incorrect -
+kubectl logs -flow app=envoy
+
+
+
+
+What changes will you make to the following deployment definition to ensure that there were no unavailable Pods and never more than 12 Pods running nginx during a rolling update deployment?
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: nginx-deployment
+ labels:
+   app: nginx
+   version: "1.10"
+spec:
+ replicas: 10
+ strategy:
+   type: RollingUpdate
+   rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 50%
+ selector:
+   matchLabels:
+     app: nginx
+        version: "1.10"
+   template:
+     metadata:
+       labels:
+         app: nginx
+         version: "1.10"
+ spec:
+   containers:
+     - name: nginx
+     image: nginx:1.10
+     ports:
+     - containerPort: 80
+Incorrect -
+spec:
+  replicas: 10
+  strategy:
+    type: Recreate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+Your choice: incorrect -
+spec:
+  replicas: 10
+  strategy:
+    type: Recreate
+    rollingUpdate:
+      maxSurge: 12
+      maxUnavailable: 0
+Correct -
+spec:
+  replicas: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+Incorrect -
+spec:
+  replicas: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 12
+      maxUnavailable: 0
+    
+     You must integrate a containerized application with your company's log monitoring platform. The log monitoring platform ingests all files in JSON format from a given location inside a persistent volume claim (PVC) log repository. Given that the containerized application is outputting XML log files, how would you integrate the application with the monitoring platform?
+Incorrect -
+By using the ambassador container pattern to connect a shared volume between the containers that converts the XML log files to markdown (MD) format
+
+Your choice: incorrect -
+By using the sidecar container pattern to extract the XML log files to the shared volume between the containers
+
+Incorrect -
+By using the proxy container pattern to move the XML log files to a shared volume between the containers on the filesystem path required for the log parsing
+
+Correct -
+By using the adapter container pattern to convert the XML log files to JSON format and mounting the PVC log repository to the containers
+
+
+
+1. You must integrate a containerized application with your company's log monitoring platform. The log monitoring platform ingests all files in JSON format from a given location inside a persistent volume claim (PVC) log repository. Given that the containerized application is outputting XML log files, how would you integrate the application with the monitoring platform?
+Incorrect -
+By using the ambassador container pattern to connect a shared volume between the containers that converts the XML log files to markdown (MD) format
+
+Incorrect -
+By using the sidecar container pattern to extract the XML log files to the shared volume between the containers
+
+Your choice: correct -
+By using the adapter container pattern to convert the XML log files to JSON format and mounting the PVC log repository to the containers
+
+Incorrect -
+By using the proxy container pattern to move the XML log files to a shared volume between the containers on the filesystem path required for the log parsing
+
+Incorrect -
+I don't know yet.
+
+2. You must debug a Pod by identifying the node on which it is running and using the shell on the node. How will you create the interactive shell instance?
+Your choice: incorrect -
+kubectl debug -it ephemeral-rkst --image=ubuntu --target=ephemeral-rkst
+Correct -
+kubectl debug node/rkst -it --image=ubuntu
+Incorrect -
+kubectl debug node/rkst -it --image=ubuntu --share-processes
+Incorrect -
+kubectl debug demo -it --image=ubuntu --share-processes --copy-to=rkst
+Incorrect -
+I don't know yet.
+
+3. Which daemon keeps track of the kernel logs and identifies kernel vulnerabilities based on predefined rules?
+Correct -
+Kernel Monitor
+
+Incorrect -
+Log Monitor
+
+Incorrect -
+Node Health Manager
+
+Your choice: incorrect -
+Kernel Manager
+
+Incorrect -
+I don't know yet.
+
+4. Your service is just one part of a microservices application. The microservice you wrote cannot handle the volume of traffic in the production cluster because it maxed out its resource constraints. Your application is deployed using the following definition. What is the most likely solution?
+apiVersion: v1
+kind: Pod
+metadata:
+labels:
+run: process-order-api
+name: process-order-api
+spec:
+containers:
+- image: company/processorder
+name: procesorder
+Incorrect -
+The Pod definition is not getting enough resources. Add the following to increase the amount of CPU and memory it reserves.
+
+- resources:
+CPU: 10M
+Mem: 1024M
+
+Your choice: incorrect -
+Apply the Pod definition a second time to scale out to more Pods.
+
+Incorrect -
+The cluster is under too high a load. Add an additional worker node and let Kubernetes rebalance.
+
+Correct -
+Redeploy the applications as a Kubernetes Deployment with a ReplicaSet set to a minimum of two.
+
+Incorrect -
+I don't know yet.
+
+5. You have a docker-compose.yml file which cannot be used with the kubectl command. How would you process the file to run with the kubectl command?
+Incorrect -
+Run kompose convert followed by kubectl storage -v <files>. 
+
+Incorrect -
+Run kompose docker followed by kubectl run -f <files>. 
+
+Correct -
+Run kompose convert followed by kubectl apply -f <files>.
+
+Your choice: incorrect -
+Run kompose docker followed by kubectl apply -f <files>. 
+
+Incorrect -
+I don't know yet.
+
+6. What is the role of a StorageClass resource in a Kubernetes cluster?
+Your choice: incorrect -
+StorageClass resources provide a way to create groups of PersistentVolumeClaims that you can mount as a single volume in a Pod using the subPath parameter.
+
+Correct -
+StorageClass resources provide a way to describe the storage options available, allowing PersistentVolumeClaims to map to volumes by requesting their storage class.
+
+Incorrect -
+StorageClass resources provide a way to restrict the type of storage options available, allowing volume applications to mount in the list of volumes.
+
+Incorrect -
+StorageClass resources provide a way to add additional information to volumes through annotations, for example attaching login details for an external storage system.
+
+Incorrect -
+I don't know yet.
+
+Using Kubernetes as a Developer
+7.
+
+Which command exposes the deployment dummy to an external IP (public internet)?
+
+7. Which command exposes the deployment dummy to an external IP (public internet)?
+Incorrect -
+kubectl expose dummy --type=nodeSet --name=my-service
+Incorrect -
+kubectl expose deployment dummy --type=ReplicaSet --name=my-service
+Your choice: incorrect -
+kubectl expose dummy --type=nodePort --name=my-service
+Correct -
+kubectl expose deployment dummy --type=LoadBalancer --name=my-service
+Incorrect -
+I don't know yet.
+
+8. What is a liveness probe?
+Your choice: incorrect -
+A check on whether a Deployment is ready to receive traffic after creation
+
+Incorrect -
+A periodic check on whether a Deployment is healthy and can continue to receive traffic
+
+Incorrect -
+A check on whether a Pod is ready to receive traffic after creation
+
+Correct -
+A periodic check on whether a Pod is healthy and can continue to receive traffic
+
+Incorrect -
+I don't know yet.
+
+9. What type of container enhances and extends the main application container by adding additional feature?
+Your choice: incorrect -
+Ambassador
+
+Incorrect -
+Adapter
+
+Incorrect -
+Bridge
+
+Correct -
+Sidecar
+
+Incorrect -
+I don't know yet.
+
+10. When would you use ImagePullSecrets?
+Your choice: correct -
+When the images that you want to pull are stored in private repositories
+
+Incorrect -
+When the images that you want to pull are from repositories outside your cluster
+
+Incorrect -
+When the images that you want to pull are stored in public repositories
+
+Incorrect -
+When the images that you want to pull are stored in any repository
+
+Incorrect -
+I don't know yet.
+
+11. Which Kubernetes feature would you use to determine whether a Pod must be restarted?
+Incorrect -
+Crash probe
+
+Your choice: incorrect -
+Error probe
+
+Correct -
+Liveness probe
+
+Incorrect -
+Readiness probe
+
+Incorrect -
+I don't know yet.
+12. After you run kompose convert on the file frontend-compose.yaml, you receive several output files that are usable with kubectl. What command can you use to deploy the application to your Kubernetes cluster?
+Incorrect -
+kubectl run -o -verbose <output_file>.yaml
+Incorrect -
+kubectl publish -j <output_file>.yaml
+Incorrect -
+kompose up -f --publish
+Your choice: correct -
+kubectl apply -f <output_file>.yaml
+Incorrect -
+I don't know yet.
+
+13. What type of resources can PersistentVolumeClaims request?
+Your choice: correct -
+Storage resources
+
+Incorrect -
+DiskSpace resources
+
+Incorrect -
+NetworkBandwidth resources
+
+Incorrect -
+DiskTime resources
+
+Incorrect -
+I don't know yet.
+
+14. What object fulfills the Ingress in Kubernetes?
+Correct -
+An Ingress controller
+
+Your choice: incorrect -
+The Docker Compose controller
+
+Incorrect -
+An Ingress mutex
+
+Incorrect -
+The Kubernetes kompose object
+
+Incorrect -
+I don't know yet.
+
+15. What happens when you use the kompose convert command?
+Incorrect -
+It uses a Docker Compose YAML file as a Kubernetes JSON file.
+
+Incorrect -
+It converts Docker clusters into Kubernetes forks.
+
+Incorrect -
+It uses cluster commands from Docker as up commands in Kubernetes.
+
+Your choice: correct -
+It converts a Docker Compose file to Kubernetes resources.
+
+Incorrect -
+I don't know yet.
+
+16. Your team wants to expose an application using a cloud load balancer on a Kubernetes as a service cluster. The public application should respond to HTTP on port 80, but the code in the container has been configured to listen on port 8080. Which code block would meet the requirements?
+Incorrect -
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: web-interface
+  name: web-interface
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: web-interface
+  type: NodePort
+Your choice: incorrect -
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: web-interface
+  name: web-interface
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: web-interface
+  type: ClusterIP
+Incorrect -
+apiVersion: v2
+kind: Service
+metadata:
+  labels:
+    app: web-interface
+  name: web-interface
+spec:
+  ports:
+  - port: 80
+  selector:
+    app: web-interface
+  type: LoadBalancer
+Correct -
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: web-interface
+  name: web-interface
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: web-interface
+  type: LoadBalancer
+Incorrect -
+I don't know yet.
+
+17. Which YAML syntax correctly represents the details of an employee?
+Your choice: correct -
+emp:
+  name: xyz
+  unit: rp23
+  skills:
+    - python
+    - java
+Incorrect -
+emp:
+  name = xyz
+  unit = rp23
+  skills:
+    - python
+    - java
+Incorrect -
+emp:
+  name: xyz
+  unit: rp23
+  skills: {python, java}
+Incorrect -
+emp:
+name: xyz
+unit: rp23
+skills: python, java
+Incorrect -
+I don't know yet.
+
+18. You must create three containers in a Pod that share a similar volume space. The configuration file for this Pod is placed at https://eg.com/demo/pods/multi-container-pod.yaml. How will you match this configuration to a Pod?
+Correct -
+kubectl apply -f https://eg.com/demo/pods/multi-container-pod.yaml
+Incorrect -
+kubectl make -i https://eg.com/demo/pods/multi-container-pod.yaml
+Your choice: incorrect -
+kubectl create -l https://eg.com/demo/pods/multi-container-pod.yaml
+Incorrect -
+kubectl init -z https://eg.com/demo/pods/multi-container-pod.yaml
+Incorrect -
+I don't know yet.
+
+19. Which application architecture pattern is Kubernetes designed for?
+Your choice: incorrect -
+Container pattern
+
+Incorrect -
+Ambassador pattern
+
+Correct -
+Microservices pattern
+
+Incorrect -
+Monolith pattern
+
+Incorrect -
+I don't know yet.
+
+20. What happens if a container fails a liveness probe check?
+Incorrect -
+The container is stopped permanently.
+
+Your choice: incorrect -
+The container stops receiving traffic until the probe is successful.
+
+Correct -
+The container is stopped and restarted.
+
+Incorrect -
+The Pod is aborted.
+
+Incorrect -
+I don't know yet.
+
+
+1. You must add a new host foo.bar.com to an existing Ingress. How will you update the Ingress without losing the previous available hosts?
+Incorrect -
+By verifying the YAML configuration file (kubectl verify ingress) and adding the details of the new host using kubectl add ingress
+
+Incorrect -
+By verifying the YAML configuration file (kubectl describe ingress) and adding the details of the new host using kubectl update ingress
+
+Your choice: correct -
+By editing the YAML configuration file (kubectl edit ingress) and adding the details of the new host
+
+Incorrect -
+By editing the YAML configuration file (kubectl edit ingress-controller) and adding the details of the new host
+
+Incorrect -
+I don't know yet.
+
+2. You omit a prefix when creating a Kubernetes annotation. What happens?
+Your choice: incorrect -
+The annotation key becomes a temporary object.
+
+Incorrect -
+The annotation key becomes a durable object.
+
+Correct -
+Kubernetes presumes that the annotation key is private to the user.
+
+Incorrect -
+Kubernetes presumes that the annotation key is public to everyone.
+
+Incorrect -
+I don't know yet.
+
+3. What would you add to this service definition to enable an external port of 5678 to a container port of 8080?
+apiVersion: v1
+kind: Service
+metadata:
+   labels:
+      app: frontend
+   name: frontend
+spec:
+   ports:
+   - name: web
+   selector:
+      app: frontend
+   type: NodePort
+status:
+   loadBalancer: {}
+Your choice: correct -
+spec:
+   ports:
+   - name: web
+     port: 5678
+     protocol: TCP
+     targetPort: 8080
+Incorrect -
+spec:
+   ports:
+   - name: web
+     port: 8080
+     protocol: HTTP
+     destinationPort: 5678
+Incorrect -
+spec:
+   ports:
+   - name: web
+     port: 5678
+     protocol: HTTP
+     destinationPort: 8080
+Incorrect -
+spec:
+   ports:
+   - name: web
+     port: 8080
+     protocol: TCP
+     targetPort: 5678
+Incorrect -
+I don't know yet.
+
+4. You must mount a directory folder of configuration files located at /app/config/ on a Pod. What command can you use in a Kubernetes command-line interface (CLI) to create a ConfigMap named app-config with all files as key/value pairs?
+Your choice: correct -
+kubectl create configmap app-config --from-file=/app/config/
+
+Incorrect -
+kubectl create configmap app-config --from-folder=/app/config/
+
+Incorrect -
+kubectl create configmap app-config /app/config/
+
+Incorrect -
+kubectl create configmap --name=app-config --from-folder=/app/config/
+
+Incorrect -
+I don't know yet.
+
+5. Why would you use the kompose up command as opposed to kompose convert?
+Incorrect -
+If you want to maintain your current Kubernetes resources and want to convert and deploy an identical set.
+
+Incorrect -
+If you want to check the current status of the kompose conversion server before using convert.
+
+Incorrect -
+If you want to check the availability of resources Kubernetes will build before deploying them with convert.
+
+Your choice: correct -
+If you want to convert docker-compose YAML files and deploy to Kubernetes simultaneously.
+
+Incorrect -
+I don't know yet.
+
+6. You do not want to use the default service account for your Pod so you set the name of your custom service account in the spec.serviceAccountName field. Your custom service account is rejected, however. What could be the possible explanation?
+Your choice: correct -
+The custom service account was not created when the Pod was created.
+
+Incorrect -
+The custom service account consists of an imagePullSecret.
+
+Incorrect -
+The automounting API credentials for the Pod are disabled.
+
+Incorrect -
+The automounting API credentials for the service account are disabled.
+
+Incorrect -
+I don't know yet.
+
+7. What objects can the dataSource field reference to?
+Incorrect -
+All the available objects in its namespace
+
+Correct -
+PersistentVolumeClaim and VolumeSnapshot 
+
+Your choice: incorrect -
+PersistentVolumeClaim and PersistentVolume 
+
+Incorrect -
+All the available objects in its namespace, including the core objects
+
+Incorrect -
+I don't know yet.
+
+8. What command in a Kubernetes command-line interface (CLI) can create a Secret called app-token with the contents of the file ./secret-token.yaml stored in the token key of the object?
+Incorrect -
+kubectl create secret generic app-token --from-file=./secret-token.yaml 
+
+Correct -
+kubectl create secret generic app-token --from-file=token=./secret-token.yaml
+
+Incorrect -
+kubectl create secret --name=app-token --from-file=./secret-token.yaml --key=token
+
+Incorrect -
+kubectl create secret app-token --from-file=./secret-token.yaml 
+
+Incorrect -
+I don't know yet.
+
+9. Why is Service an optional field in the Kubernetes web user interface (UI) deploy wizard?
+Incorrect -
+Because Pods with Service resources are deployed as resource objects
+
+Incorrect -
+Because not every application necessarily contains a Service
+
+Incorrect -
+Because the dedicated resources for Services are expensive and thereby optional
+
+Your choice: correct -
+Because not every application needs to expose a Service to an external IP address
+
+Incorrect -
+I don't know yet.
+
+10. Based on the specification in the following Ingress configuration, what type of Ingress are you using?
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+ annotations:
+ nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+ rules:
+ - host: foo.bar.com
+ http:
+ paths:
+ - path: /foo
+ backend:
+ serviceName: service1
+ servicePort: 4200
+ - path: /bar
+ backend:
+ serviceName: service2
+ servicePort: 8080
+Correct -
+A simple fanout
+
+Your choice: incorrect -
+Single service Ingress
+
+Incorrect -
+Name-based virtual hosting
+
+Incorrect -
+Transport Layer Security (TLS)
+
+Incorrect -
+I don't know yet.
+
+11. An administrator created an application deployment from the command line. An update of the container image rescales the deployment to three instances. The admin ran the following set of commands in a Kubernetes command-line interface (CLI):  kubectl create deployment nginx --image=nginx:1.7.9
+kubectl set image deployment/nginx nginx=nginx:1.9.1 --record=true
+kubectl scale deployment/nginx --replicas=3
+
+Because of an incident that the admin must fix in the application version, they reverse the deployment revision as follows:  kubectl rollout undo deployment/nginx
+
+What values will the Image and Replicas fields indicate for the deployment nginx if the admin runs the command kubectl describe deployment/nginx?
+Incorrect -
+Image: nginx:1.7.9
+Replicas: 1
+Incorrect -
+Image: nginx:1.9.1
+Replicas: 3
+Your choice: correct -
+Image: nginx:1.7.9
+Replicas: 3
+Incorrect -
+Image: nginx:1.9.1
+Replicas: 1
+Incorrect -
+I don't know yet.
+
+12. A cluster administrator created a StorageClass resource named gce-storage-disk, allowing an external GCEPersistentDisk storage system to dynamically provision volumes. What actions must a developer take to bind PersistentVolumesClaims (PVC) to PersistentVolumes (PV) of the storage class gce-storage-disk?
+Your choice: incorrect -
+Set the volume.beta.kubernetes.io/storage-class: gce-storage-disk attribute on PVC resources.
+
+Correct -
+Set the spec.storageClassName: gce-storage-disk attribute on PVC resources.
+
+Incorrect -
+Set the volume.beta.kubernetes.io/storage-class-name: gce-storage-disk annotation on PVC resources.
+
+Incorrect -
+Set the spec.storageClass: gce-storage-disk attribute on PVC resources.
+
+Incorrect -
+I don't know yet.
+
+13. Your company must connect a containerized application with a Redis database running outside Kubernetes. The application container is trying to connect to a Redis instance running on localhost. How can you use the ambassador container design pattern instead of a direct connection to the Redis database?
+Incorrect -
+You can deploy an ambassador container as a secondary container in the Pod running a database gateway service that will send requests to the database in an asynchronous manner.
+
+Your choice: correct -
+You can use an ambassador container as a secondary container in the Pod, launching a proxy application that is forwarding requests from the localhost connection to a remote Redis server.
+
+Incorrect -
+You can deploy an ambassador container as a secondary Pod running a Redis replica that is in sync with the remote Redis server. The main application container can use service discovery to connect to the ambassador. 
+
+Incorrect -
+You can use an ambassador container as a secondary container in the Pod, creating a reverse proxy application to the Kubernetes cluster, forwarding any Redis requests to the containerized application.
+
+Incorrect -
+I don't know yet.
+
+14. How can you expose Pod and container fields to applications running in a Pod?
+Incorrect -
+Using the Annotations API, applications can access Pod fields and metadata by exposing the value of the Pod or container fields to environment variables.
+
+Correct -
+Using the Downward API, applications can access Pod fields and metadata by exposing the value of the Pod or container fields to environment variables.
+
+Incorrect -
+Using the ConfigMap API, applications can access Pod fields and metadata by exposing the value of the Pod or container fields to environment variables.
+
+Your choice: incorrect -
+Using the FieldRef API, applications can access Pod fields and metadata by exposing the value of the Pod or container fields to environment variables.
+
+Incorrect -
+I don't know yet.
+
+15. You skipped setting the service account when creating a Pod. Which field will you check in the YAML file to ensure that a default service account has been assigned to the Pod?
+Your choice: incorrect -
+spec.defaultServiceAccountName
+
+Correct -
+spec.serviceAccountName
+
+Incorrect -
+spec.serviceAccount
+
+Incorrect -
+spec.defaultServiceAccount
+
+Incorrect -
+I don't know yet.
+
+16. You have an application running on Kubernetes where communication to the configuration Service (which could be in a separate container) might be performed with a localhost. When you test the application, it fails with an error implying a communication issue with the config Service. What is the most likely explanation?
+Incorrect -
+The config Service is not listening on localhost. Change to the Dockerfile to enable it to listen to localhost.
+
+Correct -
+The config Service is running in a separate Pod rather than a second container in the web application's Pod.
+
+Incorrect -
+The web application probably has egress network rules that stop it from communicating with the config Service.
+
+Your choice: incorrect -
+The web application probably has ingress network rules that makes the config Service fail to start.
+
+Incorrect -
+I don't know yet.
+
+17. You must deliver a message every other minute, so you must set up a CronJob. What value will you set to the schedule field in the configuration file to deliver a message?
+Your choice: incorrect -
+"2 * * * *"
+Correct -
+"*/2 * * * *"
+Incorrect -
+"* * * 2 *"
+Incorrect -
+"* */2 * * *"
+Incorrect -
+I don't know yet.
+
+18. What happens if a Pod that is in the running state fails a readiness probe check?
+Incorrect -
+The Pod's containers restart.
+
+Incorrect -
+The Pod restarts.
+
+Your choice: correct -
+The Pod stops receiving traffic until the probe is successful.
+
+Incorrect -
+HTTP containers in the Pod stop receiving traffic until the probe is successful.
+
+Incorrect -
+I don't know yet.
+
+19. Given a service account called default, what command would you use to update the imagePullSecrets property with a secret named pullSecret?
+Correct -
+kubectl patch serviceaccount default -p 
+       '{"imagePullSecrets": [{"name": "pullSecret"}]}'
+Incorrect -
+kubectl update serviceaccount default -p 
+       '{"imagePullSecrets": [{"name": "pullSecret"}]}'
+Your choice: incorrect -
+kubectl patch serviceaccount --json 
+       '{"imagePullSecrets": [{"name": "pullSecret"}]}'
+Incorrect -
+kubectl update service-account default --json 
+       '{"imagePullSecrets": [{"name": "pullSecret"}]}'
+Incorrect -
+I don't know yet.
+
+20. You want your company’s Kubernetes deployments to use dynamic Secret values generated as a set of files. Because you manage several clusters, what is the most effective way to handle this?
+Incorrect -
+Write an init script that downloads the Secrets from the Kubernetes API at runtime.
+
+Incorrect -
+Define the Secrets as environment variables under the Pod's container.
+
+Your choice: incorrect -
+Run an init container to download the Secrets from the Kubernetes API and mount them as a volume to the Pod.
+
+Correct -
+Attach Secrets files to Pods by declaring a volume that will mount each Secret as a file in the Pod definition.
+
+Incorrect -
+I don't know yet.
+
+. What do security context objects do in a Kubernetes cluster?
+Incorrect -
+Define access management policies for Kubernetes resources; for example setting who is allowed to modify the settings of a Pod
+
+Incorrect -
+Define security policies for Kubernetes Pods; for example what containers can run in the Pod
+
+Your choice: correct -
+Define privilege and access control settings for a Pod or container; for example running the process with a specific user ID
+
+Incorrect -
+Define networking policies for Kubernetes Pods; for example setting which namespaces are allowed networking access to a Pod
+
+Incorrect -
+I don't know yet.
+
+What command in a Kubernetes command-line interface (CLI) can create a Secret called app-token with the contents of the file ./secret-token.yaml stored in the token key of the object?
+Incorrect -
+kubectl create secret --name=app-token --from-file=./secret-token.yaml --key=token
+
+Incorrect -
+kubectl create secret app-token --from-file=./secret-token.yaml 
+
+Your choice: correct -
+kubectl create secret generic app-token --from-file=token=./secret-token.yaml
+
+Incorrect -
+kubectl create secret generic app-token --from-file=./secret-token.yaml 
+
+Incorrect -
+I don't know yet.
+
+
+
+You do not want to use the default service account for your Pod so you set the name of your custom service account in the spec.serviceAccountName field. Your custom service account is rejected, however. What could be the possible explanation?
+Incorrect -
+The automounting API credentials for the service account are disabled.
+
+Your choice: correct -
+The custom service account was not created when the Pod was created.
+
+Incorrect -
+The automounting API credentials for the Pod are disabled.
+
+Incorrect -
+The custom service account consists of an imagePullSecret.
+
+Incorrect -
+I don't know yet.
+
+
+
+ Which metadata field in a Pod is populated by the system?
+Your choice: correct -
+generation
+
+Incorrect -
+namespace
+
+Incorrect -
+name
+
+Incorrect -
+clusterName
+
+Incorrect -
+I don't know yet.
+
+A microservice you engineered contains endpoints that persist information to a database. In your application, a component of the Kubernetes container logic handles the final issuing of the calls. When the database call is made, the data to be persisted is sanitized, transformed, and injected into the database. The application handles sanitization and transformation. As the deployed application runs, resiliency testing is performed, but when containers are shut down, calls are dropped and do not experience a retry. Why is this?
+Incorrect -
+Generally, Pods should be treated as ephemeral. Therefore, a separate service should handle data sanitization and transformation, not the microservice in question.
+
+Incorrect -
+Microservices shouldn't handle their own data persistence. Create a separated service to handle data persistence for the entire application.
+
+Your choice: correct -
+Generally, containers should be treated as ephemeral. Therefore, the microservice should handle the final issuing of calls, not the container. 
+
+Incorrect -
+The Kubernetes API handles data persistence. It should be called from within the application instead of the container issuing calls.
+
+
+You are diagnosing a problem, but running kubectl get events produces too many events for you to see the problem. Which command would you use to view only the important events?
+Your choice: incorrect -
+kubectl get events --field-selector type=Error
+
+Correct -
+kubectl get events --field-selector type!=Normal
+
+Incorrect -
+kubectl get logs --field-selector type=Warning
+
+Incorrect -
+kubectl get events --since=1hr
+
+
+You created a Deployment with a Pod template. When the kubelet starts the container, there is startup failure. What fixes must you make in the container to overcome the failure?
+Incorrect -
+Set the imagePullPolicy to Never instead of IfNotPresent. 
+
+Incorrect -
+Set the imagePullPolicy to Never instead of Always. 
+
+Correct -
+Set the imagePullPolicy to IfNotPresent instead of Never.
+
+Your choice: incorrect -
+Set the imagePullPolicy to Always instead of IfNotPresent. 
+
+Incorrect -
+I don't know yet.
+
+You created a blue/green deployment for your Kubernetes application. After transferring all traffic to the green version, what will you do if users start to report bugs?
+Incorrect -
+Switch the users who are reporting the bugs back to the blue version until you fix the bugs in the green version.
+
+Your choice: correct -
+Switch the traffic back to the blue version and destroy the green version.
+
+Incorrect -
+Debug the green version while users are still using it.
+
+Incorrect -
+Start creating a new version while users are still using the existing green version.
+
+Incorrect -
+I don't know yet.
+
+
+In Kubernetes, which environment variable controls the log destination?
+Incorrect -
+CONTAINER_LOGGING_DESTINATION
+
+Your choice: incorrect -
+LOGGING_DESTINATION
+
+Incorrect -
+CLUSTER_LOGGING_DESTINATION
+
+Correct -
+KUBE_LOGGING_DESTINATION
+
+Incorrect -
+I don't know yet.
+
+ What is correct about using Services in Kubernetes?
+Incorrect -
+Userspace proxy never obstructs the source IP address of a packet accessing a Service.
+
+Correct -
+The iptables proxy mode has an affect on clients passing with a load balancer.
+
+Your choice: incorrect -
+The Type field works using a nested functionality when used in Google Compute Engine.
+
+Incorrect -
+The Type field works using a crossed functionality when used in AWS.
+
+Incorrect -
+I don't know yet.
+
+You are generating Kubernetes resources using kompose. You use the following kompose labels in your docker-compose.yaml file:
+
+kompose.volume.size as 1Gi for the requests storage’s size in the PersistentVolumeClaim
+kompose.service.type as node to designate the service to be created
+kompose.controller.type as daemonset to convert the deployment upon creation
+
+When you run kompose convert, the command fails. Why is this?
+Incorrect -
+You should increase the kompose.volume.size to handle the needs of the request.
+
+Correct -
+You must define the kompose.service.type as nodeport instead.
+
+Incorrect -
+You must define the kompose.controller.type as deployment instead.
+
+Your choice: incorrect -
+You should run the kompose up command instead of kompose convert.
+
+Incorrect -
+I don't know yet.
+
+How are files from a directory defined inside a ConfigMap?
+Correct -
+With the contents of a single file in the data attribute or a collection of key/value pairs that are also defined in the data attribute of the object
+
+Incorrect -
+With the contents of a single file in the data attribute or a collection of key/value pairs that are defined in the dataCollection attribute of the object
+
+Your choice: incorrect -
+With the contents of the files in the directory as plain key/value pairs of attributes in the ConfigMap object
+
+Incorrect -
+With the contents of the files in the directory as key/value pairs of annotations in the ConfigMap object
+
+Incorrect -
+I don't know yet.
+
+You created a Deployment with five replicas using the command kubectl apply -f https://eg.com/demo/controllers/dep.yaml. How can you verify if all five replicas are ready in the Deployment?
+Your choice: incorrect -
+Run kubectl get replicas and check if the READY label includes 5/5. 
+
+Correct -
+Run kubectl get deployments and check if the AVAILABLE label has the number five in it.
+
+Incorrect -
+Run kubectl get replicas and check if the AGE label has a value greater than zero.  
+
+Incorrect -
+Run kubectl get deployments and check if the AGE label has a value greater than one. 
+
+Incorrect -
+I don't know yet.
+
+ Given the following readiness probe definition, what is the minimum amount of time after creation of the Pod or container that will pass before it restarts?
+readinessProbe:
+  tcpSocket:
+  port: 8080
+  initialDelaySeconds: 10
+  periodSeconds: 15
+  failureThreshhold: 2
+Your choice: correct -
+25 seconds
+
+Incorrect -
+30 seconds
+
+Incorrect -
+40 seconds
+
+Incorrect -
+35 seconds
+
+Incorrect -
+I don't know yet.
+
+You're attempting to view the events for a particular Pod, but running kubectl get event my-pod results in the error "events 'my-pod' not found". What is the correct command?
+Incorrect -
+kubectl get event --field=pod my-pod
+
+Incorrect -
+kubectl get event -p my-pod
+
+Incorrect -
+kubectl get pod my-pod --events
+
+Your choice: correct -
+kubectl get event --field-selector involvedObject.name=my-pod
+
+Incorrect -
+I don't know yet.
+
+What is the purpose of using the kompose up command?
+Correct -
+To create a Kubernetes deployment for a Dockerized application
+
+Your choice: incorrect -
+To convert the docker-compose.yml file into files you can use with the kubectl command
+
+Incorrect -
+To serve as an alternative way to create files you can use with the helm command
+
+Incorrect -
+To access a Dockerized application
+
+Incorrect -
+I don't know yet.
+
+
+
+How many ways can you discover a Service in Kubernetes?
+Your choice: correct -
+2
+
+Incorrect -
+4
+
+Incorrect -
+6
+
+Incorrect -
+8
+
+Incorrect -
+I don't know yet.
+
+
+
+
+How can you expose Pod and container fields to applications running in a Pod?
+Incorrect -
+Using the FieldRef API, applications can access Pod fields and metadata by exposing the value of the Pod or container fields to environment variables.
+
+Incorrect -
+Using the Annotations API, applications can access Pod fields and metadata by exposing the value of the Pod or container fields to environment variables.
+
+Your choice: correct -
+Using the Downward API, applications can access Pod fields and metadata by exposing the value of the Pod or container fields to environment variables.
+
+Incorrect -
+Using the ConfigMap API, applications can access Pod fields and metadata by exposing the value of the Pod or container fields to environment variables.
+
+Incorrect -
+I don't know yet.
+
+2. You do not want to use the default service account for your Pod so you set the name of your custom service account in the spec.serviceAccountName field. Your custom service account is rejected, however. What could be the possible explanation?
+Your choice: correct -
+The custom service account was not created when the Pod was created.
+
+Incorrect -
+The automounting API credentials for the Pod are disabled.
+
+Incorrect -
+The custom service account consists of an imagePullSecret.
+
+Incorrect -
+The automounting API credentials for the service account are disabled.
+
+Incorrect -
+I don't know yet.
+
+3. You must debug a Pod by identifying the node on which it is running and using the shell on the node. How will you create the interactive shell instance?
+Incorrect -
+kubectl debug demo -it --image=ubuntu --share-processes --copy-to=rkst
+Incorrect -
+kubectl debug node/rkst -it --image=ubuntu --share-processes
+Incorrect -
+kubectl debug -it ephemeral-rkst --image=ubuntu --target=ephemeral-rkst
+Your choice: correct -
+kubectl debug node/rkst -it --image=ubuntu
+Incorrect -
+I don't know yet.
+
+4. How many ways can you discover a Service in Kubernetes?
+Incorrect -
+4
+
+Incorrect -
+6
+
+Your choice: correct -
+2
+
+Incorrect -
+8
+
+Incorrect -
+I don't know yet.
+
+5. Which metadata field in a Pod is populated by the system?
+Your choice: correct -
+generation
+
+Incorrect -
+clusterName
+
+Incorrect -
+namespace
+
+Incorrect -
+name
+
+Incorrect -
+I don't know yet.
+
+6. Which container acts as a client proxy and proxies the connections to the main container?
+Incorrect -
+Adapter
+
+Your choice: correct -
+Ambassador
+
+Incorrect -
+Sidecar
+
+Incorrect -
+Nginx
+
+Incorrect -
+I don't know yet.
+
+7. An application is working for the past half hour but is not progressing. You suspect the application never started successfully so you use a startup probe to check when it was started. This doesn't resolve the issue, however. What else can you do to make the application progress?
+Incorrect -
+Use a readiness probe to let the container start accepting the incoming traffic.
+
+Incorrect -
+Use a startup probe to catch and remove any known vulnerability in the application.
+
+Incorrect -
+Use a readiness probe to see if the application started successfully.
+
+Your choice: correct -
+Use a liveness probe to catch any deadlock present in the application and restart it.
+
+Incorrect -
+I don't know yet.
+
+8. Which option must you set while creating a CronJob object to handle timezones?
+Your choice: correct -
+CRON_TZ
+
+Incorrect -
+Timezone
+
+Incorrect -
+CRON_DATE
+
+Incorrect -
+TZ
+
+Incorrect -
+I don't know yet.
+
+9. Given the following PersistentVolume (PV) belonging to the storage class Recyclable:
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: persistent-disk
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: Recyclable
+  nfs:
+    path: /tmp
+    server: 172.17.0.2
+
+What happens when a user creates a PersistentVolumeClaim (PVC) that is requesting storage capacity of 5 Gb and belongs to the same storage class Recyclable?
+Your choice: incorrect -
+The PVC will be created with 5 Gb of storage capacity and other PVCs can share the remaining amount because of the Recyclable storage class.
+
+Incorrect -
+The PVC cannot be created with 5 Gb of storage capacity and the PV can only satisfy matching storage requests.
+
+Incorrect -
+The PVC is created with 5 Gb of storage capacity and other PVCs share the remaining amount because of the ReadWriteMany access mode.
+
+Correct -
+The PVC is created with 5 Gb of storage capacity and the PV locks the remaining amount.
+
+Incorrect -
+I don't know yet.
+
+10. You are running a Kubernetes cluster on-premises. How would you expose an application on a single port, running on multiple Nodes, to the non-Kubernetes systems in your network?
+Incorrect -
+Create a service with a cluster IP exposing a single port to all scheduled Pods.
+
+Correct -
+Create a service using a NodePort running on a Pod on each worker node.
+
+Incorrect -
+Create a Service using a load balancer and route the traffic to a Pod running on each worker node.
+
+Your choice: incorrect -
+Create a DaemonSet as part of a service exposing an external IP.
+
+Incorrect -
+I don't know yet.
+
+11. As a freelance developer, you signed a new contract with a client who wants you to set up Kubernetes in their enterprise. You are at home learning more about Docker and are trying to start a Dockerized web server at port 80. Which command will achieve this?
+Incorrect -
+kompose deploy -o --publish=80:80 --name=webserver
+
+Your choice: incorrect -
+docker run --port=80:80 --name=webserver nginx
+
+Correct -
+docker run --detach --publish=80:80 --name=webserver nginx
+
+Incorrect -
+kompose run --publish=80:80 --name=webserver nginx
+
+Incorrect -
+I don't know yet.
+
+12. You modified the config/kernel-monitor.json file and removed the ReadonlyFilesystem condition from the file. How can you revert the changes back?
+Correct -
+By creating a new ReadonlyFilesystem condition definition inside the conditions field along with a reason and a message
+
+Your choice: incorrect -
+By creating a new ReadonlyFilesystem condition definition inside the conditions field along with a type and an ID
+
+Incorrect -
+By creating a new ReadonlyFilesystem condition definition inside the rules field along with a type and an ID
+
+Incorrect -
+By creating a new ReadonlyFilesystem condition definition inside the rules field along with a reason and a message
+
+Incorrect -
+I don't know yet.
+
+13. You are diagnosing a problem, but running kubectl get events produces too many events for you to see the problem. Which command would you use to view only the important events?
+Your choice: correct -
+kubectl get events --field-selector type!=Normal
+
+Incorrect -
+kubectl get logs --field-selector type=Warning
+
+Incorrect -
+kubectl get events --field-selector type=Error
+
+Incorrect -
+kubectl get events --since=1hr
+
+Incorrect -
+I don't know yet.
+
+14. To trigger a new Deployment revision, what fields must you change during a Deployment object update?
+Incorrect -
+Updating any labels, fields, or annotations of the Deployment object will trigger a new Deployment revision
+
+Incorrect -
+Updating the spec.matchLabels field of the Deployment object will trigger a new Deployment revision
+
+Correct -
+Updating the .spec.template fields of the Pod template will trigger a new Deployment revision
+
+Your choice: incorrect -
+Updating the spec.replicas field of the Deployment object will trigger a new Deployment revision
+
+Incorrect -
+I don't know yet.
+
+15. In Kubernetes, which environment variable controls the log destination?
+Incorrect -
+LOGGING_DESTINATION
+
+Your choice: correct -
+KUBE_LOGGING_DESTINATION
+
+Incorrect -
+CONTAINER_LOGGING_DESTINATION
+
+Incorrect -
+CLUSTER_LOGGING_DESTINATION
+
+Incorrect -
+I don't know yet.
+
+16. You want to fetch out the stable release and track the records weekly. To do so, you create two labels as follows:
+release!=stable
+track==daily
+You receive the canary release with daily records. What fixes must you make to the labels to overcome the glitches?
+Your choice: incorrect -
+release=stable;track==daily
+Incorrect -
+release==stable
+track!=weekly
+Correct -
+release!=canary,track!=daily
+Incorrect -
+release!=canary
+track!=weekly
+Incorrect -
+I don't know yet.
+
+17. What is correct about using Services in Kubernetes?
+Incorrect -
+The Type field works using a crossed functionality when used in AWS.
+
+Your choice: correct -
+The iptables proxy mode has an affect on clients passing with a load balancer.
+
+Incorrect -
+The Type field works using a nested functionality when used in Google Compute Engine.
+
+Incorrect -
+Userspace proxy never obstructs the source IP address of a packet accessing a Service.
+
+Incorrect -
+I don't know yet.
+
+18. Which workload resource would you use for an application that requires an ordered and automated rolling update?
+Your choice: correct -
+StatefulSets
+
+Incorrect -
+ReplicaSets
+
+Incorrect -
+DaemonSets
+
+Incorrect -
+Deployments
+
+Incorrect -
+I don't know yet.
+
+19. Your team uses kubectl to manage all aspects of your company's Kubernetes deployment. You are onboarding several DevOps engineers on the team who will take over the day-to-day management of simple tasks related to deployments. Which solution is most appropriate and will help your company scale?
+Incorrect -
+Kubernetes proxy access
+
+Incorrect -
+A fully managed Kubernetes deployment on Google Cloud
+
+Your choice: correct -
+The updated kubectl command structure 
+
+Incorrect -
+A fully managed Kubernetes deployment on Microsoft Azure
+
+Incorrect -
+I don't know yet.
+
+20. Why would you use the shorthand R with the kubectl rollout command?
+Incorrect -
+To reset all the previous rollout command changes
+
+Correct -
+To process the directory specified in -f recursively
+
+Your choice: incorrect -
+To perform the rollback to a specified revision number
+
+Incorrect -
+If true, to return warnings associated with the rollout command
+
+Incorrect -
+I don't know yet.
+
+
+1. Why do all Kubernetes APIs respond with an HTTP status code of 409 when a request is made to post an object that has the same name as an existing object?
+Incorrect -
+To stop massive overwriting of files
+
+Incorrect -
+Because this is a direct result of Pod status issues in Kubernetes
+
+Correct -
+To maintain name idempotency
+
+Your choice: incorrect -
+Because this is a direct result of a microservices architecture
+
+Incorrect -
+I don't know yet.
+
+2. What is the general purpose of labels and selectors in Kubernetes?
+Correct -
+To meaningfully identify objects for users but not by directly implying semantics to the core system
+
+Your choice: incorrect -
+To meaningfully compose a large, succinct DevOps strategy based on core system information
+
+Incorrect -
+To help users rearrange data sources using a simple markup language, making large abstractions meaningful
+
+Incorrect -
+To help users choose data in their system that is meaningful for analytics
+
+Incorrect -
+I don't know yet.
+
+
+
+3. What does the envFrom attribute do in a container in the context of a ConfigMap?
+Incorrect -
+Defines all of the ConfigMap's data contents as the environment variables in the Pod; the ConfigMap replaces the /etc/environment file
+
+Your choice: correct -
+Defines all of the ConfigMap's data contents as container environment variables; the keys in the ConfigMap become environment variable names
+
+Incorrect -
+Defines all of the ConfigMap's data contents as mounted files in the container; the keys in the ConfigMap become the file names
+
+Incorrect -
+Defines all of the ConfigMap's data contents as annotations in the Pod; the keys in the ConfigMap become the label names
+
+Incorrect -
+I don't know yet.
+
+
+4. A static port is exposed on every worker node's network IP address passing traffic to a service. What is this an example of?
+Incorrect -
+A load balanced port
+
+Correct -
+A NodePort
+
+Incorrect -
+An Ingress port
+
+Your choice: incorrect -
+A cluster IP
+
+Incorrect -
+I don't know yet.
+
+
+5. What type of container enhances and extends the main application container by adding additional feature?
+Incorrect -
+Adapter
+
+Incorrect -
+Ambassador
+
+Your choice: correct -
+Sidecar
+
+Incorrect -
+Bridge
+
+Incorrect -
+I don't know yet.
+
+
+6. Given a deployment called mydeployment, which kubectl command sets up a port forward from your localhost on port 8888 to a Pod selected by mydeployment on port 5000?
+Your choice: correct -
+kubectl port-forward deployment/mydeployment 8888:5000
+
+Incorrect -
+kubectl port-forward deployment/mydeployment 8888 5000
+
+Incorrect -
+kubectl port-forward service/mypod 8888 5000
+
+Incorrect -
+kubectl port-forward pod/mydeployment 8888:5000
+
+Incorrect -
+I don't know yet.
+
+
+7. Which Kubernetes feature would you use to determine whether a Pod can receive traffic?
+Incorrect -
+Availability probe
+
+Incorrect -
+Traffic probe
+
+Your choice: incorrect -
+Liveness probe
+
+Correct -
+Readiness probe
+
+Incorrect -
+I don't know yet.
+
+7. Which Kubernetes feature would you use to determine whether a Pod can receive traffic?
+Incorrect -
+Availability probe
+
+Incorrect -
+Traffic probe
+
+Your choice: incorrect -
+Liveness probe
+
+Correct -
+Readiness probe
+
+Incorrect -
+I don't know yet.
+
+
+8. What do CronJob resources do in a Kubernetes cluster?
+Incorrect -
+Automate application deployments only at specific schedules
+
+Incorrect -
+Group Job objects by label selectors
+
+Your choice: correct -
+Run time-based Jobs
+
+Incorrect -
+Deploy applications on all the cluster nodes
+
+Incorrect -
+I don't know yet.
+
+
+9. In Kubernetes, what is the most common cause of a Pod becoming stuck in Pending when trying to become scheduled onto a node?
+Your choice: correct -
+Because of insufficient resources in the Pod of one type or another
+
+Incorrect -
+Because the node is full and cannot handle the Pod
+
+Incorrect -
+Because Pods contain state and must be scheduled two at a time
+
+Incorrect -
+Because the Pod is naturally leaking resources and therefore is faulty
+
+Incorrect -
+I don't know yet.
+
+10. Given the following PersistentVolume definition:
+apiVersion: v1 
+kind: PersistentVolume 
+metadata:
+   name: persistent-disk 
+spec:
+   capacity:
+     storage: 5Gi
+   volumeMode: Filesystem
+   accessModes:
+     - ReadWriteOnce
+   persistentVolumeReclaimPolicy: Recycle
+   storageClassName: Recyclable
+   nfs:
+     path: /tmp
+     server: 172.17.0.2
+What changes must you make for the PersistentVolume to keep its current contents after being released?
+Your choice: correct -
+Update the persistentVolumeReclaimPolicy field to Retain.
+
+Incorrect -
+Update the storageClassName field to Retainable.
+
+Incorrect -
+Update the storageClassName field to Persistable.
+
+Incorrect -
+Update the persistentVolumeReclaimPolicy field to Persistent.
+
+Incorrect -
+I don't know yet.
+
+11. Which fields must you include in the configuration file to set environment variables for a container in a Pod?
+Incorrect -
+path and setup
+
+Your choice: correct -
+env and envFrom
+
+Incorrect -
+env and environment
+
+Incorrect -
+environment and temp
+
+Incorrect -
+I don't know yet.
+
+
+12. In containers, what is the default imagePullPolicy if you have not set the tag for the image as :latest?
+Incorrect -
+Always
+
+Your choice: correct -
+IfNotPresent
+
+Incorrect -
+OnFailure
+
+Incorrect -
+Never
+
+Incorrect -
+I don't know yet.
+
+13. What do annotations in Kubernetes do?
+Incorrect -
+Identify objects for users in a non-semantic way
+
+Incorrect -
+Help users understand core variables that run Kubernetes instances
+
+Incorrect -
+Provide a composed language for marking up various aspects of Kubernetes
+
+Your choice: correct -
+Provide a purely generic way to add metadata to Kubernetes objects
+
+Incorrect -
+I don't know yet.
+
+14. What would you add to this service definition to enable an external port of 5678 to a container port of 8080?
+apiVersion: v1
+kind: Service
+metadata:
+   labels:
+      app: frontend
+   name: frontend
+spec:
+   ports:
+   - name: web
+   selector:
+      app: frontend
+   type: NodePort
+status:
+   loadBalancer: {}
+Incorrect -
+spec:
+   ports:
+   - name: web
+     port: 8080
+     protocol: HTTP
+     destinationPort: 5678
+Incorrect -
+spec:
+   ports:
+   - name: web
+     port: 5678
+     protocol: HTTP
+     destinationPort: 8080
+Incorrect -
+spec:
+   ports:
+   - name: web
+     port: 8080
+     protocol: TCP
+     targetPort: 5678
+Your choice: correct -
+spec:
+   ports:
+   - name: web
+     port: 5678
+     protocol: TCP
+     targetPort: 8080
+Incorrect -
+I don't know yet.
+
+15. One of your Pods needs access to a Service that has an associated port that is published and a cluster IP is in its place. The client Pod's environment variables aren't yet populated, however. Why?
+Incorrect -
+You must replace the Domain Name System (DNS) Service Discovery method with the Dynamic Host Configuration Protocol (DHCP) method.  
+
+Your choice: correct -
+You must create the Service before creating the client Pods.
+
+Incorrect -
+You must replace the Domain Name System (DNS) Service Discovery method with the environment variables method.
+
+Incorrect -
+You must create the Service 30 minutes after you create the client Pods. 
+
+Incorrect -
+I don't know yet.
+
+16. How can a developer modify a Pod to allow the containers to enable privileged mode as well as to gain access to devices on the host?
+Your choice: incorrect -
+Add privileged: true to the spec.securityMode attribute of the Pod.
+
+Correct -
+Add privileged: true to the spec.securityContext attribute of the Pod.
+
+Incorrect -
+Add allowPrivilegeEscalation: true to the spec.securityContext attribute of the Pod.
+
+Incorrect -
+Add allowPrivileged: true to the spec.securityContext attribute of the Pod.
+
+Incorrect -
+I don't know yet.
+
+
+
+17. You must integrate a containerized application with your company's log monitoring platform. The log monitoring platform ingests all files in JSON format from a given location inside a persistent volume claim (PVC) log repository. Given that the containerized application is outputting XML log files, how would you integrate the application with the monitoring platform?
+Incorrect -
+By using the proxy container pattern to move the XML log files to a shared volume between the containers on the filesystem path required for the log parsing
+
+Incorrect -
+By using the ambassador container pattern to connect a shared volume between the containers that converts the XML log files to markdown (MD) format
+
+Incorrect -
+By using the sidecar container pattern to extract the XML log files to the shared volume between the containers
+
+Your choice: correct -
+By using the adapter container pattern to convert the XML log files to JSON format and mounting the PVC log repository to the containers
+
+Incorrect -
+I don't know yet.
+
+
+18. You install kubectl in your system which is currently pointing to minikube. How would you point it to docker-desktop?
+Your choice: incorrect -
+kubectl config get-environments
+kubectl config use-environment docker-desktop
+Correct -
+kubectl config get-contexts
+kubectl config use-context docker-desktop
+Incorrect -
+kubectl remove-config minikube
+kubectl use-config docker-desktop
+Incorrect -
+kubectl remove-context minikube
+kubectl use-context docker-desktop
+Incorrect -
+I don't know yet.
+
+
+
+19. You have a high-traffic application running on Kubernetes that is regularly updated with new code. You need the app to have zero downtime, instant switchover, and fast rollback in the event of an issue. What method will meet your needs?
+Incorrect -
+Changing the API semantic version with every deployment and creating new traffic rules based on the new API version
+
+Incorrect -
+Using a ReplicaSet to replicate all traffic to two or more Pods during deployment
+
+Incorrect -
+Using a rolling update method
+
+Your choice: correct -
+Using a blue-green deployment method
+
+Incorrect -
+I don't know yet.
+
+
+20. You are a software engineer using kompose. There are a set of unique ingestion properties in your company's docker-compose files that you want to convert properly to Kubernetes resources. The properties aren't supported by kompose. What parts of the architecture will you have to change with plug-ins?
+Your choice: correct -
+Loader, transformer, and outputter
+
+Incorrect -
+Ingress morphology and loader
+
+Incorrect -
+Transformer only
+
+Incorrect -
+Loader only
+
+Incorrect -
+I don't know yet.
+
+

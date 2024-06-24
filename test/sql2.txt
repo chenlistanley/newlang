@@ -1,0 +1,4667 @@
+Querying Data with SQL in MariaDB
+1.
+
+You have executed several SQL statements, but the changes are not reflected. You discover that auto-commit is disabled. How can you enable it?
+
+1. You have executed several SQL statements, but the changes are not reflected. You discover that auto-commit is disabled. How can you enable it?
+Incorrect -
+SET autocommit = 0;
+Incorrect -
+SET autocommit = OFF;
+Your choice: incorrect -
+SET autocommit = ON;
+Correct -
+SET autocommit = 1;
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Querying Data with SQL in MariaDB
+2.
+
+What does the window function do?
+
+2. What does the window function do?
+Incorrect -
+Allows you to handle date and time data effectively
+
+Incorrect -
+Processes an input string and returns a string or numeric value
+
+Your choice: correct -
+Calculates an aggregate value based on a group of rows and returns multiple rows for each group
+
+Incorrect -
+Performs a calculation on one or more values and returns a single value
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Querying Data with SQL in MariaDB
+3.
+
+What is the difference between SELECT and TRUNCATE?
+
+3. What is the difference between SELECT and TRUNCATE?
+Incorrect -
+SELECT is a DDL statement, while TRUNCATE is a DQL statement.
+
+Incorrect -
+SELECT is a DML statement, while TRUNCATE is a DDL statement.
+
+Your choice: correct -
+SELECT is a DQL statement, while TRUNCATE is a DDL statement.
+
+Incorrect -
+SELECT is a DCL statement, while TRUNCATE is a DML statement.
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Querying Data with SQL in MariaDB
+4.
+
+You create a stored procedure and want to change its characteristics. What would happen if you tried to alter the procedure?
+
+4. You create a stored procedure and want to change its characteristics. What would happen if you tried to alter the procedure?
+Incorrect -
+The script would result in a syntax error.
+
+Your choice: correct -
+The procedure would be altered without an error.
+
+Incorrect -
+The procedure would be altered but would throw an error when called.
+
+Incorrect -
+The script would result in an authorization error.
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Querying Data with SQL in MariaDB
+5.
+
+You are working on tables A and B. The definitions of the tables are the same. You want to know the data records present in both tables. How would you find this information?
+
+5. You are working on tables A and B. The definitions of the tables are the same. You want to know the data records present in both tables. How would you find this information?
+Incorrect -
+(SELECT * FROM A) EXCEPT (SELECT * FROM B);
+Incorrect -
+(SELECT * FROM A ) JOIN (SELECT * FROM B);
+Incorrect -
+(SELECT * FROM A) UNION (SELECT * FROM B);
+Your choice: correct -
+(SELECT * FROM A) INTERSECT (SELECT * FROM B);
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Querying Data with SQL in MariaDB
+6.
+
+You are working on a table named "MaterialDiscount" that contains three columns: Product, Price, and Discount, where Discount is a ratio. How would you retrieve all data from the table, with an additional column calculating price after discount?
+
+6. You are working on a table named "MaterialDiscount" that contains three columns: Product, Price, and Discount, where Discount is a ratio. How would you retrieve all data from the table, with an additional column calculating price after discount?
+Incorrect -
+SELECT Product, Price, Discount, Price - Price/Discount AS 'Price after discount' FROM MaterialDiscount;
+Incorrect -
+SELECT Product, Price, Discount, Price - Price*Discount/100 AS 'Price after discount' FROM MaterialDiscount;
+Incorrect -
+SELECT Product, Price, Discount, Price - Discount AS 'Price after discount' FROM MaterialDiscount;
+Your choice: correct -
+SELECT Product, Price, Discount, Price - Price*Discount AS 'Price after discount' FROM MaterialDiscount;
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Querying Data with SQL in MariaDB
+7.
+
+You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+
+SELECT Name, Subject, AVG(Marks) FROM Student;
+7. You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+SELECT Name, Subject, AVG(Marks) FROM Student;
+Incorrect -
+Result would be average marks of each group of student and subject.
+
+Incorrect -
+Result would be average marks of each subject
+
+Your choice: correct -
+Result would be incorrect and mismatched.
+
+Incorrect -
+Result would be average marks of each student
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Querying Data with SQL in MariaDB
+8.
+
+Which of the following is a numeric data type?
+
+8. Which of the following is a numeric data type?
+Incorrect -
+BLOB
+
+Correct -
+BOOLEAN
+
+Incorrect -
+ENUM
+
+Your choice: incorrect -
+TIMESTAMP
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Querying Data with SQL in MariaDB
+9.
+
+What would be the result of the given script?
+
+SELECT CASE BINARY 'B' WHEN 'a' THEN 1 WHEN 'b' THEN 2 END;
+9. What would be the result of the given script?
+SELECT CASE BINARY 'B' WHEN 'a' THEN 1 WHEN 'b' THEN 2 END;
+Incorrect -
+0
+
+Correct -
+NULL
+
+Incorrect -
+1
+
+Your choice: incorrect -
+2
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Querying Data with SQL in MariaDB
+10.
+
+What is true for the ALTER PROCEDURE statement?
+
+10. What is true for the ALTER PROCEDURE statement?
+Incorrect -
+It can be used to change the parameters of a stored procedure.
+
+Your choice: correct -
+It can be used to change the characteristics of a stored procedure.
+
+Incorrect -
+It can be used to change the privileges of a stored procedure.
+
+Incorrect -
+It can be used to change the body of a stored procedure.
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Querying Data with SQL in MariaDB
+11.
+
+You are working on a table named Donations that contains columns Id (text), Prefix (numeric), and Suffix (text). There is a script to retrieve data which throws an error. 
+
+SELECT Id, Prefix + Suffix AS Donation FROM Donations;
+How would you fix the error?
+
+11. You are working on a table named Donations that contains columns Id (text), Prefix (numeric), and Suffix (text). There is a script to retrieve data which throws an error. 
+SELECT Id, Prefix + Suffix AS Donation FROM Donations;
+How would you fix the error?
+Your choice: correct -
+SELECT Id, CAST(Prefix AS CHAR(20)) + Suffix AS Donation FROM Donations;
+
+Incorrect -
+SELECT Id, "Prefix + Suffix" AS Donation FROM Donations;
+
+Incorrect -
+SELECT Id, CONCAT(Prefix + Suffix) AS Donation FROM Donations;
+
+Incorrect -
+SELECT Id,Suffix + Prefix AS Donation FROM Donations;
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Querying Data with SQL in MariaDB
+12.
+
+You are required to create a procedure that counts the number of rows of any table passed as an argument and store it in an output argument. How would you create this procedure?
+
+12. You are required to create a procedure that counts the number of rows of any table passed as an argument and store it in an output argument. How would you create this procedure?
+Incorrect -
+CREATE PROCEDURE FetchData (IN param1 , OUT param2 )
+ BEGIN 
+ SELECT COUNT(*) INTO param2 FROM param1;
+ END;
+Incorrect -
+CREATE PROCEDURE FetchData (IN param1 CHAR(100), OUT param2 INT)
+ BEGIN 
+ SELECT COUNT(*) INTO param1 FROM param2;
+ END;
+Incorrect -
+CREATE PROCEDURE FetchData (param1 CHAR(100),param2 INT)
+ BEGIN 
+ SELECT COUNT(*) INTO param2 FROM param1;
+ END;
+Your choice: correct -
+CREATE PROCEDURE FetchData (IN param1 CHAR(100), OUT param2 INT)
+ BEGIN 
+ SELECT COUNT(*) INTO param2 FROM param1;
+ END;
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Querying Data with SQL in MariaDB
+13.
+
+What is the difference between CURRENT_USER() and USER()?
+
+13. What is the difference between CURRENT_USER() and USER()?
+Your choice: correct -
+USER() returns the username and hostname given when authenticating MariaDB, while CURRENT_USER returns the username and hostname from the MariaDB account that the server used to authenticate the current client.
+
+Incorrect -
+USER returns both hostname and username, while CURRENT_USER returns only the username.
+
+Incorrect -
+USER() returns the username and hostname from the MariaDB account that the server used to authenticate the current client, while CURRENT_USER returns the username and hostname given when authenticating MariaDB.
+
+Incorrect -
+USER only returns the hostname that is used to authenticate to MariaDB, while CURRENT_USER returns both the hostname and the username.
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Querying Data with SQL in MariaDB
+14.
+
+What is the default order of the SELECT query?
+
+14. What is the default order of the SELECT query?
+Incorrect -
+Mixed order
+
+Incorrect -
+Descending
+
+Correct -
+No order
+
+Your choice: incorrect -
+Ascending
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Querying Data with SQL in MariaDB
+15.
+
+Which command will NOT return a current user?
+
+15. Which command will NOT return a current user?
+Incorrect -
+SYSTEM_USER
+
+Incorrect -
+SESSION_USER
+
+Your choice: correct -
+DEFAULT_USER
+
+Incorrect -
+USER
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Querying Data with SQL in MariaDB
+16.
+
+You are working on a table named Inventory with four columns: Product, Price, Discount, and Stock, where the discount is a percentage (whole number). How would you calculate the total amount and the amount given as a discount?
+
+16. You are working on a table named Inventory with four columns: Product, Price, Discount, and Stock, where the discount is a percentage (whole number). How would you calculate the total amount and the amount given as a discount?
+Your choice: incorrect -
+SELECT SUM(Price*Stock* Discount) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+Incorrect -
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock + Price*Stock*Discount) AS 'Total Discount' FROM Inventory;
+Correct -
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+Incorrect -
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock -Price*Stock*Discount) AS 'Total Discount' FROM Inventory;
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Querying Data with SQL in MariaDB
+17.
+
+Which of the following privileges are required to delete a procedure?
+
+17. Which of the following privileges are required to delete a procedure?
+Incorrect -
+DEFINER
+
+Your choice: incorrect -
+INVOKER
+
+Correct -
+ALTER ROUTINE
+
+Incorrect -
+Automatic
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Querying Data with SQL in MariaDB
+18.
+
+You created a stored procedure "Changemap" that has security characteristics set as definer. It deletes some data while executing. How would you ALTER the procedure so that everyone cannot use the procedure to delete data?
+
+18. You created a stored procedure "Changemap" that has security characteristics set as definer. It deletes some data while executing. How would you ALTER the procedure so that everyone cannot use the procedure to delete data?
+Incorrect -
+ALTER PROCEDURE Changemap  SECURITY INVOKER;
+Incorrect -
+ALTER PROCEDURE Changemap SQL SECURITY DEFINER;
+Your choice: correct -
+ALTER PROCEDURE Changemap SQL SECURITY INVOKER;
+Incorrect -
+ALTER PROCEDURE Changemap INVOKER;
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Querying Data with SQL in MariaDB
+19.
+
+You are working on a table named Marks that has four columns: Id, Math, Science, and Arts. How would you get Id and Math where items in Math are in ascending order?
+
+19. You are working on a table named Marks that has four columns: Id, Math, Science, and Arts. How would you get Id and Math where items in Math are in ascending order?
+Your choice: incorrect -
+SELECTS Id, Math FROM Marks ORDER BY ASCE(Math);
+Incorrect -
+SELECTS Id, Math FROM Marks ORDER BY ASCENDING(Math);
+Incorrect -
+SELECTS Id, Math FROM Marks ORDER BY Math AESC;
+Correct -
+SELECTS Id, Math FROM Marks ORDER BY Math;
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Querying Data with SQL in MariaDB
+20.
+
+Which of the following is true for TRUNCATE?
+
+20. Which of the following is true for TRUNCATE?
+Your choice: incorrect -
+It is a DML statement. 
+
+Incorrect -
+It is a DQL statement. 
+
+Correct -
+It is a DDL statement.
+
+Incorrect -
+It is a DCL statement. 
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Querying Data with SQL in MariaDB
+21.
+
+How many columns can be concatenated using CONCAT?
+
+21. How many columns can be concatenated using CONCAT?
+Incorrect -
+1023
+
+Incorrect -
+64
+
+Your choice: correct -
+255
+
+Incorrect -
+12
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+Querying Data with SQL in MariaDB
+22.
+
+Which function will generate the current date?
+
+22. Which function will generate the current date?
+Incorrect -
+DAY()
+
+Your choice: incorrect -
+CUR_DATE()
+
+Correct -
+CURDATE()
+
+Incorrect -
+DATE()
+
+Incorrect -
+I don't know yet.
+
+Is something wrong with the question?
+
+1. You are working on a table named Donations that contains columns Id (text), Prefix (numeric), and Suffix (text). There is a script to retrieve data which throws an error. 
+SELECT Id, Prefix + Suffix AS Donation FROM Donations;
+How would you fix the error?
+Your choice: correct -
+SELECT Id, CAST(Prefix AS CHAR(20)) + Suffix AS Donation FROM Donations;
+
+2. You are working on a data-set named Flight that contains two columns: Origin and Destination. You are required to create a recursive common table expression that selects all the destinations one can reach from origin "London". Which code would do the job?
+WITH RECURSIVE Route AS (
+SELECT Origin AS Destination FROM Flight WHERE Origin = "London"
+UNION
+SELECT Flight.Destination FROM Flight, Route WHERE Route.Destination = Flight.Origin
+)
+
+3. A stored procedure calls CURRENT_USER(). What is the output of the call?
+Your choice: correct -
+Owner of the procedure
+
+4. Which of the following is a numeric data type?
+BOOLEAN
+
+5.
+SELECT CURDATE(); 
+The script above is used to generate the current date in a string format. How would you generate it in a numeric format?
+SELECT CURDATE() + 0;
+
+6. You are working on a table named Marks that has four columns: Id, Math, Science, and Arts. How would you get Id and Math where items in Math are in ascending order?
+SELECTS Id, Math FROM Marks ORDER BY Math;
+
+7. What is the difference between CURRENT_USER() and USER()?
+Your choice: correct -
+USER() returns the username and hostname given when authenticating MariaDB, while CURRENT_USER returns the username and hostname from the MariaDB account that the server used to authenticate the current client.
+
+8. The script SELECT 50/(5-5); throws an error:  ERROR_ON_DIVISION_BY_ZERO What could be the reason?
+SQL mode is used.
+
+9. You are working on a table named "MaterialDiscount" that contains three columns: Product, Price, and Discount, where Discount is a ratio. How would you retrieve all data from the table, with an additional column calculating price after discount?
+Your choice: correct -
+SELECT Product, Price, Discount, Price - Price*Discount AS 'Price after discount' FROM MaterialDiscount;
+
+10. You are required to create a procedure that counts the number of rows of any table passed as an argument and store it in an output argument. How would you create this procedure?
+CREATE PROCEDURE FetchData (IN param1 CHAR(100), OUT param2 INT)
+ BEGIN 
+ SELECT COUNT(*) INTO param2 FROM param1;
+ END;
+ 
+ 
+ 11. You are working with four SQL queries given below:
+SELECT * FROM USER;
+SHOW AUTHORS;
+SHOW COLUMNS FROM USER;
+RENAME USER STAT TO STANLEY;
+How many of the above queries are DQL?
+3
+
+12. Which of the following is true about alias in a query?
+It is a correlation name 
+
+
+13. What would be the result of the given script?
+SELECT CASE BINARY 'B' WHEN 'a' THEN 1 WHEN 'b' THEN 2 END;
+Your choice: correct -
+NULL
+
+14. How can you change the parameters of a stored procedure?
+By dropping and replace the stored procedure
+
+15. You are working on two tables named Vendor and Customer that both require their columns to be updated to IsCustomer and IsVendor respectively. By default, the columns IsCustomer and IsVendor are set to 0. How can you update the respective columns for the records that are present in both tables by comparing the Id column of both tables?
+UPDATE Vendor, Customer SET Vendor.IsCustomer = 1 , Customer.IsVendor = 1 WHERE Vendor.Id = Customer.Id;
+
+
+16. What is the difference between SELECT and TRUNCATE?
+Correct -
+SELECT is a DQL statement, while TRUNCATE is a DDL statement.
+
+17. What does the window function do?
+Calculates an aggregate value based on a group of rows and returns multiple rows for each group
+
+18. You have executed several SQL statements, but the changes are not reflected. You discover that auto-commit is disabled. How can you enable it?
+SET autocommit = 1;
+
+19. You are working on a table named Marks that contains three columns: Student, Subject, and Marks. How would you retrieve all data along with a column containing average marks of the associated subjects?
+SELECT Student, Subject, Marks, AVG(Marks) OVER (PARTITION BY Subject) AS 'SubjectAverage' FROM Marks;
+
+20. What is true for the ALTER PROCEDURE statement?
+It can be used to change the characteristics of a stored procedure.
+
+21. How many records are returned by the GROUP BY clause for each group?
+Your choice: correct -
+One
+
+22. You are required to create a stored procedure that retrieves outdated records from master data tables. For inactive records, a column named ActiveInd is set to 0 in every master data table. How would you create this stored procedure?
+CREATE PROCEDURE FetchInactive ( param CHAR(100))
+ BEGIN
+ SELECT * FROM param WHERE ActiveInd = 0;
+ END 
+ 
+ 23. You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+SELECT Name, Subject, AVG(Marks) FROM Student;
+Your choice: correct -
+Result would be incorrect and mismatched.
+
+
+24. You are working on a table named Inventory with four columns: Product, Price, Discount, and Stock, where the discount is a percentage (whole number). How would you calculate the total amount and the amount given as a discount?
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+
+
+25. What is the default order of the SELECT query?
+No order
+
+26. You are performing TRUNCATE and DELETE operations to clear an equal amount of data, but the TRUNCATE operation is faster than DELETE. Why?
+TRUNCATE drops and recreates a table, whereas DELETE performs row by row deletion.
+
+27. Which of the following is NOT a select expression?  
+Database_name.*
+
+28. You are working on a query that requires a join of two tables. How would you use a table alias on the given script?
+SELECT Employee.Name, Employee.Salary, HR.Address, HR.Joining FROM Employee LEFT JOIN HR ON Employee.Id = HR.ID;
+SELECT E.Name, E.Salary, H.Address, H.Joining FROM Employee E LEFT JOIN HR H ON E.Id = H.ID;
+
+29. You are working on concatenating two variables VAR1 and VAR2 with the script given below. Either of the variables may contain a NULL value.
+
+CONCAT(VAR1, VAR2);
+
+The script results in a NULL. How can you handle the expected NULL value?
+Your choice: correct -
+CONCAT(IFNULL(VAR1, " "), IFNULL(VAR2, " "));
+
+30. Which of the following privileges are required to delete a procedure?
+ALTER ROUTINE
+
+ 
+1.You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+SELECT Name, Subject, AVG(Marks) FROM Student;
+Ans :Result would be incorrect and mismatched.
+
+2.What does the window function do?
+Ans : Calculates an aggregate value based on a group of rows and returns multiple rows for each group
+
+3.You are working on tables A and B. The definitions of the tables are the same. You want to know the data records present in both tables. How would you find this information?
+Ans: (SELECT * FROM A) INTERSECT (SELECT * FROM B);
+
+4.You need to insert a few records in a table, but you don't know if the records are duplicate on the primary key or not. If it is a duplicate, then you need to perform an update only. How can you accomplish this?
+Ans: INSERT … ON DUPLICATE KEY UPDATE …
+
+5. You are working on a table named "Stock" that has three columns: "ProductType", "Brand", and "Stock". How can you get the aggregated stock of each product type?
+Ans: SELECT ProductType, SUM(Stock) FROM Stock GROUP BY ProductType;
+
+6.You are working on a table named Customer with columns "Id", "Name", "Phone", and "TotalPurchase". How can you delete customer records that have the TotalPurchase of 0?
+DELETE FROM Customer WHERE TotalPurchase = 0;
+
+7.What does the SELECT statement do?  
+It retrieves data from databases
+
+8.How can you retrieve a username in MariaDB?
+SELECT USER();
+
+9.What is the role of the SET clause in an UPDATE statement?
+The SET clause indicates which column to modify and the values they should be given.
+
+10.How would you create a stored procedure that requires one input parameter in which a table name is passed to retrieve all data of the table?
+CREATE PROCEDURE FetchData (IN param CHAR(100))
+ BEGIN 
+ SELECT * FROM param;
+ END;
+
+11.What is the difference between UNION and UNION ALL operator?
+UNION operator removes the duplicate from the result set, but UNION ALL retains the duplicates.
+
+12.A coalesce script is given below:
+COALESCE(NULL, 1, NULL, 2, NULL, 3, NULL, 4);
+What is the output of the script?
+1
+
+13.What does a TRUNCATE(X, D) function return?
+It returns a number X truncated to D decimal places.
+
+
+14.You have executed several SQL statements, but the changes are not reflected. You discover that auto-commit is disabled. How can you enable it?
+SET autocommit = 1;
+
+15.You are working on a table named Customer with three columns; ID, FirstName, and LastName. How can you find the records for the customers whose last name starts with Sm and whose first name ends with an s?
+SELECT * FROM Customer WHERE LastName LIKE 'Sm%' AND FirstName LIKE '%s';
+
+16.What is the range of the unsigned tinyint data type?
+0 to 255 
+
+17.What is the default order of the SELECT query?
+No order
+
+18.You are working on a table named Review with columns Id and Comment. Comment has distinct values of 1, 2, and 3. How can you retrieve data from the table with the Comment column as "Satisfactory," "Neutral," and "Unsatisfactory" corresponding to its values?
+SELECT Id, CASE Comment 
+WHEN 1 THEN 'Satisfactory'
+WHEN 2 THEN 'Neutral'
+WHEN 3 THEN 'Unsatisfactory'
+END AS Comment  FROM Review;
+
+19.You are working on a table named Inventory with four columns: Product, Price, Discount, and Stock, where the discount is a percentage (whole number). How would you calculate the total amount and the amount given as a discount?
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+
+20.You are working on a table named Sales that contains three columns: Product, TotalSales, and MaxInd. Initially, the column MaxInd is set to 0. How can you update the MaxInd column for the rows that have the maximum TotalSales?
+UPDATE Sales SET MaxInd = 1 WHERE TotalSales = (SELECT MAX(TotalSales) FROM Sales);
+
+
+1. You are working on a table named Donations that contains columns Id (text), Prefix (numeric), and Suffix (text). There is a script to retrieve data which throws an error. 
+SELECT Id, Prefix + Suffix AS Donation FROM Donations;
+How would you fix the error?
+Your choice: correct -
+SELECT Id, CAST(Prefix AS CHAR(20)) + Suffix AS Donation FROM Donations;
+
+2. You are working on a data-set named Flight that contains two columns: Origin and Destination. You are required to create a recursive common table expression that selects all the destinations one can reach from origin "London". Which code would do the job?
+WITH RECURSIVE Route AS (
+SELECT Origin AS Destination FROM Flight WHERE Origin = "London"
+UNION
+SELECT Flight.Destination FROM Flight, Route WHERE Route.Destination = Flight.Origin
+)
+
+3. A stored procedure calls CURRENT_USER(). What is the output of the call?
+Your choice: correct -
+Owner of the procedure
+
+4. Which of the following is a numeric data type?
+BOOLEAN
+
+5.
+SELECT CURDATE(); 
+The script above is used to generate the current date in a string format. How would you generate it in a numeric format?
+SELECT CURDATE() + 0;
+
+6. You are working on a table named Marks that has four columns: Id, Math, Science, and Arts. How would you get Id and Math where items in Math are in ascending order?
+SELECTS Id, Math FROM Marks ORDER BY Math;
+
+7. What is the difference between CURRENT_USER() and USER()?
+Your choice: correct -
+USER() returns the username and hostname given when authenticating MariaDB, while CURRENT_USER returns the username and hostname from the MariaDB account that the server used to authenticate the current client.
+
+8. The script SELECT 50/(5-5); throws an error:  ERROR_ON_DIVISION_BY_ZERO What could be the reason?
+SQL mode is used.
+
+9. You are working on a table named "MaterialDiscount" that contains three columns: Product, Price, and Discount, where Discount is a ratio. How would you retrieve all data from the table, with an additional column calculating price after discount?
+Your choice: correct -
+SELECT Product, Price, Discount, Price - Price*Discount AS 'Price after discount' FROM MaterialDiscount;
+
+10. You are required to create a procedure that counts the number of rows of any table passed as an argument and store it in an output argument. How would you create this procedure?
+CREATE PROCEDURE FetchData (IN param1 CHAR(100), OUT param2 INT)
+ BEGIN 
+ SELECT COUNT(*) INTO param2 FROM param1;
+ END;
+ 
+ 
+ 11. You are working with four SQL queries given below:
+SELECT * FROM USER;
+SHOW AUTHORS;
+SHOW COLUMNS FROM USER;
+RENAME USER STAT TO STANLEY;
+How many of the above queries are DQL?
+3
+
+12. Which of the following is true about alias in a query?
+It is a correlation name 
+
+
+13. What would be the result of the given script?
+SELECT CASE BINARY 'B' WHEN 'a' THEN 1 WHEN 'b' THEN 2 END;
+Your choice: correct -
+NULL
+
+14. How can you change the parameters of a stored procedure?
+By dropping and replace the stored procedure
+
+15. You are working on two tables named Vendor and Customer that both require their columns to be updated to IsCustomer and IsVendor respectively. By default, the columns IsCustomer and IsVendor are set to 0. How can you update the respective columns for the records that are present in both tables by comparing the Id column of both tables?
+UPDATE Vendor, Customer SET Vendor.IsCustomer = 1 , Customer.IsVendor = 1 WHERE Vendor.Id = Customer.Id;
+
+
+16. What is the difference between SELECT and TRUNCATE?
+Correct -
+SELECT is a DQL statement, while TRUNCATE is a DDL statement.
+
+17. What does the window function do?
+Calculates an aggregate value based on a group of rows and returns multiple rows for each group
+
+18. You have executed several SQL statements, but the changes are not reflected. You discover that auto-commit is disabled. How can you enable it?
+SET autocommit = 1;
+
+19. You are working on a table named Marks that contains three columns: Student, Subject, and Marks. How would you retrieve all data along with a column containing average marks of the associated subjects?
+SELECT Student, Subject, Marks, AVG(Marks) OVER (PARTITION BY Subject) AS 'SubjectAverage' FROM Marks;
+
+20. What is true for the ALTER PROCEDURE statement?
+It can be used to change the characteristics of a stored procedure.
+
+21. How many records are returned by the GROUP BY clause for each group?
+Your choice: correct -
+One
+
+22. You are required to create a stored procedure that retrieves outdated records from master data tables. For inactive records, a column named ActiveInd is set to 0 in every master data table. How would you create this stored procedure?
+CREATE PROCEDURE FetchInactive ( param CHAR(100))
+ BEGIN
+ SELECT * FROM param WHERE ActiveInd = 0;
+ END 
+ 
+ 23. You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+SELECT Name, Subject, AVG(Marks) FROM Student;
+Your choice: correct -
+Result would be incorrect and mismatched.
+
+
+24. You are working on a table named Inventory with four columns: Product, Price, Discount, and Stock, where the discount is a percentage (whole number). How would you calculate the total amount and the amount given as a discount?
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+
+
+25. What is the default order of the SELECT query?
+No order
+
+26. You are performing TRUNCATE and DELETE operations to clear an equal amount of data, but the TRUNCATE operation is faster than DELETE. Why?
+TRUNCATE drops and recreates a table, whereas DELETE performs row by row deletion.
+
+27. Which of the following is NOT a select expression?  
+Database_name.*
+
+28. You are working on a query that requires a join of two tables. How would you use a table alias on the given script?
+SELECT Employee.Name, Employee.Salary, HR.Address, HR.Joining FROM Employee LEFT JOIN HR ON Employee.Id = HR.ID;
+SELECT E.Name, E.Salary, H.Address, H.Joining FROM Employee E LEFT JOIN HR H ON E.Id = H.ID;
+
+29. You are working on concatenating two variables VAR1 and VAR2 with the script given below. Either of the variables may contain a NULL value.
+
+CONCAT(VAR1, VAR2);
+
+The script results in a NULL. How can you handle the expected NULL value?
+Your choice: correct -
+CONCAT(IFNULL(VAR1, " "), IFNULL(VAR2, " "));
+
+30. Which of the following privileges are required to delete a procedure?
+ALTER ROUTINE
+
+ 
+1.You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+SELECT Name, Subject, AVG(Marks) FROM Student;
+Ans :Result would be incorrect and mismatched.
+
+2.What does the window function do?
+Ans : Calculates an aggregate value based on a group of rows and returns multiple rows for each group
+
+3.You are working on tables A and B. The definitions of the tables are the same. You want to know the data records present in both tables. How would you find this information?
+Ans: (SELECT * FROM A) INTERSECT (SELECT * FROM B);
+
+4.You need to insert a few records in a table, but you don't know if the records are duplicate on the primary key or not. If it is a duplicate, then you need to perform an update only. How can you accomplish this?
+Ans: INSERT … ON DUPLICATE KEY UPDATE …
+
+5. You are working on a table named "Stock" that has three columns: "ProductType", "Brand", and "Stock". How can you get the aggregated stock of each product type?
+Ans: SELECT ProductType, SUM(Stock) FROM Stock GROUP BY ProductType;
+
+6.You are working on a table named Customer with columns "Id", "Name", "Phone", and "TotalPurchase". How can you delete customer records that have the TotalPurchase of 0?
+DELETE FROM Customer WHERE TotalPurchase = 0;
+
+7.What does the SELECT statement do?  
+It retrieves data from databases
+
+8.How can you retrieve a username in MariaDB?
+SELECT USER();
+
+9.What is the role of the SET clause in an UPDATE statement?
+The SET clause indicates which column to modify and the values they should be given.
+
+10.How would you create a stored procedure that requires one input parameter in which a table name is passed to retrieve all data of the table?
+CREATE PROCEDURE FetchData (IN param CHAR(100))
+ BEGIN 
+ SELECT * FROM param;
+ END;
+
+11.What is the difference between UNION and UNION ALL operator?
+UNION operator removes the duplicate from the result set, but UNION ALL retains the duplicates.
+
+12.A coalesce script is given below:
+COALESCE(NULL, 1, NULL, 2, NULL, 3, NULL, 4);
+What is the output of the script?
+1
+
+13.What does a TRUNCATE(X, D) function return?
+It returns a number X truncated to D decimal places.
+
+
+14.You have executed several SQL statements, but the changes are not reflected. You discover that auto-commit is disabled. How can you enable it?
+SET autocommit = 1;
+
+15.You are working on a table named Customer with three columns; ID, FirstName, and LastName. How can you find the records for the customers whose last name starts with Sm and whose first name ends with an s?
+SELECT * FROM Customer WHERE LastName LIKE 'Sm%' AND FirstName LIKE '%s';
+
+16.What is the range of the unsigned tinyint data type?
+0 to 255 
+
+17.What is the default order of the SELECT query?
+No order
+
+18.You are working on a table named Review with columns Id and Comment. Comment has distinct values of 1, 2, and 3. How can you retrieve data from the table with the Comment column as "Satisfactory," "Neutral," and "Unsatisfactory" corresponding to its values?
+SELECT Id, CASE Comment 
+WHEN 1 THEN 'Satisfactory'
+WHEN 2 THEN 'Neutral'
+WHEN 3 THEN 'Unsatisfactory'
+END AS Comment  FROM Review;
+
+19.You are working on a table named Inventory with four columns: Product, Price, Discount, and Stock, where the discount is a percentage (whole number). How would you calculate the total amount and the amount given as a discount?
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+
+20.You are working on a table named Sales that contains three columns: Product, TotalSales, and MaxInd. Initially, the column MaxInd is set to 0. How can you update the MaxInd column for the rows that have the maximum TotalSales?
+UPDATE Sales SET MaxInd = 1 WHERE TotalSales = (SELECT MAX(TotalSales) FROM Sales);
+
+
+
+1.
+ 
+You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+SELECT Name, Subject, AVG(Marks) FROM Student;
+Result would be incorrect and mismatched.
+
+2.
+ 
+You are working with four SQL queries given below:
+SELECT * FROM USER;
+SHOW AUTHORS;
+SHOW COLUMNS FROM USER;
+RENAME USER STAT TO STANLEY;
+How many of the above queries are DQL?
+3
+
+
+3.
+SELECT CURDATE(); 
+The script above is used to generate the current date in a string format. How would you generate it in a numeric format?
+SELECT CURDATE() + 0;
+4.
+ 
+You are working on a table named Donations that contains columns Id (text), Prefix (numeric), and Suffix (text). There is a script to retrieve data which throws an error. 
+SELECT Id, Prefix + Suffix AS Donation FROM Donations;
+SELECT Id, CAST(Prefix AS CHAR(20)) + Suffix AS Donation FROM Donations;
+
+
+5.
+ 
+What is the difference between CURRENT_USER() and USER()?
+USER() returns the username and hostname given when authenticating MariaDB, while CURRENT_USER returns the username and hostname from the MariaDB account that the server used to authenticate the current client.
+
+6.
+ 
+What would be the result of the given script?
+SELECT CASE BINARY 'B' WHEN 'a' THEN 1 WHEN 'b' THEN 2 END;
+NULL
+
+7.
+ 
+A stored procedure calls CURRENT_USER(). What is the output of the call?
+•  Your choice: correct -
+Owner of the procedure
+
+8.
+ 
+How can you change the parameters of a stored procedure?
+By dropping and replace the stored procedure
+
+ 
+9.The script SELECT 50/(5-5); throws an error: 
+ 
+ERROR_ON_DIVISION_BY_ZERO
+ 
+What could be the reason?
+•  Your choice: correct -
+SQL mode is used.
+
+10.
+ 
+How would you create a stored procedure to retrieve all data from a table named 'Sales'?
+CREATE PROCEDURE Retrieve_Sales  BEGIN SELECT * FROM Sales; END; 
+
+11.
+ 
+You are working on a table named Marks that has four columns: Id, Math, Science, and Arts. How would you get Id and Math where items in Math are in ascending order?
+•  Your choice: correct -
+SELECTS Id, Math FROM Marks ORDER BY Math;
+
+
+12.
+ 
+You are required to create a stored procedure that retrieves outdated records from master data tables. For inactive records, a column named ActiveInd is set to 0 in every master data table. How would you create this stored procedure?
+ CREATE PROCEDURE FetchInactive ( param CHAR(100))
+ BEGIN
+ SELECT * FROM param WHERE ActiveInd = 0;
+ END 
+
+13.
+ 
+You are working on two tables named Vendor and Customer that both require their columns to be updated to IsCustomer and IsVendor respectively. By default, the columns IsCustomer and IsVendor are set to 0. How can you update the respective columns for the records that are present in both tables by comparing the Id column of both tables?
+UPDATE Vendor, Customer SET Vendor.IsCustomer = 1 , Customer.IsVendor = 1 WHERE Vendor.Id = Customer.Id;
+
+15.
+ 
+You are required to create a procedure that counts the number of rows of any table passed as an argument and store it in an output argument. How would you create this procedure?
+CREATE PROCEDURE FetchData (IN param1 CHAR(100), OUT param2 INT)
+ BEGIN 
+ SELECT COUNT(*) INTO param2 FROM param1;
+ END;
+16.
+ 
+Which of the following is true about alias in a query?
+It is a correlation name 
+
+17.
+ 
+How many columns can be concatenated using CONCAT?
+255
+
+18.
+ 
+You are working on a table named "MaterialDiscount" that contains three columns: Product, Price, and Discount, where Discount is a ratio. How would you retrieve all data from the table, with an additional column calculating price after discount?
+SELECT Product, Price, Discount, Price - Price*Discount AS 'Price after discount' FROM MaterialDiscount;
+
+19.
+ 
+You created a stored procedure "Changemap" that has security characteristics set as definer. It deletes some data while executing. How would you ALTER the procedure so that everyone cannot use the procedure to delete data?
+ALTER PROCEDURE Changemap SQL SECURITY INVOKER;
+
+20.
+ 
+You are working on a data-set named Flight that contains two columns: Origin and Destination. You are required to create a recursive common table expression that selects all the destinations one can reach from origin "London". Which code would do the job?
+WITH RECURSIVE Route AS (
+SELECT Origin AS Destination FROM Flight WHERE Origin = "London"
+UNION
+SELECT Flight.Destination FROM Flight, Route WHERE Route.Destination = Flight.Origin
+)
+
+
+21.
+ 
+What is the difference between SELECT and TRUNCATE?
+SELECT is a DQL statement, while TRUNCATE is a DDL statement.
+
+22.
+ 
+You are working on a stored procedure named InventoryBuckets and there is a confirmed requirement to tweak the logic of the body. What do you need to do first considering you have backup of code and now need to update the stored procedure with same name?
+•  Your choice: correct -
+DROP PROCEDURE InventoryBuckets;
+
+
+23.
+ 
+Which function will generate the current date?
+CURDATE()
+
+24.
+ 
+What is true for the ALTER PROCEDURE statement?
+It can be used to change the characteristics of a stored procedure.
+
+25.
+ 
+How many records are returned by the GROUP BY clause for each group?
+•  Your choice: correct -
+One
+
+26.
+ 
+Which of the following is a numeric data type?
+BOOLEAN
+
+27.
+ 
+You are performing TRUNCATE and DELETE operations to clear an equal amount of data, but the TRUNCATE operation is faster than DELETE. Why?
+•  Your choice: correct -
+TRUNCATE drops and recreates a table, whereas DELETE performs row by row deletion.
+
+28.
+ 
+Which of the following is correct about the IN clause?
+It is shorthand for multiple OR operations.
+
+29.
+ 
+What does the window function do?
+Calculates an aggregate value based on a group of rows and returns multiple rows for each group
+
+30.
+ 
+You are working on a table named Inventory with four columns: Product, Price, Discount, and Stock, where the discount is a percentage (whole number). How would you calculate the total amount and the amount given as a discount?
+•  Your choice: correct -
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+
+
+1. You are working on a table named Donations that contains columns Id (text), Prefix (numeric), and Suffix (text). There is a script to retrieve data which throws an error. 
+SELECT Id, Prefix + Suffix AS Donation FROM Donations;
+How would you fix the error?
+Your choice: correct -
+SELECT Id, CAST(Prefix AS CHAR(20)) + Suffix AS Donation FROM Donations;
+
+2. You are working on a data-set named Flight that contains two columns: Origin and Destination. You are required to create a recursive common table expression that selects all the destinations one can reach from origin "London". Which code would do the job?
+WITH RECURSIVE Route AS (
+SELECT Origin AS Destination FROM Flight WHERE Origin = "London"
+UNION
+SELECT Flight.Destination FROM Flight, Route WHERE Route.Destination = Flight.Origin
+)
+
+3. A stored procedure calls CURRENT_USER(). What is the output of the call?
+Your choice: correct -
+Owner of the procedure
+
+4. Which of the following is a numeric data type?
+BOOLEAN
+
+5.
+SELECT CURDATE(); 
+The script above is used to generate the current date in a string format. How would you generate it in a numeric format?
+SELECT CURDATE() + 0;
+
+6. You are working on a table named Marks that has four columns: Id, Math, Science, and Arts. How would you get Id and Math where items in Math are in ascending order?
+SELECTS Id, Math FROM Marks ORDER BY Math;
+
+7. What is the difference between CURRENT_USER() and USER()?
+Your choice: correct -
+USER() returns the username and hostname given when authenticating MariaDB, while CURRENT_USER returns the username and hostname from the MariaDB account that the server used to authenticate the current client.
+
+8. The script SELECT 50/(5-5); throws an error:  ERROR_ON_DIVISION_BY_ZERO What could be the reason?
+SQL mode is used.
+
+9. You are working on a table named "MaterialDiscount" that contains three columns: Product, Price, and Discount, where Discount is a ratio. How would you retrieve all data from the table, with an additional column calculating price after discount?
+Your choice: correct -
+SELECT Product, Price, Discount, Price - Price*Discount AS 'Price after discount' FROM MaterialDiscount;
+
+10. You are required to create a procedure that counts the number of rows of any table passed as an argument and store it in an output argument. How would you create this procedure?
+CREATE PROCEDURE FetchData (IN param1 CHAR(100), OUT param2 INT)
+ BEGIN 
+ SELECT COUNT(*) INTO param2 FROM param1;
+ END;
+ 
+ 
+ 11. You are working with four SQL queries given below:
+SELECT * FROM USER;
+SHOW AUTHORS;
+SHOW COLUMNS FROM USER;
+RENAME USER STAT TO STANLEY;
+How many of the above queries are DQL?
+3
+
+12. Which of the following is true about alias in a query?
+It is a correlation name 
+
+
+13. What would be the result of the given script?
+SELECT CASE BINARY 'B' WHEN 'a' THEN 1 WHEN 'b' THEN 2 END;
+Your choice: correct -
+NULL
+
+14. How can you change the parameters of a stored procedure?
+By dropping and replace the stored procedure
+
+15. You are working on two tables named Vendor and Customer that both require their columns to be updated to IsCustomer and IsVendor respectively. By default, the columns IsCustomer and IsVendor are set to 0. How can you update the respective columns for the records that are present in both tables by comparing the Id column of both tables?
+UPDATE Vendor, Customer SET Vendor.IsCustomer = 1 , Customer.IsVendor = 1 WHERE Vendor.Id = Customer.Id;
+
+
+16. What is the difference between SELECT and TRUNCATE?
+Correct -
+SELECT is a DQL statement, while TRUNCATE is a DDL statement.
+
+17. What does the window function do?
+Calculates an aggregate value based on a group of rows and returns multiple rows for each group
+
+18. You have executed several SQL statements, but the changes are not reflected. You discover that auto-commit is disabled. How can you enable it?
+SET autocommit = 1;
+
+19. You are working on a table named Marks that contains three columns: Student, Subject, and Marks. How would you retrieve all data along with a column containing average marks of the associated subjects?
+SELECT Student, Subject, Marks, AVG(Marks) OVER (PARTITION BY Subject) AS 'SubjectAverage' FROM Marks;
+
+20. What is true for the ALTER PROCEDURE statement?
+It can be used to change the characteristics of a stored procedure.
+
+21. How many records are returned by the GROUP BY clause for each group?
+Your choice: correct -
+One
+
+22. You are required to create a stored procedure that retrieves outdated records from master data tables. For inactive records, a column named ActiveInd is set to 0 in every master data table. How would you create this stored procedure?
+CREATE PROCEDURE FetchInactive ( param CHAR(100))
+ BEGIN
+ SELECT * FROM param WHERE ActiveInd = 0;
+ END 
+ 
+ 23. You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+SELECT Name, Subject, AVG(Marks) FROM Student;
+Your choice: correct -
+Result would be incorrect and mismatched.
+
+
+24. You are working on a table named Inventory with four columns: Product, Price, Discount, and Stock, where the discount is a percentage (whole number). How would you calculate the total amount and the amount given as a discount?
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+
+
+25. What is the default order of the SELECT query?
+No order
+
+26. You are performing TRUNCATE and DELETE operations to clear an equal amount of data, but the TRUNCATE operation is faster than DELETE. Why?
+TRUNCATE drops and recreates a table, whereas DELETE performs row by row deletion.
+
+27. Which of the following is NOT a select expression?  
+Database_name.*
+
+28. You are working on a query that requires a join of two tables. How would you use a table alias on the given script?
+SELECT Employee.Name, Employee.Salary, HR.Address, HR.Joining FROM Employee LEFT JOIN HR ON Employee.Id = HR.ID;
+SELECT E.Name, E.Salary, H.Address, H.Joining FROM Employee E LEFT JOIN HR H ON E.Id = H.ID;
+
+29. You are working on concatenating two variables VAR1 and VAR2 with the script given below. Either of the variables may contain a NULL value.
+
+CONCAT(VAR1, VAR2);
+
+The script results in a NULL. How can you handle the expected NULL value?
+Your choice: correct -
+CONCAT(IFNULL(VAR1, " "), IFNULL(VAR2, " "));
+
+30. Which of the following privileges are required to delete a procedure?
+ALTER ROUTINE
+
+ 
+1.You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+SELECT Name, Subject, AVG(Marks) FROM Student;
+Ans :Result would be incorrect and mismatched.
+
+2.What does the window function do?
+Ans : Calculates an aggregate value based on a group of rows and returns multiple rows for each group
+
+3.You are working on tables A and B. The definitions of the tables are the same. You want to know the data records present in both tables. How would you find this information?
+Ans: (SELECT * FROM A) INTERSECT (SELECT * FROM B);
+
+4.You need to insert a few records in a table, but you don't know if the records are duplicate on the primary key or not. If it is a duplicate, then you need to perform an update only. How can you accomplish this?
+Ans: INSERT … ON DUPLICATE KEY UPDATE …
+
+5. You are working on a table named "Stock" that has three columns: "ProductType", "Brand", and "Stock". How can you get the aggregated stock of each product type?
+Ans: SELECT ProductType, SUM(Stock) FROM Stock GROUP BY ProductType;
+
+6.You are working on a table named Customer with columns "Id", "Name", "Phone", and "TotalPurchase". How can you delete customer records that have the TotalPurchase of 0?
+DELETE FROM Customer WHERE TotalPurchase = 0;
+
+7.What does the SELECT statement do?  
+It retrieves data from databases
+
+8.How can you retrieve a username in MariaDB?
+SELECT USER();
+
+9.What is the role of the SET clause in an UPDATE statement?
+The SET clause indicates which column to modify and the values they should be given.
+
+10.How would you create a stored procedure that requires one input parameter in which a table name is passed to retrieve all data of the table?
+CREATE PROCEDURE FetchData (IN param CHAR(100))
+ BEGIN 
+ SELECT * FROM param;
+ END;
+
+11.What is the difference between UNION and UNION ALL operator?
+UNION operator removes the duplicate from the result set, but UNION ALL retains the duplicates.
+
+12.A coalesce script is given below:
+COALESCE(NULL, 1, NULL, 2, NULL, 3, NULL, 4);
+What is the output of the script?
+1
+
+13.What does a TRUNCATE(X, D) function return?
+It returns a number X truncated to D decimal places.
+
+
+14.You have executed several SQL statements, but the changes are not reflected. You discover that auto-commit is disabled. How can you enable it?
+SET autocommit = 1;
+
+15.You are working on a table named Customer with three columns; ID, FirstName, and LastName. How can you find the records for the customers whose last name starts with Sm and whose first name ends with an s?
+SELECT * FROM Customer WHERE LastName LIKE 'Sm%' AND FirstName LIKE '%s';
+
+16.What is the range of the unsigned tinyint data type?
+0 to 255 
+
+17.What is the default order of the SELECT query?
+No order
+
+18.You are working on a table named Review with columns Id and Comment. Comment has distinct values of 1, 2, and 3. How can you retrieve data from the table with the Comment column as "Satisfactory," "Neutral," and "Unsatisfactory" corresponding to its values?
+SELECT Id, CASE Comment 
+WHEN 1 THEN 'Satisfactory'
+WHEN 2 THEN 'Neutral'
+WHEN 3 THEN 'Unsatisfactory'
+END AS Comment  FROM Review;
+
+19.You are working on a table named Inventory with four columns: Product, Price, Discount, and Stock, where the discount is a percentage (whole number). How would you calculate the total amount and the amount given as a discount?
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+
+20.You are working on a table named Sales that contains three columns: Product, TotalSales, and MaxInd. Initially, the column MaxInd is set to 0. How can you update the MaxInd column for the rows that have the maximum TotalSales?
+UPDATE Sales SET MaxInd = 1 WHERE TotalSales = (SELECT MAX(TotalSales) FROM Sales);
+
+
+
+1.
+ 
+You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+SELECT Name, Subject, AVG(Marks) FROM Student;
+Result would be incorrect and mismatched.
+
+2.
+ 
+You are working with four SQL queries given below:
+SELECT * FROM USER;
+SHOW AUTHORS;
+SHOW COLUMNS FROM USER;
+RENAME USER STAT TO STANLEY;
+How many of the above queries are DQL?
+3
+
+
+3.
+SELECT CURDATE(); 
+The script above is used to generate the current date in a string format. How would you generate it in a numeric format?
+SELECT CURDATE() + 0;
+4.
+ 
+You are working on a table named Donations that contains columns Id (text), Prefix (numeric), and Suffix (text). There is a script to retrieve data which throws an error. 
+SELECT Id, Prefix + Suffix AS Donation FROM Donations;
+SELECT Id, CAST(Prefix AS CHAR(20)) + Suffix AS Donation FROM Donations;
+
+
+5.
+ 
+What is the difference between CURRENT_USER() and USER()?
+USER() returns the username and hostname given when authenticating MariaDB, while CURRENT_USER returns the username and hostname from the MariaDB account that the server used to authenticate the current client.
+
+6.
+ 
+What would be the result of the given script?
+SELECT CASE BINARY 'B' WHEN 'a' THEN 1 WHEN 'b' THEN 2 END;
+NULL
+
+7.
+ 
+A stored procedure calls CURRENT_USER(). What is the output of the call?
+•  Your choice: correct -
+Owner of the procedure
+
+8.
+ 
+How can you change the parameters of a stored procedure?
+By dropping and replace the stored procedure
+
+ 
+9.The script SELECT 50/(5-5); throws an error: 
+ 
+ERROR_ON_DIVISION_BY_ZERO
+ 
+What could be the reason?
+•  Your choice: correct -
+SQL mode is used.
+
+10.
+ 
+How would you create a stored procedure to retrieve all data from a table named 'Sales'?
+CREATE PROCEDURE Retrieve_Sales  BEGIN SELECT * FROM Sales; END; 
+
+11.
+ 
+You are working on a table named Marks that has four columns: Id, Math, Science, and Arts. How would you get Id and Math where items in Math are in ascending order?
+•  Your choice: correct -
+SELECTS Id, Math FROM Marks ORDER BY Math;
+
+
+12.
+ 
+You are required to create a stored procedure that retrieves outdated records from master data tables. For inactive records, a column named ActiveInd is set to 0 in every master data table. How would you create this stored procedure?
+ CREATE PROCEDURE FetchInactive ( param CHAR(100))
+ BEGIN
+ SELECT * FROM param WHERE ActiveInd = 0;
+ END 
+
+13.
+ 
+You are working on two tables named Vendor and Customer that both require their columns to be updated to IsCustomer and IsVendor respectively. By default, the columns IsCustomer and IsVendor are set to 0. How can you update the respective columns for the records that are present in both tables by comparing the Id column of both tables?
+UPDATE Vendor, Customer SET Vendor.IsCustomer = 1 , Customer.IsVendor = 1 WHERE Vendor.Id = Customer.Id;
+
+15.
+ 
+You are required to create a procedure that counts the number of rows of any table passed as an argument and store it in an output argument. How would you create this procedure?
+CREATE PROCEDURE FetchData (IN param1 CHAR(100), OUT param2 INT)
+ BEGIN 
+ SELECT COUNT(*) INTO param2 FROM param1;
+ END;
+16.
+ 
+Which of the following is true about alias in a query?
+It is a correlation name 
+
+17.
+ 
+How many columns can be concatenated using CONCAT?
+255
+
+18.
+ 
+You are working on a table named "MaterialDiscount" that contains three columns: Product, Price, and Discount, where Discount is a ratio. How would you retrieve all data from the table, with an additional column calculating price after discount?
+SELECT Product, Price, Discount, Price - Price*Discount AS 'Price after discount' FROM MaterialDiscount;
+
+19.
+ 
+You created a stored procedure "Changemap" that has security characteristics set as definer. It deletes some data while executing. How would you ALTER the procedure so that everyone cannot use the procedure to delete data?
+ALTER PROCEDURE Changemap SQL SECURITY INVOKER;
+
+20.
+ 
+You are working on a data-set named Flight that contains two columns: Origin and Destination. You are required to create a recursive common table expression that selects all the destinations one can reach from origin "London". Which code would do the job?
+WITH RECURSIVE Route AS (
+SELECT Origin AS Destination FROM Flight WHERE Origin = "London"
+UNION
+SELECT Flight.Destination FROM Flight, Route WHERE Route.Destination = Flight.Origin
+)
+
+
+21.
+ 
+What is the difference between SELECT and TRUNCATE?
+SELECT is a DQL statement, while TRUNCATE is a DDL statement.
+
+22.
+ 
+You are working on a stored procedure named InventoryBuckets and there is a confirmed requirement to tweak the logic of the body. What do you need to do first considering you have backup of code and now need to update the stored procedure with same name?
+•  Your choice: correct -
+DROP PROCEDURE InventoryBuckets;
+
+
+23.
+ 
+Which function will generate the current date?
+CURDATE()
+
+24.
+ 
+What is true for the ALTER PROCEDURE statement?
+It can be used to change the characteristics of a stored procedure.
+
+25.
+ 
+How many records are returned by the GROUP BY clause for each group?
+•  Your choice: correct -
+One
+
+26.
+ 
+Which of the following is a numeric data type?
+BOOLEAN
+
+27.
+ 
+You are performing TRUNCATE and DELETE operations to clear an equal amount of data, but the TRUNCATE operation is faster than DELETE. Why?
+•  Your choice: correct -
+TRUNCATE drops and recreates a table, whereas DELETE performs row by row deletion.
+
+28.
+ 
+Which of the following is correct about the IN clause?
+It is shorthand for multiple OR operations.
+
+29.
+ 
+What does the window function do?
+Calculates an aggregate value based on a group of rows and returns multiple rows for each group
+
+30.
+ 
+You are working on a table named Inventory with four columns: Product, Price, Discount, and Stock, where the discount is a percentage (whole number). How would you calculate the total amount and the amount given as a discount?
+•  Your choice: correct -
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+
+
+
+
+
+
+
+
+1. You are working on a table named Donations that contains columns Id (text), Prefix (numeric), and Suffix (text). There is a script to retrieve data which throws an error. 
+SELECT Id, Prefix + Suffix AS Donation FROM Donations;
+How would you fix the error?
+Your choice: correct -
+SELECT Id, CAST(Prefix AS CHAR(20)) + Suffix AS Donation FROM Donations;
+
+2. You are working on a data-set named Flight that contains two columns: Origin and Destination. You are required to create a recursive common table expression that selects all the destinations one can reach from origin "London". Which code would do the job?
+WITH RECURSIVE Route AS (
+SELECT Origin AS Destination FROM Flight WHERE Origin = "London"
+UNION
+SELECT Flight.Destination FROM Flight, Route WHERE Route.Destination = Flight.Origin
+)
+
+3. A stored procedure calls CURRENT_USER(). What is the output of the call?
+Your choice: correct -
+Owner of the procedure
+
+4. Which of the following is a numeric data type?
+BOOLEAN
+
+5.
+SELECT CURDATE(); 
+The script above is used to generate the current date in a string format. How would you generate it in a numeric format?
+SELECT CURDATE() + 0;
+
+6. You are working on a table named Marks that has four columns: Id, Math, Science, and Arts. How would you get Id and Math where items in Math are in ascending order?
+SELECTS Id, Math FROM Marks ORDER BY Math;
+
+7. What is the difference between CURRENT_USER() and USER()?
+Your choice: correct -
+USER() returns the username and hostname given when authenticating MariaDB, while CURRENT_USER returns the username and hostname from the MariaDB account that the server used to authenticate the current client.
+
+8. The script SELECT 50/(5-5); throws an error:  ERROR_ON_DIVISION_BY_ZERO What could be the reason?
+SQL mode is used.
+
+9. You are working on a table named "MaterialDiscount" that contains three columns: Product, Price, and Discount, where Discount is a ratio. How would you retrieve all data from the table, with an additional column calculating price after discount?
+Your choice: correct -
+SELECT Product, Price, Discount, Price - Price*Discount AS 'Price after discount' FROM MaterialDiscount;
+
+10. You are required to create a procedure that counts the number of rows of any table passed as an argument and store it in an output argument. How would you create this procedure?
+CREATE PROCEDURE FetchData (IN param1 CHAR(100), OUT param2 INT)
+ BEGIN 
+ SELECT COUNT(*) INTO param2 FROM param1;
+ END;
+ 
+ 
+ 11. You are working with four SQL queries given below:
+SELECT * FROM USER;
+SHOW AUTHORS;
+SHOW COLUMNS FROM USER;
+RENAME USER STAT TO STANLEY;
+How many of the above queries are DQL?
+3
+
+12. Which of the following is true about alias in a query?
+It is a correlation name 
+
+
+13. What would be the result of the given script?
+SELECT CASE BINARY 'B' WHEN 'a' THEN 1 WHEN 'b' THEN 2 END;
+Your choice: correct -
+NULL
+
+14. How can you change the parameters of a stored procedure?
+By dropping and replace the stored procedure
+
+15. You are working on two tables named Vendor and Customer that both require their columns to be updated to IsCustomer and IsVendor respectively. By default, the columns IsCustomer and IsVendor are set to 0. How can you update the respective columns for the records that are present in both tables by comparing the Id column of both tables?
+UPDATE Vendor, Customer SET Vendor.IsCustomer = 1 , Customer.IsVendor = 1 WHERE Vendor.Id = Customer.Id;
+
+
+16. What is the difference between SELECT and TRUNCATE?
+Correct -
+SELECT is a DQL statement, while TRUNCATE is a DDL statement.
+
+17. What does the window function do?
+Calculates an aggregate value based on a group of rows and returns multiple rows for each group
+
+18. You have executed several SQL statements, but the changes are not reflected. You discover that auto-commit is disabled. How can you enable it?
+SET autocommit = 1;
+
+19. You are working on a table named Marks that contains three columns: Student, Subject, and Marks. How would you retrieve all data along with a column containing average marks of the associated subjects?
+SELECT Student, Subject, Marks, AVG(Marks) OVER (PARTITION BY Subject) AS 'SubjectAverage' FROM Marks;
+
+20. What is true for the ALTER PROCEDURE statement?
+It can be used to change the characteristics of a stored procedure.
+
+21. How many records are returned by the GROUP BY clause for each group?
+Your choice: correct -
+One
+
+22. You are required to create a stored procedure that retrieves outdated records from master data tables. For inactive records, a column named ActiveInd is set to 0 in every master data table. How would you create this stored procedure?
+CREATE PROCEDURE FetchInactive ( param CHAR(100))
+ BEGIN
+ SELECT * FROM param WHERE ActiveInd = 0;
+ END 
+ 
+ 23. You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+SELECT Name, Subject, AVG(Marks) FROM Student;
+Your choice: correct -
+Result would be incorrect and mismatched.
+
+
+24. You are working on a table named Inventory with four columns: Product, Price, Discount, and Stock, where the discount is a percentage (whole number). How would you calculate the total amount and the amount given as a discount?
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+
+
+25. What is the default order of the SELECT query?
+No order
+
+26. You are performing TRUNCATE and DELETE operations to clear an equal amount of data, but the TRUNCATE operation is faster than DELETE. Why?
+TRUNCATE drops and recreates a table, whereas DELETE performs row by row deletion.
+
+27. Which of the following is NOT a select expression?  
+Database_name.*
+
+28. You are working on a query that requires a join of two tables. How would you use a table alias on the given script?
+SELECT Employee.Name, Employee.Salary, HR.Address, HR.Joining FROM Employee LEFT JOIN HR ON Employee.Id = HR.ID;
+SELECT E.Name, E.Salary, H.Address, H.Joining FROM Employee E LEFT JOIN HR H ON E.Id = H.ID;
+
+29. You are working on concatenating two variables VAR1 and VAR2 with the script given below. Either of the variables may contain a NULL value.
+
+CONCAT(VAR1, VAR2);
+
+The script results in a NULL. How can you handle the expected NULL value?
+Your choice: correct -
+CONCAT(IFNULL(VAR1, " "), IFNULL(VAR2, " "));
+
+30. Which of the following privileges are required to delete a procedure?
+ALTER ROUTINE
+
+ 
+1.You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+SELECT Name, Subject, AVG(Marks) FROM Student;
+Ans :Result would be incorrect and mismatched.
+
+2.What does the window function do?
+Ans : Calculates an aggregate value based on a group of rows and returns multiple rows for each group
+
+3.You are working on tables A and B. The definitions of the tables are the same. You want to know the data records present in both tables. How would you find this information?
+Ans: (SELECT * FROM A) INTERSECT (SELECT * FROM B);
+
+4.You need to insert a few records in a table, but you don't know if the records are duplicate on the primary key or not. If it is a duplicate, then you need to perform an update only. How can you accomplish this?
+Ans: INSERT … ON DUPLICATE KEY UPDATE …
+
+5. You are working on a table named "Stock" that has three columns: "ProductType", "Brand", and "Stock". How can you get the aggregated stock of each product type?
+Ans: SELECT ProductType, SUM(Stock) FROM Stock GROUP BY ProductType;
+
+6.You are working on a table named Customer with columns "Id", "Name", "Phone", and "TotalPurchase". How can you delete customer records that have the TotalPurchase of 0?
+DELETE FROM Customer WHERE TotalPurchase = 0;
+
+7.What does the SELECT statement do?  
+It retrieves data from databases
+
+8.How can you retrieve a username in MariaDB?
+SELECT USER();
+
+9.What is the role of the SET clause in an UPDATE statement?
+The SET clause indicates which column to modify and the values they should be given.
+
+10.How would you create a stored procedure that requires one input parameter in which a table name is passed to retrieve all data of the table?
+CREATE PROCEDURE FetchData (IN param CHAR(100))
+ BEGIN 
+ SELECT * FROM param;
+ END;
+
+11.What is the difference between UNION and UNION ALL operator?
+UNION operator removes the duplicate from the result set, but UNION ALL retains the duplicates.
+
+12.A coalesce script is given below:
+COALESCE(NULL, 1, NULL, 2, NULL, 3, NULL, 4);
+What is the output of the script?
+1
+
+13.What does a TRUNCATE(X, D) function return?
+It returns a number X truncated to D decimal places.
+
+
+14.You have executed several SQL statements, but the changes are not reflected. You discover that auto-commit is disabled. How can you enable it?
+SET autocommit = 1;
+
+15.You are working on a table named Customer with three columns; ID, FirstName, and LastName. How can you find the records for the customers whose last name starts with Sm and whose first name ends with an s?
+SELECT * FROM Customer WHERE LastName LIKE 'Sm%' AND FirstName LIKE '%s';
+
+16.What is the range of the unsigned tinyint data type?
+0 to 255 
+
+17.What is the default order of the SELECT query?
+No order
+
+18.You are working on a table named Review with columns Id and Comment. Comment has distinct values of 1, 2, and 3. How can you retrieve data from the table with the Comment column as "Satisfactory," "Neutral," and "Unsatisfactory" corresponding to its values?
+SELECT Id, CASE Comment 
+WHEN 1 THEN 'Satisfactory'
+WHEN 2 THEN 'Neutral'
+WHEN 3 THEN 'Unsatisfactory'
+END AS Comment  FROM Review;
+
+19.You are working on a table named Inventory with four columns: Product, Price, Discount, and Stock, where the discount is a percentage (whole number). How would you calculate the total amount and the amount given as a discount?
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+
+20.You are working on a table named Sales that contains three columns: Product, TotalSales, and MaxInd. Initially, the column MaxInd is set to 0. How can you update the MaxInd column for the rows that have the maximum TotalSales?
+UPDATE Sales SET MaxInd = 1 WHERE TotalSales = (SELECT MAX(TotalSales) FROM Sales);
+
+
+
+1.
+ 
+You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+SELECT Name, Subject, AVG(Marks) FROM Student;
+Result would be incorrect and mismatched.
+
+2.
+ 
+You are working with four SQL queries given below:
+SELECT * FROM USER;
+SHOW AUTHORS;
+SHOW COLUMNS FROM USER;
+RENAME USER STAT TO STANLEY;
+How many of the above queries are DQL?
+3
+
+
+3.
+SELECT CURDATE(); 
+The script above is used to generate the current date in a string format. How would you generate it in a numeric format?
+SELECT CURDATE() + 0;
+4.
+ 
+You are working on a table named Donations that contains columns Id (text), Prefix (numeric), and Suffix (text). There is a script to retrieve data which throws an error. 
+SELECT Id, Prefix + Suffix AS Donation FROM Donations;
+SELECT Id, CAST(Prefix AS CHAR(20)) + Suffix AS Donation FROM Donations;
+
+
+5.
+ 
+What is the difference between CURRENT_USER() and USER()?
+USER() returns the username and hostname given when authenticating MariaDB, while CURRENT_USER returns the username and hostname from the MariaDB account that the server used to authenticate the current client.
+
+6.
+ 
+What would be the result of the given script?
+SELECT CASE BINARY 'B' WHEN 'a' THEN 1 WHEN 'b' THEN 2 END;
+NULL
+
+7.
+ 
+A stored procedure calls CURRENT_USER(). What is the output of the call?
+•  Your choice: correct -
+Owner of the procedure
+
+8.
+ 
+How can you change the parameters of a stored procedure?
+By dropping and replace the stored procedure
+
+ 
+9.The script SELECT 50/(5-5); throws an error: 
+ 
+ERROR_ON_DIVISION_BY_ZERO
+ 
+What could be the reason?
+•  Your choice: correct -
+SQL mode is used.
+
+10.
+ 
+How would you create a stored procedure to retrieve all data from a table named 'Sales'?
+CREATE PROCEDURE Retrieve_Sales  BEGIN SELECT * FROM Sales; END; 
+
+11.
+ 
+You are working on a table named Marks that has four columns: Id, Math, Science, and Arts. How would you get Id and Math where items in Math are in ascending order?
+•  Your choice: correct -
+SELECTS Id, Math FROM Marks ORDER BY Math;
+
+
+12.
+ 
+You are required to create a stored procedure that retrieves outdated records from master data tables. For inactive records, a column named ActiveInd is set to 0 in every master data table. How would you create this stored procedure?
+ CREATE PROCEDURE FetchInactive ( param CHAR(100))
+ BEGIN
+ SELECT * FROM param WHERE ActiveInd = 0;
+ END 
+
+13.
+ 
+You are working on two tables named Vendor and Customer that both require their columns to be updated to IsCustomer and IsVendor respectively. By default, the columns IsCustomer and IsVendor are set to 0. How can you update the respective columns for the records that are present in both tables by comparing the Id column of both tables?
+UPDATE Vendor, Customer SET Vendor.IsCustomer = 1 , Customer.IsVendor = 1 WHERE Vendor.Id = Customer.Id;
+
+15.
+ 
+You are required to create a procedure that counts the number of rows of any table passed as an argument and store it in an output argument. How would you create this procedure?
+CREATE PROCEDURE FetchData (IN param1 CHAR(100), OUT param2 INT)
+ BEGIN 
+ SELECT COUNT(*) INTO param2 FROM param1;
+ END;
+16.
+ 
+Which of the following is true about alias in a query?
+It is a correlation name 
+
+17.
+ 
+How many columns can be concatenated using CONCAT?
+255
+
+18.
+ 
+You are working on a table named "MaterialDiscount" that contains three columns: Product, Price, and Discount, where Discount is a ratio. How would you retrieve all data from the table, with an additional column calculating price after discount?
+SELECT Product, Price, Discount, Price - Price*Discount AS 'Price after discount' FROM MaterialDiscount;
+
+19.
+ 
+You created a stored procedure "Changemap" that has security characteristics set as definer. It deletes some data while executing. How would you ALTER the procedure so that everyone cannot use the procedure to delete data?
+ALTER PROCEDURE Changemap SQL SECURITY INVOKER;
+
+20.
+ 
+You are working on a data-set named Flight that contains two columns: Origin and Destination. You are required to create a recursive common table expression that selects all the destinations one can reach from origin "London". Which code would do the job?
+WITH RECURSIVE Route AS (
+SELECT Origin AS Destination FROM Flight WHERE Origin = "London"
+UNION
+SELECT Flight.Destination FROM Flight, Route WHERE Route.Destination = Flight.Origin
+)
+
+
+21.
+ 
+What is the difference between SELECT and TRUNCATE?
+SELECT is a DQL statement, while TRUNCATE is a DDL statement.
+
+22.
+ 
+You are working on a stored procedure named InventoryBuckets and there is a confirmed requirement to tweak the logic of the body. What do you need to do first considering you have backup of code and now need to update the stored procedure with same name?
+•  Your choice: correct -
+DROP PROCEDURE InventoryBuckets;
+
+
+23.
+ 
+Which function will generate the current date?
+CURDATE()
+
+24.
+ 
+What is true for the ALTER PROCEDURE statement?
+It can be used to change the characteristics of a stored procedure.
+
+25.
+ 
+How many records are returned by the GROUP BY clause for each group?
+•  Your choice: correct -
+One
+
+26.
+ 
+Which of the following is a numeric data type?
+BOOLEAN
+
+27.
+ 
+You are performing TRUNCATE and DELETE operations to clear an equal amount of data, but the TRUNCATE operation is faster than DELETE. Why?
+•  Your choice: correct -
+TRUNCATE drops and recreates a table, whereas DELETE performs row by row deletion.
+
+28.
+ 
+Which of the following is correct about the IN clause?
+It is shorthand for multiple OR operations.
+
+29.
+ 
+What does the window function do?
+Calculates an aggregate value based on a group of rows and returns multiple rows for each group
+
+30.
+ 
+You are working on a table named Inventory with four columns: Product, Price, Discount, and Stock, where the discount is a percentage (whole number). How would you calculate the total amount and the amount given as a discount?
+•  Your choice: correct -
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+
+
+1. You are working on a table named Donations that contains columns Id (text), Prefix (numeric), and Suffix (text). There is a script to retrieve data which throws an error. 
+SELECT Id, Prefix + Suffix AS Donation FROM Donations;
+How would you fix the error?
+Your choice: correct -
+SELECT Id, CAST(Prefix AS CHAR(20)) + Suffix AS Donation FROM Donations;
+
+2. You are working on a data-set named Flight that contains two columns: Origin and Destination. You are required to create a recursive common table expression that selects all the destinations one can reach from origin "London". Which code would do the job?
+WITH RECURSIVE Route AS (
+SELECT Origin AS Destination FROM Flight WHERE Origin = "London"
+UNION
+SELECT Flight.Destination FROM Flight, Route WHERE Route.Destination = Flight.Origin
+)
+
+3. A stored procedure calls CURRENT_USER(). What is the output of the call?
+Your choice: correct -
+Owner of the procedure
+
+4. Which of the following is a numeric data type?
+BOOLEAN
+
+5.
+SELECT CURDATE(); 
+The script above is used to generate the current date in a string format. How would you generate it in a numeric format?
+SELECT CURDATE() + 0;
+
+6. You are working on a table named Marks that has four columns: Id, Math, Science, and Arts. How would you get Id and Math where items in Math are in ascending order?
+SELECTS Id, Math FROM Marks ORDER BY Math;
+
+7. What is the difference between CURRENT_USER() and USER()?
+Your choice: correct -
+USER() returns the username and hostname given when authenticating MariaDB, while CURRENT_USER returns the username and hostname from the MariaDB account that the server used to authenticate the current client.
+
+8. The script SELECT 50/(5-5); throws an error:  ERROR_ON_DIVISION_BY_ZERO What could be the reason?
+SQL mode is used.
+
+9. You are working on a table named "MaterialDiscount" that contains three columns: Product, Price, and Discount, where Discount is a ratio. How would you retrieve all data from the table, with an additional column calculating price after discount?
+Your choice: correct -
+SELECT Product, Price, Discount, Price - Price*Discount AS 'Price after discount' FROM MaterialDiscount;
+
+10. You are required to create a procedure that counts the number of rows of any table passed as an argument and store it in an output argument. How would you create this procedure?
+CREATE PROCEDURE FetchData (IN param1 CHAR(100), OUT param2 INT)
+ BEGIN 
+ SELECT COUNT(*) INTO param2 FROM param1;
+ END;
+ 
+ 
+ 11. You are working with four SQL queries given below:
+SELECT * FROM USER;
+SHOW AUTHORS;
+SHOW COLUMNS FROM USER;
+RENAME USER STAT TO STANLEY;
+How many of the above queries are DQL?
+3
+
+12. Which of the following is true about alias in a query?
+It is a correlation name 
+
+
+13. What would be the result of the given script?
+SELECT CASE BINARY 'B' WHEN 'a' THEN 1 WHEN 'b' THEN 2 END;
+Your choice: correct -
+NULL
+
+14. How can you change the parameters of a stored procedure?
+By dropping and replace the stored procedure
+
+15. You are working on two tables named Vendor and Customer that both require their columns to be updated to IsCustomer and IsVendor respectively. By default, the columns IsCustomer and IsVendor are set to 0. How can you update the respective columns for the records that are present in both tables by comparing the Id column of both tables?
+UPDATE Vendor, Customer SET Vendor.IsCustomer = 1 , Customer.IsVendor = 1 WHERE Vendor.Id = Customer.Id;
+
+
+16. What is the difference between SELECT and TRUNCATE?
+Correct -
+SELECT is a DQL statement, while TRUNCATE is a DDL statement.
+
+17. What does the window function do?
+Calculates an aggregate value based on a group of rows and returns multiple rows for each group
+
+18. You have executed several SQL statements, but the changes are not reflected. You discover that auto-commit is disabled. How can you enable it?
+SET autocommit = 1;
+
+19. You are working on a table named Marks that contains three columns: Student, Subject, and Marks. How would you retrieve all data along with a column containing average marks of the associated subjects?
+SELECT Student, Subject, Marks, AVG(Marks) OVER (PARTITION BY Subject) AS 'SubjectAverage' FROM Marks;
+
+20. What is true for the ALTER PROCEDURE statement?
+It can be used to change the characteristics of a stored procedure.
+
+21. How many records are returned by the GROUP BY clause for each group?
+Your choice: correct -
+One
+
+22. You are required to create a stored procedure that retrieves outdated records from master data tables. For inactive records, a column named ActiveInd is set to 0 in every master data table. How would you create this stored procedure?
+CREATE PROCEDURE FetchInactive ( param CHAR(100))
+ BEGIN
+ SELECT * FROM param WHERE ActiveInd = 0;
+ END 
+ 
+ 23. You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+SELECT Name, Subject, AVG(Marks) FROM Student;
+Your choice: correct -
+Result would be incorrect and mismatched.
+
+
+24. You are working on a table named Inventory with four columns: Product, Price, Discount, and Stock, where the discount is a percentage (whole number). How would you calculate the total amount and the amount given as a discount?
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+
+
+25. What is the default order of the SELECT query?
+No order
+
+26. You are performing TRUNCATE and DELETE operations to clear an equal amount of data, but the TRUNCATE operation is faster than DELETE. Why?
+TRUNCATE drops and recreates a table, whereas DELETE performs row by row deletion.
+
+27. Which of the following is NOT a select expression?  
+Database_name.*
+
+28. You are working on a query that requires a join of two tables. How would you use a table alias on the given script?
+SELECT Employee.Name, Employee.Salary, HR.Address, HR.Joining FROM Employee LEFT JOIN HR ON Employee.Id = HR.ID;
+SELECT E.Name, E.Salary, H.Address, H.Joining FROM Employee E LEFT JOIN HR H ON E.Id = H.ID;
+
+29. You are working on concatenating two variables VAR1 and VAR2 with the script given below. Either of the variables may contain a NULL value.
+
+CONCAT(VAR1, VAR2);
+
+The script results in a NULL. How can you handle the expected NULL value?
+Your choice: correct -
+CONCAT(IFNULL(VAR1, " "), IFNULL(VAR2, " "));
+
+30. Which of the following privileges are required to delete a procedure?
+ALTER ROUTINE
+
+ 
+1.You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+SELECT Name, Subject, AVG(Marks) FROM Student;
+Ans :Result would be incorrect and mismatched.
+
+2.What does the window function do?
+Ans : Calculates an aggregate value based on a group of rows and returns multiple rows for each group
+
+3.You are working on tables A and B. The definitions of the tables are the same. You want to know the data records present in both tables. How would you find this information?
+Ans: (SELECT * FROM A) INTERSECT (SELECT * FROM B);
+
+4.You need to insert a few records in a table, but you don't know if the records are duplicate on the primary key or not. If it is a duplicate, then you need to perform an update only. How can you accomplish this?
+Ans: INSERT … ON DUPLICATE KEY UPDATE …
+
+5. You are working on a table named "Stock" that has three columns: "ProductType", "Brand", and "Stock". How can you get the aggregated stock of each product type?
+Ans: SELECT ProductType, SUM(Stock) FROM Stock GROUP BY ProductType;
+
+6.You are working on a table named Customer with columns "Id", "Name", "Phone", and "TotalPurchase". How can you delete customer records that have the TotalPurchase of 0?
+DELETE FROM Customer WHERE TotalPurchase = 0;
+
+7.What does the SELECT statement do?  
+It retrieves data from databases
+
+8.How can you retrieve a username in MariaDB?
+SELECT USER();
+
+9.What is the role of the SET clause in an UPDATE statement?
+The SET clause indicates which column to modify and the values they should be given.
+
+10.How would you create a stored procedure that requires one input parameter in which a table name is passed to retrieve all data of the table?
+CREATE PROCEDURE FetchData (IN param CHAR(100))
+ BEGIN 
+ SELECT * FROM param;
+ END;
+
+11.What is the difference between UNION and UNION ALL operator?
+UNION operator removes the duplicate from the result set, but UNION ALL retains the duplicates.
+
+12.A coalesce script is given below:
+COALESCE(NULL, 1, NULL, 2, NULL, 3, NULL, 4);
+What is the output of the script?
+1
+
+13.What does a TRUNCATE(X, D) function return?
+It returns a number X truncated to D decimal places.
+
+
+14.You have executed several SQL statements, but the changes are not reflected. You discover that auto-commit is disabled. How can you enable it?
+SET autocommit = 1;
+
+15.You are working on a table named Customer with three columns; ID, FirstName, and LastName. How can you find the records for the customers whose last name starts with Sm and whose first name ends with an s?
+SELECT * FROM Customer WHERE LastName LIKE 'Sm%' AND FirstName LIKE '%s';
+
+16.What is the range of the unsigned tinyint data type?
+0 to 255 
+
+17.What is the default order of the SELECT query?
+No order
+
+18.You are working on a table named Review with columns Id and Comment. Comment has distinct values of 1, 2, and 3. How can you retrieve data from the table with the Comment column as "Satisfactory," "Neutral," and "Unsatisfactory" corresponding to its values?
+SELECT Id, CASE Comment 
+WHEN 1 THEN 'Satisfactory'
+WHEN 2 THEN 'Neutral'
+WHEN 3 THEN 'Unsatisfactory'
+END AS Comment  FROM Review;
+
+19.You are working on a table named Inventory with four columns: Product, Price, Discount, and Stock, where the discount is a percentage (whole number). How would you calculate the total amount and the amount given as a discount?
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+
+20.You are working on a table named Sales that contains three columns: Product, TotalSales, and MaxInd. Initially, the column MaxInd is set to 0. How can you update the MaxInd column for the rows that have the maximum TotalSales?
+UPDATE Sales SET MaxInd = 1 WHERE TotalSales = (SELECT MAX(TotalSales) FROM Sales);
+
+
+
+1.
+ 
+You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+SELECT Name, Subject, AVG(Marks) FROM Student;
+Result would be incorrect and mismatched.
+
+2.
+ 
+You are working with four SQL queries given below:
+SELECT * FROM USER;
+SHOW AUTHORS;
+SHOW COLUMNS FROM USER;
+RENAME USER STAT TO STANLEY;
+How many of the above queries are DQL?
+3
+
+
+3.
+SELECT CURDATE(); 
+The script above is used to generate the current date in a string format. How would you generate it in a numeric format?
+SELECT CURDATE() + 0;
+4.
+ 
+You are working on a table named Donations that contains columns Id (text), Prefix (numeric), and Suffix (text). There is a script to retrieve data which throws an error. 
+SELECT Id, Prefix + Suffix AS Donation FROM Donations;
+SELECT Id, CAST(Prefix AS CHAR(20)) + Suffix AS Donation FROM Donations;
+
+
+5.
+ 
+What is the difference between CURRENT_USER() and USER()?
+USER() returns the username and hostname given when authenticating MariaDB, while CURRENT_USER returns the username and hostname from the MariaDB account that the server used to authenticate the current client.
+
+6.
+ 
+What would be the result of the given script?
+SELECT CASE BINARY 'B' WHEN 'a' THEN 1 WHEN 'b' THEN 2 END;
+NULL
+
+7.
+ 
+A stored procedure calls CURRENT_USER(). What is the output of the call?
+•  Your choice: correct -
+Owner of the procedure
+
+8.
+ 
+How can you change the parameters of a stored procedure?
+By dropping and replace the stored procedure
+
+ 
+9.The script SELECT 50/(5-5); throws an error: 
+ 
+ERROR_ON_DIVISION_BY_ZERO
+ 
+What could be the reason?
+•  Your choice: correct -
+SQL mode is used.
+
+10.
+ 
+How would you create a stored procedure to retrieve all data from a table named 'Sales'?
+CREATE PROCEDURE Retrieve_Sales  BEGIN SELECT * FROM Sales; END; 
+
+11.
+ 
+You are working on a table named Marks that has four columns: Id, Math, Science, and Arts. How would you get Id and Math where items in Math are in ascending order?
+•  Your choice: correct -
+SELECTS Id, Math FROM Marks ORDER BY Math;
+
+
+12.
+ 
+You are required to create a stored procedure that retrieves outdated records from master data tables. For inactive records, a column named ActiveInd is set to 0 in every master data table. How would you create this stored procedure?
+ CREATE PROCEDURE FetchInactive ( param CHAR(100))
+ BEGIN
+ SELECT * FROM param WHERE ActiveInd = 0;
+ END 
+
+13.
+ 
+You are working on two tables named Vendor and Customer that both require their columns to be updated to IsCustomer and IsVendor respectively. By default, the columns IsCustomer and IsVendor are set to 0. How can you update the respective columns for the records that are present in both tables by comparing the Id column of both tables?
+UPDATE Vendor, Customer SET Vendor.IsCustomer = 1 , Customer.IsVendor = 1 WHERE Vendor.Id = Customer.Id;
+
+15.
+ 
+You are required to create a procedure that counts the number of rows of any table passed as an argument and store it in an output argument. How would you create this procedure?
+CREATE PROCEDURE FetchData (IN param1 CHAR(100), OUT param2 INT)
+ BEGIN 
+ SELECT COUNT(*) INTO param2 FROM param1;
+ END;
+16.
+ 
+Which of the following is true about alias in a query?
+It is a correlation name 
+
+17.
+ 
+How many columns can be concatenated using CONCAT?
+255
+
+18.
+ 
+You are working on a table named "MaterialDiscount" that contains three columns: Product, Price, and Discount, where Discount is a ratio. How would you retrieve all data from the table, with an additional column calculating price after discount?
+SELECT Product, Price, Discount, Price - Price*Discount AS 'Price after discount' FROM MaterialDiscount;
+
+19.
+ 
+You created a stored procedure "Changemap" that has security characteristics set as definer. It deletes some data while executing. How would you ALTER the procedure so that everyone cannot use the procedure to delete data?
+ALTER PROCEDURE Changemap SQL SECURITY INVOKER;
+
+20.
+ 
+You are working on a data-set named Flight that contains two columns: Origin and Destination. You are required to create a recursive common table expression that selects all the destinations one can reach from origin "London". Which code would do the job?
+WITH RECURSIVE Route AS (
+SELECT Origin AS Destination FROM Flight WHERE Origin = "London"
+UNION
+SELECT Flight.Destination FROM Flight, Route WHERE Route.Destination = Flight.Origin
+)
+
+
+21.
+ 
+What is the difference between SELECT and TRUNCATE?
+SELECT is a DQL statement, while TRUNCATE is a DDL statement.
+
+22.
+ 
+You are working on a stored procedure named InventoryBuckets and there is a confirmed requirement to tweak the logic of the body. What do you need to do first considering you have backup of code and now need to update the stored procedure with same name?
+•  Your choice: correct -
+DROP PROCEDURE InventoryBuckets;
+
+
+23.
+ 
+Which function will generate the current date?
+CURDATE()
+
+24.
+ 
+What is true for the ALTER PROCEDURE statement?
+It can be used to change the characteristics of a stored procedure.
+
+25.
+ 
+How many records are returned by the GROUP BY clause for each group?
+•  Your choice: correct -
+One
+
+26.
+ 
+Which of the following is a numeric data type?
+BOOLEAN
+
+27.
+ 
+You are performing TRUNCATE and DELETE operations to clear an equal amount of data, but the TRUNCATE operation is faster than DELETE. Why?
+•  Your choice: correct -
+TRUNCATE drops and recreates a table, whereas DELETE performs row by row deletion.
+
+28.
+ 
+Which of the following is correct about the IN clause?
+It is shorthand for multiple OR operations.
+
+29.
+ 
+What does the window function do?
+Calculates an aggregate value based on a group of rows and returns multiple rows for each group
+
+30.
+ 
+You are working on a table named Inventory with four columns: Product, Price, Discount, and Stock, where the discount is a percentage (whole number). How would you calculate the total amount and the amount given as a discount?
+•  Your choice: correct -
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+
+
+1. You are working on a table named Donations that contains columns Id (text), Prefix (numeric), and Suffix (text). There is a script to retrieve data which throws an error. 
+SELECT Id, Prefix + Suffix AS Donation FROM Donations;
+How would you fix the error?
+Your choice: correct -
+SELECT Id, CAST(Prefix AS CHAR(20)) + Suffix AS Donation FROM Donations;
+
+2. You are working on a data-set named Flight that contains two columns: Origin and Destination. You are required to create a recursive common table expression that selects all the destinations one can reach from origin "London". Which code would do the job?
+WITH RECURSIVE Route AS (
+SELECT Origin AS Destination FROM Flight WHERE Origin = "London"
+UNION
+SELECT Flight.Destination FROM Flight, Route WHERE Route.Destination = Flight.Origin
+)
+
+3. A stored procedure calls CURRENT_USER(). What is the output of the call?
+Your choice: correct -
+Owner of the procedure
+
+4. Which of the following is a numeric data type?
+BOOLEAN
+
+5.
+SELECT CURDATE(); 
+The script above is used to generate the current date in a string format. How would you generate it in a numeric format?
+SELECT CURDATE() + 0;
+
+6. You are working on a table named Marks that has four columns: Id, Math, Science, and Arts. How would you get Id and Math where items in Math are in ascending order?
+SELECTS Id, Math FROM Marks ORDER BY Math;
+
+7. What is the difference between CURRENT_USER() and USER()?
+Your choice: correct -
+USER() returns the username and hostname given when authenticating MariaDB, while CURRENT_USER returns the username and hostname from the MariaDB account that the server used to authenticate the current client.
+
+8. The script SELECT 50/(5-5); throws an error:  ERROR_ON_DIVISION_BY_ZERO What could be the reason?
+SQL mode is used.
+
+9. You are working on a table named "MaterialDiscount" that contains three columns: Product, Price, and Discount, where Discount is a ratio. How would you retrieve all data from the table, with an additional column calculating price after discount?
+Your choice: correct -
+SELECT Product, Price, Discount, Price - Price*Discount AS 'Price after discount' FROM MaterialDiscount;
+
+10. You are required to create a procedure that counts the number of rows of any table passed as an argument and store it in an output argument. How would you create this procedure?
+CREATE PROCEDURE FetchData (IN param1 CHAR(100), OUT param2 INT)
+ BEGIN 
+ SELECT COUNT(*) INTO param2 FROM param1;
+ END;
+ 
+ 
+ 11. You are working with four SQL queries given below:
+SELECT * FROM USER;
+SHOW AUTHORS;
+SHOW COLUMNS FROM USER;
+RENAME USER STAT TO STANLEY;
+How many of the above queries are DQL?
+3
+
+12. Which of the following is true about alias in a query?
+It is a correlation name 
+
+
+13. What would be the result of the given script?
+SELECT CASE BINARY 'B' WHEN 'a' THEN 1 WHEN 'b' THEN 2 END;
+Your choice: correct -
+NULL
+
+14. How can you change the parameters of a stored procedure?
+By dropping and replace the stored procedure
+
+15. You are working on two tables named Vendor and Customer that both require their columns to be updated to IsCustomer and IsVendor respectively. By default, the columns IsCustomer and IsVendor are set to 0. How can you update the respective columns for the records that are present in both tables by comparing the Id column of both tables?
+UPDATE Vendor, Customer SET Vendor.IsCustomer = 1 , Customer.IsVendor = 1 WHERE Vendor.Id = Customer.Id;
+
+
+16. What is the difference between SELECT and TRUNCATE?
+Correct -
+SELECT is a DQL statement, while TRUNCATE is a DDL statement.
+
+17. What does the window function do?
+Calculates an aggregate value based on a group of rows and returns multiple rows for each group
+
+18. You have executed several SQL statements, but the changes are not reflected. You discover that auto-commit is disabled. How can you enable it?
+SET autocommit = 1;
+
+19. You are working on a table named Marks that contains three columns: Student, Subject, and Marks. How would you retrieve all data along with a column containing average marks of the associated subjects?
+SELECT Student, Subject, Marks, AVG(Marks) OVER (PARTITION BY Subject) AS 'SubjectAverage' FROM Marks;
+
+20. What is true for the ALTER PROCEDURE statement?
+It can be used to change the characteristics of a stored procedure.
+
+21. How many records are returned by the GROUP BY clause for each group?
+Your choice: correct -
+One
+
+22. You are required to create a stored procedure that retrieves outdated records from master data tables. For inactive records, a column named ActiveInd is set to 0 in every master data table. How would you create this stored procedure?
+CREATE PROCEDURE FetchInactive ( param CHAR(100))
+ BEGIN
+ SELECT * FROM param WHERE ActiveInd = 0;
+ END 
+ 
+ 23. You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+SELECT Name, Subject, AVG(Marks) FROM Student;
+Your choice: correct -
+Result would be incorrect and mismatched.
+
+
+24. You are working on a table named Inventory with four columns: Product, Price, Discount, and Stock, where the discount is a percentage (whole number). How would you calculate the total amount and the amount given as a discount?
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+
+
+25. What is the default order of the SELECT query?
+No order
+
+26. You are performing TRUNCATE and DELETE operations to clear an equal amount of data, but the TRUNCATE operation is faster than DELETE. Why?
+TRUNCATE drops and recreates a table, whereas DELETE performs row by row deletion.
+
+27. Which of the following is NOT a select expression?  
+Database_name.*
+
+28. You are working on a query that requires a join of two tables. How would you use a table alias on the given script?
+SELECT Employee.Name, Employee.Salary, HR.Address, HR.Joining FROM Employee LEFT JOIN HR ON Employee.Id = HR.ID;
+SELECT E.Name, E.Salary, H.Address, H.Joining FROM Employee E LEFT JOIN HR H ON E.Id = H.ID;
+
+29. You are working on concatenating two variables VAR1 and VAR2 with the script given below. Either of the variables may contain a NULL value.
+
+CONCAT(VAR1, VAR2);
+
+The script results in a NULL. How can you handle the expected NULL value?
+Your choice: correct -
+CONCAT(IFNULL(VAR1, " "), IFNULL(VAR2, " "));
+
+30. Which of the following privileges are required to delete a procedure?
+ALTER ROUTINE
+
+ 
+1.You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+SELECT Name, Subject, AVG(Marks) FROM Student;
+Ans :Result would be incorrect and mismatched.
+
+2.What does the window function do?
+Ans : Calculates an aggregate value based on a group of rows and returns multiple rows for each group
+
+3.You are working on tables A and B. The definitions of the tables are the same. You want to know the data records present in both tables. How would you find this information?
+Ans: (SELECT * FROM A) INTERSECT (SELECT * FROM B);
+
+4.You need to insert a few records in a table, but you don't know if the records are duplicate on the primary key or not. If it is a duplicate, then you need to perform an update only. How can you accomplish this?
+Ans: INSERT … ON DUPLICATE KEY UPDATE …
+
+5. You are working on a table named "Stock" that has three columns: "ProductType", "Brand", and "Stock". How can you get the aggregated stock of each product type?
+Ans: SELECT ProductType, SUM(Stock) FROM Stock GROUP BY ProductType;
+
+6.You are working on a table named Customer with columns "Id", "Name", "Phone", and "TotalPurchase". How can you delete customer records that have the TotalPurchase of 0?
+DELETE FROM Customer WHERE TotalPurchase = 0;
+
+7.What does the SELECT statement do?  
+It retrieves data from databases
+
+8.How can you retrieve a username in MariaDB?
+SELECT USER();
+
+9.What is the role of the SET clause in an UPDATE statement?
+The SET clause indicates which column to modify and the values they should be given.
+
+10.How would you create a stored procedure that requires one input parameter in which a table name is passed to retrieve all data of the table?
+CREATE PROCEDURE FetchData (IN param CHAR(100))
+ BEGIN 
+ SELECT * FROM param;
+ END;
+
+11.What is the difference between UNION and UNION ALL operator?
+UNION operator removes the duplicate from the result set, but UNION ALL retains the duplicates.
+
+12.A coalesce script is given below:
+COALESCE(NULL, 1, NULL, 2, NULL, 3, NULL, 4);
+What is the output of the script?
+1
+
+13.What does a TRUNCATE(X, D) function return?
+It returns a number X truncated to D decimal places.
+
+
+14.You have executed several SQL statements, but the changes are not reflected. You discover that auto-commit is disabled. How can you enable it?
+SET autocommit = 1;
+
+15.You are working on a table named Customer with three columns; ID, FirstName, and LastName. How can you find the records for the customers whose last name starts with Sm and whose first name ends with an s?
+SELECT * FROM Customer WHERE LastName LIKE 'Sm%' AND FirstName LIKE '%s';
+
+16.What is the range of the unsigned tinyint data type?
+0 to 255 
+
+17.What is the default order of the SELECT query?
+No order
+
+18.You are working on a table named Review with columns Id and Comment. Comment has distinct values of 1, 2, and 3. How can you retrieve data from the table with the Comment column as "Satisfactory," "Neutral," and "Unsatisfactory" corresponding to its values?
+SELECT Id, CASE Comment 
+WHEN 1 THEN 'Satisfactory'
+WHEN 2 THEN 'Neutral'
+WHEN 3 THEN 'Unsatisfactory'
+END AS Comment  FROM Review;
+
+19.You are working on a table named Inventory with four columns: Product, Price, Discount, and Stock, where the discount is a percentage (whole number). How would you calculate the total amount and the amount given as a discount?
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+
+20.You are working on a table named Sales that contains three columns: Product, TotalSales, and MaxInd. Initially, the column MaxInd is set to 0. How can you update the MaxInd column for the rows that have the maximum TotalSales?
+UPDATE Sales SET MaxInd = 1 WHERE TotalSales = (SELECT MAX(TotalSales) FROM Sales);
+
+
+1. You are working on a stored procedure named InventoryBuckets and there is a confirmed requirement to tweak the logic of the body. What do you need to do first considering you have backup of code and now need to update the stored procedure with same name?
+Correct -
+DROP PROCEDURE InventoryBuckets;
+Incorrect -
+CREATE PROCEDURE InventoryBuckets;
+Incorrect -
+DELETE PROCEDURE InventoryBuckets;
+Your choice: incorrect -
+SHOW PROCEDURE InventoryBuckets;
+Incorrect -
+I don't know yet.
+
+
+
+2. The script given below has an output of 3.
+SELECT CEILING(2.34);  
+What is the outcome of the script SELECT CEILING(-2.34);?
+Your choice: incorrect -
+3
+
+Incorrect -
+-3
+
+Correct -
+-2
+
+Incorrect -
+2
+
+Incorrect -
+I don't know yet.
+
+3. You are working on two tables, Products and ExpiredItem, with one common column Id. You need to delete all rows from Products which are present in ExpiredItem. How can you accomplish this?
+Incorrect -
+DELETE FROM Products WHERE Id = ExpiredItem.Id;
+Incorrect -
+DELETE ALL FROM Products WHERE Id = (SELECT Id FROM ExpiredItem);
+Incorrect -
+DELETE FROM Products WHERE Id IS (SELECT Id FROM ExpiredItem);
+Your choice: correct -
+DELETE FROM Products WHERE Id IN (SELECT Id FROM ExpiredItem);
+Incorrect -
+I don't know yet.
+
+4. You are required to create a stored procedure that calculates the total stock price from a table named Inventory, that has columns Product, Type, Price, and Stock. Which script will create the procedure?
+Incorrect -
+CREATE PROCEDURE TotalStock (IN param int)
+BEGIN
+SELECT SUM(Price)  param FROM Inventory;
+END;
+Your choice: correct -
+CREATE PROCEDURE TotalStock (OUT param int)
+BEGIN
+SELECT SUM(Price*Stock) INTO param FROM Inventory;
+END;
+Incorrect -
+CREATE PROCEDURE TotalStock (OUT param t)
+BEGIN
+SELECT SUM(Stock) param INTO  FROM Inventory;
+END;
+Incorrect -
+CREATE PROCEDURE TotalStock (OUT param int)
+BEGIN
+SELECT SUM(Price*Stock) INTO param1 FROM Inventory
+END;
+Incorrect -
+I don't know yet.
+
+5. You are working on two tables: A and B. Both tables contain master data. You need them to be joined so that each row in a table is joined with all the rows in the other table. What will do that?
+Incorrect -
+SELECT * FROM A LEFT JOIN B;
+Correct -
+SELECT * FROM A CROSS JOIN B;
+Your choice: incorrect -
+SELECT * FROM A INNER JOIN B;
+Incorrect -
+SELECT * FROM A ANTI JOIN B;
+Incorrect -
+I don't know yet.
+
+6. There are two tables "Student" and "Marks" that both have a common column named "Id". The Student table contains data related to students, and Marks contains the marks of those who took exams. How can you retrieve all student's information and their marks?
+Incorrect -
+SELECT * FROM Student LEFT JOIN Marks WHEN Student.Id = Marks.Id;
+Incorrect -
+SELECT * FROM Student LEFT JOIN Marks WHERE Student.Id = Marks.Id;
+Incorrect -
+SELECT * FROM Student LEFT JOIN Marks SET Student.Id = Marks.Id;
+Your choice: correct -
+SELECT * FROM Student LEFT JOIN Marks ON Student.Id = Marks.Id;
+Incorrect -
+I don't know yet.
+
+7. What does the window function do?
+Incorrect -
+Processes an input string and returns a string or numeric value
+
+Incorrect -
+Performs a calculation on one or more values and returns a single value
+
+Your choice: correct -
+Calculates an aggregate value based on a group of rows and returns multiple rows for each group
+
+Incorrect -
+Allows you to handle date and time data effectively
+
+Incorrect -
+I don't know yet.
+
+8. You are performing TRUNCATE and DELETE operations to clear an equal amount of data, but the TRUNCATE operation is faster than DELETE. Why?
+Your choice: correct -
+TRUNCATE drops and recreates a table, whereas DELETE performs row by row deletion.
+
+Incorrect -
+TRUNCATE does not check foreign key integrity, whereas DELETE does.
+
+Incorrect -
+TRUNCATE performs row by row deletion, whereas DELETE drops and recreates a table.
+
+Incorrect -
+TRUNCATE checks foreign key integrity, whereas DELETE does not.
+
+Incorrect -
+I don't know yet.
+
+9. You are working on a table named Marks that has four columns: Id, Math, Science, and Arts. How would you get Id and Math where items in Math are in ascending order?
+Incorrect -
+SELECTS Id, Math FROM Marks ORDER BY ASCENDING(Math);
+Your choice: correct -
+SELECTS Id, Math FROM Marks ORDER BY Math;
+Incorrect -
+SELECTS Id, Math FROM Marks ORDER BY ASCE(Math);
+Incorrect -
+SELECTS Id, Math FROM Marks ORDER BY Math AESC;
+Incorrect -
+I don't know yet.
+
+10. You are required to create a procedure that counts the number of rows of any table passed as an argument and store it in an output argument. How would you create this procedure?
+Your choice: incorrect -
+CREATE PROCEDURE FetchData (IN param1 , OUT param2 )
+ BEGIN 
+ SELECT COUNT(*) INTO param2 FROM param1;
+ END;
+Incorrect -
+CREATE PROCEDURE FetchData (param1 CHAR(100),param2 INT)
+ BEGIN 
+ SELECT COUNT(*) INTO param2 FROM param1;
+ END;
+Correct -
+CREATE PROCEDURE FetchData (IN param1 CHAR(100), OUT param2 INT)
+ BEGIN 
+ SELECT COUNT(*) INTO param2 FROM param1;
+ END;
+Incorrect -
+CREATE PROCEDURE FetchData (IN param1 CHAR(100), OUT param2 INT)
+ BEGIN 
+ SELECT COUNT(*) INTO param1 FROM param2;
+ END;
+Incorrect -
+I don't know yet
+
+11. What is the difference between SELECT and TRUNCATE?
+Incorrect -
+SELECT is a DCL statement, while TRUNCATE is a DML statement.
+
+Incorrect -
+SELECT is a DML statement, while TRUNCATE is a DDL statement.
+
+Incorrect -
+SELECT is a DDL statement, while TRUNCATE is a DQL statement.
+
+Your choice: correct -
+SELECT is a DQL statement, while TRUNCATE is a DDL statement.
+
+Incorrect -
+I don't know yet.
+
+12. You are working on a table named Inventory with four columns: Product, Price, Discount, and Stock, where the discount is a percentage (whole number). How would you calculate the total amount and the amount given as a discount?
+Your choice: incorrect -
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock -Price*Stock*Discount) AS 'Total Discount' FROM Inventory;
+Incorrect -
+SELECT SUM(Price*Stock* Discount) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+Correct -
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+Incorrect -
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock + Price*Stock*Discount) AS 'Total Discount' FROM Inventory;
+Incorrect -
+I don't know yet.
+
+13. Which command will NOT return a current user?
+Incorrect -
+USER
+
+Incorrect -
+SESSION_USER
+
+Correct -
+DEFAULT_USER
+
+Your choice: incorrect -
+SYSTEM_USER
+
+Incorrect -
+I don't know yet.
+
+14. What is the purpose of the GROUP BY clause?
+Incorrect -
+It groups columns into a summarized column.
+
+Incorrect -
+It groups rows into order.
+
+Incorrect -
+It groups text into a required pattern.
+
+Your choice: correct -
+It groups records into summarized rows.
+
+Incorrect -
+I don't know yet.
+
+15. You are working on two tables named Vendor and Customer that both require their columns to be updated to IsCustomer and IsVendor respectively. By default, the columns IsCustomer and IsVendor are set to 0. How can you update the respective columns for the records that are present in both tables by comparing the Id column of both tables?
+Your choice: correct -
+UPDATE Vendor, Customer SET Vendor.IsCustomer = 1 , Customer.IsVendor = 1 WHERE Vendor.Id = Customer.Id;
+Incorrect -
+UPDATE Vendor, Customer SET Vendor.IsCustomer = 1 AND Customer.IsVendor = 1 WHERE Vendor.Id = Customer.Id;
+Incorrect -
+UPDATE Vendor AND Customer SET Vendor.IsCustomer = 1 , Customer.IsVendor = 1 WHERE Vendor.Id = Customer.Id;
+Incorrect -
+UPDATE Vendor, Customer SET Vendor.IsCustomer = 1 , Customer.IsVendor = 1;
+Incorrect -
+I don't know yet.
+
+16. You are required to create a stored procedure that retrieves outdated records from master data tables. For inactive records, a column named ActiveInd is set to 0 in every master data table. How would you create this stored procedure?
+Incorrect -
+
+ CREATE PROCEDURE FetchInactive ( param CHAR(100))
+ BEGIN
+ SELECT * FROM param WHERE ActiveInd = 1;
+ END
+Your choice: correct -
+ CREATE PROCEDURE FetchInactive ( param CHAR(100))
+ BEGIN
+ SELECT * FROM param WHERE ActiveInd = 0;
+ END 
+Incorrect -
+ 
+ CREATE PROCEDURE FetchInactive ( param CHAR(100))
+ BEGIN
+ SELECT * FROM param WHERE ActiveInd = 0$$
+ END
+Incorrect -
+ 
+ CREATE PROCEDURE FetchInactive ()
+ BEGIN
+ SELECT * FROM param WHERE ActiveInd = 0.
+ END 
+Incorrect -
+I don't know yet.
+
+17. You created a stored procedure "Changemap" that has security characteristics set as definer. It deletes some data while executing. How would you ALTER the procedure so that everyone cannot use the procedure to delete data?
+Incorrect -
+ALTER PROCEDURE Changemap SQL SECURITY DEFINER;
+Your choice: correct -
+ALTER PROCEDURE Changemap SQL SECURITY INVOKER;
+Incorrect -
+ALTER PROCEDURE Changemap INVOKER;
+Incorrect -
+ALTER PROCEDURE Changemap  SECURITY INVOKER;
+Incorrect -
+I don't know yet.
+
+18. What is true for the ALTER PROCEDURE statement?
+Incorrect -
+It can be used to change the body of a stored procedure.
+
+Your choice: correct -
+It can be used to change the characteristics of a stored procedure.
+
+Incorrect -
+It can be used to change the privileges of a stored procedure.
+
+Incorrect -
+It can be used to change the parameters of a stored procedure.
+
+Incorrect -
+I don't know yet.
+
+19. You are working on tables A and B. The definitions of the tables are the same. You want to know the data records present in both tables. How would you find this information?
+Incorrect -
+(SELECT * FROM A) EXCEPT (SELECT * FROM B);
+Incorrect -
+(SELECT * FROM A) UNION (SELECT * FROM B);
+Incorrect -
+(SELECT * FROM A ) JOIN (SELECT * FROM B);
+Your choice: correct -
+(SELECT * FROM A) INTERSECT (SELECT * FROM B);
+Incorrect -
+I don't know yet.
+
+20. You have executed several SQL statements, but the changes are not reflected. You discover that auto-commit is disabled. How can you enable it?
+Incorrect -
+SET autocommit = OFF;
+Incorrect -
+SET autocommit = ON;
+Incorrect -
+SET autocommit = 0;
+Your choice: correct -
+SET autocommit = 1;
+Incorrect -
+I don't know yet.
+
+
+
+1. You are working on tables A and B. The definitions of the tables are the same. You want to know the data records present in both tables. How would you find this information?
+Incorrect -
+(SELECT * FROM A) EXCEPT (SELECT * FROM B);
+Incorrect -
+(SELECT * FROM A ) JOIN (SELECT * FROM B);
+Your choice: correct -
+(SELECT * FROM A) INTERSECT (SELECT * FROM B);
+Incorrect -
+(SELECT * FROM A) UNION (SELECT * FROM B);
+Incorrect -
+I don't know yet.
+
+
+
+2. Which of the following is a numeric data type?
+Incorrect -
+BLOB
+
+Incorrect -
+TIMESTAMP
+
+Your choice: correct -
+BOOLEAN
+
+Incorrect -
+ENUM
+
+Incorrect -
+I don't know yet.
+
+
+
+
+3. You are working on a data-set named Flight that contains two columns: Origin and Destination. You are required to create a recursive common table expression that selects all the destinations one can reach from origin "London". Which code would do the job?
+Your choice: incorrect -
+WITH RECURSIVE Route AS (
+SELECT Destination FROM Flight WHERE Origin = "London"
+UNION
+SELECT Flight.Destination FROM Flight, Route WHERE Route.Destination = Flight.Origin
+)
+Correct -
+WITH RECURSIVE Route AS (
+SELECT Origin AS Destination FROM Flight WHERE Origin = "London"
+UNION
+SELECT Flight.Destination FROM Flight, Route WHERE Route.Destination = Flight.Origin
+)
+Incorrect -
+WITH RECURSIVE Route AS (
+SELECT Destination FROM Flight WHERE Origin = "London"
+)
+Incorrect -
+ WITH RECURSIVE Route AS ( 
+SELECT Flight.Destination FROM Flight, Route WHERE Route.Destination = Flight.Origin
+)
+Incorrect -
+I don't know yet.
+
+
+4. What is the difference between CURRENT_USER() and USER()?
+Incorrect -
+USER only returns the hostname that is used to authenticate to MariaDB, while CURRENT_USER returns both the hostname and the username.
+
+Incorrect -
+USER returns both hostname and username, while CURRENT_USER returns only the username.
+
+Your choice: incorrect -
+USER() returns the username and hostname from the MariaDB account that the server used to authenticate the current client, while CURRENT_USER returns the username and hostname given when authenticating MariaDB.
+
+Correct -
+USER() returns the username and hostname given when authenticating MariaDB, while CURRENT_USER returns the username and hostname from the MariaDB account that the server used to authenticate the current client.
+
+Incorrect -
+I don't know yet.
+
+
+
+5. You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+SELECT Name, Subject, AVG(Marks) FROM Student;
+Incorrect -
+Result would be average marks of each subject
+
+Incorrect -
+Result would be average marks of each group of student and subject.
+
+Incorrect -
+Result would be average marks of each student
+
+Your choice: correct -
+Result would be incorrect and mismatched.
+
+
+21. How can you change the parameters of a stored procedure?
+Your choice: incorrect -
+With the ALTER PROCEDURE statement
+
+Incorrect -
+With the SELECT statement
+
+Correct -
+By dropping and replace the stored procedure
+
+Incorrect -
+With the TRUNCATE statement
+
+Incorrect -
+I don't know yet.
+
+22. How would you create a stored procedure to retrieve all data from a table named 'Sales'?
+Incorrect -
+CREATE PROCEDURE Retrieve_Sales AS BEGIN  Sales; END; 
+Incorrect -
+CREATE PROCEDURE Retrieve_Sales AS BEGIN  STATEMENT SELECT * FROM Sales; END; 
+Incorrect -
+CREATE PROCEDURE Retrieve_Sales AS  SELECT * FROM Sales; END; 
+Your choice: correct -
+CREATE PROCEDURE Retrieve_Sales  BEGIN SELECT * FROM Sales; END; 
+Incorrect -
+I don't know yet.
+
+You are working on a table containing master data, named Master. It has the following columns:
+Id
+Text1
+Text2
+Text3
+Text4
+Text5
+How would you select all records containing "Master record" in any Text1, Text2, Text3, Text4 and, Text5 columns?
+Incorrect -
+SELECT * FROM Master WHERE  (Text1, Text2, Text3, Text4, Text5) = 'Master record";
+
+Incorrect -
+SELECT * FROM Master WHERE 'Master record' IN Text*;
+
+Your choice: correct -
+SELECT * FROM Master WHERE 'Master record' IN (Text1, Text2, Text3, Text4, Text5);
+
+Incorrect -
+SELECT Text* FROM Master WHERE 'Master record' IN (Text1, Text2, Text3, Text4, Text5);
+
+Incorrect -
+I don't know yet.
+
+28. What does a TRUNCATE(X, D) function return?
+Incorrect -
+It frees up the space of the objects X and D.
+
+Incorrect -
+It returns a table X truncated to D columns.
+
+Your choice: correct -
+It returns a number X truncated to D decimal places.
+
+Incorrect -
+It returns a string X trimmed to D length.
+
+Incorrect -
+I don't know yet.
+
+29. Which of the following privileges are required to delete a procedure?
+Your choice: correct -
+ALTER ROUTINE
+
+Incorrect -
+Automatic
+
+Incorrect -
+INVOKER
+
+Incorrect -
+DEFINER
+
+Incorrect -
+I don't know yet.
+Incorrect -
+I don't know yet.
+
+
+6. How many columns can be concatenated using CONCAT?
+Your choice: incorrect -
+1023
+
+Incorrect -
+64
+
+Incorrect -
+12
+
+Correct -
+255
+
+Incorrect -
+I don't know yet.
+
+7. What would be the result of the given script?
+SELECT CASE BINARY 'B' WHEN 'a' THEN 1 WHEN 'b' THEN 2 END;
+Incorrect -
+0
+
+Incorrect -
+1
+
+Correct -
+NULL
+
+Your choice: incorrect -
+2
+
+Incorrect -
+I don't know yet.
+
+8. You are working on a table named "MaterialDiscount" that contains three columns: Product, Price, and Discount, where Discount is a ratio. How would you retrieve all data from the table, with an additional column calculating price after discount?
+Incorrect -
+SELECT Product, Price, Discount, Price - Price*Discount/100 AS 'Price after discount' FROM MaterialDiscount;
+Correct -
+SELECT Product, Price, Discount, Price - Price*Discount AS 'Price after discount' FROM MaterialDiscount;
+Your choice: incorrect -
+SELECT Product, Price, Discount, Price - Price/Discount AS 'Price after discount' FROM MaterialDiscount;
+Incorrect -
+SELECT Product, Price, Discount, Price - Discount AS 'Price after discount' FROM MaterialDiscount;
+Incorrect -
+I don't know yet.
+
+
+9. You are working on a table named Donations that contains columns Id (text), Prefix (numeric), and Suffix (text). There is a script to retrieve data which throws an error. 
+SELECT Id, Prefix + Suffix AS Donation FROM Donations;
+How would you fix the error?
+Incorrect -
+SELECT Id,Suffix + Prefix AS Donation FROM Donations;
+
+Your choice: correct -
+SELECT Id, CAST(Prefix AS CHAR(20)) + Suffix AS Donation FROM Donations;
+
+Incorrect -
+SELECT Id, "Prefix + Suffix" AS Donation FROM Donations;
+
+Incorrect -
+SELECT Id, CONCAT(Prefix + Suffix) AS Donation FROM Donations;
+
+Incorrect -
+I don't know yet.
+
+
+12. What is the default order of the SELECT query?
+Incorrect -
+Descending
+
+Your choice: correct -
+No order
+
+Incorrect -
+Ascending
+
+Incorrect -
+Mixed order
+
+Incorrect -
+I don't know yet.
+
+13. You create a stored procedure and want to change its characteristics. What would happen if you tried to alter the procedure?
+Incorrect -
+The script would result in an authorization error.
+
+Incorrect -
+The script would result in a syntax error.
+
+Your choice: incorrect -
+The procedure would be altered but would throw an error when called.
+
+Correct -
+The procedure would be altered without an error.
+
+Incorrect -
+I don't know yet.
+
+
+
+16. Which of the following is true for TRUNCATE?
+Your choice: correct -
+It is a DDL statement.
+
+Incorrect -
+It is a DCL statement. 
+
+Incorrect -
+It is a DQL statement. 
+
+Incorrect -
+It is a DML statement. 
+
+Incorrect -
+I don't know yet.
+
+
+
+19. Which function will generate the current date?
+Incorrect -
+DAY()
+
+Incorrect -
+DATE()
+
+Incorrect -
+CUR_DATE()
+
+Your choice: correct -
+CURDATE()
+
+Incorrect -
+I don't know yet.
+
+
+20. You are working on a table named Inventory with four columns: Product, Price, Discount, and Stock, where the discount is a percentage (whole number). How would you calculate the total amount and the amount given as a discount?
+Incorrect -
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock -Price*Stock*Discount) AS 'Total Discount' FROM Inventory;
+Incorrect -
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock + Price*Stock*Discount) AS 'Total Discount' FROM Inventory;
+Incorrect -
+SELECT SUM(Price*Stock* Discount) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+Your choice: correct -
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+Incorrect -
+I don't know yet.
+
+21.
+SELECT CURDATE(); 
+The script above is used to generate the current date in a string format. How would you generate it in a numeric format?
+Correct -
+SELECT CURDATE() + 0;
+Incorrect -
+SELECT CURRENT_DATE();
+Incorrect -
+SELECT CURDATE() + 1;
+Your choice: incorrect -
+SELECT INT(CURDATE()) ;
+Incorrect -
+I don't know yet.
+
+4. You are working with four SQL queries given below:
+SELECT * FROM USER;
+SHOW AUTHORS;
+SHOW COLUMNS FROM USER;
+RENAME USER STAT TO STANLEY;
+How many of the above queries are DQL?
+Incorrect -
+2
+
+Your choice: correct -
+3
+
+Incorrect -
+4
+
+Incorrect -
+1
+
+Incorrect -
+I don't know yet.
+
+5. The script SELECT 50/(5-5); throws an error:  ERROR_ON_DIVISION_BY_ZERO What could be the reason?
+Your choice: incorrect -
+A number is divided by 0.
+
+Incorrect -
+The arithmetic operation DIV should be used.
+
+Correct -
+SQL mode is used.
+
+Incorrect -
+You need to define data type.
+
+Incorrect -
+I don't know yet.
+
+6. A stored procedure calls CURRENT_USER(). What is the output of the call?
+Your choice: incorrect -
+Current user of the system
+
+Correct -
+Owner of the procedure
+
+Incorrect -
+Host name of the system
+
+Incorrect -
+User of the Client
+
+Incorrect -
+I don't know yet.
+
+5. You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+SELECT Name, Subject, AVG(Marks) FROM Student;
+Incorrect -
+Result would be average marks of each student
+
+Incorrect -
+Result would be average marks of each subject
+
+Your choice: correct -
+Result would be incorrect and mismatched.
+
+Incorrect -
+Result would be average marks of each group of student and subject.
+
+Incorrect -
+I don't know yet.
+
+13. Which of the following is NOT a window function?
+Correct -
+ASCII
+
+Your choice: incorrect -
+CUME_DIST
+
+Incorrect -
+LAST_VALUE
+
+Incorrect -
+LAG
+
+Incorrect -
+I don't know yet.
+
+16. Which of the following is true about alias in a query?
+Incorrect -
+It renames the column or table 
+
+Incorrect -
+It creates the same table with a different column name
+
+Your choice: correct -
+It is a correlation name 
+
+Incorrect -
+It is used to assign another name to the table permanently
+
+Incorrect -
+I don't know yet.
+
+19. What is the range of the unsigned tinyint data type?
+Incorrect -
+-255 to 254
+
+Your choice: correct -
+0 to 255 
+
+Incorrect -
+0 to 127
+
+Incorrect -
+-128 to 127 
+
+Incorrect -
+I don't know yet.
+
+20. You are working on concatenating two variables VAR1 and VAR2 with the script given below. Either of the variables may contain a NULL value.
+
+CONCAT(VAR1, VAR2);
+
+The script results in a NULL. How can you handle the expected NULL value?
+Incorrect -
+CONCAT(VAR1, IFNULL(VAR2, " "));
+
+Incorrect -
+CONCAT(ISNULL(VAR1, " "), ISNULL(VAR2, " "));
+
+Your choice: correct -
+CONCAT(IFNULL(VAR1, " "), IFNULL(VAR2, " "));
+
+Incorrect -
+CONCAT(NULL(VAR1, " "), NULL(VAR2, " "));
+
+Incorrect -
+I don't know yet.
+
+21. Which of the following is NOT a select expression?  
+Incorrect -
+*
+
+Incorrect -
+Column Name
+
+Your choice: correct -
+Database_name.*
+
+Incorrect -
+Table_name.*
+
+Incorrect -
+I don't know yet.
+
+22. Which command will execute a stored procedure?
+Your choice: correct -
+CALL
+
+Incorrect -
+BEGIN
+
+Incorrect -
+EXEC
+
+Incorrect -
+COMMIT
+
+Incorrect -
+I don't know yet.
+
+23. You are working on a table named Marks that contains three columns: Student, Subject, and Marks. How would you retrieve all data along with a column containing average marks of the associated subjects?
+Incorrect -
+SELECT Student, Subject, Marks, AVG(Marks) OVER (PARTITION BY Marks AS 'SubjectAverage' FROM Marks;
+Incorrect -
+SELECT Student, Subject, Marks, AVG(Marks) AS 'SubjectAverage' FROM Marks;
+Incorrect -
+SELECT Student, Subject, Marks, AVG(Marks) OVER (PARTITION BY Student) AS 'SubjectAverage' FROM Marks;
+Your choice: correct -
+SELECT Student, Subject, Marks, AVG(Marks) OVER (PARTITION BY Subject) AS 'SubjectAverage' FROM Marks;
+Incorrect -
+I don't know yet.
+
+24. How many columns can be concatenated using CONCAT?
+Your choice: correct -
+255
+
+Incorrect -
+64
+
+Incorrect -
+12
+
+Incorrect -
+1023
+
+Incorrect -
+I don't know yet.
+
+25. What is the default type of the parameter in a stored procedure?
+Incorrect -
+DETERMINISTIC
+
+Incorrect -
+INHERIT
+
+Incorrect -
+OUT
+
+Your choice: correct -
+IN
+
+Incorrect -
+I don't know yet.
+
+26. What is true for TRUNCATE?
+Incorrect -
+The TRUNCATE operation can be rolled back.
+
+Incorrect -
+TRUNCATE is used security purposes.
+
+Your choice: correct -
+The TRUNCATE operation cannot be rolled back.
+
+Incorrect -
+TRUNCATE is used for data manipulation.
+
+Incorrect -
+I don't know yet.
+
+28. You are working on a table named 'Products' with three columns; 'Id', 'Name ', and 'Price'. How would you apply rank over a select query?
+Incorrect -
+SELECT Id, Name, Price, RANK OVER (ORDER  BY Price)  FROM Products;
+Your choice: correct -
+SELECT Id, Name, Price, RANK() OVER (ORDER  BY Price) Rank_price FROM Products;
+Incorrect -
+SELECT Id, Name, Price, RANK() OVER (Price) Rank_price FROM Products;
+Incorrect -
+SELECT Id, Name, Price, RANK()  (ORDER  BY Price) Rank_price FROM Products;
+Incorrect -
+I don't know yet.
+
+29. A coalesce script is given below:
+
+ COALESCE(NULL, 1, NULL, 2, NULL, 3, NULL, 4);What is the output of the script?
+Your choice: correct -
+1
+
+Incorrect -
+3
+
+Incorrect -
+4
+
+Incorrect -
+2
+
+Incorrect -
+I don't know yet.
+
+30. Which of the following is correct about the IN clause?
+Incorrect -
+It is shorthand for multiple NOT operations.
+
+Incorrect -
+It is shorthand for multiple AND operations.
+
+Your choice: correct -
+It is shorthand for multiple OR operations.
+
+Incorrect -
+It is shorthand for multiple AND and OR operations.
+
+Incorrect -
+I don't know yet.
+
+1.
+ 
+You create a stored procedure and want to change its characteristics. What would happen if you tried to alter the procedure?
+•  Incorrect -
+The script would result in a syntax error.
+•  Your choice: correct -
+The procedure would be altered without an error.
+•  Incorrect -
+The script would result in an authorization error.
+•  Incorrect -
+The procedure would be altered but would throw an error when called.
+•  Incorrect -
+I don't know yet.
+
+
+2.
+ 
+You are required to create a procedure that counts the number of rows of any table passed as an argument and store it in an output argument. How would you create this procedure?
+•  Incorrect -
+CREATE PROCEDURE FetchData (IN param1 , OUT param2 )
+ BEGIN 
+ SELECT COUNT(*) INTO param2 FROM param1;
+ END;
+•  Your choice: incorrect -
+CREATE PROCEDURE FetchData (IN param1 CHAR(100), OUT param2 INT)
+ BEGIN 
+ SELECT COUNT(*) INTO param1 FROM param2;
+ END;
+•  Correct -
+CREATE PROCEDURE FetchData (IN param1 CHAR(100), OUT param2 INT)
+ BEGIN 
+ SELECT COUNT(*) INTO param2 FROM param1;
+ END;
+•  Incorrect -
+CREATE PROCEDURE FetchData (param1 CHAR(100),param2 INT)
+ BEGIN 
+ SELECT COUNT(*) INTO param2 FROM param1;
+ END;
+•  Incorrect -
+I don't know yet.
+
+
+
+
+Querying Data with SQL in MariaDB
+3.
+Which function will generate the current date?
+3.
+ 
+Which function will generate the current date?
+•  Incorrect -
+CUR_DATE()
+•  Incorrect -
+DAY()
+•  Your choice: correct -
+CURDATE()
+•  Incorrect -
+DATE()
+•  Incorrect -
+I don't know yet.
+
+
+4.
+ 
+What is true for the ALTER PROCEDURE statement?
+•  Incorrect -
+It can be used to change the body of a stored procedure.
+•  Your choice: correct -
+It can be used to change the characteristics of a stored procedure.
+•  Incorrect -
+It can be used to change the privileges of a stored procedure.
+•  Incorrect -
+It can be used to change the parameters of a stored procedure.
+•  Incorrect -
+I don't know yet.
+
+5.
+ 
+You are working on a table named Donations that contains columns Id (text), Prefix (numeric), and Suffix (text). There is a script to retrieve data which throws an error. 
+SELECT Id, Prefix + Suffix AS Donation FROM Donations;
+How would you fix the error?
+•  Incorrect -
+SELECT Id,Suffix + Prefix AS Donation FROM Donations;
+•  Incorrect -
+SELECT Id, "Prefix + Suffix" AS Donation FROM Donations;
+•  Your choice: correct -
+SELECT Id, CAST(Prefix AS CHAR(20)) + Suffix AS Donation FROM Donations;
+•  Incorrect -
+SELECT Id, CONCAT(Prefix + Suffix) AS Donation FROM Donations;
+•  Incorrect -
+I don't know yet.
+
+
+
+6.
+ 
+You have executed several SQL statements, but the changes are not reflected. You discover that auto-commit is disabled. How can you enable it?
+•  Incorrect -
+SET autocommit = ON;
+•  Incorrect -
+SET autocommit = OFF;
+•  Incorrect -
+SET autocommit = 0;
+•  Your choice: correct -
+SET autocommit = 1;
+•  Incorrect -
+I don't know yet.
+
+
+
+7.
+ 
+What would be the result of the given script?
+SELECT CASE BINARY 'B' WHEN 'a' THEN 1 WHEN 'b' THEN 2 END;
+•  Incorrect -
+1
+•  Your choice: incorrect -
+2
+•  Incorrect -
+0
+•  Correct -
+NULL
+•  Incorrect -
+I don't know yet.
+
+
+8.
+ 
+You are working on a table named "MaterialDiscount" that contains three columns: Product, Price, and Discount, where Discount is a ratio. How would you retrieve all data from the table, with an additional column calculating price after discount?
+•  Incorrect -
+SELECT Product, Price, Discount, Price - Discount AS 'Price after discount' FROM MaterialDiscount;
+•  Incorrect -
+SELECT Product, Price, Discount, Price - Price/Discount AS 'Price after discount' FROM MaterialDiscount;
+•  Incorrect -
+SELECT Product, Price, Discount, Price - Price*Discount/100 AS 'Price after discount' FROM MaterialDiscount;
+•  Your choice: correct -
+SELECT Product, Price, Discount, Price - Price*Discount AS 'Price after discount' FROM MaterialDiscount;
+•  Incorrect -
+I don't know yet.
+
+
+
+9.
+ 
+What is the difference between CURRENT_USER() and USER()?
+•  Correct -
+USER() returns the username and hostname given when authenticating MariaDB, while CURRENT_USER returns the username and hostname from the MariaDB account that the server used to authenticate the current client.
+•  Your choice: incorrect -
+USER() returns the username and hostname from the MariaDB account that the server used to authenticate the current client, while CURRENT_USER returns the username and hostname given when authenticating MariaDB.
+•  Incorrect -
+USER returns both hostname and username, while CURRENT_USER returns only the username.
+•  Incorrect -
+USER only returns the hostname that is used to authenticate to MariaDB, while CURRENT_USER returns both the hostname and the username.
+•  Incorrect -
+I don't know yet.
+
+
+
+10.
+ 
+You created a stored procedure "Changemap" that has security characteristics set as definer. It deletes some data while executing. How would you ALTER the procedure so that everyone cannot use the procedure to delete data?
+•  Incorrect -
+ALTER PROCEDURE Changemap  SECURITY INVOKER;
+•  Incorrect -
+ALTER PROCEDURE Changemap SQL SECURITY DEFINER;
+•  Incorrect -
+ALTER PROCEDURE Changemap INVOKER;
+•  Your choice: correct -
+ALTER PROCEDURE Changemap SQL SECURITY INVOKER;
+•  Incorrect -
+I don't know yet.
+
+
+
+11.
+ 
+Which of the following is a numeric data type?
+•  Incorrect -
+ENUM
+•  Incorrect -
+TIMESTAMP
+•  Your choice: correct -
+BOOLEAN
+•  Incorrect -
+BLOB
+•  Incorrect -
+I don't know yet.
+
+
+
+12.
+ 
+You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+SELECT Name, Subject, AVG(Marks) FROM Student;
+•  Incorrect -
+Result would be average marks of each subject
+•  Your choice: incorrect -
+Result would be average marks of each group of student and subject.
+•  Incorrect -
+Result would be average marks of each student
+•  Correct -
+Result would be incorrect and mismatched.
+•  Incorrect -
+I don't know yet.
+
+
+13.
+ 
+How can you change the parameters of a stored procedure?
+•  Incorrect -
+With the SELECT statement
+•  Correct -
+By dropping and replace the stored procedure
+•  Your choice: incorrect -
+With the ALTER PROCEDURE statement
+•  Incorrect -
+With the TRUNCATE statement
+•  Incorrect -
+I don't know yet.
+
+
+
+14.
+ 
+How would you create a stored procedure to retrieve all data from a table named 'Sales'?
+•  Your choice: incorrect -
+CREATE PROCEDURE Retrieve_Sales AS BEGIN  STATEMENT SELECT * FROM Sales; END; 
+•  Correct -
+CREATE PROCEDURE Retrieve_Sales  BEGIN SELECT * FROM Sales; END; 
+•  Incorrect -
+CREATE PROCEDURE Retrieve_Sales AS  SELECT * FROM Sales; END; 
+•  Incorrect -
+CREATE PROCEDURE Retrieve_Sales AS BEGIN  Sales; END; 
+•  Incorrect -
+I don't know yet.
+
+
+15.
+ 
+How many columns can be concatenated using CONCAT?
+•  Your choice: correct -
+255
+•  Incorrect -
+12
+•  Incorrect -
+64
+•  Incorrect -
+1023
+•  Incorrect -
+I don't know yet.
+
+
+
+16.
+ 
+Which of the following privileges are required to delete a procedure?
+•  Incorrect -
+INVOKER
+•  Incorrect -
+DEFINER
+•  Incorrect -
+Automatic
+•  Your choice: correct -
+ALTER ROUTINE
+•  Incorrect -
+I don't know yet.
+
+
+
+17.
+SELECT CURDATE(); 
+The script above is used to generate the current date in a string format. How would you generate it in a numeric format?
+•  Your choice: incorrect -
+SELECT INT(CURDATE()) ;
+•  Correct -
+SELECT CURDATE() + 0;
+•  Incorrect -
+SELECT CURDATE() + 1;
+•  Incorrect -
+SELECT CURRENT_DATE();
+•  Incorrect -
+I don't know yet.
+
+
+
+
+18.
+ 
+You are working on two tables: A and B. Both tables contain master data. You need them to be joined so that each row in a table is joined with all the rows in the other table. What will do that?
+•  Your choice: correct -
+SELECT * FROM A CROSS JOIN B;
+•  Incorrect -
+SELECT * FROM A LEFT JOIN B;
+•  Incorrect -
+SELECT * FROM A ANTI JOIN B;
+•  Incorrect -
+SELECT * FROM A INNER JOIN B;
+•  Incorrect -
+I don't know yet.
+19.
+ 
+You are working on a data-set named Flight that contains two columns: Origin and Destination. You are required to create a recursive common table expression that selects all the destinations one can reach from origin "London". Which code would do the job?
+•  Incorrect -
+ WITH RECURSIVE Route AS ( 
+SELECT Flight.Destination FROM Flight, Route WHERE Route.Destination = Flight.Origin
+)
+•  Correct -
+WITH RECURSIVE Route AS (
+SELECT Origin AS Destination FROM Flight WHERE Origin = "London"
+UNION
+SELECT Flight.Destination FROM Flight, Route WHERE Route.Destination = Flight.Origin
+)
+•  Incorrect -
+WITH RECURSIVE Route AS (
+SELECT Destination FROM Flight WHERE Origin = "London"
+)
+•  Your choice: incorrect -
+WITH RECURSIVE Route AS (
+SELECT Destination FROM Flight WHERE Origin = "London"
+UNION
+SELECT Flight.Destination FROM Flight, Route WHERE Route.Destination = Flight.Origin
+)
+•  Incorrect -
+I don't know yet.
+
+
+
+20.
+ 
+Which of the following is NOT a select expression?  
+•  Incorrect -
+*
+•  Incorrect -
+Column Name
+•  Your choice: correct -
+Database_name.*
+•  Incorrect -
+Table_name.*
+•  Incorrect -
+I don't know yet.
+
+
+21.
+ 
+You are working on a stored procedure named InventoryBuckets and there is a confirmed requirement to tweak the logic of the body. What do you need to do first considering you have backup of code and now need to update the stored procedure with same name?
+•  Incorrect -
+CREATE PROCEDURE InventoryBuckets;
+•  Incorrect -
+DELETE PROCEDURE InventoryBuckets;
+•  Incorrect -
+SHOW PROCEDURE InventoryBuckets;
+•  Your choice: correct -
+DROP PROCEDURE InventoryBuckets;
+•  Incorrect -
+I don't know yet.
+
+
+
+22.
+ 
+You are working on a table named Marks that contains three columns: Student, Subject, and Marks. How would you retrieve all data along with a column containing average marks of the associated subjects?
+•  Incorrect -
+SELECT Student, Subject, Marks, AVG(Marks) OVER (PARTITION BY Student) AS 'SubjectAverage' FROM Marks;
+•  Incorrect -
+SELECT Student, Subject, Marks, AVG(Marks) AS 'SubjectAverage' FROM Marks;
+•  Incorrect -
+SELECT Student, Subject, Marks, AVG(Marks) OVER (PARTITION BY Marks AS 'SubjectAverage' FROM Marks;
+•  Your choice: correct -
+SELECT Student, Subject, Marks, AVG(Marks) OVER (PARTITION BY Subject) AS 'SubjectAverage' FROM Marks;
+•  Incorrect -
+I don't know yet.
+
+
+
+23.
+ 
+You are working with four SQL queries given below:
+SELECT * FROM USER;
+SHOW AUTHORS;
+SHOW COLUMNS FROM USER;
+RENAME USER STAT TO STANLEY;
+How many of the above queries are DQL?
+•  Incorrect -
+4
+•  Incorrect -
+2
+•  Your choice: incorrect -
+1
+•  Correct -
+3
+•  Incorrect -
+I don't know yet.
+
+
+1. Which command will NOT return a current user?
+DEFAULT_USER
+
+2. You are working on a table named Inventory with four columns: Product, Price, Discount, and Stock, where the discount is a percentage (whole number). How would you calculate the total amount and the amount given as a discount?
+
+SELECT SUM(Price*Stock) AS 'Total Amount', SUM(Price*Stock*Discount)/100 AS 'Total Discount' FROM Inventory;
+
+3. The script SELECT 50/(5-5); throws an error:  ERROR_ON_DIVISION_BY_ZERO What could be the reason?
+
+SQL mode is used.
+
+4. You are working on two tables named Vendor and Customer that both require their columns to be updated to IsCustomer and IsVendor respectively. By default, the columns IsCustomer and IsVendor are set to 0. How can you update the respective columns for the records that are present in both tables by comparing the Id column of both tables?
+Your choice: correct -
+UPDATE Vendor, Customer SET Vendor.IsCustomer = 1 , Customer.IsVendor = 1 WHERE Vendor.Id = Customer.Id;
+
+5. You are performing TRUNCATE and DELETE operations to clear an equal amount of data, but the TRUNCATE operation is faster than DELETE. Why?
+Your choice: correct -
+TRUNCATE drops and recreates a table, whereas DELETE performs row by row deletion.
+
+6. You are working on a table containing master data, named Master. It has the following columns:
+Id
+Text1
+Text2
+Text3
+Text4
+Text5
+How would you select all records containing "Master record" in any Text1, Text2, Text3, Text4 and, Text5 columns?
+SELECT * FROM Master WHERE 'Master record' IN (Text1, Text2, Text3, Text4, Text5);
+
+7. What is the purpose of the GROUP BY clause?
+It groups records into summarized rows.
+
+8. You are working on concatenating two variables VAR1 and VAR2 with the script given below. Either of the variables may contain a NULL value.
+
+CONCAT(VAR1, VAR2);
+
+The script results in a NULL. How can you handle the expected NULL value?
+CONCAT(IFNULL(VAR1, " "), IFNULL(VAR2, " "));
+
+9. The script given below has an output of 3.
+SELECT CEILING(2.34);  
+What is the outcome of the script SELECT CEILING(-2.34);?
+-2
+
+10. How would you create a stored procedure to retrieve all data from a table named 'Sales'?
+Correct -
+CREATE PROCEDURE Retrieve_Sales  BEGIN SELECT * FROM Sales; END;
+
+11. Which of the following is true for TRUNCATE?
+It is a DDL statement.
+
+12. Which of the following is NOT a window function?
+Your choice: correct -
+ASCII
+
+13. You are working on a table named Donations that contains columns Id (text), Prefix (numeric), and Suffix (text). There is a script to retrieve data which throws an error. 
+SELECT Id, Prefix + Suffix AS Donation FROM Donations;
+How would you fix the error?
+Your choice: correct -
+SELECT Id, CAST(Prefix AS CHAR(20)) + Suffix AS Donation FROM Donations;
+
+14. Which of the following is true about alias in a query?
+It is a correlation name
+
+15. You are working on a table named Marks that contains three columns: Student, Subject, and Marks. How would you retrieve all data along with a column containing average marks of the associated subjects?
+SELECT Student, Subject, Marks, AVG(Marks) OVER (PARTITION BY Subject) AS 'SubjectAverage' FROM Marks;
+
+16. Which function will generate the current date?
+CURDATE()
+
+17. A coalesce script is given below:
+
+COALESCE(NULL, 1, NULL, 2, NULL, 3, NULL, 4);What is the output of the script?
+1
+18. What is a SQL-Transaction?
+A sequence of executions of SQL statements that is completely successful or has no effect on schema or data
+19. What is the range of the unsigned tinyint data type?
+0 to 255
+
+20. What is the difference between SELECT and TRUNCATE?
+SELECT is a DQL statement, while TRUNCATE is a DDL statement.
+
+21. What does the window function do?
+Your choice: correct -
+Calculates an aggregate value based on a group of rows and returns multiple rows for each group
+
+22. You are working on a table named Marks that has four columns: Id, Math, Science, and Arts. How would you get Id and Math where items in Math are in ascending order?
+SELECTS Id, Math FROM Marks ORDER BY Math;
+
+23. You are required to create a stored procedure that calculates the total stock price from a table named Inventory, that has columns Product, Type, Price, and Stock. Which script will create the procedure?
+CREATE PROCEDURE TotalStock (OUT param int)
+BEGIN
+SELECT SUM(Price*Stock) INTO param FROM Inventory;
+END;
+
+24. Which of the following is used to display columns in a table?
+SHOW COLUMN
+
+25. What does a TRUNCATE(X, D) function return?
+It returns a number X truncated to D decimal places.
+
+26. Which of the following can be used to replace NULL values with meaningful data?
+COALESCE
+
+27. You are working in a table named Employee that contains five columns: Id, JoiningDate, Left, Salary, and Phone. You are required to create a stored procedure that returns the salary of an employee when Id is passed in the procedure. Which code would do the job?
+
+DELIMITER $$
+CREATE PROCDURE FetchSalary( IN param INTEGER)
+BEGIN 
+SELECT Salary FROM Employee WHERE Id = param;
+END $$
+
+28. What is true for TRUNCATE?
+Your choice: correct -
+The TRUNCATE operation cannot be rolled back.
+
+29. Which is NOT a type of parameter in stored procedures?
+Your choice: correct -
+EXTEND
+
+30. You are working on two tables: Inventory with columns Material, Type, and Stock, and Summary with columns Type and Total. The Total column contains total value according to type. How would you create a transaction that updates the sum of stock that has Type as Grocery in the Summary table?
+Your choice: correct -
+START TRANSACTION;
+SELECT @stockSum = SUM(Stock) FROM Inventory WHERE Type = "Grocery";
+UPDATE Summary SET Total = @stockSum WHERE Type = "Grocery";
+COMMIT;
+ 
+ 
+1.
+
+You are working on two tables named Vendor and Customer that both require their columns to be updated to IsCustomer and IsVendor respectively. By default, the columns IsCustomer and IsVendor are set to 0. How can you update the respective columns for the records that are present in both tables by comparing the Id column of both tables?
+•  Your choice: correct -
+UPDATE Vendor, Customer SET Vendor.IsCustomer = 1 , Customer.IsVendor = 1 WHERE Vendor.Id = Customer.Id;
+•  Incorrect -
+UPDATE Vendor AND Customer SET Vendor.IsCustomer = 1 , Customer.IsVendor = 1 WHERE Vendor.Id = Customer.Id;
+•  Incorrect -
+UPDATE Vendor, Customer SET Vendor.IsCustomer = 1 AND Customer.IsVendor = 1 WHERE Vendor.Id = Customer.Id;
+•  Incorrect -
+UPDATE Vendor, Customer SET Vendor.IsCustomer = 1 , Customer.IsVendor = 1;
+ 
+2.
+
+You are working on tables A and B. The definitions of the tables are the same. You want to know the data records present in both tables. How would you find this information?
+•  Incorrect -
+(SELECT * FROM A) UNION (SELECT * FROM B);
+•  Incorrect -
+(SELECT * FROM A ) JOIN (SELECT * FROM B);
+•  Your choice: correct -
+(SELECT * FROM A) INTERSECT (SELECT * FROM B);
+•  Incorrect -
+(SELECT * FROM A) EXCEPT (SELECT * FROM B);
+ 
+3.
+
+You have executed several SQL statements, but the changes are not reflected. You discover that auto-commit is disabled. How can you enable it?
+•  Incorrect -
+SET autocommit = OFF;
+•  Your choice: correct -
+SET autocommit = 1;
+•  Incorrect -
+SET autocommit = ON;
+•  Incorrect -
+SET autocommit = 0;
+ 
+4.
+
+You are working on a stored procedure named InventoryBuckets and there is a confirmed requirement to tweak the logic of the body. What do you need to do first considering you have backup of code and now need to update the stored procedure with same name?
+•  Incorrect -
+SHOW PROCEDURE InventoryBuckets;
+•  Your choice: correct -
+DROP PROCEDURE InventoryBuckets;
+•  Incorrect -
+CREATE PROCEDURE InventoryBuckets;
+•  Incorrect -
+DELETE PROCEDURE InventoryBuckets;
+ 
+5.
+
+You need to delete all records of a table named ExpiredItems. Which of the following is an efficient way to clear the table?
+•  Incorrect -
+DROP ExpiredItems;
+•  Incorrect -
+DELETE FROM ExpiredItems;
+•  Your choice: correct -
+TRUNCATE ExpiredItems;
+•  Incorrect -
+REPLACE ExpiredItems;
+ 
+6.
+
+You are working on a table named Review with columns Id and Comment. Comment has distinct values of 1, 2, and 3. How can you retrieve data from the table with the Comment column as "Satisfactory," "Neutral," and "Unsatisfactory" corresponding to its values?
+ 
+ 
+•  Your choice: correct -
+SELECT Id, CASE Comment 
+WHEN 1 THEN 'Satisfactory'
+WHEN 2 THEN 'Neutral'
+WHEN 3 THEN 'Unsatisfactory'
+END AS Comment  FROM Review;
+•  Incorrect -
+SELECT Id, CASE Comment 
+WHEN 1 THEN 'Satisfactory'
+WHEN 2 THEN 'Neutral'
+WHEN 3 THEN 'Unsatisfactory'
+FROM Review;
+•  Incorrect -
+SELECT Id, CASE Comment 
+WHEN 1 THEN 'Satisfactory'
+2 THEN 'Neutral'
+3 THEN 'Unsatisfactory'
+END AS Comment  FROM Review;
+•  Incorrect -
+SELECT Id,  Comment 
+WHEN 1 THEN 'Satisfactory'
+WHEN 2 THEN 'Neutral'
+WHEN 3 THEN 'Unsatisfactory'
+END AS Comment  FROM Review;
+ 
+ 
+7.
+
+What is a Common Table Expression (CTE)?
+•  Incorrect -
+Used to retrieve data from multiple databases
+•  Your choice: correct -
+Defines a temporary result set which can be used in a SELECT statement
+•  Incorrect -
+A collection of different clauses for complicated database calls
+•  Incorrect -
+Checks the scope of a statement
+ 
+8.
+
+Which command will execute a stored procedure?
+•  Your choice: correct -
+CALL
+•  Incorrect -
+EXEC
+•  Incorrect -
+BEGIN
+•  Incorrect -
+COMMIT
+ 
+9.
+
+What is the difference between COMMIT and ROLLBACK?
+•  Incorrect -
+COMMIT ends the transaction and saves the changes but they are not visible to the subsequent transactions, while ROLLBACK ends the transaction and removes the changes so that they are not visible to other transactions.
+•  Incorrect -
+COMMIT ends the transaction and saves the changes so that they are visible to the subsequent transactions, while ROLLBACK ends the transaction and removes the changes but they are visible to other transactions.
+•  Your choice: correct -
+COMMIT completes the transaction and saves the changes so that they are visible to subsequent transactions. ROLLBACK ends the transaction and removes the changes so that they cannot be visible to other transactions.
+•  Incorrect -
+COMMIT ends the transaction and removes the changes so that they cannot be visible to other transactions, while ROLLBACK ends the transaction and saves the changes so that they are visible to subsequent transactions.
+ 
+ 
+10.
+
+Which of the following is NOT a select expression?  
+•  Incorrect -
+Table_name.*
+•  Incorrect -
+Column Name
+•  Your choice: correct -
+Database_name.*
+•  Incorrect -
+*
+11.
+
+The script SELECT 50/(5-5); throws an error: 
+
+ERROR_ON_DIVISION_BY_ZERO
+
+What could be the reason?
+•  Incorrect -
+The arithmetic operation DIV should be used.
+•  Correct -
+SQL mode is used.
+•  Incorrect -
+You need to define data type.
+•  Your choice: incorrect -
+A number is divided by 0.
+ 
+12.
+
+You are working on a table containing master data, named Master. It has the following columns:
+•  Id
+•  Text1
+•  Text2
+•  Text3
+•  Text4
+•  Text5
+How would you select all records containing "Master record" in any Text1, Text2, Text3, Text4 and, Text5 columns?
+•  Incorrect -
+SELECT Text* FROM Master WHERE 'Master record' IN (Text1, Text2, Text3, Text4, Text5);
+•  Incorrect -
+SELECT * FROM Master WHERE (Text1, Text2, Text3, Text4, Text5) = 'Master record";
+•  Incorrect -
+SELECT * FROM Master WHERE 'Master record' IN Text*;
+•  Your choice: correct -
+SELECT * FROM Master WHERE 'Master record' IN (Text1, Text2, Text3, Text4, Text5);
+ 
+13.
+
+What is the default order of the SELECT query?
+•  Your choice: incorrect -
+Ascending
+•  Correct -
+No order
+•  Incorrect -
+Mixed order
+•  Incorrect -
+Descending
+ 
+14.
+
+What does a TRUNCATE(X, D) function return?
+•  Incorrect -
+It frees up the space of the objects X and D.
+•  Incorrect -
+It returns a string X trimmed to D length.
+•  Incorrect -
+It returns a table X truncated to D columns.
+•  Your choice: correct -
+It returns a number X truncated to D decimal places.
+15.
+
+What is the purpose of the GROUP BY clause?
+•  Incorrect -
+It groups text into a required pattern.
+•  Incorrect -
+It groups rows into order.
+•  Incorrect -
+It groups columns into a summarized column.
+•  Your choice: correct -
+It groups records into summarized rows.
+ 
+16.
+
+You are working on a table named Customer with three columns; ID, FirstName, and LastName. How can you find the records for the customers whose last name starts with Sm and whose first name ends with an s?
+•  Incorrect -
+SELECT * FROM Customer WHERE LastName LIKE '%s' AND FirstName LIKE '%Sm';
+•  Incorrect -
+SELECT * FROM Customer WHERE LastName LIKE 'Sm%' OR FirstName LIKE '%s';
+•  Your choice: correct -
+SELECT * FROM Customer WHERE LastName LIKE 'Sm%' AND FirstName LIKE '%s';
+•  Incorrect -
+SELECT * FROM Customer WHERE LastName LIKE 'Sm%' AND FirstName LIKE 's%';
+ 
+17.
+
+You need to insert a few records in a table, but you don't know if the records are duplicate on the primary key or not. If it is a duplicate, then you need to perform an update only. How can you accomplish this?
+•  Incorrect -
+INSERT …. IF ERROR THEN UPDATE…
+•  Your choice: correct -
+INSERT … ON DUPLICATE KEY UPDATE …
+•  Incorrect -
+INSERT …. PASS UPDATE….
+•  Incorrect -
+INSERT … ELSE UPDATE …
+ 
+18.
+
+Which of the following is NOT a window function?
+•  Incorrect -
+LAG
+•  Your choice: correct -
+ASCII
+•  Incorrect -
+LAST_VALUE
+•  Incorrect -
+CUME_DIST
+ 
+19.
+
+The script given below has an output of 3.
+SELECT CEILING(2.34);  
+What is the outcome of the script SELECT CEILING(-2.34);?
+•  Incorrect -
+-3
+•  Incorrect -
+3
+•  Incorrect -
+2
+•  Your choice: correct -
+-2
+ 
+20.
+
+Which of the following can be used to replace NULL values with meaningful data?
+•  Incorrect -
+CONV
+•  Incorrect -
+IS NOT NULL
+•  Incorrect -
+ISNULL
+•  Your choice: correct -
+COALESCE
+ 
+21.
+
+You are working on two tables: Commercial and Finance. They contain employee information from different departments with the same table structure. How can you consolidate data from both departments?
+•  Incorrect -
+SELECT * FROM FINANCE INNER JOIN COMMERCIAL;
+•  Incorrect -
+(SELECT * FROM Commercial) AND (SELECT * FROM Finance);
+•  Incorrect -
+(SELECT * FROM Commercial) INTERSECT (SELECT * FROM Finance);
+•  Your choice: correct -
+(SELECT * FROM Commercial) UNION (SELECT * FROM Finance);
+22.
+
+You are working on a table named Customer, that contains data about different purchased products. Entries of several products were set as detergent instead of Soap. How would you update all rows of the column Product to Soap?
+•  Incorrect -
+Insert Customer SET Product = 'Soap' WHERE Product = 'detergent'
+•  Incorrect -
+Insert Customer SET Product = 'Soap'
+•  Incorrect -
+Update Customer SET Product = 'detergent'
+•  Your choice: correct -
+Update Customer SET Product = 'Soap' WHERE Product = 'detergent'
+23.
+
+You are working on concatenating two variables VAR1 and VAR2 with the script given below. Either of the variables may contain a NULL value.
+ 
+CONCAT(VAR1, VAR2);
+ 
+The script results in a NULL. How can you handle the expected NULL value?
+•  Incorrect -
+CONCAT(VAR1, IFNULL(VAR2, " "));
+•  Incorrect -
+CONCAT(NULL(VAR1, " "), NULL(VAR2, " "));
+•  Incorrect -
+CONCAT(ISNULL(VAR1, " "), ISNULL(VAR2, " "));
+•  Your choice: correct -
+CONCAT(IFNULL(VAR1, " "), IFNULL(VAR2, " "));
+ 
+24.
+
+There are two tables "Student" and "Marks" that both have a common column named "Id". The Student table contains data related to students, and Marks contains the marks of those who took exams. How can you retrieve all student's information and their marks?
+•  Incorrect -
+SELECT * FROM Student LEFT JOIN Marks WHERE Student.Id = Marks.Id;
+•  Incorrect -
+SELECT * FROM Student LEFT JOIN Marks WHEN Student.Id = Marks.Id;
+•  Incorrect -
+SELECT * FROM Student LEFT JOIN Marks SET Student.Id = Marks.Id;
+•  Your choice: correct -
+SELECT * FROM Student LEFT JOIN Marks ON Student.Id = Marks.Id;
+ 
+25.
+
+What is the range of the unsigned tinyint data type?
+•  Your choice: correct -
+0 to 255 
+•  Incorrect -
+-255 to 254
+•  Incorrect -
+-128 to 127 
+•  Incorrect -
+0 to 127
+ 
+26.
+
+How would you convert a number 554 into char data type?
+•  Your choice: correct -
+CAST( 554 AS CHAR)
+•  Incorrect -
+CAST( 554 , CHAR)
+•  Incorrect -
+CAST(CHAR(554))
+•  Incorrect -
+CAST( 554 USING CHAR)
+ 
+27.
+
+How does the COALESCE function handle NULL values?
+•  Incorrect -
+It calculates an expression for the passed NULL values.
+•  Incorrect -
+It returns constant values for the NULL values.
+•  Incorrect -
+It replaces all NULL values with average.
+•  Your choice: correct -
+It returns the first non-NULL value from the list of parameters passed in the function.
+ 
+ 
+28.
+
+A coalesce script is given below:
+ 
+COALESCE(NULL, 1, NULL, 2, NULL, 3, NULL, 4);
+What is the output of the script?
+•  Your choice: correct -
+1
+•  Incorrect -
+4
+•  Incorrect -
+2
+•  Incorrect -
+3
+ 
+29.
+
+What does the window function do?
+•  Incorrect -
+Performs a calculation on one or more values and returns a single value
+•  Incorrect -
+Processes an input string and returns a string or numeric value
+•  Your choice: correct -
+Calculates an aggregate value based on a group of rows and returns multiple rows for each group
+•  Incorrect -
+Allows you to handle date and time data effectively
+30.
+
+What is true for TRUNCATE?
+•  Incorrect -
+The TRUNCATE operation can be rolled back.
+•  Your choice: correct -
+The TRUNCATE operation cannot be rolled back.
+•  Incorrect -
+TRUNCATE is used for data manipulation.
+•  Incorrect -
+TRUNCATE is used security purposes.
+ 
+ 
+ 
+1.
+
+You create a stored procedure and want to change its characteristics. What would happen if you tried to alter the procedure?
+•  Incorrect -
+The script would result in a syntax error.
+•  Your choice: correct -
+The procedure would be altered without an error.
+•  Incorrect -
+The script would result in an authorization error.
+•  Incorrect -
+The procedure would be altered but would throw an error when called.
+•  Incorrect -
+I don't know yet.
+ 
+ 
+2.
+
+You are required to create a procedure that counts the number of rows of any table passed as an argument and store it in an output argument. How would you create this procedure?
+•  Incorrect -
+CREATE PROCEDURE FetchData (IN param1 , OUT param2 )
+BEGIN 
+SELECT COUNT(*) INTO param2 FROM param1;
+END;
+•  Your choice: incorrect -
+CREATE PROCEDURE FetchData (IN param1 CHAR(100), OUT param2 INT)
+BEGIN 
+SELECT COUNT(*) INTO param1 FROM param2;
+END;
+•  Correct -
+CREATE PROCEDURE FetchData (IN param1 CHAR(100), OUT param2 INT)
+BEGIN 
+SELECT COUNT(*) INTO param2 FROM param1;
+END;
+•  Incorrect -
+CREATE PROCEDURE FetchData (param1 CHAR(100),param2 INT)
+BEGIN 
+SELECT COUNT(*) INTO param2 FROM param1;
+END;
+•  Incorrect -
+I don't know yet.
+ 
+ 
+ 
+Querying Data with SQL in MariaDB
+3.
+Which function will generate the current date?
+3.
+
+Which function will generate the current date?
+•  Incorrect -
+CUR_DATE()
+•  Incorrect -
+DAY()
+•  Your choice: correct -
+CURDATE()
+•  Incorrect -
+DATE()
+•  Incorrect -
+I don't know yet.
+ 
+ 
+4.
+
+What is true for the ALTER PROCEDURE statement?
+•  Incorrect -
+It can be used to change the body of a stored procedure.
+•  Your choice: correct -
+It can be used to change the characteristics of a stored procedure.
+•  Incorrect -
+It can be used to change the privileges of a stored procedure.
+•  Incorrect -
+It can be used to change the parameters of a stored procedure.
+•  Incorrect -
+I don't know yet.
+ 
+5.
+
+You are working on a table named Donations that contains columns Id (text), Prefix (numeric), and Suffix (text). There is a script to retrieve data which throws an error. 
+SELECT Id, Prefix + Suffix AS Donation FROM Donations;
+How would you fix the error?
+•  Incorrect -
+SELECT Id,Suffix + Prefix AS Donation FROM Donations;
+•  Incorrect -
+SELECT Id, "Prefix + Suffix" AS Donation FROM Donations;
+•  Your choice: correct -
+SELECT Id, CAST(Prefix AS CHAR(20)) + Suffix AS Donation FROM Donations;
+•  Incorrect -
+SELECT Id, CONCAT(Prefix + Suffix) AS Donation FROM Donations;
+•  Incorrect -
+I don't know yet.
+ 
+ 
+6.
+
+You have executed several SQL statements, but the changes are not reflected. You discover that auto-commit is disabled. How can you enable it?
+•  Incorrect -
+SET autocommit = ON;
+•  Incorrect -
+SET autocommit = OFF;
+•  Incorrect -
+SET autocommit = 0;
+•  Your choice: correct -
+SET autocommit = 1;
+•  Incorrect -
+I don't know yet.
+ 
+ 
+7.
+
+What would be the result of the given script?
+SELECT CASE BINARY 'B' WHEN 'a' THEN 1 WHEN 'b' THEN 2 END;
+•  Incorrect -
+1
+•  Your choice: incorrect -
+2
+•  Incorrect -
+0
+•  Correct -
+NULL
+•  Incorrect -
+I don't know yet.
+ 
+ 
+8.
+
+You are working on a table named "MaterialDiscount" that contains three columns: Product, Price, and Discount, where Discount is a ratio. How would you retrieve all data from the table, with an additional column calculating price after discount?
+•  Incorrect -
+SELECT Product, Price, Discount, Price - Discount AS 'Price after discount' FROM MaterialDiscount;
+•  Incorrect -
+SELECT Product, Price, Discount, Price - Price/Discount AS 'Price after discount' FROM MaterialDiscount;
+•  Incorrect -
+SELECT Product, Price, Discount, Price - Price*Discount/100 AS 'Price after discount' FROM MaterialDiscount;
+•  Your choice: correct -
+SELECT Product, Price, Discount, Price - Price*Discount AS 'Price after discount' FROM MaterialDiscount;
+•  Incorrect -
+I don't know yet.
+ 
+ 
+9.
+
+What is the difference between CURRENT_USER() and USER()?
+•  Correct -
+USER() returns the username and hostname given when authenticating MariaDB, while CURRENT_USER returns the username and hostname from the MariaDB account that the server used to authenticate the current client.
+•  Your choice: incorrect -
+USER() returns the username and hostname from the MariaDB account that the server used to authenticate the current client, while CURRENT_USER returns the username and hostname given when authenticating MariaDB.
+•  Incorrect -
+USER returns both hostname and username, while CURRENT_USER returns only the username.
+•  Incorrect -
+USER only returns the hostname that is used to authenticate to MariaDB, while CURRENT_USER returns both the hostname and the username.
+•  Incorrect -
+I don't know yet.
+ 
+ 
+10.
+
+You created a stored procedure "Changemap" that has security characteristics set as definer. It deletes some data while executing. How would you ALTER the procedure so that everyone cannot use the procedure to delete data?
+•  Incorrect -
+ALTER PROCEDURE Changemap  SECURITY INVOKER;
+•  Incorrect -
+ALTER PROCEDURE Changemap SQL SECURITY DEFINER;
+•  Incorrect -
+ALTER PROCEDURE Changemap INVOKER;
+•  Your choice: correct -
+ALTER PROCEDURE Changemap SQL SECURITY INVOKER;
+•  Incorrect -
+I don't know yet.
+ 
+ 
+11.
+
+Which of the following is a numeric data type?
+•  Incorrect -
+ENUM
+•  Incorrect -
+TIMESTAMP
+•  Your choice: correct -
+BOOLEAN
+•  Incorrect -
+BLOB
+•  Incorrect -
+I don't know yet.
+ 
+ 
+12.
+
+You are working on a table named Student that contains three columns: Name, Subject, and Marks. How would you describe the result of the SQL statement given below? 
+SELECT Name, Subject, AVG(Marks) FROM Student;
+•  Incorrect -
+Result would be average marks of each subject
+•  Your choice: incorrect -
+Result would be average marks of each group of student and subject.
+•  Incorrect -
+Result would be average marks of each student
+•  Correct -
+Result would be incorrect and mismatched.
+•  Incorrect -
+I don't know yet.
+ 
+ 
+13.
+
+How can you change the parameters of a stored procedure?
+•  Incorrect -
+With the SELECT statement
+•  Correct -
+By dropping and replace the stored procedure
+•  Your choice: incorrect -
+With the ALTER PROCEDURE statement
+•  Incorrect -
+With the TRUNCATE statement
+•  Incorrect -
+I don't know yet.
+ 
+ 
+14.
+
+How would you create a stored procedure to retrieve all data from a table named 'Sales'?
+•  Your choice: incorrect -
+CREATE PROCEDURE Retrieve_Sales AS BEGIN  STATEMENT SELECT * FROM Sales; END; 
+•  Correct -
+CREATE PROCEDURE Retrieve_Sales  BEGIN SELECT * FROM Sales; END; 
+•  Incorrect -
+CREATE PROCEDURE Retrieve_Sales AS  SELECT * FROM Sales; END; 
+•  Incorrect -
+CREATE PROCEDURE Retrieve_Sales AS BEGIN  Sales; END; 
+•  Incorrect -
+I don't know yet.
+ 
+ 
+15.
+
+How many columns can be concatenated using CONCAT?
+•  Your choice: correct -
+255
+•  Incorrect -
+12
+•  Incorrect -
+64
+•  Incorrect -
+1023
+•  Incorrect -
+I don't know yet.
+ 
+ 
+16.
+
+Which of the following privileges are required to delete a procedure?
+•  Incorrect -
+INVOKER
+•  Incorrect -
+DEFINER
+•  Incorrect -
+Automatic
+•  Your choice: correct -
+ALTER ROUTINE
+•  Incorrect -
+I don't know yet.
+ 
+ 
+17.
+SELECT CURDATE(); 
+The script above is used to generate the current date in a string format. How would you generate it in a numeric format?
+•  Your choice: incorrect -
+SELECT INT(CURDATE()) ;
+•  Correct -
+SELECT CURDATE() + 0;
+•  Incorrect -
+SELECT CURDATE() + 1;
+•  Incorrect -
+SELECT CURRENT_DATE();
+•  Incorrect -
+I don't know yet.
+ 
+ 
+ 
+18.
+
+You are working on two tables: A and B. Both tables contain master data. You need them to be joined so that each row in a table is joined with all the rows in the other table. What will do that?
+•  Your choice: correct -
+SELECT * FROM A CROSS JOIN B;
+•  Incorrect -
+SELECT * FROM A LEFT JOIN B;
+•  Incorrect -
+SELECT * FROM A ANTI JOIN B;
+•  Incorrect -
+SELECT * FROM A INNER JOIN B;
+•  Incorrect -
+I don't know yet.
+19.
+
+You are working on a data-set named Flight that contains two columns: Origin and Destination. You are required to create a recursive common table expression that selects all the destinations one can reach from origin "London". Which code would do the job?
+•  Incorrect -
+WITH RECURSIVE Route AS ( 
+SELECT Flight.Destination FROM Flight, Route WHERE Route.Destination = Flight.Origin
+)
+•  Correct -
+WITH RECURSIVE Route AS (
+SELECT Origin AS Destination FROM Flight WHERE Origin = "London"
+UNION
+SELECT Flight.Destination FROM Flight, Route WHERE Route.Destination = Flight.Origin
+)
+•  Incorrect -
+WITH RECURSIVE Route AS (
+SELECT Destination FROM Flight WHERE Origin = "London"
+)
+•  Your choice: incorrect -
+WITH RECURSIVE Route AS (
+SELECT Destination FROM Flight WHERE Origin = "London"
+UNION
+SELECT Flight.Destination FROM Flight, Route WHERE Route.Destination = Flight.Origin
+)
+•  Incorrect -
+I don't know yet.
+ 
+ 
+20.
+
+Which of the following is NOT a select expression?  
+•  Incorrect -
+*
+•  Incorrect -
+Column Name
+•  Your choice: correct -
+Database_name.*
+•  Incorrect -
+Table_name.*
+•  Incorrect -
+I don't know yet.
+ 
+ 
+21.
+
+You are working on a stored procedure named InventoryBuckets and there is a confirmed requirement to tweak the logic of the body. What do you need to do first considering you have backup of code and now need to update the stored procedure with same name?
+•  Incorrect -
+CREATE PROCEDURE InventoryBuckets;
+•  Incorrect -
+DELETE PROCEDURE InventoryBuckets;
+•  Incorrect -
+SHOW PROCEDURE InventoryBuckets;
+•  Your choice: correct -
+DROP PROCEDURE InventoryBuckets;
+•  Incorrect -
+I don't know yet.
+ 
+ 
+22.
+
+You are working on a table named Marks that contains three columns: Student, Subject, and Marks. How would you retrieve all data along with a column containing average marks of the associated subjects?
+•  Incorrect -
+SELECT Student, Subject, Marks, AVG(Marks) OVER (PARTITION BY Student) AS 'SubjectAverage' FROM Marks;
+•  Incorrect -
+SELECT Student, Subject, Marks, AVG(Marks) AS 'SubjectAverage' FROM Marks;
+•  Incorrect -
+SELECT Student, Subject, Marks, AVG(Marks) OVER (PARTITION BY Marks AS 'SubjectAverage' FROM Marks;
+•  Your choice: correct -
+SELECT Student, Subject, Marks, AVG(Marks) OVER (PARTITION BY Subject) AS 'SubjectAverage' FROM Marks;
+•  Incorrect -
+I don't know yet.
+ 
+ 
+23.
+
+You are working with four SQL queries given below:
+SELECT * FROM USER;
+SHOW AUTHORS;
+SHOW COLUMNS FROM USER;
+RENAME USER STAT TO STANLEY;
+How many of the above queries are DQL?
+•  Incorrect -
+4
+•  Incorrect -
+2
+•  Your choice: incorrect -
+1
+•  Correct -
+3
+•  Incorrect -
+I don't know yet.
+
+
+
+
+
+
+
+

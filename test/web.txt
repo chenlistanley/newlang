@@ -1,0 +1,117 @@
+Spring Framework: Building Web Applications and Services
+
+1. What can you use from Thymeleaf to create a common layout that can be reused in your Spring MVC application?
+Fragments
+
+2. Where are the routes defined in Spring MVC compared to other popular web frameworks?
+They are dispersed throughout the whole application.
+
+3. What is the purpose of versioning APIs?
+It allows you to iterate faster when required changes are identified for multiple client integrations.
+
+4. What is a disadvantage of having model classes that are also entity classes in a Spring MVC application?
+The MVC layer of the application has to deal with transactions.
+
+5. Which annotation can be called to validate a variable that contains a value which is not null nor an empty string? 
+@NotEmpty
+
+6. What is the purpose of a Model(s) in the MVC architecture? 
+To contain all of the data and logic in an application. 
+
+7. In Spring, what happens when you omit the @RestResource annotation on an associated resource property?
+Both the path and the name of the associated resource will have the value of the name of the actual property.
+
+8. What is the name of the pattern that creates a new request and redirects the user to the request path when successfully submitting a form in Spring MVC?
+Redirect-after-post
+
+9. What additional Maven dependency does FreeMarker template engine require to integrate with Spring MVC?
+spring-context-support
+
+10. Your Spring MVC application needs an additional CSS file. You have put the resource under webapp/resources and created a Spring mvc:resources mapping, but when you run the project, the CSS is still not loading. What is wrong?
+The CSS is not included in the JSP page.
+
+11. You are working on a large Spring project that has been live for more than 10 years, and the process is tedious. After some time you notice that the presentation and the domain layers are very tightly coupled and any change you make in the domain requires you to also change the controllers. How can you start refactoring this application in order to decouple the above layers?
+Use Data Transfer Objects (DTO) in the service layer of the application. 
+
+12. You are performing API versioning with custom headers. When you implement a single header in your versioning script such as: headers = {"X-API-VERSION=2"} your endpoint functions but when you implement multiple headers such as: headers = {"X-API-VERSION=2", "X-API-VERSION=1"} you get a "404" status error. What can you do to avoid this error? 
+Implement custom parameter mapping with HandlerMethodArgumentResolver. 
+
+13. Consider the following configuration:  
+@Override
+public void addResourceHandlers(ResourceHandlerRegistry registry) {
+ registry.addResourceHandler("/resources/**")
+ .addResourceLocations("/pdf/");
+}
+Under the "pdf" directory, if you have a sub-directory "product/manuals/" which contains a PDF file called my-manual.pdf, how can you form the request path to access that PDF file?
+/resources/product/manuals/my-manual.pdf
+
+14. You're working on implementing a Spring based HR system. You've defined all classes and their association relationships correctly, and you're now attempting to write automated integration tests for the associated resources. One of your tests is issuing a HEAD HTTP request directly to the URL of one of the associated resources but fails. What likely the cause for this, without inspecting the test logs?
+An associated resource only supports GET, PUT, POST, and DELETE requests.
+
+15. You have a Spring MVC application with 2 themes, each theme having its own properties file: light.properties and dark.properties located under /themes folder. However, Spring MVC is not locating the files correctly when requested. What is missing from the implementation?
+@Override 
+public void addResourceHandlers(ResourceHandlerRegistry registry) {
+  registry
+   .addResourceHandler("/themes/**")
+   .addResourceLocations("classpath:/themes/");
+}
+
+16. Which of the following is an example of a valid comparison between a Projection and an Excerpt?
+An Excerpt is a Projection that is applied automatically to collection resources, whereas a standard Projection doesn't apply automatically to a single resource. 
+
+17. What is an example of a Java annotation that you can use in Spring to design your validation logic layer?
+@Future
+
+18. You want to pass a collection of values to the new view when clicking a link on a page in your Spring MVC application. Which of the following implementations would be the most suitable for this situation?
+@GetMapping("/newPage")
+public String newPage(ModelMap map) {          
+  map.addAttribute("welcomeMessage", "Welcome");
+  map.addAttribute("message", "Hello!");
+  return "viewPage";
+} 
+
+19. Which Spring MVC annotation can you use to place model attributes in scope for all controllers to be used in reusable tags?
+@ControllerAdvice
+
+20. A Spring MVC application fails to load a page when a request is sent to "http://localhost:8080/MyApp/admin/listPeople". The controller and the view contain the following lines:   @GetMapping(value="/admin/listPeople")  <a href="/admin/listPeople">People List</a>.  What would you do to fix the issue?
+Use the c:url JSP  tag to append the context path to the URL.
+
+21. When sending a request to http://yoursite.com/test.jsp you are able to see the contents of the JSP of your Spring MVC application, which poses a security threat. How can you fix this?
+Move test.jsp file under the WEB-INF/ folder
+
+22. You're working on implementing a Spring-based HR system. Assume that an OfficeDeskLocation class exists and is correctly implemented so far, and that the same is true for an Employee class. The two classes have a one-to-one relationship, owned by the Employee class. This association relationship isn't declared in code yet, and you'd like to do so, naming the endpoint URL of the associated resource officeDetails, and its name office. What is a valid first step you can take?
+In the Employee class, annotate the property of type OfficeDeskLocation with:
+
+@OneToOne
+
+@JoinColumn(name = "office_location_details_id")
+
+@RestResource(path = "officeDetails", rel="office")
+
+23. What is the delegate implementation of the ThemeSource that loads properties file from the root of the classpath in Spring MVC?
+org.springframework.ui.context.support.ResourceBundleThemeSource
+
+24. You've finished building a RESTful web service using Sprint Boot. You've automatically generated an endpoint serving documentation for it using Springfox for Swagger 2. You've customized the title and description of your API via the Springfox configuration and now want to go one step further and visualize the documentation in a friendlier format. When trying to access the Swagger UI at the URL below, you receive a 404 HTTP status code. What is the most likely cause for the error?
+
+http://localhost:8080/swagger-ui/index.html#/
+You are missing a dependency on springfox-swagger-ui
+
+25. How would you define a Spring MVC theme that references a background image, which changes the text on it based on the selected language? The available languages are English and French.
+Define 2 property files that reference the image: /WEB-INF/classes/super.properties and /WEB-INF/classes/super_fr.properties
+
+26. You versioned your API with a through request parameters but this is causing you to maintain too many URLs. How can you refactor your versioning strategy to be more adaptable?
+Use Content-Type and Accept headers to tell API clients what data your API accepts and returns. 
+
+27. What is true about the WEB-INF resource folder in Spring MVC?
+No file contained in this directory may be served directly to a client by the container.
+
+28. What class configures a request handler for serving static resources by forwarding the request to the Servlet container's "default" Servlet in a Spring MVC application?
+DefaultServletHandlerConfigurer
+
+29. Which of the following is a valid use case for the params attribute of the @RequestMapping Spring annotation?
+To further narrow down the mapping of an HTTP GET request
+
+30. What object will Spring use "behind the scenes" to issue a redirect command?
+org.springframework.web.servlet.view.RedirectView
+
+

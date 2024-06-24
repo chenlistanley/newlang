@@ -1,0 +1,236 @@
+1.
+If you want to set a property on the Mock property source for the current environment, which of these methods would you use?
+Incorrect -
+Environment's setActiveProfiles(String... profiles) method
+Your choice: incorrect -
+MockEnvironment's addProperty(String key, String value) method
+Correct -
+MockEnvironment's withProperty(String key, String value) method
+Incorrect -
+MockPropertySource's addPropertySource(String name, Object value) method
+
+2.
+What HTTP verb would you use to create a resource if you need to ensure that issuing the request once or several times successively has the same effect?
+Your choice: correct -
+PUT
+Incorrect -
+PATCH
+Incorrect -
+POST
+Incorrect -
+GET
+3.
+Given @SpringBootApplication and the combination of @Configuration, @ComponentScan, and @EnableAutoConfiguration on the main application class, what is true?
+Incorrect -
+@SpringBootApplication does not cover auto configuration.
+Your choice: correct -
+They are equivalent in functionality.
+Incorrect -
+@SpringBootApplication includes additional auto configuration.
+Incorrect -
+@SpringBootApplication does not cover component scanning.
+
+4.
+You have code with an interface named BuyProduct and a method productCart() in it. You must verify if the method of the given interface is being invoked or not with the required set of parameters in another file that will execute the final code. How would you do so? 
+Incorrect -
+Add verify(BuyProduct.productCart(...)); in the required method of the new file. 
+Your choice: incorrect -
+Add mock.verify(BuyProduct.productCart(...)); in the required method of the new file. 
+Correct -
+Add verify(BuyProduct).productCart(...); in the required method of the new file. 
+Incorrect -
+Add mock.verify(BuyProduct).productCart(...); in the required method of the new file. 
+
+5.
+What does SimpleMappingExceptionResolver allow you to do? 
+Incorrect -
+To handle all the exceptions thrown by different controllers
+Incorrect -
+To resolve exceptions based on their status code
+Your choice: correct -
+To map exception class names to view names
+Incorrect -
+To map exception codes to view names
+
+6.
+While checking a Spring Cloud application code, you come across some lines that keep track of all the services the application uses along with their instances. How can you use such services in your application? 
+Incorrect -
+Through the @EnableEurekaServer annotation 
+Your choice: correct -
+Through Service Discovery 
+Incorrect -
+Through Dependency Injection
+Incorrect -
+Through @EnableDiscoveryClient annotation 
+
+7.
+Consider the following SQL:
+create table person (id integer, name varchar(100))  Which JdbcTemplate method(s) would you use to run this?
+Incorrect -
+execute() but not update() 
+Your choice: correct -
+execute() or update() 
+Incorrect -
+update() but not execute()
+Incorrect -
+execute() followed by update() 
+
+8.
+The Spring Framework provides built-in support for mocking which object when writing unit tests?
+Incorrect -
+JdbcTemplate
+Correct -
+Environment
+Incorrect -
+Resource
+Your choice: incorrect -
+ApplicationContext
+
+9.
+What is the correct way to configure Java Database Connectivity (JDBC) Authentication? 
+Incorrect -
+Pass an interface AuthenticationManager as a parameter to the required method.
+Incorrect -
+Pass the AuthenticationManagerBuilder class as a parameter to the required method.
+Incorrect -
+Pass an interface AuthenticationProvider with its object as a parameter to the required method.
+Your choice: correct -
+Pass the AuthenticationManagerBuilder class with its object as a parameter to the required method.
+
+10.
+How will you add attributes to the model for a view in a controller method?
+Correct -
+By annotating the method with @ModelAttribute
+Incorrect -
+By using the @RequestMapping annotation on the method
+Incorrect -
+By using the @PathVariable annotation on a method parameter
+Your choice: incorrect -
+By annotating a method parameter with @ModelAttribute
+
+11.
+In a Spring Cloud application, which action would allow you to make HTTP requests to services using the service name as the hostname?
+Your choice: incorrect -
+Put @LoadBalanced on the configuration class that creates a RestTemplate.
+Correct -
+Put @LoadBalanced on the method responsible for creating a RestTemplate.
+Incorrect -
+Put @LoadBalanced on the service or component using the RestTemplate.
+Incorrect -
+Put @LoadBalanced on the instance variable or method injected with RestTemplate.
+
+12.
+What is the difference between Spring aspect-oriented programming (AOP) and AspectJ in terms of aspect application and pointcut support?
+Your choice: correct -
+Spring AOP is limited to proxy-based AOP using Java dynamic proxies or CGLIB, whereas AspectJ supports a wider range of aspect weaving options, including compile-time and load-time weaving.
+Incorrect -
+Spring AOP is constrained to using its annotations for defining aspects, while AspectJ can use both its own and Spring's annotations for a broader aspect application.
+Incorrect -
+Spring AOP can be applied to any Spring-managed bean, whereas AspectJ has the capability to weave aspects into any Java class, extending beyond the beans that Spring manages.
+Incorrect -
+Spring AOP supports a restricted set of pointcuts primarily at runtime, while AspectJ offers extensive pointcut options, including those applicable at compile-time and load-time.
+
+13.
+You implement the following controller which aims to return a list of users in XML format:
+@RestController
+public class UserController 
+{
+  @RequestMapping(value = "/users")
+  public UserList getAllUsers() {
+    //API code
+  }
+}
+However, when testing the API you notice that the response is not returned in XML format. What might be a plausible cause?
+Incorrect -
+The produces attribute of @RequestMapping annotation is not set.
+Incorrect -
+The @RestController annotation only returns objects in JSON format.
+Your choice: correct -
+There is no dependency that supports XML return format in the class path.
+Incorrect -
+The consumer of the REST API is configured to only accept JSON format.
+14.
+What is the purpose of the @RibbonClient annotation in Spring Cloud?
+Your choice: correct -
+To declaratively configure a ribbon client
+Incorrect -
+To inject a ribbon client into a field or method
+Incorrect -
+To turn on load balancing for RestTemplate
+Incorrect -
+To define a new ribbon client
+Incorrect -
+
+15.
+How can you achieve content negotiation? 
+Incorrect -
+URL parameter and path extension 
+Your choice: correct -
+Path extension, URL parameter, and accept headers 
+Incorrect -
+Path extension and accept headers 
+Incorrect -
+URL extension, path location, and accept headers 
+
+16.
+Which feature only exists in Spring Boot?
+Incorrect -
+Support for YAML
+Incorrect -
+@Conditional bean creation
+Incorrect -
+Reactive programming model
+Your choice: correct -
+Type-safe configuration properties
+
+17.
+Which class resolves uncaught exceptions using @ExceptionHandler methods? 
+Incorrect -
+ResponseStatusExceptionResolver
+Your choice: correct -
+ExceptionHandlerExceptionResolver
+Incorrect -
+DefaultHandlerExceptionResolver
+Incorrect -
+HandlerExceptionResolver
+
+18.
+Consider the following bean definition:
+@Bean
+public JdbcTemplate(DataSource dataSource) {
+   JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+   return jdbcTemplate;
+}
+You forgot to set an exception translator by calling:
+jdbcTemplate.setExceptionTranslator(...)
+If you were to write and execute a malformed SQL query with the jdbcTemplate, what is the default behavior?
+Incorrect -
+JdbcTemplate uses SQLExceptionSubclassTranslator by default and would translate the exception.
+Your choice: correct -
+JdbcTemplate uses SQLErrorCodeSQLExceptionTranslator by default and would translate the exception.
+Incorrect -
+JdbcTemplate does not have a default exception translator and instead wraps all exceptions with SQLException.
+Incorrect -
+JdbcTemplate does not have a default exception translator and instead wraps all exceptions with RuntimeException.
+
+19.
+What is true about the Spring security filter chain? 
+Your choice: incorrect -
+It consists of some filters, where you can add more according to the required dependencies. 
+Incorrect -
+It consists of only two filters, each of which have their own responsibilities.
+Incorrect -
+It is a combination of filters where every filter performs the same task at the same time. 
+Correct -
+It is a combination of filters where every filter has some responsibility. 
+
+20.
+At which level can you override the executor used by Spring MVC's asynchronous processing if it defaults to SimpleAsyncTaskExecutor?
+Incorrect -
+Only at the method level
+Your choice: correct -
+Both at the application level and the method level
+Incorrect -
+Both at the method level and the class level
+Incorrect -
+Only at the application level
